@@ -1,0 +1,69 @@
+{% set moduleName = 'u4m-service-cards' %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+
+	<div class="service-cardsWrap {{name}}">
+		<div class="innerService-cards">
+			{% for item in module.cards %}
+			<div class="cmCard cmItem_{{loop.index}}">
+				<div class="cmInnerCard {% if item.background_settings.background_type =="color" %}{{ item.background_settings.select_color }}{% endif %}">
+					<div class="cm_description">
+						{% if item.title %}
+						<h5 class="cm_title">{{ item.title }}</h5>
+						{% endif %}
+						{% if item.content %}
+						<div class="cmcntWrap">
+							{{ item.content }}
+						</div>
+						{% endif %}
+					</div>
+					
+					{{macros.singlebuttonGroup(item.button_group, false)}}
+					
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+
+{% for item in module.cards %}
+{{macros.singlebuttonGroup(item.button_group, true)}}
+{% endfor %}
+
+
+
+
+{# ===== #}
+
+
+{% require_css %}
+<style>
+	{% for item in module.cards %}
+	{% if item.background_settings.background_type =="image" %}
+	.service-cardsWrap.{{name}} .cmItem_{{loop.index}} .cmInnerCard{
+		background-image: {% if item.background_settings.include_overlay_gradient %} radial-gradient(circle at top left, rgba(21, 31, 51, 0.8) 0%, rgba(21, 31, 51, 0.7) 100%),{% endif %} url({{ item.background_settings.background_image.src }});
+	}
+	{% endif %}
+	{% endfor %}
+</style>
+{% end_require_css %}
+
+
+
+
+
