@@ -113,10 +113,10 @@
 }
 @mixin b3 {
   font-family: $font1;
-  font-size: 16rem;
+  font-size: 14rem;
   line-height: 1.6;
   letter-spacing: 0;
-  color: $azure;
+  color: $baseColor;
   @include tabletvert {
     font-size: 15rem;
   }
