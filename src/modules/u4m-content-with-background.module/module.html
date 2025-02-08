@@ -1,4 +1,6 @@
-{% set moduleName = 'u4m-content-with-background' %}
+<div class="content_wid_bg_outer parent{{name}}">
+	
+	{% set moduleName = 'u4m-content-with-background' %}
 
 {% include "../partials/u4-module-includes.html" %}
 
@@ -8,9 +10,23 @@
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 
 </div>
+	{% if module.intro_content.enable_float_credit_text %}
+	<div class="floating_text">
+		{{ module.intro_content.float_credit_text }}
+	</div>
+	{% endif %}
 </section>
+{% if module.intro_content.enable_credit_text %}
+<div class="bottom_credit">
+	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+	<div class="cmCreditCnt">
+		<div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
+		</div>
+</div>
+</div>
+{% endif %}
 
-
+</div>
 
 {# button group popup modal#}
 {% if module.intro_content.include_button %}
@@ -27,3 +43,15 @@
 </style>
 {% endif %}
 {% end_require_css %}
+
+
+
+
+
+
+
+
+
+
+
+

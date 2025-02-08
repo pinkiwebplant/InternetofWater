@@ -344,6 +344,64 @@
         "no_follow" : false
       }
     } ]
+  }, {
+    "id" : "e7427762-6629-1c3c-27b7-b3f3ef99e2bc",
+    "name" : "enable_credit_text",
+    "label" : "Enable Credit Text",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "2b60c1b9-db0c-9ea6-b2d5-effb61bcb026",
+    "name" : "credit_text",
+    "label" : "Credit Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.enable_credit_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e9daad19-f4d6-45da-5972-8f049c3f685c",
+    "name" : "enable_float_credit_text",
+    "label" : "Enable Float Credit Text",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "cbb3a026-d9ae-bc8c-0d7d-2fbfc977b2b9",
+    "name" : "float_credit_text",
+    "label" : "Float Credit Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.enable_float_credit_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -375,7 +433,9 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    } ]
+    } ],
+    "enable_credit_text" : false,
+    "enable_float_credit_text" : false
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
@@ -400,7 +460,7 @@
   }, {
     "id" : "1aeb9913-725b-0bcf-a401-da6ba2a99eb3",
     "name" : "enable_fade_effect",
-    "label" : "Enable Fade Effect",
+    "label" : "Enable Shadow Effect",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
