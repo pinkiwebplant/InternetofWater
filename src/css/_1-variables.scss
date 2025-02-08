@@ -1,25 +1,53 @@
 // Colors - For transparency use rgba($action1, 0.5) = 50% opaque
-$action1: #733BF7;
+$action1: #733bf7;
 $action2: #00a4bd;
-$black: #33475b;
+$black: #000;
 $white: #fff;
 $gray1: #edf0f2;
 $gray2: #cbd6e2;
-$gray3: #7C98B6;
+$gray3: #7c98b6;
+
+// ===================
+
+$sunsetOrange: #ffba5a;
+$slateBlue: #55677f;
+$tealGreen: #008078;
+$darkGray: #666666;
+$azure: #0b3160;
+$cadetGray: #8e9ca4;
+$whiteSmoke: #f7f7f7;
+$lightGray: #e5e5e5;
+$darkblue : #151f33;
+
+//=====================
+
 $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
-$font1: 'Montserrat';
+$font1: "Quicksand", Helvetica, Arial, Lucida, sans-serif;
 $baseFontSize: 16rem;
 $baseLineHeight: 1.61803398875; // Golden ratio
+$baseColor: $darkGray;
+$baseFontWeight: 500;
+
 // Border Radius
 $border1: 4rem;
 $border2: 5rem;
 $border3: 10rem;
+
 // Shadow
-$shadow1: 0rem 1rem 12rem 0 rgba($black, 0.1);
-$shadow2: 0 5rem 25rem 0 rgba($black, 0.2);
-$shadow3: 0 10rem 50rem 0 rgba($black, 0.3);
-$textShadow1: 0 0 4rem rgba($black, 0.3);
+$shadow1: 6px 6px 18px -3px $cadetGray;
+$shadow2: 0px 32px 80px -16px rgba(85, 103, 127, 0.3);
+$shadow3: 0 0 15px rgba(0, 0, 0, 0.2);
+
 // Animation
-$animation1: .1s ease-in;
-$animation2: .25s ease-in;
+$animation1: 300ms ease 0ms;
+$animation2: 0.25s ease-in;
 $animation3: 1s ease-in;
+
+$borderRadius: 25rem;
+$buttonBorderRadius: 6rem;
+
+$outerContainerSize: 1400rem;
+$containerSize: 1100rem;
+$containerInnerSpacing: 10rem;
+
+$introContainer: 810rem;

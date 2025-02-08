@@ -17,13 +17,9 @@ html {
 
 /* make html visible after Firefox flash in hack */
 body {
-  font-family: $font1;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
-  color: $black;
-  font-weight: normal;
-  margin-top: 78rem;
-
+  @include bodyStyle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   &.hide-header {
     margin-top: 0;
   }
@@ -41,14 +37,19 @@ h4,
 h5,
 h6 {
   font-weight: normal;
+  margin-top: 0;
+
+  margin-bottom: 20rem;
 }
 
 h1 {
   @include h1;
+  padding-bottom: 10rem;
 }
 
 h2 {
   @include h2;
+  padding-bottom: 10rem;
 }
 
 h3 {
@@ -140,11 +141,11 @@ div.hs_cos_wrapper_widget section.bottom-margin-medium {
   margin-bottom: 100rem;
 
   @include tabletvert {
-    margin-bottom: 75rem
+    margin-bottom: 75rem;
   }
 
   @include phone {
-    margin-bottom: 50rem
+    margin-bottom: 50rem;
   }
 }
 
@@ -220,11 +221,11 @@ div.hs_cos_wrapper_widget section.bottom-padding-medium {
   padding-bottom: 100rem;
 
   @include tabletvert {
-    padding-bottom: 75rem
+    padding-bottom: 75rem;
   }
 
   @include phone {
-    padding-bottom: 50rem
+    padding-bottom: 50rem;
   }
 }
 
@@ -267,7 +268,7 @@ div.video-popup {
 div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gradients {
   box-shadow: 2rem -1rem 5rem 0rem rgba(0, 0, 0, 0.05);
   border: 0;
-  background-color: rgba($white, .9);
+  background-color: rgba($white, 0.9);
 
   div#hs-eu-cookie-confirmation-inner {
     background-color: rgba($white, 0);
@@ -297,12 +298,9 @@ div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gra
 }
 
 // default p size
-p {
-  @include b3;
-}
 
 a {
-  @include link
+  @include link;
 }
 
 blockquote,
@@ -319,7 +317,6 @@ strong {
 }
 
 ul {
-  @include b3;
   list-style: disc;
   padding-left: 40rem;
   margin-top: 0;
@@ -327,7 +324,6 @@ ul {
 }
 
 ol {
-  @include b3;
   list-style: decimal;
   padding-left: 40rem;
   margin-top: 0;
@@ -336,7 +332,7 @@ ol {
 
 li {
   margin-bottom: 5rem;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
 
 ul ul,
@@ -357,7 +353,7 @@ button {
 
 /* Forms */
 form {
-  margin-bottom: 30rem
+  margin-bottom: 30rem;
 }
 
 ::-webkit-input-placeholder {
@@ -420,11 +416,11 @@ code {
   border-radius: 0;
 }
 
-pre>code {
+pre > code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
-  margin-bottom: 30rem
+  margin-bottom: 30rem;
 }
 
 pre {
@@ -456,7 +452,7 @@ td:last-child {
 }
 
 table {
-  margin-bottom: 30rem
+  margin-bottom: 30rem;
 }
 
 table th {
@@ -468,11 +464,260 @@ table td {
   font-size: 14rem;
 }
 
-a[href='javascript:;'] {
+a[href="javascript:;"] {
   cursor: default;
 }
 
 //
-section[class*='u4m-'] {
+section[class*="u4m-"] {
   scroll-margin-top: 150px;
+}
+
+//
+
+.intro_btn_wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+  align-items: center;
+}
+
+.intro_content {
+  text-align: center;
+  margin-bottom: 36rem;
+  max-width: $introContainer;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .eyebrow_text {
+    @include eyebrow;
+    margin-bottom: 11rem;
+    position: relative;
+
+    &:after {
+      content: "";
+      background: $sunsetOrange;
+      bottom: -4px;
+      display: block;
+      height: 3px;
+      left: 50%;
+      margin: auto;
+      max-width: 100px;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+  }
+
+  .intro_title {
+    margin-bottom: 16rem;
+    margin-top: 0;
+    padding-bottom: 10px;
+    line-height: 1em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+
+    &.hd_border {
+      span {
+        height: 3px;
+        margin: auto;
+        max-width: 100px;
+        display: block;
+        position: absolute;
+        width: 80px;
+        background: $sunsetOrange;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .intro_desc {
+    margin-bottom: 36px;
+    p:last-child {
+      margin: 0;
+    }
+  }
+
+  .heading_top_border {
+    max-width: 100px;
+    margin: auto;
+    height: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+    span {
+      display: block;
+      height: 3px;
+      background: $sunsetOrange;
+    }
+  }
+
+  &.right {
+    text-align: right;
+    .heading_top_border {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .intro_title span {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    .eyebrow_text:after {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+  }
+
+  &.left {
+    text-align: left;
+    .heading_top_border {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .intro_title span {
+      left: 0;
+      right: auto;
+      transform: none;
+    }
+
+    .eyebrow_text:after {
+      left: 0;
+      right: auto;
+      transform: none;
+    }
+  }
+}
+
+.reverse-text {
+  color: $white;
+
+  .eyebrow_text,
+  .intro_desc,
+  .intro_title {
+    color: $white;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    color: $white;
+  }
+
+  .arrow-link:not(:hover) {
+    color: $white;
+  }
+}
+
+// bg_classes
+
+.sunsetOrange_bg {
+  background-color: $sunsetOrange;
+}
+
+.slateBlue_bg {
+  background-color: $slateBlue;
+}
+
+.tealGreen_bg {
+  background-color: $tealGreen;
+}
+
+.darkGray_bg {
+  background-color: $darkGray;
+}
+
+.azure_bg {
+  background-color: $azure;
+}
+
+.cadetGray_bg {
+  background-color: $cadetGray;
+}
+
+.whiteSmoke_bg {
+  background-color: $whiteSmoke;
+}
+
+.lightGray_bg {
+  background-color: $lightGray;
+}
+
+.white_bg {
+  background-color: $white;
+}
+
+.black_bg {
+  background-color: $black;
+}
+
+.darkblue_bg {
+  background-color: $darkblue;
+}
+
+//
+
+.bg_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.dnd_padd {
+  position: relative;
+}
+
+.bg_overlay ~ *:not(.bg_overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+// buttons
+
+.hs-button {
+  @include button;
+}
+
+.hs-sec-btn {
+  @include buttonSecond;
+}
+
+.hs-ter-btn {
+  @include buttonThird;
+}
+
+.modal_trigger {
+  cursor: pointer !important;
+}
+
+.themeStyle {
+  @include themeStyle;
+}
+
+.bodystyle1 {
+  @include b1;
+}
+
+.bodystyle2 {
+  @include b2;
+}
+
+.bodystyle3 {
+  @include b3;
+}
+
+.flex_row {
+  display: flex;
+  flex-wrap: wrap;
 }
