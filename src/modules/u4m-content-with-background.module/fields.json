@@ -1,7 +1,7 @@
 [ {
   "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
   "name" : "intro_content",
-  "label" : "Intro Content",
+  "label" : "Content",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -69,7 +69,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "aef5e961-e297-2654-68e0-6128687770bf",
     "name" : "heading_size",
@@ -91,7 +91,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "h2"
+    "default" : "h4"
   }, {
     "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
     "name" : "heading",
@@ -111,7 +111,25 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Our Top Priorities"
+  }, {
+    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
+    "name" : "include_heading_border",
+    "label" : "Include Heading Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.heading",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -121,9 +139,9 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
-    "id" : "cdaaad47-35bf-0a8f-5783-e647f8f8c36d",
+    "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
     "name" : "content_style",
     "label" : "Content Style",
     "required" : false,
@@ -143,7 +161,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "bodystyle3"
+    "default" : "themeStyle"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -160,7 +178,7 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+    "default" : "<p style=\"color: #444;\"><strong>The Internet of Water Coalition seeks to advance the transformation and modernization of water data infrastructure in the United States by developing affordable, open-source technologies for sharing and integrating water data, and demonstrate, through a national network of partners, the power of those technologies to improve sustainable, equitable, and resilient water outcomes.</strong></p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -181,7 +199,7 @@
       "min" : null,
       "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 2
+      "default" : 1
     },
     "visibility" : {
       "controlling_field" : null,
@@ -325,19 +343,6 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
     } ]
   } ],
   "tab" : "CONTENT",
@@ -349,12 +354,13 @@
     "include_eyebrow_text" : false,
     "eyebrow_text" : "Eyebrow Text",
     "include_top_border" : false,
-    "include_heading" : false,
-    "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
-    "include_content" : false,
-    "content_style" : "bodystyle3",
-    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "include_heading" : true,
+    "heading_size" : "h4",
+    "heading" : "Our Top Priorities",
+    "include_heading_border" : true,
+    "include_content" : true,
+    "content_style" : "themeStyle",
+    "content" : "<p style=\"color: #444;\"><strong>The Internet of Water Coalition seeks to advance the transformation and modernization of water data infrastructure in the United States by developing affordable, open-source technologies for sharing and integrating water data, and demonstrate, through a national network of partners, the power of those technologies to improve sustainable, equitable, and resilient water outcomes.</strong></p>",
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -369,433 +375,8 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
     } ]
   }
-}, {
-  "id" : "086a5902-e3ef-7f90-b0b6-45866d8cc1b4",
-  "name" : "cards",
-  "label" : "Cards",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "7a9e82da-81df-3767-ea36-607b3b3c5a5c",
-    "default" : 3
-  },
-  "children" : [ {
-    "id" : "d9f44ac1-b7b6-6cdd-69b7-c911df6e48bc",
-    "name" : "background_settings",
-    "label" : "Background Settings",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "module_overrides.enable_overrides",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "f9486191-5642-973b-2a7a-0c0dffd844db",
-      "name" : "background_type",
-      "label" : "Background Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "color", "Color" ], [ "image", "Image" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "image"
-    }, {
-      "id" : "7756104e-55dd-a955-6f16-4b70577ecff4",
-      "name" : "background_image",
-      "label" : "Background Image",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.background_settings.background_type",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "responsive" : true,
-      "resizable" : false,
-      "show_loading" : false,
-      "type" : "image",
-      "display_width" : null,
-      "default" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      }
-    }, {
-      "id" : "0e2805c9-9626-af92-0ffb-91e8c95eb6fa",
-      "name" : "select_color",
-      "label" : "Select Color",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.background_settings.background_type",
-        "controlling_value_regex" : "color",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "sunsetOrange_bg", "Sunset Orange" ], [ "slateBlue_bg", "Slate Blue" ], [ "tealGreen_bg", "Teal Green" ], [ "darkGray_bg", "Dark Gray" ], [ "azure_bg", "Azure" ], [ "cadetGray_bg", "Cadet Gray" ], [ "whiteSmoke_bg", "White Smoke" ], [ "lightGray_bg", "Light Gray" ], [ "white_bg", "White" ], [ "black_bg", "Black" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : ""
-    }, {
-      "id" : "49f1fa32-f526-8364-5a90-2c7e19eb70af",
-      "name" : "include_overlay_gradient",
-      "label" : "Include Overlay Gradient",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.background_settings.background_type",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "display_width" : null,
-      "default" : true
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : true,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    }
-  }, {
-    "id" : "7a9e82da-81df-3767-ea36-607b3b3c5a5c",
-    "name" : "title",
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Education and training"
-  }, {
-    "id" : "bb11bb6e-e5a1-bd4e-65e5-3f1bb9d3e246",
-    "name" : "content_style",
-    "label" : "Content Style",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "bodystyle3"
-  }, {
-    "id" : "24a15aa6-a3e9-d87d-fb1c-65dd7097dfc0",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>"
-  }, {
-    "id" : "b9fa043f-3cca-d57f-101c-8b203442f068",
-    "name" : "button_group",
-    "label" : "Button Group",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "96d89561-6fd3-b22a-a022-c2634890feb1",
-      "name" : "button_type",
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "std"
-    }, {
-      "id" : "ccb0b24c-060b-f50d-dc6e-16968c9844bc",
-      "name" : "button_style",
-      "label" : "Button Style",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.button_group.button_type",
-        "controlling_value_regex" : "std|popup_content",
-        "property" : null,
-        "operator" : "MATCHES_REGEX",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "hs-ter-btn"
-    }, {
-      "id" : "6a01a3cd-3c94-3a9b-3757-f05b6e6a4019",
-      "name" : "button_text",
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Learn More"
-    }, {
-      "id" : "e07ba972-f0ae-0886-c130-79212920a4c4",
-      "name" : "link",
-      "label" : "Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "display_width" : null,
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "a43acbc2-436e-4f0b-6968-5bdcc27b01cc",
-      "name" : "cta",
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.button_group.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta",
-      "display_width" : null
-    }, {
-      "id" : "245f521a-003e-37ca-544d-665b11373d57",
-      "name" : "popup_content",
-      "label" : "Popup Content",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.button_group.button_type",
-        "controlling_value_regex" : "popup_content",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "richtext",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "button_type" : "std",
-      "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "background_settings" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    },
-    "title" : "Education and training",
-    "content_style" : "bodystyle3",
-    "content" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>",
-    "button_group" : {
-      "button_type" : "std",
-      "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }
-  }, {
-    "background_settings" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    },
-    "title" : "Education and training",
-    "content_style" : "bodystyle3",
-    "content" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>",
-    "button_group" : {
-      "button_type" : "std",
-      "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }
-  }, {
-    "background_settings" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    },
-    "title" : "Education and training",
-    "content_style" : "bodystyle3",
-    "content" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>",
-    "button_group" : {
-      "button_type" : "std",
-      "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }
-  } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
@@ -815,7 +396,17 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "center"
+    "default" : "left"
+  }, {
+    "id" : "1aeb9913-725b-0bcf-a401-da6ba2a99eb3",
+    "name" : "enable_fade_effect",
+    "label" : "Enable Fade Effect",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -823,7 +414,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center"
+    "intro_content_alignment" : "left",
+    "enable_fade_effect" : true
   }
 }, {
   "id" : "module_overrides",
@@ -1147,7 +739,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "color"
+      "default" : "image"
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
       "name" : "background_image",
@@ -1168,10 +760,14 @@
       "type" : "image",
       "display_width" : null,
       "default" : {
-        "size_type" : "auto",
-        "src" : "",
-        "alt" : null,
-        "loading" : "lazy"
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
+        "alt" : "Background Image",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1707,
+        "max_width" : 2000,
+        "max_height" : 1333.59375
       }
     }, {
       "id" : "4ea36da9-c8a6-adf2-7460-cbf4d98190fd",
@@ -1212,7 +808,7 @@
       "display" : "checkbox",
       "type" : "boolean",
       "display_width" : null,
-      "default" : false
+      "default" : true
     }, {
       "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
       "name" : "select_gradient",
@@ -1234,7 +830,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : ""
+      "default" : "gradient2"
     } ],
     "tab" : "CONTENT",
     "expanded" : true,
@@ -1242,16 +838,20 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "background_type" : "color",
+      "background_type" : "image",
       "background_image" : {
-        "size_type" : "auto",
-        "src" : "",
-        "alt" : null,
-        "loading" : "lazy"
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
+        "alt" : "Background Image",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1707,
+        "max_width" : 2000,
+        "max_height" : 1333.59375
       },
       "select_color" : "",
-      "include_overlay_gradient" : false,
-      "select_gradient" : ""
+      "include_overlay_gradient" : true,
+      "select_gradient" : "gradient2"
     }
   }, {
     "id" : "fc248331-90d9-cb7e-66f6-4b85de179aa9",
@@ -1265,7 +865,8 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "full_width"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1288,16 +889,21 @@
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
     "background_settings" : {
-      "background_type" : "color",
+      "background_type" : "image",
       "background_image" : {
-        "size_type" : "auto",
-        "src" : "",
-        "alt" : null,
-        "loading" : "lazy"
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
+        "alt" : "Background Image",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1707,
+        "max_width" : 2000,
+        "max_height" : 1333.59375
       },
       "select_color" : "",
-      "include_overlay_gradient" : false,
-      "select_gradient" : ""
-    }
+      "include_overlay_gradient" : true,
+      "select_gradient" : "gradient2"
+    },
+    "container_size" : "full_width"
   }
 } ]

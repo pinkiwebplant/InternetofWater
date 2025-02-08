@@ -17,7 +17,7 @@
 						<h5 class="cm_title">{{ item.title }}</h5>
 						{% endif %}
 						{% if item.content %}
-						<div class="cmcntWrap">
+						<div class="cmcntWrap {{ item.content_style }}">
 							{{ item.content }}
 						</div>
 						{% endif %}
@@ -62,8 +62,5 @@
 	{% endfor %}
 </style>
 {% end_require_css %}
-
-
-
 
 

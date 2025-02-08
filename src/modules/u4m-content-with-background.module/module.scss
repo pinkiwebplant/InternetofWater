@@ -1,0 +1,14 @@
+@import "../../css/_module-imports";
+
+.u4m-content-with-background {
+	.intro_content {
+		max-width: 100%;
+		margin-bottom: 0;
+		.intro__inner {
+			padding: 13px 0;
+            .intro_desc {
+                margin-bottom: 0;
+            }
+		}
+	}
+}

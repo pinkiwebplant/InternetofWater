@@ -1,0 +1,20 @@
+@import "../../css/_module-imports";
+
+.embedded_contentWrap {
+	.innerEmbedded_cnt {
+		.mainFrameRow {
+			display: flex;
+			width: 100%;
+		}
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 5px;
+		p {
+			margin: 0;
+			@include laptop{
+				padding-left:15px;
+				padding-right:15px;
+			}
+		}
+	}
+}
