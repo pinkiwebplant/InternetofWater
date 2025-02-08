@@ -97,9 +97,6 @@
   line-height: 1.4;
   letter-spacing: 0;
   color: $azure;
-  @include tabletvert {
-    font-size: 17rem;
-  }
 }
 @mixin b2 {
   font-family: $font1;
@@ -107,9 +104,6 @@
   line-height: 1.6;
   letter-spacing: 0;
   color: $azure;
-  @include tabletvert {
-    font-size: 16rem;
-  }
 }
 @mixin b3 {
   font-family: $font1;
@@ -117,9 +111,6 @@
   line-height: 1.6;
   letter-spacing: 0;
   color: $baseColor;
-  @include tabletvert {
-    font-size: 15rem;
-  }
 }
 
 @mixin b4 {
@@ -129,9 +120,6 @@
   letter-spacing: 0.35rem;
   margin-bottom: 20rem;
   color: $baseColor;
-  @include tabletvert {
-    font-size: 14rem;
-  }
 }
 @mixin b5 {
   font-family: $font1;

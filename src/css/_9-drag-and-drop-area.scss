@@ -82,3 +82,17 @@ main#main-content {
     padding-right: 15px;
   }
 }
+
+@include tabletMid {
+  .col3_row .col3,
+  .col4_row .col4 {
+    width: 50%;
+  }
+}
+
+@include tabletvert {
+  .col3_row .col3,
+  .col4_row .col4 {
+    width: 100%;
+  }
+}

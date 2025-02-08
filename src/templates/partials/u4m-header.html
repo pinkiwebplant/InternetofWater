@@ -1,0 +1,37 @@
+<!--
+templateType: global_partial
+label: Header
+-->
+<div class="header_wrapper">
+	<header id="main-header">
+   <div class="page-center et_menu_container">
+      <div class="logo_container">
+				<span class="logo_helper"></span>
+			{% set logo_file =  get_asset_url('../..//templates/images/internet-of-water-coalition-logo.png') %}
+      {% module "header_logo" path="@hubspot/logo", label="Header Logo", link='/', img={src="{{logo_file}}", width=173, alt= Internet of Water, override_inherited_src= true} %}
+       
+      </div>
+      <div id="et-top-navigation">
+         <nav id="top-menu-nav">
+           {% menu "header_menu" id=185872674707, flyouts=false, label='Header Menu' %}
+         </nav>
+         <div id="et_top_search">
+            <span id="et_search_icon"></span>
+         </div>
+         <div id="et_mobile_nav_menu">
+            <div class="mobile_nav closed">
+               <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+               <div id="mobile_menu" class="et_mobile_menu">
+                   {% menu "header_mobile_menu" id=185872674707, flyouts=false, label='Header Mobile Menu' %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="et_search_outer">
+      <div class="page-center et_search_form_container">
+         {% module "header_search" path="@hubspot/search_input" placeholder="Search …",include_search_button="true" %}
+      </div>
+   </div>
+</header>
+</div>

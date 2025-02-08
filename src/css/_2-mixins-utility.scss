@@ -87,16 +87,6 @@
     @content;
   }
 }
-@mixin tabletmidmin {
-  @media (min-width: 992px) {
-    @content;
-  }
-}
-@mixin tabletmid {
-  @media (max-width: 991px) {
-    @content;
-  }
-}
 
 @mixin laptop {
   @media (max-width: 1440px) {

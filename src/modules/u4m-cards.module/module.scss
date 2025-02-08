@@ -5,98 +5,81 @@ section.u4m-cards {
   margin-bottom: 100rem;
 
   &.reverse-text {
-
-    h2.heading,
-    h3.subheading {
+    .car_item {
       color: $white;
     }
-  }
 
-  .heading {
-    @include center;
-    @include h2;
-    text-align: center;
-  }
-
-  .subheading {
-    @include center;
-    max-width: 1000rem;
-    @include b2;
-    font-weight: normal;
-    text-align: center;
-  }
-
-  .link {
-    text-align: center;
-
-    a {
-      @include button;
+    .title {
+      &.small {
+        color: $white;
+      }
+      &.medium {
+        color: $white;
+      }
+      &.large {
+        color: $white;
+      }
     }
   }
 
-  .wrapper {
-    @include center;
-    max-width: 1280rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .cards_row {
+    row-gap: 15rem;
+  }
 
-    @include phone {
-      display: block;
+  .icon_box > a {
+    color: inherit;
+  }
+
+  .car_item {
+    &.al_center {
+      text-align: center;
     }
 
-    &.landscape {
-      div.card {
-        flex-direction: row;
+    &.al_right {
+      text-align: right;
+    }
 
-        @include tabletvert {
-          flex-direction: column;
-        }
+    span.img_shadw {
+      display: inline-block;
+      box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      position: relative;
+      max-width: 100%;
+    }
+  }
 
-        div.image.filled {
-          min-width: 200rem;
-        }
+  .card_img {
+    margin-bottom: 15px;
 
-        div.content {
-          @include phone {
-            margin-bottom: 0;
+    .icon_img img {
+      height: auto;
+      max-width: 100%;
+    }
 
-            span.teaser {
-              margin-bottom: 0;
-            }
-          }
-        }
+    .txt_icon {
+      font-size: 60px;
+      line-height: 1;
+      text-align: center;
+
+      svg {
+        display: block;
+        width: 1em;
+        height: 1em;
+        margin: auto;
+        fill: currentColor;
       }
     }
+  }
 
-    div.card {
-      @include card;
+  .title {
+    &.small {
+      @include b4;
     }
-
-    &.two {
-      div.card {
-        flex-basis: calc(50% - 40rem);
-      }
+    &.medium {
+      @include b2;
     }
-
-    &.three {
-      div.card {
-        flex-basis: calc(33.333% - 40rem);
-
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
-        }
-      }
-    }
-
-    &.four {
-      div.card {
-        flex-basis: calc(25% - 40rem);
-
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
-        }
-      }
+    &.large {
+      @include b1;
     }
   }
 }

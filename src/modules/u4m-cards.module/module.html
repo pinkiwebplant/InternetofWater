@@ -55,21 +55,68 @@
 					{% endif %}
 
 					{% if item.select_image_type == "class" %}
-					<span class="icon_box icon_class txt_icon">
-						<span style="color: {{ item.card_settings.select_icon_color.rgba }}">{{ item.icon_class_name }}</span>
+					<span class="icon_box icon_class txt_icon {{ item.card_settings.select_icon_color }}">
+						{% if item.link_on_image %}
+						{% set href = item.image_link.url.href %}
+						{% if item.image_link.url.type is equalto "EMAIL_ADDRESS" %}
+						{% set href = "mailto:" + href %}
+						{% endif %}
+						<a
+							 {% if item.image_link.url.type is equalto "CALL_TO_ACTION"  %}
+							 href="{{ href }}"
+							 {% else %}
+							 href="{{ href }}"
+							 {% endif %}
+							 {% if item.image_link.open_in_new_tab %}
+							 target="_blank"
+							 {% endif %}
+							 {% if item.image_link.rel %}
+							 rel="{{ item.image_link.rel }}"
+							 {% endif %}>
+							{% endif %}
+
+							<span class="{{ item.icon_class_name }}"></span>
+							{% if item.link_on_image %}
+						</a>
+						{% endif %}
 					</span>
 					{% endif %}
 
 					{% if item.select_image_type == "icon" %}
-					<span class="icon_box icon_svg txt_icon">
-						<span style="color: {{ item.card_settings.select_icon_color.rgba }}">
-							{% icon
+
+
+					<span class="icon_box icon_svg txt_icon {{ item.card_settings.select_icon_color }}">
+						{% if item.link_on_image %}
+						{% set href = item.image_link.url.href %}
+						{% if item.image_link.url.type is equalto "EMAIL_ADDRESS" %}
+						{% set href = "mailto:" + href %}
+						{% endif %}
+						<a
+							 {% if item.image_link.url.type is equalto "CALL_TO_ACTION"  %}
+							 href="{{ href }}"
+							 {% else %}
+							 href="{{ href }}"
+							 {% endif %}
+							 {% if item.image_link.open_in_new_tab %}
+							 target="_blank"
+							 {% endif %}
+							 {% if item.image_link.rel %}
+							 rel="{{ item.image_link.rel }}"
+							 {% endif %}>
+							{% endif %}
+
+							<span>
+
+								{% icon
 							name="{{ item.icon.name }}"
 							style="{{ item.icon.type }}"
 							unicode="{{ item.icon.unicode }}"
 							icon_set="{{ item.icon.icon_set }}"
 						%}
-						</span>
+							</span>
+							{% if item.link_on_image %}
+						</a>
+						{% endif %}
 					</span>
 					{% endif %}
 
@@ -82,6 +129,10 @@
 					<div class="card_text">
 						{{ item.content }}
 					</div>
+
+					{% if item.button_group %}
+					{{macros.buttonGroup(item.button_group, false)}}
+					{% endif %}
 				</div>
 
 			</div>
@@ -102,3 +153,9 @@
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
+
+{% for item in module.card_group %}
+{% if item.button_group %}
+{{macros.buttonGroup(item.button_group, true)}}
+{% endif %}
+{% endfor %}

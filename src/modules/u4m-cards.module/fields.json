@@ -457,24 +457,6 @@
       "height" : 2560
     }
   }, {
-    "id" : "46566409-4c5a-3ac2-7265-b5618eabc709",
-    "name" : "link_on_image",
-    "label" : "Link on Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "card_group.select_image_type",
-      "controlling_value_regex" : "image",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
     "id" : "93bd0314-f324-621b-599a-e58d2b45dd44",
     "name" : "icon",
     "label" : "Icon",
@@ -512,9 +494,19 @@
     "type" : "text",
     "display_width" : null
   }, {
+    "id" : "46566409-4c5a-3ac2-7265-b5618eabc709",
+    "name" : "link_on_image",
+    "label" : "Link on Icon",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "89a10b9c-7032-9dd2-3cc5-47a690cf85fa",
     "name" : "image_link",
-    "label" : "Image Link",
+    "label" : "Link on Icon",
     "required" : false,
     "locked" : false,
     "visibility" : {
@@ -574,6 +566,140 @@
     "display_width" : null,
     "default" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>"
   }, {
+    "id" : "17db7b43-910e-a64f-59b3-b2cba3e1ad5a",
+    "name" : "button_group",
+    "label" : "Button Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 2,
+      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "39a9373c-7adc-45e6-71e4-14e34441bfc0",
+      "name" : "button_type",
+      "label" : "Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "std"
+    }, {
+      "id" : "f687afc1-0756-6767-7ee1-c62c548357ab",
+      "name" : "button_style",
+      "label" : "Button Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "card_group.button_group.button_type",
+        "controlling_value_regex" : "std|popup_content",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "hs-button"
+    }, {
+      "id" : "63d223d7-c3ce-d2eb-5ed2-a18eb9dea80e",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "card_group.button_group.button_type",
+        "controlling_value_regex" : "std",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Button"
+    }, {
+      "id" : "38406305-b530-822a-0ea3-2d19b1d6d343",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "card_group.button_group.button_type",
+        "controlling_value_regex" : "std",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "66f94038-2129-040a-3510-2a3bdce04c74",
+      "name" : "cta",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "card_group.button_group.button_type",
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "a4b6d870-8603-95b0-8fcd-a398c86c5d69",
+      "name" : "popup_content",
+      "label" : "Popup Content",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "card_group.button_group.button_type",
+        "controlling_value_regex" : "popup_content",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "richtext",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  }, {
     "id" : "ef1b3fd2-a18e-cdc7-358a-4400bfd553e5",
     "name" : "card_settings",
     "label" : "Card Settings",
@@ -626,8 +752,8 @@
       "width" : 1978,
       "height" : 2560
     },
-    "link_on_image" : false,
     "icon" : { },
+    "link_on_image" : false,
     "image_link" : {
       "url" : {
         "content_id" : null,
@@ -640,6 +766,7 @@
     "title" : "Technology Adoption at Public Agencies",
     "title_size" : "medium",
     "content" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>",
+    "button_group" : [ ],
     "card_settings" : {
       "select_icon_color" : "",
       "image_shadow" : false
@@ -654,8 +781,8 @@
       "width" : 1978,
       "height" : 2560
     },
-    "link_on_image" : false,
     "icon" : { },
+    "link_on_image" : false,
     "image_link" : {
       "url" : {
         "content_id" : null,
@@ -668,6 +795,7 @@
     "title" : "Technology Adoption at Public Agencies",
     "title_size" : "medium",
     "content" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>",
+    "button_group" : [ ],
     "card_settings" : {
       "select_icon_color" : "",
       "image_shadow" : false
@@ -682,8 +810,8 @@
       "width" : 1978,
       "height" : 2560
     },
-    "link_on_image" : false,
     "icon" : { },
+    "link_on_image" : false,
     "image_link" : {
       "url" : {
         "content_id" : null,
@@ -696,6 +824,7 @@
     "title" : "Technology Adoption at Public Agencies",
     "title_size" : "medium",
     "content" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>",
+    "button_group" : [ ],
     "card_settings" : {
       "select_icon_color" : "",
       "image_shadow" : false
