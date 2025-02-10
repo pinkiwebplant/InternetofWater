@@ -629,22 +629,20 @@ section[class*="u4m-"] {
   }
 }
 
-.intro_content + div {
+.row_spacing {
   padding-top: 13px;
   padding-bottom: 13px;
 }
 
 @include tabletMid {
   @media (max-width: 991px) {
+    .row_spacing,
     .intro_content {
       padding-top: 30px;
       padding-bottom: 30px;
     }
 
-    .intro_content + div {
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
+
   }
 }
 
