@@ -83,7 +83,14 @@ main#main-content {
   }
 }
 
+@include tablet {
+  .col20_row .col20 {
+    width: 33.33%;
+  }
+}
+
 @include tabletMid {
+  .col20_row .col20,
   .col3_row .col3,
   .col4_row .col4 {
     width: 50%;
@@ -91,6 +98,7 @@ main#main-content {
 }
 
 @include tabletvert {
+  .col20_row .col20,
   .col3_row .col3,
   .col4_row .col4 {
     width: 100%;

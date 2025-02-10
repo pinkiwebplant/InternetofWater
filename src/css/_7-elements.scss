@@ -563,6 +563,7 @@ section[class*="u4m-"] {
   }
 
   &.right {
+    max-width: 100%;
     text-align: right;
     .heading_top_border {
       margin-left: auto;
@@ -580,10 +581,14 @@ section[class*="u4m-"] {
       right: 0;
       transform: none;
     }
+    .intro_btn_wrap {
+      justify-content: right;
+    }
   }
 
   &.left {
     text-align: left;
+    max-width: 100%;
     .heading_top_border {
       margin-left: 0;
       margin-right: auto;
@@ -599,6 +604,10 @@ section[class*="u4m-"] {
       left: 0;
       right: auto;
       transform: none;
+    }
+
+    .intro_btn_wrap {
+      justify-content: left;
     }
   }
 }
@@ -726,6 +735,7 @@ section[class*="u4m-"] {
   width: 100%;
   height: 100%;
   z-index: 1;
+  pointer-events: none;
 }
 
 .bg_image {
@@ -779,4 +789,5 @@ section[class*="u4m-"] {
 .flex_row {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 15rem;
 }
