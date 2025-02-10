@@ -1,0 +1,30 @@
+@import "../../css/_module-imports";
+
+.u4m-blog-banner {
+    .intro_content {
+        margin: 20px auto;
+        .intro_title {
+            font-family: $font1;
+            font-weight: 600;
+            font-size: 75rem;
+            line-height: 1.4em;
+            @include tabletvert {
+                font-size: 40rem;
+            }
+        }
+        .intro_desc {
+            &.bodystyle4 {
+                font-family: $font1;
+                font-size: 29rem;
+                line-height: 1.8em;
+                margin: 0;
+                @include tabletvert {
+                    font-size: 20rem;
+                }
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
