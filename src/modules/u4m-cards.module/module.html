@@ -11,7 +11,7 @@
 
 	<div class="cards_row flex_row {{ module.module_settings.cards_count_in_row }}_row">
 		{% for item in module.card_group %}
-		<div class="car_item col {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
+		<div class="car_item col {% if module.module_settings.card_shadow %}cardShdw{% endif %} {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
 			<div class="card_inner">
 
 				<div class="card_img" {% if module.module_settings.include_icon_animation %}data-aos="{{ module.module_settings.icon_animation }}"{% endif %}>

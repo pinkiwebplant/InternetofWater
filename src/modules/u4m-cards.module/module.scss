@@ -31,6 +31,14 @@ section.u4m-cards {
   }
 
   .car_item {
+    &.cardShdw {
+      .card_inner {
+        box-shadow: $cardShdw;
+        background: $white;
+        padding: 30px 30px;
+      }
+    }
+
     &.al_center {
       text-align: center;
     }

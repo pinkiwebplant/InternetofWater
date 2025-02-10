@@ -21,7 +21,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
     "name" : "eyebrow_text",
@@ -139,7 +139,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
     "name" : "content_style",
@@ -364,14 +364,14 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow_text" : false,
+    "include_eyebrow_text" : true,
     "eyebrow_text" : "Eyebrow Text",
     "include_top_border" : false,
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Top Heading",
     "include_heading_border" : false,
-    "include_content" : false,
+    "include_content" : true,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
     "include_button" : false,
@@ -969,6 +969,16 @@
     "display_width" : null,
     "default" : false
   }, {
+    "id" : "2c3e34c4-4884-9d5a-7bb0-8e687166f012",
+    "name" : "card_shadow",
+    "label" : "Card Shadow",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "e745bb6b-a7fe-a5ed-9ab6-b689c5856112",
     "name" : "include_icon_animation",
     "label" : "Include Icon Animation",
@@ -1011,6 +1021,7 @@
     "cards_count_in_row" : "col4",
     "card_content_style" : "bodystyle3",
     "image_shadow" : false,
+    "card_shadow" : false,
     "include_icon_animation" : false
   }
 }, {
