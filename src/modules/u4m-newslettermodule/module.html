@@ -1,0 +1,21 @@
+{% set moduleName = 'u4m-newsletter' %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center   {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	<div class="cntt {{ module.module_settings.select_inner_background_color }}">
+			{{macros.introGroup(module.intro_content, module.module_settings)}}
+	</div>
+
+
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
