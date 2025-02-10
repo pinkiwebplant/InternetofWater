@@ -8,9 +8,9 @@
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 
 	<div class="cardPaginationWrap">
-		<div class="innerCardPagination">
+		<div class="innerCardPagination flex_row col4_row">
 			{% for item in module.cards %}
-			<div class="card_item item_{{loop.index}}">
+			<div class="card_item item_{{loop.index}} col4 col">
 				{% if item.include_image %}
 				{% if item.image.src %}
 				<div class="featured-image">

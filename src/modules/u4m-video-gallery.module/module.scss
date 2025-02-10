@@ -1,0 +1,113 @@
+@import "../../css/_module-imports";
+
+
+.cmVideoGallery {
+    .cmVideoGalleryWrap {
+        .innerVideoGallery {
+            .slider-for {
+                .videoWrapper {
+                    padding-bottom: 56.2963%;
+                    width: 100%;
+                    position: relative;
+
+                    iframe {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        border: none;
+                    }
+                }
+            }
+
+            .slick-initialized.slider-nav {
+                margin-left: -10px;
+                margin-right: -10px;
+                margin-top: 2%;
+
+                .slick-slide {
+                    position: relative;
+                    background: rgba(0, 0, 0, .25);
+                    float: left;
+                    margin: 0 10px;
+                    padding: 0;
+                    width: 32%;
+
+                    .cm_video_overlay {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        z-index: 10;
+                        height: 100%;
+                        width: 100%;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                        cursor: pointer;
+
+                        .cm_video_overlay_hover {
+                            background: transparent;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            z-index: 100;
+                            -webkit-transition: all .5s ease-in-out;
+                            transition: all .5s ease-in-out;
+
+                            a.cm_video_play {
+                                font-size: 44.48rem;
+                                line-height: 44.48rem;
+                                margin-left: -1.39rem;
+                                margin-top: -1.39rem;
+                                opacity: 0;
+                                -webkit-transition: all .5s ease-in-out;
+                                transition: all .5s ease-in-out;
+                                display: block;
+                                position: absolute;
+                                z-index: 100;
+                                color: $white;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+
+                                &:before {
+                                    font-family: $iconFont;
+                                    content: "I";
+                                }
+                            }
+                        }
+                    }
+
+                    &:after {
+                        padding-top: 75%;
+                        display: block;
+                        content: "";
+                    }
+
+                    &.slick-active.slick-current {
+                        .cm_video_overlay {
+                            .cm_video_overlay_hover {
+                                background: rgba(0, 0, 0, .6);
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .cm_video_overlay {
+                            .cm_video_overlay_hover {
+                                background: rgba(0, 0, 0, .6);
+
+                                a.cm_video_play {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

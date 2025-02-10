@@ -1,0 +1,51 @@
+{% set moduleName = 'cmVideoGallery' %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+
+	<div class="cmVideoGalleryWrap">
+		<div class="innerVideoGallery">
+			<div class="slider-for">
+				{% for item in module.items %}
+				<div class="item-slick">
+					<div class="videoWrapper">
+						{% if item.select_video_type == "hubspot_video" %}
+					<video width="320" height="240" controls src="{{ item.file_field }}"></video>
+					{% elif item.select_video_type == "external_video" %}
+					{% if item.video_url %}
+					<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
+					{% endif %}
+					{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="slider-nav">
+				{% for item in module.items %}
+				<div class="item-slick">
+						{% if item.poster_image.src %}
+						<div class="cm_video_overlay" style="background-image: url({{ item.poster_image.src }});">
+							<div class="cm_video_overlay_hover">
+								<a href="#" class="cm_video_play"></a>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+

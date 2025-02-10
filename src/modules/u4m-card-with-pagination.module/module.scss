@@ -8,9 +8,9 @@
 			flex-wrap: wrap;
 			justify-content: space-around;
 			align-items: flex-start;
+			row-gap: 0;
 
 			.card_item {
-				width: 30%;
 				margin-top: 30px;
 
 				.featured-image {
@@ -26,6 +26,18 @@
 
 					a {
 						display: block;
+						color: $tealGreen;
+						transition: unset;
+
+						&>* {
+							color: inherit;
+							margin: 0;
+						}
+
+						&:hover {
+							text-decoration: underline;
+							color: $azure;
+						}
 					}
 				}
 			}
