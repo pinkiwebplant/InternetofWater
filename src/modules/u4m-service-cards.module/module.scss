@@ -1,23 +1,30 @@
 @import "../../css/_module-imports";
 
+.u4m-service-cards {
 
-.u4m-service-cards .service-cardsWrap {
-	padding-top: 13px;
-	padding-bottom: 27px;
-	.innerService-cards {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -15px;
+    .service-cardsWrap {
+        padding-top: 13px;
+        padding-bottom: 27px;
+    }
+
+    .innerService-cards {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
         row-gap: 10px;
-		.cmCard {
-			width: 33.3333%;
-			padding: 0 15px;
-            @include tabletMid{
+
+        .cmCard {
+            width: 33.3333%;
+            padding: 0 15px;
+
+            @include tabletMid {
                 width: 50%;
             }
-            @include tabletvert{
+
+            @include tabletvert {
                 width: 100%;
             }
+
             .cmInnerCard {
                 border-radius: 10px;
                 padding: 64px 20px;
@@ -27,22 +34,27 @@
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+
                 &:hover {
                     padding-top: 70px;
                     padding-bottom: 70px;
-                    margin:0;
+                    margin: 0;
                 }
+
                 .cm_description {
                     padding-bottom: 20px;
                     position: relative;
-                    .cmcntWrap >* {
+
+                    .cmcntWrap>* {
                         color: $white;
                         opacity: 0.6;
                         transition: all 300ms ease 0ms;
                     }
-                    .cmcntWrap:hover >* { 
+
+                    .cmcntWrap:hover>* {
                         opacity: 1;
                     }
+
                     .cm_title {
                         text-transform: uppercase;
                         letter-spacing: 4px;
@@ -53,6 +65,7 @@
                         color: $white;
                     }
                 }
+
                 .intro_btn_wrap {
                     .btn_item {
                         .hs-ter-btn {
@@ -62,8 +75,10 @@
                     }
                 }
             }
-		}
-	}
+        }
+    }
+
+
+
+
 }
-
-
