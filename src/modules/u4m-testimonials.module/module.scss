@@ -1,0 +1,72 @@
+@import "../../css/_module-imports";
+
+.u4m-testimonials {
+    .testimonials-wrpp {
+        .bg {
+            &:before {
+                font-family: ETmodules !important;
+                speak: none;
+                font-style: normal;
+                font-weight: 400;
+                -webkit-font-feature-settings: normal;
+                font-feature-settings: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                text-shadow: 0 0;
+                direction: ltr;
+                content: "|";
+                font-size: 32px;
+                left: 50%;
+                position: absolute;
+                top: -16px;
+                margin-left: -16px;
+                border-radius: 31px;
+                z-index: 2;
+                color: $darkText;
+                background-color: transparent;
+            }
+
+            padding: 30px 35px;
+
+            .testimonial_content {
+                p {
+                    font-style: italic;
+                    font-size: 19px;
+                    line-height: 1.8em;
+                }
+
+                padding-bottom: 1rem;
+            }
+        }
+
+        span.et_pb_testimonial_author {
+            display: block;
+            font-weight: 700;
+            margin-top: 32px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        p.et_pb_testimonial_meta {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+
+    .testimonials-wrpp.center {
+        text-align: center;
+    }
+
+    .testimonials-wrpp.left {
+        text-align: left;
+    }
+
+    .testimonials-wrpp.right {
+        text-align: right;
+    }
+
+}

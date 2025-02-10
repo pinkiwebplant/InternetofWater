@@ -60,7 +60,7 @@
 	@media(max-width:991px){
 		{% for item in module.partners_items_group %}
 		{% if item.change_the_image_width_for_mobile %}
-		.u4m-partners .btmCntt .col.items.item_{{loop.index}} .innerImg{
+		.u4m-partners.{{name}} .btmCntt .col.items.item_{{loop.index}} .innerImg{
 			width:{{ item.image_width }}px;
 			margin: 0 auto;
 		}

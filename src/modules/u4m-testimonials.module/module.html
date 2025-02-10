@@ -1,0 +1,35 @@
+{% set moduleName = 'u4m-testimonials' %}
+
+{% include "../partials/u4-module-includes.html" %}
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+	<div class="testimonials-wrpp {{ module.module_settings.intro_content_alignment }}">
+		<div class="bg {{ module.module_settings.select_inner_background_color }}">
+			<div class="description">
+				<div class="description_inner">
+					<div class="testimonial_content">
+						{{ module.testimonials_content_group.content }}
+					</div>
+				</div>
+				{% if  module.testimonials_content_group.author_name %}
+				<span class="et_pb_testimonial_author">{{ module.testimonials_content_group.author_name }}</span>
+				{% endif %}
+				<p class="et_pb_testimonial_meta">
+					{% if  module.testimonials_content_group.position %}
+					<span class="et_pb_testimonial_position">{{ module.testimonials_content_group.position }}</span>
+					{% endif %}
+					{% if module.testimonials_content_group.company %}
+					<span class="et_pb_testimonial_separator">,</span>
+					<span class="et_pb_testimonial_company">{{ module.testimonials_content_group.company }}</span>
+					{% endif %}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
