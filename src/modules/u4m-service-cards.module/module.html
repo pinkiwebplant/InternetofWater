@@ -7,7 +7,7 @@
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 
-	<div class="service-cardsWrap {{name}}">
+	<div class="service-cardsWrap">
 		<div class="innerService-cards">
 			{% for item in module.cards %}
 			<div class="cmCard cmItem_{{loop.index}}">
@@ -55,7 +55,7 @@
 <style>
 	{% for item in module.cards %}
 	{% if item.background_settings.background_type =="image" %}
-	.service-cardsWrap.{{name}} .cmItem_{{loop.index}} .cmInnerCard{
+	.u4m-service-cards.{{name}} .cmItem_{{loop.index}} .cmInnerCard{
 		background-image: {% if item.background_settings.include_overlay_gradient %} radial-gradient(circle at top left, rgba(21, 31, 51, 0.8) 0%, rgba(21, 31, 51, 0.7) 100%),{% endif %} url({{ item.background_settings.background_image.src }});
 	}
 	{% endif %}

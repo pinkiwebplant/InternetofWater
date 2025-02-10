@@ -467,6 +467,35 @@
     "type" : "boolean",
     "display_width" : null,
     "default" : true
+  }, {
+    "id" : "1aa45fba-1b85-0bfe-8b14-1deab79a4057",
+    "name" : "set_height",
+    "label" : "Set Height",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "465aff1c-6a9b-82db-8c29-5c47a5b8ef40",
+    "name" : "height",
+    "label" : "Height",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.set_height",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 436,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -475,7 +504,8 @@
   "display_width" : null,
   "default" : {
     "intro_content_alignment" : "left",
-    "enable_fade_effect" : true
+    "enable_fade_effect" : true,
+    "set_height" : false
   }
 }, {
   "id" : "module_overrides",

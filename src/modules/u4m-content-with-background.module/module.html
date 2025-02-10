@@ -12,17 +12,17 @@
 </div>
 	{% if module.intro_content.enable_float_credit_text %}
 	<div class="floating_text">
-		{{ module.intro_content.float_credit_text }}
+		<div class="floatInner">
+			{{ module.intro_content.float_credit_text }}
+		</div>
 	</div>
 	{% endif %}
 </section>
 {% if module.intro_content.enable_credit_text %}
 <div class="bottom_credit">
-	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 	<div class="cmCreditCnt">
 		<div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
-		</div>
-</div>
+	</div>
 </div>
 {% endif %}
 
@@ -35,13 +35,19 @@
 
 
 {% require_css %}
-{% if module.module_settings.enable_fade_effect %}
 <style>
+	{% if module.module_settings.set_height %}
+	.u4m-content-with-background.{{name}}{
+		min-height :{{ module.module_settings.height }}px;
+	}
+{% endif %}
+{% if module.module_settings.enable_fade_effect %}
 	.u4m-content-with-background.{{name}} .bg_image{
 		box-shadow: inset 0px 240px 120px -80px #ffffff;
 	}
-</style>
 {% endif %}
+
+	
 {% end_require_css %}
 
 

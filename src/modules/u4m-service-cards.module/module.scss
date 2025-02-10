@@ -1,7 +1,7 @@
 @import "../../css/_module-imports";
 
 
-.service-cardsWrap {
+.u4m-service-cards .service-cardsWrap {
 	padding-top: 13px;
 	padding-bottom: 27px;
 	.innerService-cards {
@@ -10,9 +10,9 @@
 		margin: 0 -15px;
         row-gap: 10px;
 		.cmCard {
-			width: 33.33%;
+			width: 33.3333%;
 			padding: 0 15px;
-            @include tabletmid{
+            @include tabletMid{
                 width: 50%;
             }
             @include tabletvert{
@@ -40,7 +40,7 @@
                         opacity: 0.6;
                         transition: all 300ms ease 0ms;
                     }
-                    .cmcntWrap:hover >* {
+                    .cmcntWrap:hover >* { 
                         opacity: 1;
                     }
                     .cm_title {

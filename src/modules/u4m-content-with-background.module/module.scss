@@ -11,4 +11,41 @@
             }
 		}
 	}
+	.floating_text {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		transform-origin: center;
+		margin-top: -100px;
+		.floatInner {
+			background: $white;
+			border-top-right-radius: 10px;
+			font-size: 9rem;
+			font-weight: 700;
+			height: 3em;
+			line-height: 1em;
+			opacity: .5;
+			padding: 8px 15px;
+			text-transform: uppercase;
+			transform: rotateZ(270deg);
+			z-index: 9;
+			transform-origin: bottom right;
+		}
+		@include tabletMid{
+			display:none;
+		}
+	}
+}
+.bottom_credit {
+	padding-bottom: 13rem;
+	.cmCreditCnt {
+		margin-left: 15rem;
+		margin-right: 15rem;
+		padding: 13px 0;
+		.cmCreditCnt_text {
+			font-size: 14rem;
+			line-height: 1.7em;
+		}
+	}
 }
