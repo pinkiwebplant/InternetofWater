@@ -72,6 +72,9 @@ section.u4m-cards {
   }
 
   .title {
+    & > a {
+      color: inherit;
+    }
     &.small {
       @include b4;
     }
@@ -81,5 +84,8 @@ section.u4m-cards {
     &.large {
       @include b1;
     }
+  }
+  .card_text + .intro_btn_wrap {
+    margin-top: 30px;
   }
 }

@@ -15,6 +15,20 @@ html {
   opacity: 1;
 }
 
+//
+
+@font-face {
+  font-family: "ETmodules";
+  src:
+    url("{{ get_asset_url('./fonts/u4m-modules.eot') }}")
+      format("embedded-opentype"),
+    url("{{ get_asset_url('./fonts/u4m-modules.woff') }}") format("woff"),
+    url("{{ get_asset_url('./fonts/u4m-modules.ttf') }}") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
 /* make html visible after Firefox flash in hack */
 body {
   @include bodyStyle;
@@ -490,6 +504,9 @@ section[class*="u4m-"] {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
 
   .eyebrow_text {
     @include eyebrow;
@@ -612,6 +629,26 @@ section[class*="u4m-"] {
   }
 }
 
+.intro_content + div {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+@include tabletMid {
+  @media (max-width: 991px) {
+    .intro_content {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .intro_content + div {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+//
 .reverse-text {
   color: $white;
 

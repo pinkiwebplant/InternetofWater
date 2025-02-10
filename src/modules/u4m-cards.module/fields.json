@@ -494,9 +494,9 @@
     "type" : "text",
     "display_width" : null
   }, {
-    "id" : "46566409-4c5a-3ac2-7265-b5618eabc709",
-    "name" : "link_on_image",
-    "label" : "Link on Icon",
+    "id" : "07861b33-e9f6-eeb4-f904-e01057b8e584",
+    "name" : "include_link_on_icon",
+    "label" : "Include Link on Icon",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
@@ -504,20 +504,41 @@
     "display_width" : null,
     "default" : false
   }, {
-    "id" : "89a10b9c-7032-9dd2-3cc5-47a690cf85fa",
-    "name" : "image_link",
-    "label" : "Link on Icon",
+    "id" : "7f428e66-1c4c-ee7d-fe60-90419d1d911e",
+    "name" : "link_type",
+    "label" : "Link Type",
     "required" : false,
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "card_group.link_on_image",
+      "controlling_field_path" : "card_group.include_link_on_icon",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
     },
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG" ],
+    "display" : "select",
+    "choices" : [ [ "link", "Page Link" ], [ "popup_content", "Popup Content" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "0ec25366-bda8-9630-2414-cb18b4456203",
+    "name" : "select_link",
+    "label" : "Select Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_group.link_type",
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
     "type" : "link",
     "display_width" : null,
@@ -531,17 +552,51 @@
       "no_follow" : false
     }
   }, {
+    "id" : "a20cdbe2-245e-ec4b-c47d-52977e42a926",
+    "name" : "popup_content",
+    "label" : "Popup Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_group.link_type",
+      "controlling_value_regex" : "popup_content",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null
+  }, {
     "id" : "713a536b-329c-744f-474d-e4d60e894bfb",
     "name" : "title",
     "label" : "Title",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_group.include_link_on_icon",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
     "default" : "Technology Adoption at Public Agencies"
+  }, {
+    "id" : "3bac1e46-4b88-bc4a-9636-5d8c4ccc4ca6",
+    "name" : "include_link_on_title",
+    "label" : "Include Link on Title",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   }, {
     "id" : "a5862b93-7872-1b9c-9e6e-7ed1296be52a",
     "name" : "title_size",
@@ -753,8 +808,8 @@
       "height" : 2560
     },
     "icon" : { },
-    "link_on_image" : false,
-    "image_link" : {
+    "include_link_on_icon" : false,
+    "select_link" : {
       "url" : {
         "content_id" : null,
         "type" : "EXTERNAL",
@@ -770,7 +825,8 @@
     "card_settings" : {
       "select_icon_color" : "",
       "image_shadow" : false
-    }
+    },
+    "boolean_field" : false
   }, {
     "select_image_type" : "image",
     "image" : {
@@ -782,8 +838,8 @@
       "height" : 2560
     },
     "icon" : { },
-    "link_on_image" : false,
-    "image_link" : {
+    "include_link_on_icon" : false,
+    "select_link" : {
       "url" : {
         "content_id" : null,
         "type" : "EXTERNAL",
@@ -799,7 +855,8 @@
     "card_settings" : {
       "select_icon_color" : "",
       "image_shadow" : false
-    }
+    },
+    "boolean_field" : false
   }, {
     "select_image_type" : "image",
     "image" : {
@@ -811,8 +868,8 @@
       "height" : 2560
     },
     "icon" : { },
-    "link_on_image" : false,
-    "image_link" : {
+    "include_link_on_icon" : false,
+    "select_link" : {
       "url" : {
         "content_id" : null,
         "type" : "EXTERNAL",
@@ -828,7 +885,8 @@
     "card_settings" : {
       "select_icon_color" : "",
       "image_shadow" : false
-    }
+    },
+    "boolean_field" : false
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
@@ -910,6 +968,37 @@
     "type" : "boolean",
     "display_width" : null,
     "default" : false
+  }, {
+    "id" : "e745bb6b-a7fe-a5ed-9ab6-b689c5856112",
+    "name" : "include_icon_animation",
+    "label" : "Include Icon Animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "d0b837e7-e3af-12c2-77c1-b3d6600fd332",
+    "name" : "icon_animation",
+    "label" : "Icon Animation",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.include_icon_animation",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -921,7 +1010,8 @@
     "card_content_alignment" : "center",
     "cards_count_in_row" : "col4",
     "card_content_style" : "bodystyle3",
-    "image_shadow" : false
+    "image_shadow" : false,
+    "include_icon_animation" : false
   }
 }, {
   "id" : "module_overrides",

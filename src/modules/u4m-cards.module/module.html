@@ -7,155 +7,241 @@
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 
+
+
 	<div class="cards_row flex_row {{ module.module_settings.cards_count_in_row }}_row">
 		{% for item in module.card_group %}
 		<div class="car_item col {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
 			<div class="card_inner">
 
-				<div class="card_img">
+				<div class="card_img" {% if module.module_settings.include_icon_animation %}data-aos="{{ module.module_settings.icon_animation }}"{% endif %}>
 					{% if item.select_image_type == "image" %}
 					<span class="icon_box icon_img">
-						{% if item.link_on_image %}
-						{% set href = item.image_link.url.href %}
-						{% if item.image_link.url.type is equalto "EMAIL_ADDRESS" %}
-						{% set href = "mailto:" + href %}
-						{% endif %}
-						<a
-							 {% if item.image_link.url.type is equalto "CALL_TO_ACTION"  %}
-							 href="{{ href }}"
-							 {% else %}
-							 href="{{ href }}"
-							 {% endif %}
-							 {% if item.image_link.open_in_new_tab %}
-							 target="_blank"
-							 {% endif %}
-							 {% if item.image_link.rel %}
-							 rel="{{ item.image_link.rel }}"
-							 {% endif %}>
+
+
+						{% if item.include_link_on_icon %}
+
+						{% if item.link_type == "popup_content" %}
+						<a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+
+							{% else %}
+
+							{% set href = item.select_link.url.href %}
+							{% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
+							{% set href = "mailto:" + href %}
+							{% endif %}
+							<a
+								 {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
+								 href="{{ href }}" 
+								 {% else %}
+								 href="{{ href|escape_url }}"
+								 {% endif %}
+								 {% if item.select_link.open_in_new_tab %}
+								 target="_blank"
+								 {% endif %}
+								 {% if item.select_link.rel %}
+								 rel="{{ item.select_link.rel|escape_attr }}"
+								 {% endif %}
+								 >
+								{% endif %}
+
+								{% endif %}
+								<span class="{% if module.module_settings.image_shadow %}img_shadw{% endif %}">
+									{% if item.image.src %}
+									{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+									{% if item.image.size_type == 'auto' %}
+									{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+									{% elif item.image.size_type == 'auto_custom_max' %}
+									{% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+									{% endif %}
+									{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+									<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+									{% endif %}
+								</span>
+
+								{% if item.include_link_on_icon %}
+							</a>
 							{% endif %}
 
-							<span class="{% if module.module_settings.image_shadow %}img_shadw{% endif %}">
-								{% if item.image.src %}
-								{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
-								{% if item.image.size_type == 'auto' %}
-								{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
-								{% elif item.image.size_type == 'auto_custom_max' %}
-								{% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-								{% endif %}
-								{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
-								<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-								{% endif %}
 							</span>
-
-							{% if item.link_on_image %}
-						</a>
 						{% endif %}
 
-					</span>
-					{% endif %}
+						{% if item.select_image_type == "class" %}
+						<span class="icon_box icon_class txt_icon {{ item.card_settings.select_icon_color }}">
+							{% if item.include_link_on_icon %}
 
-					{% if item.select_image_type == "class" %}
-					<span class="icon_box icon_class txt_icon {{ item.card_settings.select_icon_color }}">
-						{% if item.link_on_image %}
-						{% set href = item.image_link.url.href %}
-						{% if item.image_link.url.type is equalto "EMAIL_ADDRESS" %}
-						{% set href = "mailto:" + href %}
-						{% endif %}
-						<a
-							 {% if item.image_link.url.type is equalto "CALL_TO_ACTION"  %}
-							 href="{{ href }}"
-							 {% else %}
-							 href="{{ href }}"
-							 {% endif %}
-							 {% if item.image_link.open_in_new_tab %}
-							 target="_blank"
-							 {% endif %}
-							 {% if item.image_link.rel %}
-							 rel="{{ item.image_link.rel }}"
-							 {% endif %}>
+							{% if item.link_type == "popup_content" %}
+							<a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+
+								{% else %}
+
+								{% set href = item.select_link.url.href %}
+								{% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
+								{% set href = "mailto:" + href %}
+								{% endif %}
+								<a
+									 {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
+									 href="{{ href }}" 
+									 {% else %}
+									 href="{{ href|escape_url }}"
+									 {% endif %}
+									 {% if item.select_link.open_in_new_tab %}
+									 target="_blank"
+									 {% endif %}
+									 {% if item.select_link.rel %}
+									 rel="{{ item.select_link.rel|escape_attr }}"
+									 {% endif %}
+									 >
+									{% endif %}
+
+									{% endif %}
+
+
+									<span class="{{ item.icon_class_name }}"></span>
+
+
+									{% if item.include_link_on_icon %}
+								</a>
+								{% endif %}
+								</span>
 							{% endif %}
 
-							<span class="{{ item.icon_class_name }}"></span>
-							{% if item.link_on_image %}
-						</a>
-						{% endif %}
-					</span>
-					{% endif %}
-
-					{% if item.select_image_type == "icon" %}
+							{% if item.select_image_type == "icon" %}
 
 
-					<span class="icon_box icon_svg txt_icon {{ item.card_settings.select_icon_color }}">
-						{% if item.link_on_image %}
-						{% set href = item.image_link.url.href %}
-						{% if item.image_link.url.type is equalto "EMAIL_ADDRESS" %}
-						{% set href = "mailto:" + href %}
-						{% endif %}
-						<a
-							 {% if item.image_link.url.type is equalto "CALL_TO_ACTION"  %}
-							 href="{{ href }}"
-							 {% else %}
-							 href="{{ href }}"
-							 {% endif %}
-							 {% if item.image_link.open_in_new_tab %}
-							 target="_blank"
-							 {% endif %}
-							 {% if item.image_link.rel %}
-							 rel="{{ item.image_link.rel }}"
-							 {% endif %}>
-							{% endif %}
+							<span class="icon_box icon_svg txt_icon {{ item.card_settings.select_icon_color }}">
+								{% if item.include_link_on_icon %}
 
-							<span>
+								{% if item.link_type == "popup_content" %}
+								<a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
 
-								{% icon
+									{% else %}
+
+									{% set href = item.select_link.url.href %}
+									{% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
+									{% set href = "mailto:" + href %}
+									{% endif %}
+									<a
+										 {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
+										 href="{{ href }}" 
+										 {% else %}
+										 href="{{ href|escape_url }}"
+										 {% endif %}
+										 {% if item.select_link.open_in_new_tab %}
+										 target="_blank"
+										 {% endif %}
+										 {% if item.select_link.rel %}
+										 rel="{{ item.select_link.rel|escape_attr }}"
+										 {% endif %}
+										 >
+										{% endif %}
+
+										{% endif %}
+
+										<span>
+
+											{% icon
 							name="{{ item.icon.name }}"
 							style="{{ item.icon.type }}"
 							unicode="{{ item.icon.unicode }}"
 							icon_set="{{ item.icon.icon_set }}"
 						%}
-							</span>
-							{% if item.link_on_image %}
-						</a>
-						{% endif %}
-					</span>
-					{% endif %}
+										</span>
+
+										{% if item.include_link_on_icon %}
+									</a>
+									{% endif %}
+									</span>
+								{% endif %}
+
+								</div>
+
+							<div class="card_desc {{ module.module_settings.card_content_style }}">
+								<div class="title {{ item.title_size }}">
+									{% if item.include_link_on_icon %}
+
+									{% if item.include_link_on_title %}
+										{% if item.link_type == "popup_content" %}
+										<a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+											{{ item.title }}
+										</a>
+										{% else %}
+
+										{% set href = item.select_link.url.href %}
+										{% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
+										{% set href = "mailto:" + href %}
+										{% endif %}
+										<a
+											 {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
+											 href="{{ href }}" 
+											 {% else %}
+											 href="{{ href|escape_url }}"
+											 {% endif %}
+											 {% if item.select_link.open_in_new_tab %}
+											 target="_blank"
+											 {% endif %}
+											 {% if item.select_link.rel %}
+											 rel="{{ item.select_link.rel|escape_attr }}"
+											 {% endif %}
+											 >	{{ item.title }}
+										</a>
+										{% endif %}
+									{% else %}
+									{{ item.title }}
+									{% endif %}
+									
+									{% else %}
+									{{ item.title }}
+									{% endif %}
+								</div>
+								<div class="card_text">
+									{{ item.content }}
+								</div>
+
+								{% if item.button_group %}
+								{{macros.buttonGroup(item.button_group, false)}}
+								{% endif %}
+							</div>
+
+							</div>
+						</div>
+
+					{% endfor %}
 
 				</div>
+				{# #}
 
-				<div class="card_desc {{ module.module_settings.card_content_style }}">
-					<div class="title {{ item.title_size }}">
-						{{ item.title }}
-					</div>
-					<div class="card_text">
-						{{ item.content }}
-					</div>
-
-					{% if item.button_group %}
-					{{macros.buttonGroup(item.button_group, false)}}
-					{% endif %}
-				</div>
 
 			</div>
-		</div>
+			</section>
+
+
+
+		{# button group popup modal#}
+		{% if module.intro_content.include_button %}
+		{{macros.buttonGroup(module.intro_content.button_group, true)}}
+		{% endif %}
+
+		{% for item in module.card_group %}
+		{% if item.button_group %}
+		{{macros.buttonGroup(item.button_group, true)}}
+		{% endif %}
+
+
+		{# #}
+		{% if item.include_link_on_icon %}
+		{% if item.link_type == "popup_content" %}
+		{{macros.popup_contentloop(item)}}
+		{% endif %}
+		{% endif %}
+		{# #}
 
 		{% endfor %}
 
-	</div>
-	{# #}
-
-
-</div>
-</section>
 
 
 
-{# button group popup modal#}
-{% if module.intro_content.include_button %}
-{{macros.buttonGroup(module.intro_content.button_group, true)}}
-{% endif %}
 
-{% for item in module.card_group %}
-{% if item.button_group %}
-{{macros.buttonGroup(item.button_group, true)}}
-{% endif %}
-{% endfor %}
+
+
+

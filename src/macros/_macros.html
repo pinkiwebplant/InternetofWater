@@ -76,6 +76,22 @@
 
 {# #}
 
+{% macro popup_contentloop(items)%}
+{% if items %}
+{% for item in items %}
+<div class="popup_content_modal" data-modal-id="modal{{loop.index}}{{name}}">
+	<div class="popup_content_modal_container">
+		<span class="close_content_modal"></span>
+		<div class="popup_content_modal_inner_container">
+			<div class="popup_content_text">
+				{{item.popup_content}}
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endif %}
+{% endmacro%}
 
 {# #}
 
