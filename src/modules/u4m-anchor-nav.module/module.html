@@ -1,15 +1,67 @@
-{% set moduleName = 'u4m-anchor-nav' %}
-{% if module.make_sticky %} 
-  {% set moduleName = 'u4m-anchor-nav has-sticky' %}
-{% endif %}
-{% set imageMax = 300 %}
+{% set moduleName = 'u4m-anchor_nav_outer' %}
 
 {% include "../partials/u4-module-includes.html" %}
-    <div class="wrapper">
-      <div class="anchor-nav">
-      {% for item in module.anchor_link %}
-        <a class="single-anchor hs-skip-lang-url-rewrite" href="#{{ item.anchor_link|replace('#', '') }}">{{ item.text }}</a>
-      {% endfor %}
-      </div>
-    </div>
+
+<div class="anchor_nav_inner">
+
+	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+
+		<div class="flex_row">
+			{% for item in module.nav_item %}
+			<div class="col nav_item_col ty_{{item.select_icon_type}}">
+
+				{% set href = item.link.url.href %}
+				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = "mailto:" + href %}
+				{% elif item.link.url.type is equalto "CONTENT" %}
+				{% set href =  href + "#"+item.bookmark_id %}
+				{% endif %}
+
+				<a
+					 {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+					 href="{{ href }}"
+					 {% else %}
+					 href="{{ href }}"
+					 {% endif %}
+					 {% if item.link.open_in_new_tab %}
+					 target="_blank"
+					 {% endif %}
+					 {% if item.link.rel %}
+					 rel="{{ item.link.rel|escape_attr }}"
+					 {% endif %}
+					 >
+
+					<div class="icon_image_wrap">
+						{% if item.select_icon_type == "icon"%}
+						<span class="text_icon svg_icon"> {% icon
+		name="{{ item.icon.name }}"
+		style="{{ item.icon.type }}"
+		unicode="{{ item.icon.unicode }}"
+		icon_set="{{ item.icon.icon_set }}"
+	%}</span>
+						{% endif %}
+						{% if item.select_icon_type == "custom_class"%}
+
+						<span class="text_icon custom_icon"><span class="{{ item.custom_class }}"></span></span>
+						{% endif %}
+						{% if item.select_icon_type == "image"%}
+						<span class="img_icon"><img src="{{ item.image.src }}" alt="{{ item.image.alt }}"></span>
+						{% endif %}
+					</div>
+
+					<div class="nav_title">
+						<h4>
+							{{ item.title }}
+						</h4>
+					</div>
+				</a>
+
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</div>
 </section>
+

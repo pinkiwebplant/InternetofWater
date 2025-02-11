@@ -1,0 +1,81 @@
+{% set moduleName = 'u4m-blogcards' %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+
+
+
+	<div class="blogcards_row flex_row {{ module.module_settings.cards_count_in_row }}_row row_spacing">
+		{% set max_posts = module.feed_settings.number_of_posts %}
+		{% set rec_posts = [] %}
+		{% set rec_posts = rec_posts + blog_recent_posts(module.feed_settings.seelct_blog, max_posts + 1) %}
+		{% set i = 0 %}
+		{% for post in rec_posts %}
+		{% if content.absolute_url != post.absolute_url and i < max_posts %}
+		<div class="car_item col {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
+
+			<div class="blogcard_inner">
+				<div class="blogcard_img" {% if module.module_settings.include_icon_animation %}data-aos="{{ module.module_settings.icon_animation }}"{% endif %}>
+					<span class="icon_box icon_img">
+						<span class="{% if module.module_settings.image_shadow %}img_shadw{% endif %}">
+							<a class="overlay_link" href="{{post.absolute_url}}">
+								<img src="{{ resize_image_url( post.post_list_summary_featured_image,767 ) }}" class="recent-hs-featured-image" alt="{{ post.featured_image_alt_text | escape }}"></a>
+						</span>
+					</span>
+				</div>
+				<div class="blogcard_desc {{ module.module_settings.card_content_style }}">
+					<div class="title {{ module.module_settings.card_title_style }}"><a href="{{post.absolute_url}}">{{ post.name}} </a> </div>
+					<div class="blogcard_text">
+						<p>{{ post.post_list_content|striptags|safe|truncatehtml(250, '.' , false) }}</p>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		{% set i = i + 1 %}          
+		{% endif %}
+		{% endfor %}
+
+	</div>
+	{# #}
+
+
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+{% for item in module.card_group %}
+{% if item.button_group %}
+{{macros.buttonGroup(item.button_group, true)}}
+{% endif %}
+
+
+{# #}
+{% if item.include_link_on_icon %}
+{% if item.link_type == "popup_content" %}
+{{macros.popup_contentloop(item)}}
+{% endif %}
+{% endif %}
+{# #}
+
+{% endfor %}
+
+
+
+
+
+
+
+

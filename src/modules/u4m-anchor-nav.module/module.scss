@@ -1,80 +1,61 @@
 @import "../../css/module-imports";
 
-.u4m-anchor-nav {
-  position: relative;
-  z-index: 100;
-  background-color: $black;
-
-  .wrapper {
-    @include centerSmall;
-    padding: 25rem 0;
-    border: 0;
-    position: relative;
-
-    .anchor-nav {
-      position: absolute;
-      transition: opacity $animation1;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
+.u4m-anchor_nav_outer {
+  .anchor_nav_inner {
+    .nav_item_col {
+      width: 20%;
       text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: none;
-      letter-spacing: 1rem;
+
+      @include tablet {
+        width: 33.33%;
+      }
+
+      @include tabletMid {
+        width: 50%;
+      }
+
+      @include tabletvert {
+        width: 100%;
+      }
 
       a {
-        color: $white;
-        padding: 0 25rem;
-        height: 100%;
-        font-weight: bold;
-        font-size: 14rem;
-        display: flex;
-        align-items: center;
-        top: -100rem;
-
-        @include phone {
-          padding: 0 8rem;
-          font-size: 12rem;
-        }
+        text-decoration: none;
       }
-    }
-  }
 
-  &.sticky {
-    .wrapper {
-      .anchor-nav {
-        background-color: $black;
-        position: fixed;
+      span.img_icon {
+        width: 1em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .nav_title h4 {
+        margin: 0;
+        color: $azure;
+        text-decoration: none;
 
         a {
-          &.active-anchor {
-            color: $white;
-            background-color: $action1;
-          }
+          text-decoration: none;
+          color: inherit;
         }
       }
-    }
-  }
 
-  &.bottom {
-    .wrapper {
-      .anchor-nav {
-        //position: absolute;
-        opacity: 0;
-        transition: $animation1;
-        pointer-events: none;
-      }
-    }
-  }
+      .icon_image_wrap {
+        font-size: 58px;
+        line-height: 1;
 
-  &.non-sticky {
-    .wrapper {
-      .anchor-nav {
-        a {
-          color: $white;
+        @include tabletvert {
+          font-size: 68px;
+        }
+
+        & > span {
+          display: block;
+          margin-bottom: 10rem;
+        }
+        svg {
+          width: 1em;
+          height: 1em;
+          fill: currentColor;
         }
       }
     }

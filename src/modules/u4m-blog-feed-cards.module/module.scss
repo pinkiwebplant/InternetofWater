@@ -1,0 +1,100 @@
+@import "../../css/_module-imports";
+
+section.u4m-blogcards {
+  margin-top: 100rem;
+  margin-bottom: 100rem;
+
+  &.reverse-text {
+    .car_item {
+      color: $white;
+    }
+
+    .title {
+      &.small {
+        color: $white;
+      }
+      &.medium {
+        color: $white;
+      }
+      &.large {
+        color: $white;
+      }
+    }
+  }
+
+  .cards_row {
+    row-gap: 15rem;
+  }
+
+  .icon_box > a {
+    color: inherit;
+  }
+
+  .car_item {
+    &.cardShdw {
+      .blogcard_inner {
+        box-shadow: $cardShdw;
+        background: $white;
+        padding: 30px 30px;
+      }
+    }
+
+    &.al_center {
+      text-align: center;
+    }
+
+    &.al_right {
+      text-align: right;
+    }
+
+    span.img_shadw {
+      display: inline-block;
+      box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      position: relative;
+      max-width: 100%;
+    }
+  }
+
+  .blogcard_img {
+    margin-bottom: 15px;
+
+    .icon_img img {
+      height: auto;
+      max-width: 100%;
+    }
+
+    .txt_icon {
+      font-size: 60px;
+      line-height: 1;
+      text-align: center;
+
+      svg {
+        display: block;
+        width: 1em;
+        height: 1em;
+        margin: auto;
+        fill: currentColor;
+      }
+    }
+  }
+
+  .title {
+    & > a {
+      color: inherit;
+      text-decoration: none;
+    }
+    &.small {
+      @include b4;
+    }
+    &.medium {
+      @include b2;
+    }
+    &.large {
+      @include b1;
+    }
+  }
+  .blogcard_text + .intro_btn_wrap {
+    margin-top: 30px;
+  }
+}

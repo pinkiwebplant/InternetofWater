@@ -1,87 +1,108 @@
 [ {
-  "id" : "345e97ba-d593-cf1a-0bd8-e19e813df442",
-  "name" : "nav_item",
-  "label" : "Nav Item",
+  "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
+  "name" : "intro_content",
+  "label" : "Intro Content",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 5,
-    "sorting_label_field" : "547e031f-b8c0-a1a2-0529-8b1b28e55966",
-    "default" : 5
-  },
   "children" : [ {
-    "id" : "6bb8fc14-99d1-eae0-32a4-e7900c150084",
-    "name" : "select_icon_type",
-    "label" : "Select Icon Type",
+    "id" : "c5ccdda8-6960-e255-a51f-c61077a633ca",
+    "name" : "include_eyebrow_text",
+    "label" : "Include Eyebrow Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_top_border",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
+    "name" : "eyebrow_text",
+    "label" : "Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_eyebrow_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Eyebrow Text"
+  }, {
+    "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
+    "name" : "include_top_border",
+    "label" : "Include Top Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_eyebrow_text",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
+    "name" : "include_heading",
+    "label" : "Include Heading",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "aef5e961-e297-2654-68e0-6128687770bf",
+    "name" : "heading_size",
+    "label" : "Heading Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_heading",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "select",
-    "choices" : [ [ "image", "Image" ], [ "icon", "Icon" ], [ "custom_class", "Custom Class" ] ],
+    "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "image"
+    "default" : "h2"
   }, {
-    "id" : "5b336928-a718-5859-195b-da8adbf5e148",
-    "name" : "image",
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "nav_item.select_icon_type",
-      "controlling_value_regex" : "image",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/noun-video-information-770599-FCB95A.png",
-      "alt" : "noun-video-information-770599-FCB95A",
-      "loading" : "lazy",
-      "width" : 1200,
-      "height" : 1200,
-      "max_width" : 1200,
-      "max_height" : 1200
-    }
-  }, {
-    "id" : "a05baaa5-7ead-79db-d9f5-5b8c86cab10b",
-    "name" : "icon",
-    "label" : "Icon",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "nav_item.select_icon_type",
-      "controlling_value_regex" : "icon",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "icon_set" : "fontawesome-5.14.0",
-    "type" : "icon",
-    "display_width" : null,
-    "default" : { }
-  }, {
-    "id" : "ca5980d7-a91f-6d18-e186-68fa82bde1cd",
-    "name" : "custom_class",
-    "label" : "Custom Class",
+    "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
+    "name" : "heading",
+    "label" : "Heading",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "nav_item.select_icon_type",
-      "controlling_value_regex" : "custom_class",
+      "controlling_field" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
@@ -90,184 +111,466 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "fa fa-phone"
+    "default" : "Top Heading"
   }, {
-    "id" : "547e031f-b8c0-a1a2-0529-8b1b28e55966",
-    "name" : "title",
-    "label" : "Title",
+    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
+    "name" : "include_heading_border",
+    "label" : "Include Heading Border",
     "required" : false,
     "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.heading",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
     "display_width" : null,
-    "default" : "Instructional Videos"
+    "default" : false
   }, {
-    "id" : "a9edc08d-ba2a-1fed-85fc-3f1294199af0",
-    "name" : "link",
-    "label" : "Link",
+    "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
+    "name" : "include_content",
+    "label" : "Include Content",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
+    "display" : "checkbox",
+    "type" : "boolean",
     "display_width" : null,
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+    "default" : false
+  }, {
+    "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
+    "name" : "content_style",
+    "label" : "Content Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bodystyle3"
+  }, {
+    "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+  }, {
+    "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
+    "name" : "include_button",
+    "label" : "Include Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
+    "name" : "button_group",
+    "label" : "Button Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 2,
+      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+      "default" : 2
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+      "name" : "button_type",
+      "label" : "Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "std"
+    }, {
+      "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
+      "name" : "button_style",
+      "label" : "Button Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "std|popup_content",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "id" : "89f9eca9-0a76-c4cb-92da-3895a2d26272",
-    "name" : "bookmark_id",
-    "label" : "Bookmark ID",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "nav_item.link",
-      "controlling_value_regex" : "CONTENT",
-      "property" : null,
-      "operator" : "MATCHES_REGEX",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null
+      "display" : "select",
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "hs-button"
+    }, {
+      "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "std",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Button"
+    }, {
+      "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "std",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
+      "name" : "cta",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "b6aabd88-017b-65ec-24a7-10528e4fb2be",
+      "name" : "popup_content",
+      "label" : "Popup Content",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "popup_content",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "richtext",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : [ {
-    "select_icon_type" : "image",
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/noun-video-information-770599-FCB95A.png",
-      "alt" : "noun-video-information-770599-FCB95A",
-      "loading" : "lazy",
-      "width" : 1200,
-      "height" : 1200,
-      "max_width" : 1200,
-      "max_height" : 1200
-    },
-    "icon" : { },
-    "custom_class" : "fa fa-phone",
-    "title" : "Instructional Videos",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
+  "default" : {
+    "include_eyebrow_text" : true,
+    "eyebrow_text" : "Eyebrow Text",
+    "include_top_border" : false,
+    "include_heading" : false,
+    "heading_size" : "h2",
+    "heading" : "Top Heading",
+    "include_heading_border" : false,
+    "include_content" : false,
+    "content_style" : "bodystyle3",
+    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "include_button" : false,
+    "button_group" : [ {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  }
+}, {
+  "id" : "6e9a280e-bf99-0ce6-3399-162459ecd9fc",
+  "name" : "feed_settings",
+  "label" : "Feed Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0492b85f-7f4b-3199-c819-40e363dac035",
+    "name" : "seelct_blog",
+    "label" : "Seelct Blog",
+    "required" : false,
+    "locked" : false,
+    "type" : "blog",
+    "display_width" : null
   }, {
-    "select_icon_type" : "image",
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/noun-video-information-770599-FCB95A.png",
-      "alt" : "noun-video-information-770599-FCB95A",
-      "loading" : "lazy",
-      "width" : 1200,
-      "height" : 1200,
-      "max_width" : 1200,
-      "max_height" : 1200
-    },
-    "icon" : { },
-    "custom_class" : "fa fa-phone",
-    "title" : "Instructional Videos",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
+    "id" : "3010e470-e90a-d8d0-d57a-7cf147007b6f",
+    "name" : "number_of_posts",
+    "label" : "Number of Posts",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 6
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "number_of_posts" : 6
+  }
+}, {
+  "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
+  "name" : "module_settings",
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
+    "name" : "intro_content_alignment",
+    "label" : "Intro Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
   }, {
-    "select_icon_type" : "image",
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/noun-video-information-770599-FCB95A.png",
-      "alt" : "noun-video-information-770599-FCB95A",
-      "loading" : "lazy",
-      "width" : 1200,
-      "height" : 1200,
-      "max_width" : 1200,
-      "max_height" : 1200
-    },
-    "icon" : { },
-    "custom_class" : "fa fa-phone",
-    "title" : "Instructional Videos",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
+    "id" : "6e57a0b5-40dd-c767-73eb-1b0eb21f2896",
+    "name" : "cards_count_in_row",
+    "label" : "Cards Count in Row",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "col12", "One" ], [ "col6", "Two" ], [ "col4", "Three" ], [ "col3", "Four" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "col4"
   }, {
-    "select_icon_type" : "image",
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/noun-video-information-770599-FCB95A.png",
-      "alt" : "noun-video-information-770599-FCB95A",
-      "loading" : "lazy",
-      "width" : 1200,
-      "height" : 1200,
-      "max_width" : 1200,
-      "max_height" : 1200
-    },
-    "icon" : { },
-    "custom_class" : "fa fa-phone",
-    "title" : "Instructional Videos",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
+    "id" : "a64f39d6-da3a-bfb6-afa4-99c0f877480c",
+    "name" : "card_content_style",
+    "label" : "Card Content Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bodystyle3"
   }, {
-    "select_icon_type" : "image",
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/noun-video-information-770599-FCB95A.png",
-      "alt" : "noun-video-information-770599-FCB95A",
-      "loading" : "lazy",
-      "width" : 1200,
-      "height" : 1200,
-      "max_width" : 1200,
-      "max_height" : 1200
+    "id" : "44bb7f9e-7dc7-c7a2-8a21-9b3b3a13ae96",
+    "name" : "card_content_alignment",
+    "label" : "Card Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "23748bc1-a7df-e3d2-bc2c-88bf77020092",
+    "name" : "card_title_style",
+    "label" : "Card Title Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "medium"
+  }, {
+    "id" : "72e31845-9c84-2a1b-7902-0a89e878076c",
+    "name" : "image_shadow",
+    "label" : "Card Image Shadow",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "e745bb6b-a7fe-a5ed-9ab6-b689c5856112",
+    "name" : "include_icon_animation",
+    "label" : "Include Image Animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "d0b837e7-e3af-12c2-77c1-b3d6600fd332",
+    "name" : "icon_animation",
+    "label" : "Image Animation",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.include_icon_animation",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
     },
-    "icon" : { },
-    "custom_class" : "fa fa-phone",
-    "title" : "Instructional Videos",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  } ]
+    "display" : "select",
+    "choices" : [ [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fade-up"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "intro_content_alignment" : "left",
+    "cards_count_in_row" : "col4",
+    "card_content_style" : "bodystyle3",
+    "card_content_alignment" : "center",
+    "card_title_style" : "medium",
+    "image_shadow" : true,
+    "include_icon_animation" : true,
+    "icon_animation" : "fade-up"
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -745,14 +1048,4 @@
     },
     "container_size" : "theme"
   }
-}, {
-  "id" : "b66352ab-9c67-1710-c864-f95ea6f525d4",
-  "name" : "enable_sticky",
-  "label" : "Enable Sticky",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
 } ]
