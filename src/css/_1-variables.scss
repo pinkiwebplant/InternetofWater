@@ -24,10 +24,16 @@ $darkText: #a7a7a7;
 $lightShade: #ABB0B2;
 $mediumShade: #bbbbbb;
 $DarkLiver: #4e4e4e;
+$Error: #e85c41;
 //=====================
 
-$gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
+$gradient1: linear-gradient(180deg,rgba($black,0) 0%,$azure 100%);
+$gradient2: linear-gradient(180deg,rgba($black,0) 0%, $darkblue 100%);
 $gradient3: linear-gradient(-45deg, $action2 0%, $black 50%);
+
+
+
+
 $font1: "Quicksand", Helvetica, Arial, Lucida, sans-serif;
 $font2:"Helvetica", sans-serif;
 $baseFontSize: 16rem;

@@ -17,6 +17,14 @@ html {
 
 //
 
+
+:root{
+  --gradient1  : $gradient1;
+  --gradient2  : $gradient2;
+  --gradient3  : $gradient3;
+}
+
+
 @font-face {
   font-family: "ETmodules";
   src:
@@ -825,8 +833,4 @@ section[class*="u4m-"] {
   display: flex;
   flex-wrap: wrap;
   row-gap: 30rem;
-}
-
-.gradient3{
-  @include gradient3;
 }
