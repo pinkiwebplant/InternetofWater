@@ -1,75 +1,128 @@
 {% set moduleName = 'u4m-animated-stats' %}
-  {% set bgImageMax = 1920 %}
-  
-  {% include "../partials/u4-module-includes.html" %}
-  <h2 class="heading">{{ module.animated_stats_heading }}</h2>
-  {% if module.include_intro %}
-  <div class="intro">{{ module.intro_text }}</div>
-  {% endif %}
-  <div class="statistics items-{{module.items_per_row}}">
-    {% for item in module.statistic_group %}
-    <div class="statistics__item">
-      {% if item.include_image %}
-      <div class="image">
-        <img loading="lazy" src="{{ item.image_field.src }}" width="80" alt="{{ item.image_field.alt }}">
-      </div>
-      {% endif %}
-      {% if item.show_top_caption %}<span class="caption ">{{ item.top_caption }}</span>{% endif %}
-      {% if item.show_currency_label %}<span class="currency">{{ item.currency_label }}</span>{% endif %}        
-      <span class="number {% unless item.disable_animation %}count{% endunless %}">{{ item.numeric_stat }}</span>
-      {% if item.show_stat_unit %}<span class="unit">{{ item.stat_unit }}</span>{% endif %}
-      {% if item.show_bottom_caption %}<span class="caption ">{{ item.bottom_caption }}</span>{% endif %}
-    </div>
-    {% endfor %}
-  </div>
-  </section>
-  
-  
-  
-  
-  {% require_js %}
-  <script>
-    {
-      const onScroll = (entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) entry.target.classList.remove('is-in-viewport');
-          else {
-            entry.target.classList.add('is-in-viewport');
-  
-            $('.count').each(function () {
-              $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-              }, {
-                duration: 4000,
-                easing: 'swing',
-                step: function (now) {
-                  // $(this).text(Math.ceil(now));
-                  $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
-                  $(this).removeClass( "count" )
-                }
-              });
-            });
-  
-          }
-        });
-      };
-  
-      const options = {
-        threshold: .75 // 50% of element in view
-      }
-  
-      const observer = new IntersectionObserver(onScroll, options);
-      document.querySelectorAll("section.{{moduleName}}.{{name}}").forEach(section => observer.observe(section));
-  
-                                }
-  
-  
-  </script>
-  {% end_require_js %}
-  
-  
-  
-  
-  
-  
-  
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+	<div class="animated_stats_wrapper">
+		<div class="stats_inner">
+			<div class="flex_row">
+				{% if module.stats_items.left_column.embed_url.href|escape_url or module.stats_items.left_column.embed_text %}
+				<div class="stats_left col col4">
+					<div class="embed_url">
+						<div class="video-wrapper">
+							<iframe loading="lazy" src="{{ module.stats_items.left_column.embed_url.href|escape_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid0"></iframe>
+
+						</div>
+					</div>
+					<div class="embed_text">
+						<div class="promo_description">
+							<div>
+								{{ module.stats_items.left_column.embed_text }}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% for item in module.stats_items.right_column %}
+				<div class="stats_right col col4">
+
+					<div class="number_count">
+						<p>
+							{% if item.prefix %}
+							<span class="prefix">{{ item.prefix }}</span>
+							{% endif %}
+							<span class="count" data-count="{{ item.number }}">0</span>
+							{% if item.surfix %}
+							<span class="surfix">{{ item.surfix }}</span>
+							{% endif %}
+						</p>
+					</div>
+					<h5 class="title">{{ item.title }}</h5>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+
+
+
+{% require_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+		// Function to start the counting animation
+		function startCountingAnimation() {
+			var counters = document.querySelectorAll('.u4m-animated-stats.{{name}} .count');
+			counters.forEach(function(counter) {
+				var countTo = counter.getAttribute('data-count');
+				animateCounting(counter, countTo);
+			});
+		}
+
+		// Function to animate counting and format the number with separators
+		function animateCounting(counter, countTo) {
+			let currentCount = parseInt(counter.textContent, 10) || 0;
+			let targetCount = parseInt(countTo, 10);
+			let duration = 1000;
+			let startTime = null;
+
+			function step(timestamp) {
+				if (!startTime) startTime = timestamp;
+				let progress = timestamp - startTime;
+				let increment = Math.min(targetCount, currentCount + (targetCount - currentCount) * (progress / duration));
+
+				counter.textContent = formatNumber(Math.floor(increment));
+
+				if (progress < duration) {
+					window.requestAnimationFrame(step);
+				} else {
+					counter.textContent = formatNumber(targetCount);
+				}
+			}
+
+			window.requestAnimationFrame(step);
+		}
+
+		// Function to format numbers with commas
+		function formatNumber(number) {
+			return number.toLocaleString();
+		}
+
+		// Intersection Observer setup
+		var observerOptions = {
+			root: null, // Use the viewport as the root
+			rootMargin: '0px',
+			threshold: 0.1 // Trigger when 10% of the element is visible
+		};
+
+		var observer = new IntersectionObserver(function(entries) {
+			entries.forEach(function(entry) {
+				if (entry.isIntersecting) {
+					// Start animation when the element is in view
+					startCountingAnimation();
+					// Optional: Unobserve after animation starts if only needed once
+					observer.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		// Observe the .animated_stats_wrapper element
+		document.querySelectorAll('.u4m-animated-stats.{{name}} .animated_stats_wrapper').forEach(function(wrapper) {
+			observer.observe(wrapper);
+		});
+	});
+
+</script>
+{% end_require_js %}
+
