@@ -1,0 +1,201 @@
+{% set moduleName = 'cmCardWithPagination' %}
+
+{% include "../partials/u4-module-includes.html" %}
+{% set table =  module.select_hubdb_table  %}
+{% set query = 'hs_created_at' %}
+{% set resouces = hubdb_table_rows(table,query) %}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+
+	<div class="cardPaginationWrap">
+		<div class="resourceListWrap">
+			<div class="innerCardPagination flex_row col4_row resourceList">
+				{% for row in resouces|reverse %}
+				<div class="resourceCard card_item item_{{loop.index}} col4 col">
+					{% if row.image.url %}
+					<div class="featured-image">
+						<a href="{{ row.link }}">
+							<div class="featured-imagein" style="background-image: url({{ row.image.url }});"></div>
+							<!-- <img src="{{ row.image.url }}" alt="{{ row.name }}"> -->
+						</a>
+					</div>
+					{% endif %}
+					{% if row.name %}
+					<div class="title-newsletter restitle">
+						<a href="{{ row.link }}">
+							<h5>{{ row.name }} | {{ row.date|datetimeformat('%B %Y')}}</h5>
+						</a>
+					</div>
+					{% endif %}
+					{% if row.description %}
+					<div class="innerContent">
+						{{ row.description }}
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<ul id="pagination{{ name|replace('widget_','')|replace('module_','') }}" class="pagination"></ul> 
+	</div>
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+{% require_js %}
+<script>
+	const wrapper = document.querySelector(".resourceList");
+	const pagination = document.querySelector(".pagination");
+	const items = Array.from(document.querySelectorAll(".resourceCard"));
+	let filteredItems = items;
+	let currPage = 1;
+
+	function MainLogic() {
+
+
+		filteredItems = items.filter((el) => filterItems(el));
+		currPage = 1;
+
+		if (filteredItems.length !== 0) {
+			pagination.style.display = "flex";
+			setHTML(filteredItems);
+		} else {
+			pagination.style.display = "none";
+			wrapper.innerHTML = "<p class='col statusCnt'>No Data Found.</p>";
+		}
+	}
+
+	function calculatePagination(
+		totalItems,
+		currentPage = 1,
+		pageSize = 6,
+		maxPages = 4
+	) {
+		let startPage,
+				endPage,
+				totalPages = Math.ceil(totalItems / pageSize);
+
+		if (currentPage < 1) {
+			currentPage = 1;
+		} else if (currentPage > totalPages) {
+			currentPage = totalPages;
+		}
+
+		if (totalPages <= maxPages) {
+			startPage = 1;
+			endPage = totalPages;
+		} else {
+			let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+			let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+
+			if (currentPage <= maxPagesBeforeCurrentPage) {
+				startPage = 1;
+				endPage = maxPages;
+			} else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
+				startPage = totalPages - maxPages + 1;
+				endPage = totalPages;
+			} else {
+				startPage = currentPage - maxPagesBeforeCurrentPage;
+				endPage = currentPage + maxPagesAfterCurrentPage;
+			}
+		}
+
+		let startIndex = (currentPage - 1) * pageSize;
+		let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+		let pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
+			(i) => startPage + i
+		);
+
+		return {
+			totalItems: totalItems,
+			currentPage: currentPage,
+			pageSize: pageSize,
+			totalPages: totalPages,
+			startPage: startPage,
+			endPage: endPage,
+			startIndex: startIndex,
+			endIndex: endIndex,
+			pages: pages,
+		};
+	}
+
+	function setHTML(items) {
+		wrapper.innerHTML = "";
+		pagination.innerHTML = "";
+
+		const {
+			totalItems,
+			currentPage,
+			pageSize,
+			totalPages,
+			startPage,
+			endPage,
+			startIndex,
+			endIndex,
+			pages,
+		} = calculatePagination(items.length, currPage, {{module.number_of_item}}, 3);
+
+		const nav = document.createElement("nav");
+		nav.classList.add(
+			"relative",
+			"z-0",
+			"inline-flex",
+			"rounded-md",
+			"shadow-sm",
+			"-space-x-px"
+		);
+		let paginationHTML = "";
+		paginationHTML += `<button ${currentPage === 1 && "disabled"} class="${
+		currentPage === 1 ? "cursor-not-allowed previous" : "previous"
+	} para gray_border black_color light_bg relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">&lt; BACK</button>`;
+
+		pages.forEach((page) => {
+			paginationHTML +=
+				currentPage === page
+				? `<button class="blogPgLink blogPgactive para gray_border black_color light_bg z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium" page="${page}" disabled>${page}</button>`
+			: `<button class="blogPgLink para gray_border black_color light_bg page bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" page="${page}">${page}</button>`;
+		});
+
+		paginationHTML += `<button ${currentPage === endPage && "disabled"} class="${
+		currentPage === endPage ? "cursor-not-allowed next" : "next"
+	} para gray_border black_color light_bg relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">NEXT &gt;</button>`;
+
+		nav.innerHTML = paginationHTML;
+		pagination.append(nav);
+
+		const start = (currentPage - 1) * pageSize;
+		const end = currentPage * pageSize;
+		items.slice(start, end).forEach((el) => {
+			wrapper.append(el);
+		});
+	}
+	document.addEventListener("click", (e) => {
+		const $this = e.target;
+		if ($this.classList.contains("page")) {
+			const pageNumber = $this.getAttribute("page");
+			if (pageNumber) {
+				currPage = parseInt(pageNumber);
+				setHTML(filteredItems);
+			}
+		}
+		if ($this.classList.contains("next")) {
+			currPage += 1;
+			setHTML(filteredItems);
+		}
+		if ($this.classList.contains("previous")) {
+			currPage -= 1;
+			setHTML(filteredItems);
+		}
+	});
+
+	setHTML(filteredItems);
+
+</script>
+{% end_require_js %}

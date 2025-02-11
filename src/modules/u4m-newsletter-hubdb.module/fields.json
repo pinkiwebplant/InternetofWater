@@ -404,6 +404,26 @@
     } ]
   }
 }, {
+  "id" : "5d1a73f0-8de0-f229-cefb-918f0a252d56",
+  "name" : "select_hubdb_table",
+  "label" : "Select HubDB Table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "display_width" : null,
+  "default" : 108860741
+}, {
+  "id" : "91b491ec-e824-2611-da7a-ba879455910a",
+  "name" : "number_of_item",
+  "label" : "Number of Item",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 12
+}, {
   "id" : "288ea647-d3b0-f438-be11-4903d4fbf27c",
   "name" : "cards",
   "label" : "Cards",
