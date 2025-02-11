@@ -1,0 +1,19 @@
+@import "../../css/_module-imports";
+
+
+.u4m-advanced-button {
+	.intro_content {
+		a.hs-button {
+			padding: 10px;
+		}
+		max-width: 100%;
+		.intro_title {
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 6px;
+			line-height: 1.8em;
+			margin-bottom: 25px;
+			padding-bottom: 10px;
+		}
+	}
+}
