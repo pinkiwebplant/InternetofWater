@@ -1,0 +1,26 @@
+@import "../../css/_module-imports";
+
+.cmBoxContent {
+    .cmBoxWrapper {
+        padding: 100px 90px;
+        box-shadow: 0px 32px 200px -16px rgba(85, 103, 127, 0.3);
+
+        @include tabletMid {
+            padding: 40px;
+        }
+
+        @include tabletvert {
+            padding: 20px;
+        }
+
+        .innerBoxWrapper {
+            .contentWrap {
+                p {
+                    &:last-of-type {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

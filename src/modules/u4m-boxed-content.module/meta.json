@@ -2,8 +2,8 @@
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
   "host_template_types" : [ "PAGE" ],
-  "module_id" : 186019610626,
-  "label" : "Rich Text",
+  "module_id" : 186016548764,
+  "label" : "Boxed Content",
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",
   "is_available_for_new_content" : true
 }

@@ -1,0 +1,48 @@
+{% set moduleName = 'cmBorderCards' %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+
+	<div class="cmBorderCardWrap">
+		<div class="innerBorderCard flex_row col4_row">
+			{% for item in module.cards %}
+			<div class="cmCards cmItem_{{loop.index}} col4 col">
+				<div class="textWrap">
+					<div class="textInnerWrap">
+						{% if item.heading %}
+						<{{ item.heading_size }} class="cmTitle">{{ item.heading }}</{{ item.heading_size }}>
+							{% endif %}
+							{% if item.content %}
+						<div class="cntWrapper {{ item.content_style }}">
+							{{ item.content }}
+						</div>
+					{% endif %}
+					</div>
+				</div>
+			{% if item.include_button %}
+			{{macros.singlebuttonGroup(item.button_group, false)}}
+			{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+{% for item in module.cards %}
+{{macros.singlebuttonGroup(item.button_group, true)}}
+{% endfor %}
+
+

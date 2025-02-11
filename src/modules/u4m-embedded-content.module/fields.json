@@ -419,7 +419,8 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "https://storymaps.arcgis.com/stories/6ba78af2a202448e8325273323682eeb"
   }, {
     "id" : "441cb5e7-4833-f54c-4cf1-905d3460f08c",
     "name" : "credit_text",
@@ -437,7 +438,9 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : { }
+  "default" : {
+    "embedded" : "https://storymaps.arcgis.com/stories/6ba78af2a202448e8325273323682eeb"
+  }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
@@ -907,7 +910,8 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "theme"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -940,6 +944,7 @@
       "select_color" : "",
       "include_overlay_gradient" : false,
       "select_gradient" : ""
-    }
+    },
+    "container_size" : "theme"
   }
 } ]

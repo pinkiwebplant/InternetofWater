@@ -1,4 +1,4 @@
-{% set moduleName = 'cmRichText' %}
+{% set moduleName = 'cmBoxContent' %}
 
 {% include "../partials/u4-module-includes.html" %}
 
@@ -6,6 +6,16 @@
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
+
+	<div class="cmBoxWrapper">
+		<div class="innerBoxWrapper">
+			{% if module.box_content.include_content %}
+			<div class="contentWrap {{ module.box_content.content_style }}">
+				{{ module.box_content.content }}
+			</div>
+			{% endif %}
+		</div>
+	</div>
 
 </div>
 </section>
@@ -18,18 +28,5 @@
 {% endif %}
 
 
-{% require_css %}
-<style>
-	.cmRichText.{{name}} .intro_content .intro__inner .intro_btn_wrap {
-		justify-content: {{ module.module_settings.button_alignment }};
-	}
-	{% if module.module_settings.enable_shadow %}
-	.cmRichText.{{name}} .bg_image{
-		box-shadow: inset 0px 240px 120px -80px #ffffff;
-	}
-	{% endif %}
-	
-	
-</style>
-{% end_require_css %}
+
 

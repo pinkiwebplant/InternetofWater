@@ -21,7 +21,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
     "name" : "eyebrow_text",
@@ -113,6 +113,24 @@
     "display_width" : null,
     "default" : "Frequently asked questions"
   }, {
+    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
+    "name" : "include_heading_border",
+    "label" : "Include Heading Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.heading",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
     "label" : "Include Content",
@@ -123,7 +141,7 @@
     "display_width" : null,
     "default" : false
   }, {
-    "id" : "cdaaad47-35bf-0a8f-5783-e647f8f8c36d",
+    "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
     "name" : "content_style",
     "label" : "Content Style",
     "required" : false,
@@ -237,16 +255,16 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_value_regex" : "std|popup_content",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
       "display_width" : null,
-      "default" : "Button"
+      "default" : "Learn More"
     }, {
       "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
       "name" : "link",
@@ -315,7 +333,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Learn More",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -328,7 +346,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Learn More",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -346,12 +364,13 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow_text" : false,
+    "include_eyebrow_text" : true,
     "eyebrow_text" : "Eyebrow Text",
     "include_top_border" : false,
     "include_heading" : false,
     "heading_size" : "h2",
     "heading" : "Frequently asked questions",
+    "include_heading_border" : false,
     "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
@@ -359,7 +378,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Learn More",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -372,7 +391,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Learn More",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -385,7 +404,7 @@
     } ]
   }
 }, {
-  "id" : "086a5902-e3ef-7f90-b0b6-45866d8cc1b4",
+  "id" : "00c4a072-82c4-e168-b534-f5d7a256365c",
   "name" : "cards",
   "label" : "Cards",
   "required" : false,
@@ -393,130 +412,12 @@
   "occurrence" : {
     "min" : null,
     "max" : null,
-    "sorting_label_field" : "7a9e82da-81df-3767-ea36-607b3b3c5a5c",
+    "sorting_label_field" : "19e94dd3-0bc4-0d0a-815a-06642e79a6fe",
     "default" : 3
   },
   "children" : [ {
-    "id" : "d9f44ac1-b7b6-6cdd-69b7-c911df6e48bc",
-    "name" : "background_settings",
-    "label" : "Background Settings",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "module_overrides.enable_overrides",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "f9486191-5642-973b-2a7a-0c0dffd844db",
-      "name" : "background_type",
-      "label" : "Background Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "color", "Color" ], [ "image", "Image" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "image"
-    }, {
-      "id" : "7756104e-55dd-a955-6f16-4b70577ecff4",
-      "name" : "background_image",
-      "label" : "Background Image",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.background_settings.background_type",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "responsive" : true,
-      "resizable" : false,
-      "show_loading" : false,
-      "type" : "image",
-      "display_width" : null,
-      "default" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      }
-    }, {
-      "id" : "0e2805c9-9626-af92-0ffb-91e8c95eb6fa",
-      "name" : "select_color",
-      "label" : "Select Color",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.background_settings.background_type",
-        "controlling_value_regex" : "color",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "sunsetOrange_bg", "Sunset Orange" ], [ "slateBlue_bg", "Slate Blue" ], [ "tealGreen_bg", "Teal Green" ], [ "darkGray_bg", "Dark Gray" ], [ "azure_bg", "Azure" ], [ "cadetGray_bg", "Cadet Gray" ], [ "whiteSmoke_bg", "White Smoke" ], [ "lightGray_bg", "Light Gray" ], [ "white_bg", "White" ], [ "black_bg", "Black" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : ""
-    }, {
-      "id" : "49f1fa32-f526-8364-5a90-2c7e19eb70af",
-      "name" : "include_overlay_gradient",
-      "label" : "Include Overlay Gradient",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "cards.background_settings.background_type",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "display_width" : null,
-      "default" : true
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : true,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    }
-  }, {
-    "id" : "7a9e82da-81df-3767-ea36-607b3b3c5a5c",
-    "name" : "title",
+    "id" : "19e94dd3-0bc4-0d0a-815a-06642e79a6fe",
+    "name" : "heading",
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -525,9 +426,31 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Education and training"
+    "default" : "Building Data Infrastructure"
   }, {
-    "id" : "bb11bb6e-e5a1-bd4e-65e5-3f1bb9d3e246",
+    "id" : "cfbb75a5-de7b-b8cb-b27e-09d37289100d",
+    "name" : "heading_size",
+    "label" : "Title Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.heading",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h5"
+  }, {
+    "id" : "5dfbbc73-dbf4-1c34-0637-7a153ef9810c",
     "name" : "content_style",
     "label" : "Content Style",
     "required" : false,
@@ -541,22 +464,40 @@
     "display_width" : null,
     "default" : "bodystyle3"
   }, {
-    "id" : "24a15aa6-a3e9-d87d-fb1c-65dd7097dfc0",
+    "id" : "a3643955-91b1-32e5-e375-a145be50f752",
     "name" : "content",
     "label" : "Content",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>"
+    "default" : "<p>Enabling integrated and shared water data from public agencies (state, local, and tribal governments) and NGOs by providing the essential, missing technology to make an internet of water possible.</p>"
   }, {
-    "id" : "b9fa043f-3cca-d57f-101c-8b203442f068",
+    "id" : "eb1eaf91-558c-fbbd-1f46-135a36108a79",
+    "name" : "include_button",
+    "label" : "Include Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "189f0b89-15fa-717c-8b3a-50ea5f992ca6",
     "name" : "button_group",
     "label" : "Button Group",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards.include_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "children" : [ {
-      "id" : "96d89561-6fd3-b22a-a022-c2634890feb1",
+      "id" : "4d982500-7a71-fae9-b2d9-1e61b1064d5f",
       "name" : "button_type",
       "label" : "Button Type",
       "required" : false,
@@ -568,9 +509,9 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "std"
+      "default" : "popup_content"
     }, {
-      "id" : "ccb0b24c-060b-f50d-dc6e-16968c9844bc",
+      "id" : "6c18cbed-4067-200d-d6b6-550c3b99c3d1",
       "name" : "button_style",
       "label" : "Button Style",
       "required" : false,
@@ -592,7 +533,7 @@
       "display_width" : null,
       "default" : "hs-ter-btn"
     }, {
-      "id" : "6a01a3cd-3c94-3a9b-3757-f05b6e6a4019",
+      "id" : "4de4d8c2-531f-52cf-2594-c6d03748ab9e",
       "name" : "button_text",
       "label" : "Button Text",
       "required" : false,
@@ -601,18 +542,18 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "cards.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_value_regex" : "std|popup_content",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
       "display_width" : null,
-      "default" : "Learn More"
+      "default" : "Button"
     }, {
-      "id" : "e07ba972-f0ae-0886-c130-79212920a4c4",
+      "id" : "b26a2509-b2f1-4246-baae-0b75727143ef",
       "name" : "link",
       "label" : "Link",
       "required" : false,
@@ -639,7 +580,7 @@
         "no_follow" : false
       }
     }, {
-      "id" : "a43acbc2-436e-4f0b-6968-5bdcc27b01cc",
+      "id" : "40023fbd-611a-a912-a0a6-e59c35079871",
       "name" : "cta",
       "label" : "CTA",
       "required" : false,
@@ -655,7 +596,7 @@
       "type" : "cta",
       "display_width" : null
     }, {
-      "id" : "245f521a-003e-37ca-544d-665b11373d57",
+      "id" : "d696444a-1adc-e9f8-24e7-7eb7ba3792d0",
       "name" : "popup_content",
       "label" : "Popup Content",
       "required" : false,
@@ -669,7 +610,8 @@
         "access" : null
       },
       "type" : "richtext",
-      "display_width" : null
+      "display_width" : null,
+      "default" : "<p>Content Here</p>"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -677,9 +619,9 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "button_type" : "std",
+      "button_type" : "popup_content",
       "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
+      "button_text" : "Button",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -688,7 +630,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "popup_content" : "<p>Content Here</p>"
     }
   } ],
   "tab" : "CONTENT",
@@ -697,28 +640,15 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
-    "background_settings" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    },
-    "title" : "Education and training",
+    "heading" : "Building Data Infrastructure",
+    "heading_size" : "h5",
     "content_style" : "bodystyle3",
-    "content" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>",
+    "content" : "<p>Enabling integrated and shared water data from public agencies (state, local, and tribal governments) and NGOs by providing the essential, missing technology to make an internet of water possible.</p>",
+    "include_button" : true,
     "button_group" : {
-      "button_type" : "std",
+      "button_type" : "popup_content",
       "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
+      "button_text" : "Button",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -727,31 +657,19 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "popup_content" : "<p>Content Here</p>"
     }
   }, {
-    "background_settings" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    },
-    "title" : "Education and training",
+    "heading" : "Building Data Infrastructure",
+    "heading_size" : "h5",
     "content_style" : "bodystyle3",
-    "content" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>",
+    "content" : "<p>Enabling integrated and shared water data from public agencies (state, local, and tribal governments) and NGOs by providing the essential, missing technology to make an internet of water possible.</p>",
+    "include_button" : true,
     "button_group" : {
-      "button_type" : "std",
+      "button_type" : "popup_content",
       "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
+      "button_text" : "Button",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -760,31 +678,19 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "popup_content" : "<p>Content Here</p>"
     }
   }, {
-    "background_settings" : {
-      "background_type" : "image",
-      "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/john-schnobrich-WS7tgu261f0-unsplash-scaled.jpg",
-        "alt" : "Background Image",
-        "loading" : "lazy",
-        "width" : 1707,
-        "height" : 2560,
-        "max_width" : 1333.59375,
-        "max_height" : 2000
-      },
-      "select_color" : "",
-      "include_overlay_gradient" : true
-    },
-    "title" : "Education and training",
+    "heading" : "Building Data Infrastructure",
+    "heading_size" : "h5",
     "content_style" : "bodystyle3",
-    "content" : "<p><strong>Technology adoption workshops and training for water sector public agencies</strong></p>",
+    "content" : "<p>Enabling integrated and shared water data from public agencies (state, local, and tribal governments) and NGOs by providing the essential, missing technology to make an internet of water possible.</p>",
+    "include_button" : true,
     "button_group" : {
-      "button_type" : "std",
+      "button_type" : "popup_content",
       "button_style" : "hs-ter-btn",
-      "button_text" : "Learn More",
+      "button_text" : "Button",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -793,7 +699,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "popup_content" : "<p>Content Here</p>"
     }
   } ]
 }, {
@@ -815,7 +722,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "center"
+    "default" : "left"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -823,7 +730,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center"
+    "intro_content_alignment" : "left"
   }
 }, {
   "id" : "module_overrides",
