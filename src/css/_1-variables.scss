@@ -54,4 +54,9 @@ $containerInnerSpacing: 15rem;
 
 $introContainer: 810rem;
 
-$cardShdw: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);
+$cardShdw: 0px 2px 18px 0px rgba($black, 0.3);
+
+$textshadow: -0.03em 0.02em 0.08em rgba($black, 0.4);
+$textshadow2: 0.21em 0.21em 0.3em rgba($black, 0.4);
+
+$white50: rgba($white, 0.5);

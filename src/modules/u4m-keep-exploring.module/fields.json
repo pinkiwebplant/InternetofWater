@@ -5,62 +5,6 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "c5ccdda8-6960-e255-a51f-c61077a633ca",
-    "name" : "include_eyebrow_text",
-    "label" : "Include Eyebrow Text",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_top_border",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
-    "name" : "eyebrow_text",
-    "label" : "Eyebrow Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_eyebrow_text",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Eyebrow Text"
-  }, {
-    "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
-    "name" : "include_top_border",
-    "label" : "Include Top Border",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_eyebrow_text",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
     "name" : "include_heading",
     "label" : "Include Heading",
@@ -113,24 +57,6 @@
     "display_width" : null,
     "default" : "Keep Exploring"
   }, {
-    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
-    "name" : "include_heading_border",
-    "label" : "Include Heading Border",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.heading",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "NOT_EMPTY",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
     "label" : "Include Content",
@@ -139,7 +65,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
     "name" : "content_style",
@@ -179,184 +105,6 @@
     "type" : "richtext",
     "display_width" : null,
     "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
-  }, {
-    "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
-    "name" : "include_button",
-    "label" : "Include Button",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
-    "name" : "button_group",
-    "label" : "Button Group",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 2,
-      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 2
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "name" : "button_type",
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "std"
-    }, {
-      "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
-      "name" : "button_style",
-      "label" : "Button Style",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std|popup_content",
-        "property" : null,
-        "operator" : "MATCHES_REGEX",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "hs-button"
-    }, {
-      "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
-      "name" : "button_text",
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Button"
-    }, {
-      "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
-      "name" : "link",
-      "label" : "Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "display_width" : null,
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
-      "name" : "cta",
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta",
-      "display_width" : null
-    }, {
-      "id" : "b6aabd88-017b-65ec-24a7-10528e4fb2be",
-      "name" : "popup_content",
-      "label" : "Popup Content",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "popup_content",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "richtext",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -364,14 +112,10 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow_text" : true,
-    "eyebrow_text" : "Eyebrow Text",
-    "include_top_border" : false,
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Keep Exploring",
-    "include_heading_border" : false,
-    "include_content" : true,
+    "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
   }
@@ -381,34 +125,358 @@
   "label" : "Post Items",
   "required" : false,
   "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "19a44ec9-6b84-ced4-2a30-6a073889f23a",
+    "default" : 3
+  },
   "children" : [ {
+    "id" : "19a44ec9-6b84-ced4-2a30-6a073889f23a",
+    "name" : "select_content_type",
+    "label" : "Select Content Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "blog", "Blog" ], [ "card", "Card" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "blog"
+  }, {
     "id" : "d7b0ab1d-9205-14ee-6f4c-52c248e388b7",
     "name" : "post_by_title",
     "label" : "Post By Title",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "post_items.select_content_type",
+      "controlling_value_regex" : "blog",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "type" : "page",
-    "display_width" : null
+    "display_width" : null,
+    "default" : 185968683574
   }, {
-    "id" : "19a44ec9-6b84-ced4-2a30-6a073889f23a",
-    "name" : "select_post_item",
-    "label" : "Select Post Item",
+    "id" : "0c751fba-c55d-a0d6-19b4-b8557e55c2be",
+    "name" : "cards",
+    "label" : "Cards",
     "required" : false,
     "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "value 1", "Label 1" ], [ "value 2", "Label 2" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "post_items.select_content_type",
+      "controlling_value_regex" : "card",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "6315e34c-c8fe-9495-5c8a-81b8f54b5b8b",
+      "name" : "background_image",
+      "label" : "Background Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/usgs-JiuVoQd-ZLk-unsplash-scaled-e1647873732490.jpg",
+        "alt" : "Geoconnex: A Community Index for Water Data",
+        "loading" : "lazy",
+        "width" : 2553,
+        "height" : 2124,
+        "max_width" : 2000,
+        "max_height" : 1663.924794359577
+      }
+    }, {
+      "id" : "2786a2ae-9cad-bbed-4fe5-c7e74626bcf2",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Geoconnex: A Community Index for Water Data"
+    }, {
+      "id" : "335b7f4f-7cd6-f52d-0714-6946943611f7",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "A detailed presentation from Kyle Onda on the Internet of Water’s flagship technology, Geoconnex. When completed, this geospatial index will be capable of searching and retrieving any water metadata published in the United States, and ultimately North America and beyond. Geoconnex relies on a distributed linked data system. Such systems are foundational elements of internet search technology, allowing for the retrieval of millions of records in an instant. This webinar provides visualizations of Geoconnex (e.g., what does it do, how does it work), including graphics of the current contents and anticipated growth in scope and scale."
+    }, {
+      "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
+      "name" : "button_group",
+      "label" : "Button Group",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+        "name" : "button_type",
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "std"
+      }, {
+        "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
+        "name" : "button_style",
+        "label" : "Button Style",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "post_items.cards.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "hs-button"
+      }, {
+        "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "post_items.cards.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Button"
+      }, {
+        "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "post_items.cards.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : true,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
+        "name" : "cta",
+        "label" : "CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "post_items.cards.button_group.button_type",
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "cta",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : true,
+          "no_follow" : false
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "background_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/usgs-JiuVoQd-ZLk-unsplash-scaled-e1647873732490.jpg",
+        "alt" : "Geoconnex: A Community Index for Water Data",
+        "loading" : "lazy",
+        "width" : 2553,
+        "height" : 2124,
+        "max_width" : 2000,
+        "max_height" : 1663.924794359577
+      },
+      "title" : "Geoconnex: A Community Index for Water Data",
+      "content" : "A detailed presentation from Kyle Onda on the Internet of Water’s flagship technology, Geoconnex. When completed, this geospatial index will be capable of searching and retrieving any water metadata published in the United States, and ultimately North America and beyond. Geoconnex relies on a distributed linked data system. Such systems are foundational elements of internet search technology, allowing for the retrieval of millions of records in an instant. This webinar provides visualizations of Geoconnex (e.g., what does it do, how does it work), including graphics of the current contents and anticipated growth in scope and scale.",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : true,
+          "no_follow" : false
+        }
+      }
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : { }
+  "default" : [ {
+    "select_content_type" : "blog",
+    "post_by_title" : 185968683574,
+    "cards" : {
+      "background_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/usgs-JiuVoQd-ZLk-unsplash-scaled-e1647873732490.jpg",
+        "alt" : "Geoconnex: A Community Index for Water Data",
+        "loading" : "lazy",
+        "width" : 2553,
+        "height" : 2124,
+        "max_width" : 2000,
+        "max_height" : 1663.924794359577
+      },
+      "title" : "Geoconnex: A Community Index for Water Data",
+      "content" : "A detailed presentation from Kyle Onda on the Internet of Water’s flagship technology, Geoconnex. When completed, this geospatial index will be capable of searching and retrieving any water metadata published in the United States, and ultimately North America and beyond. Geoconnex relies on a distributed linked data system. Such systems are foundational elements of internet search technology, allowing for the retrieval of millions of records in an instant. This webinar provides visualizations of Geoconnex (e.g., what does it do, how does it work), including graphics of the current contents and anticipated growth in scope and scale.",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : true,
+          "no_follow" : false
+        }
+      }
+    }
+  }, {
+    "select_content_type" : "blog",
+    "post_by_title" : 185968683574,
+    "cards" : {
+      "background_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/usgs-JiuVoQd-ZLk-unsplash-scaled-e1647873732490.jpg",
+        "alt" : "Geoconnex: A Community Index for Water Data",
+        "loading" : "lazy",
+        "width" : 2553,
+        "height" : 2124,
+        "max_width" : 2000,
+        "max_height" : 1663.924794359577
+      },
+      "title" : "Geoconnex: A Community Index for Water Data",
+      "content" : "A detailed presentation from Kyle Onda on the Internet of Water’s flagship technology, Geoconnex. When completed, this geospatial index will be capable of searching and retrieving any water metadata published in the United States, and ultimately North America and beyond. Geoconnex relies on a distributed linked data system. Such systems are foundational elements of internet search technology, allowing for the retrieval of millions of records in an instant. This webinar provides visualizations of Geoconnex (e.g., what does it do, how does it work), including graphics of the current contents and anticipated growth in scope and scale.",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : true,
+          "no_follow" : false
+        }
+      }
+    }
+  }, {
+    "select_content_type" : "blog",
+    "post_by_title" : 185968683574,
+    "cards" : {
+      "background_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/usgs-JiuVoQd-ZLk-unsplash-scaled-e1647873732490.jpg",
+        "alt" : "Geoconnex: A Community Index for Water Data",
+        "loading" : "lazy",
+        "width" : 2553,
+        "height" : 2124,
+        "max_width" : 2000,
+        "max_height" : 1663.924794359577
+      },
+      "title" : "Geoconnex: A Community Index for Water Data",
+      "content" : "A detailed presentation from Kyle Onda on the Internet of Water’s flagship technology, Geoconnex. When completed, this geospatial index will be capable of searching and retrieving any water metadata published in the United States, and ultimately North America and beyond. Geoconnex relies on a distributed linked data system. Such systems are foundational elements of internet search technology, allowing for the retrieval of millions of records in an instant. This webinar provides visualizations of Geoconnex (e.g., what does it do, how does it work), including graphics of the current contents and anticipated growth in scope and scale.",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : true,
+          "no_follow" : false
+        }
+      }
+    }
+  } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
@@ -616,7 +684,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "top-padding-default"
+    "default" : "top-padding-custom"
   }, {
     "id" : "custom_top_padding",
     "name" : "custom_top_padding",
@@ -635,7 +703,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 100
+    "default" : 20
   }, {
     "id" : "custom_top_padding_mobile",
     "name" : "custom_top_padding_mobile",
@@ -654,7 +722,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 50
+    "default" : 20
   }, {
     "id" : "module_overrides.bottom_padding",
     "name" : "bottom_padding",
@@ -676,7 +744,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "bottom-padding-default"
+    "default" : "bottom-padding-custom"
   }, {
     "id" : "custom_bottom_padding",
     "name" : "custom_bottom_padding",
@@ -695,7 +763,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 100
+    "default" : 40
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
@@ -714,7 +782,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 50
+    "default" : 40
   }, {
     "id" : "3eccf45d-b0dc-4bac-42a0-f923e4405158",
     "name" : "reverse_text",
@@ -894,12 +962,12 @@
     "bottom_margin" : "bottom-margin-none",
     "custom_bottom_margin" : 100,
     "custom_bottom_margin_mobile" : 50,
-    "top_padding" : "top-padding-default",
-    "custom_top_padding" : 100,
-    "custom_top_padding_mobile" : 50,
-    "bottom_padding" : "bottom-padding-default",
-    "custom_bottom_padding" : 100,
-    "custom_bottom_padding_mobile" : 50,
+    "top_padding" : "top-padding-custom",
+    "custom_top_padding" : 20,
+    "custom_top_padding_mobile" : 20,
+    "bottom_padding" : "bottom-padding-custom",
+    "custom_bottom_padding" : 40,
+    "custom_bottom_padding_mobile" : 40,
     "reverse_text" : false,
     "background_settings" : {
       "background_type" : "color",

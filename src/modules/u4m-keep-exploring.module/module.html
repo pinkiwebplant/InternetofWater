@@ -1,4 +1,4 @@
-{% set moduleName = 'u4m-accordion' %}
+{% set moduleName = 'u4m-keep-exploring' %}
 
 {% include "../partials/u4-module-includes.html" %}
 
@@ -9,31 +9,106 @@
 	<div class="contentSec">
 		<div class="sliderItemWrap">
 			<div class="sliderItems">
+				{% for item in module.post_items %}
 				<div class="sliderItem">
-					<div class="et_pb_container clearfix" style="height: 718.281px;">
-						<div class="et_pb_slider_container_inner">
-							<div class="et_pb_slide_description">
-								<h2 class="et_pb_slide_title"><a href="https://internetofwater.org/blog/putting-tribal-community-science-data-to-work-in-state-systems/">Putting Tribal &amp; Community Science Data to Work in State Systems</a></h2>
-								<div class="et_pb_slide_content">
-									<p>
-										In California, as in the rest of the country, Freshwater Harmful Algal Blooms are on the rise.&nbsp; The CA State Water Board has partnered with The Commons and the Nicholas Institute to develop a robust FHAB
-										monitoring and notification system to warn the public about and better track FHABs as they occur.
-									</p>
-								</div>
-								<div class="et_pb_button_wrapper">
-									<a class="et_pb_button et_pb_more_button" href="https://internetofwater.org/blog/putting-tribal-community-science-data-to-work-in-state-systems/" target="_blank">Read the Blog</a>
+					{% if item.select_content_type=="blog"%}
+					{% set item = content_by_id(item.post_by_title) %}
+					<div class="sliderItemin" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #1b335f 100%), url({{ item.featured_image }});">
+						<div class="itemcontainer">
+							<div class="itemslider_container_inner">
+								<div class="itemslide_description animated" data-animation-in="fadeInUp" data-delay-in="0.3">
+									<h2 class="itemslide_title">
+										<a href="{{ item.absolute_url }}">{{ item.name }}</a>
+									</h2>
+									<div class="itemslide_content">
+										{% if item.widgets.listing_summary.body.value %}
+										<p>{{ item.widgets.listing_summary.body.value }}</p>
+										{% else %}
+										<p>{{ item.post_list_content|safe|striptags|truncatehtml(250, '.' , false) }}</p>
+										{% endif %}
+									</div>
+									<div class="itembutton_wrapper">
+										<a href="{{ item.absolute_url }}" class="hs-button">Read the Blog</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					{% elif item.select_content_type=="card"%}
+					<div class="sliderItemin" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #263a5e 100%), url({{ item.cards.background_image.src }});">
+						<div class="itemcontainer">
+							<div class="itemslider_container_inner">
+								<div class="itemslide_description animated" data-animation-in="fadeInUp" data-delay-in="0.3">
+									<h2 class="itemslide_title">
+										{% set href = item.cards.button_group.link.url.href %}
+										{% if item.cards.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
+										{% set href = "mailto:" + href %}
+										{% endif %}
+										<a
+											 {% if item.cards.button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
+											 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+											 {% else %}
+											 href="{{ href|escape_url }}"
+											 {% endif %}
+											 {% if item.cards.button_group.link.open_in_new_tab %}
+											 target="_blank"
+											 {% endif %}
+											 {% if item.cards.button_group.link.rel %}
+											 rel="{{ item.cards.button_group.link.rel|escape_attr }}"
+											 {% endif %}
+											 >{{ item.cards.title }}</a></h2>
+									<div class="itemslide_content">
+										<p>{{ item.cards.content }}</p>
+									</div>
+									<div class="itembutton_wrapper">
+										{{macros.singlebuttonGroup(item.cards.button_group, false)}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
 				</div>
+				{% endfor %}
 			</div>
-			<div class="slider-arrows">
-				<a class="arrow-prev" href="#"><span>Previous</span></a>
-				<a class="arrow-next" href="#"><span>Next</span></a>
-			</div>
-			<div class="controllers"></div>
 		</div>
 	</div>
 </div>
 </section>
+{% require_js %}
+<script>
+	$('.{{ name }} .sliderItems').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		dots: true,
+		autoplay: false,
+		fade: true,
+// 		adaptiveHeight: true,
+		prevArrow:'<div class="cmarrow arrow-prev"><span>Previous</span></div>',
+		nextArrow:'<div class="cmarrow arrow-next"><span>Next</span></div>'
+		}).slickAnimation();;
+
+	$('.slick-nav').on('click touch', function(e) {
+
+		e.preventDefault();
+
+		let arrow = $(this);
+
+		if(!arrow.hasClass('animate')) {
+			arrow.addClass('animate');
+			setTimeout(() => {
+				arrow.removeClass('animate');
+			}, 1600);
+		}
+
+	});
+</script>
+{% end_require_js %}
+
+
+
+
+
+

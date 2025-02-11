@@ -22,19 +22,21 @@ isAvailableForNewContent: false
 
 	</head>
 	<body class="{{ builtin_body_classes }} {% if request.full_url is string_containing "/author/" %} author-listing {% endif %}">
-		{% block header %}
-		{% global_partial path='././partials/u4m-header.html' %}
-		{% endblock header %}
+		<div class="body_wrapper">
+			{% block header %}
+			{% global_partial path='././partials/u4m-header.html' %}
+			{% endblock header %}
 
-		{% block body %}
-		{% endblock body %}
+			{% block body %}
+			{% endblock body %}
 
-		{% block footer %}
-		{% global_partial path='././partials/u4m-footer.html' %}
-		{% endblock footer %}
-		{{ require_js(get_asset_url('../js/jquery.js')) }} 
-		{{ require_js(get_asset_url('../js/aos.js')) }} 
-		{{ require_js(get_asset_url('../js/main.js')) }} 
-		{{ standard_footer_includes }}
+			{% block footer %}
+			{% global_partial path='././partials/u4m-footer.html' %}
+			{% endblock footer %}
+			{{ require_js(get_asset_url('../js/jquery.js')) }} 
+			{{ require_js(get_asset_url('../js/aos.js')) }} 
+			{{ require_js(get_asset_url('../js/main.js')) }} 
+			{{ standard_footer_includes }}
+		</div>
 	</body>
 </html>

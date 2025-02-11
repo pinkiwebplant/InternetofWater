@@ -9,7 +9,6 @@ label: Header
 				<span class="logo_helper"></span>
 			{% set logo_file =  get_asset_url('../..//templates/images/internet-of-water-coalition-logo.png') %}
       {% module "header_logo" path="@hubspot/logo", label="Header Logo", link='/', img={src="{{logo_file}}", width=173, alt= Internet of Water, override_inherited_src= true} %}
-       
       </div>
       <div id="et-top-navigation">
          <nav id="top-menu-nav">
@@ -30,7 +29,7 @@ label: Header
    </div>
    <div class="et_search_outer">
       <div class="page-center et_search_form_container">
-         {% module "header_search" path="@hubspot/search_input" placeholder="Search …",include_search_button="true" %}
+         {% module "header_search" path="@hubspot/search_input" label='Header Site Search ' placeholder="Search …",include_search_button="true" %}
       </div>
    </div>
 </header>

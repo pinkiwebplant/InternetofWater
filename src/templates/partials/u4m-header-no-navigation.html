@@ -1,0 +1,15 @@
+<!--
+templateType: global_partial
+label: Header no navigation 
+-->
+<div class="header_wrapper lp-hdr">
+	<header id="main-header">
+   <div class="page-center et_menu_container">
+      <div class="logo_container">
+				<span class="logo_helper"></span>
+			{% set logo_file =  get_asset_url('../..//templates/images/internet-of-water-coalition-logo.png') %}
+      {% module "header_logo" path="@hubspot/logo", label="Header Logo", link='/', img={src="{{logo_file}}", width=173, alt= Internet of Water, override_inherited_src= true} %}
+      </div>
+   </div>
+</header>
+</div>
