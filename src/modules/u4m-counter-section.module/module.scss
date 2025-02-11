@@ -1,0 +1,82 @@
+@import "../../css/_module-imports";
+
+$color_1: #55677f;
+
+.cmCounterSection {
+    .counter-section {
+        position: relative;
+
+
+        .counter_section_inner {
+
+
+            .counter_item {
+                .title_wrapper {
+                    .number_wrapper {
+                        p {
+                            display: flex;
+                            justify-content: center;
+                            font-size: 62rem;
+                            color: $slateBlue;
+                            line-height: 1.16129032258;
+                            font-weight: 500;
+                            margin: 0;
+                        }
+
+
+                        margin-bottom: 20px;
+                        min-height: 72px;
+                        position: relative;
+                    }
+
+                    .title {
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        line-height: 1.6em;
+                        padding-top: 10px;
+                        margin-bottom: 0;
+                        padding-bottom: 10px;
+                    }
+                }
+
+                .counter_summary {
+                    p {
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    line-height: 2em;
+                    font-size: 14rem;
+                    color: $darkGray;
+                }
+
+                text-align: center;
+            }
+        }
+    }
+}
+
+.cmCounterSection {
+    &.reverse-text {
+        .counter-section {
+            .counter_section_inner {
+                .counter_item {
+                    .counter_summary {
+                        p {
+                            color: $white;
+                        }
+                    }
+
+                    .title_wrapper {
+                        .number_wrapper {
+                            p {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
