@@ -1,0 +1,89 @@
+{% set moduleName = 'u4m-content-with-blog-card' %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	<div class="flex_row">
+		<div class="col7 content_group col">
+			{{macros.introGroup(module.intro_content, module.module_settings)}}
+		</div>
+
+		<div class="blogGroup col5 col">
+			{% if module.blog_card.select_post_type == "recent" %}
+			{% set max_posts = 1 %}
+			{% set rec_posts = [] %}
+			{% set rec_posts = rec_posts + blog_recent_posts(module.blog_card.select_blog, max_posts) %}
+			{% set i = 0 %}
+			{% for post in rec_posts %}
+			{% if content.absolute_url != post.absolute_url and i < max_posts %}
+			<div class="blog_card_wrap">
+				<div class="blog_card_inner">
+					<div class="bl_post_img" style="background-image: url(	{{post.post_list_summary_featured_image}})">
+						<a href="{{postURL}}" class="overlay_link"></a>
+					</div>
+					<div class="bl_post_body">
+						<div class="bl_title">
+							<a href="{{postURL}}" class="overlay_link">{{post.name}}</a>
+						</div>
+						<div class="bl_date">
+							{{ post.publish_date_local_time|datetimeformat('%b %d, %Y') }} 
+						</div>
+						<div class="bl_content">
+							{{ post.post_list_content|striptags|truncatehtml(100, '' , false)|safe }}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% set i = i + 1 %}          
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+			{% if module.blog_card.select_post_type == "bytitle" %}
+			{% set post = content_by_id(module.blog_card.post.select_post) %}
+			{% set postURL = post.absolute_url %}
+			<div class="blog_card_wrap ">
+				<div class="blog_card_inner">
+					<div class="bl_post_img" style="background-image: url(	{{post.post_list_summary_featured_image}})">
+						<a href="{{postURL}}" class="overlay_link"></a>
+					</div>
+					<div class="bl_post_body">
+						<div class="bl_title">
+							<a href="{{postURL}}" class="overlay_link">{{post.name}}</a>
+						</div>
+						<div class="bl_date">
+							{{ post.publish_date_local_time|datetimeformat('%b %d, %Y') }} 
+						</div>
+						<div class="bl_content">
+							{{ post.post_list_content|striptags|truncatehtml(100, '' , false)|safe }}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if module.blog_card.include_button %}
+			<div class="blog_btn_wrap">
+				{{macros.buttonGroup(module.blog_card.button_group, false)}}
+			</div>
+			{% endif %}
+
+		</div>
+
+	</div>
+
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+{% if module.blog_card.include_button %}
+{{macros.buttonGroup(module.blog_card.button_group, true)}}
+{% endif %}

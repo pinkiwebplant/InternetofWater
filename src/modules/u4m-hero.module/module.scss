@@ -1,148 +1,145 @@
 @import "../../css/_module-imports";
 section.u4m-hero {
-  margin-bottom: 100rem;
-  background-size: cover;
-  background-position: 50% 50%;
-  padding: 100px 0;
-  &.reverse-text {
-    .content-wrap {
-      color: $white;
+  position: relative;
+
+  &:has(.buttonAdded) {
+    padding-bottom: 0;
+
+    .page-center {
+      margin-bottom: 50px;
     }
   }
-  .inner {
-    .content-wrap {
-      @include center;
-      padding: 20rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      .image {
-        flex: 0 0 0;
-        body.hs-landing-page & {
-          flex: 0 0 0;
+
+  &.full_height {
+    display: flex;
+    align-items: center;
+    min-height: 480px;
+    height: calc(100vh - 120px);
+    flex-direction: column;
+  }
+
+  h1.intro_title {
+    font-size: 5.7vw;
+    line-height: 1.4em;
+    text-shadow: 0em 0em 0.8em rgba(0, 17, 51, 0.55);
+
+    @include tabletvert {
+      font-size: 48rem;
+    }
+  }
+  h2.intro_title {
+    font-size: 5.2vw;
+    line-height: 1.4em;
+    text-shadow: 0em 0em 0.8em rgba(0, 17, 51, 0.55);
+    @include tabletvert {
+      font-size: 40rem;
+    }
+  }
+
+  .intro_content {
+    max-width: 100%;
+    width: 80%;
+    .intro_btn_wrap {
+      display: none;
+    }
+
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+  }
+
+  .btn_bottom_wrap {
+    min-height: 83px;
+    position: static;
+    width: 100%;
+    margin-top: auto;
+
+    .intro_btn_wrap {
+      bottom: 0;
+      justify-content: flex-end;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 4;
+      flex-wrap: nowrap;
+      gap: 0;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+
+      @include tabletMid {
+        position: static;
+        flex-direction: column-reverse;
+      }
+
+      a {
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 2px;
+        padding: 30px 20px;
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        transition:
+          margin 300ms ease 0ms,
+          padding 300ms ease 0ms,
+          border-radius 300ms ease;
+        &:hover {
+          padding: 35px 20px !important;
         }
       }
-      .copy {
-        flex: 0 0 80%;
-        text-align: center;
-        padding: 55rem 0 30rem 0;
-        padding-left: 100px;
-        body.hs-landing-page & {
-          flex: 0 0 100%;
+
+      .btn_item {
+        width: 33.33%;
+
+        @include tabletMid {
+          width: 100%;
         }
-        .eyebrow {
-          @include eyebrow;
+
+        &:last-child > a {
+          border-radius: 10px 0 0 0;
         }
-        .heading {
-          @include h1;
-          &.small {
-            @include h2;
-            @include tablet {
-              @include h3;
-            }
-          }
-          @include tablet {
-            @include h2;
-          }
+
+        &:last-child:hover > a {
+          border-radius: 10px 10px 0 0;
         }
-        .subtext {
-          @include b2;
-        }
-        a {
-          @include button;
-        }
-        .cta {}
-        svg {
-          max-width: 100rem;
-          cursor: pointer;
-          circle {
-            transition: $animation1;
-          }
-          &:hover {
-            circle {
-              fill: $gray3;
-            }
-          }
-        }
-        @include tabletvert {
-          padding-right: 0;
-          padding-left: 0;
-          padding: 20rem 0 0 0;
+
+        &:nth-child(2):not(:last-of-type):hover > a,
+        &:nth-child(1):not(:last-of-type):hover > a {
+          border-radius: 10px 10px 0 0;
         }
       }
-      &.has-image {
-        .image {
-          flex: 0 0 40%;
-          body.hs-landing-page & {
-            flex: 0 0 40%;
-          }
-          @include phone {
-            padding: 0;
-          }
-        }
-        .copy {
-          flex: 0 0 60%;
-          text-align: left;
-          body.hs-landing-page & {
-            flex: 0 0 60%;
-          }
-          @include tabletvert {
-            padding-right: 0;
-            padding-left: 0;
-            padding: 20rem 0 0 0;
-          }
+
+      a.hs-button {
+        background-color: $slateBlue;
+        color: $white;
+        box-shadow: 0px 12px 100px -6px rgba(85, 103, 127, 0.6);
+
+        :hover {
+          padding: 35px 20px;
         }
       }
-      &.has-video {
-        .video {
-          flex: 0 0 40%;
-          body.hs-landing-page & {
-            flex: 0 0 40%;
-          }
-          @include tabletvert {
-            padding: 0;
-            width: 100%;
-          }
-        }
-        .copy {
-          flex: 0 0 60%;
-          text-align: left;
-          body.hs-landing-page & {
-            flex: 0 0 60%;
-          }
-          @include tabletvert {
-            padding-right: 0;
-            padding-left: 0;
-            padding: 20rem 0 0 0;
-          }
+
+      a.hs-sec-btn {
+        background-color: $cadetGray;
+        color: $white;
+        box-shadow: 0px 12px 100px -6px rgba(85, 103, 127, 0.6);
+
+        :hover {
+          padding: 35px 20px;
         }
       }
-      &.text-left {
-        flex-direction: row-reverse;
-        .copy {
-          flex: 0 0 60%;
-          text-align: left;
-          margin-right: auto;
-          padding-right: 100px;
-          padding-left: 0;
-          @include tabletvert {
-            padding-right: 0;
-            padding-left: 0;
-            padding: 20rem 0 0 0;
-          }
+
+      a.hs-ter-btn {
+        background-color: $sunsetOrange;
+        color: $azure;
+        box-shadow: 0px 12px 100px -6px rgba(255, 186, 90, 0.6);
+
+        :hover {
+          padding: 35px 20px;
         }
-        @include tabletvert {
-          flex-direction: column;
-        }
-      }
-      &.has-none {
-        .copy {
-          padding-left: 0;
-        }
-      }
-      @include tabletvert {
-        flex-direction: column;
       }
     }
   }

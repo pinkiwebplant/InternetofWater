@@ -15,7 +15,6 @@
   }
 
   div.legal-consent-container {
-
     p,
     .hs-form-booleancheckbox label {
       @include b6;
@@ -34,7 +33,7 @@
       margin: 0;
 
       ul.hs-error-msgs {
-        animation: fadeIn2 .5s ease;
+        animation: fadeIn2 0.5s ease;
         margin-bottom: 20rem;
 
         li {
@@ -49,7 +48,7 @@
     }
 
     .hs-form-field {
-      >label {
+      > label {
         font-weight: 400;
         font-family: $font2;
         display: block;
@@ -60,12 +59,11 @@
     }
 
     .input {
-
       input[type="text"],
       input[type="number"],
       input[type="tel"],
       input[type="email"],
-      input[type="file"]  {
+      input[type="file"] {
         border: 1px solid $lightShade;
         @include b3;
         border-radius: 4rem;
@@ -98,6 +96,16 @@
         width: auto;
       }
 
+      .hs_hs_lead_status.hs-fieldtype-radio.field label {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+      .hs_hs_lead_status.hs-fieldtype-radio.field label input {
+        margin: 0;
+        margin: 3px 3px 0 5px;
+      }
+
       input select {
         border: 0;
         border-radius: 4rem;
@@ -123,7 +131,7 @@
         margin: 0 0 3%;
       }
 
-      &+.hs-error-msgs {
+      & + .hs-error-msgs {
         li {
           position: relative;
           text-align: left;
@@ -261,7 +269,6 @@
     .form-columns-1,
     .form-columns-2,
     .form-columns-3 {
-
       .input,
       select {
         margin-right: 0;
@@ -273,15 +280,15 @@
         @include phone {
           margin-right: 8rem;
 
-          .hs-input:not([type=checkbox]):not([type=radio]) {
-            width: 100%
+          .hs-input:not([type="checkbox"]):not([type="radio"]) {
+            width: 100%;
           }
         }
       }
     }
 
     .form-columns-2 {
-      &>div {
+      & > div {
         width: calc(50% - 10rem);
 
         &:last-of-type {

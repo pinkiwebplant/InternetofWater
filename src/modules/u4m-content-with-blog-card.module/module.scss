@@ -1,0 +1,71 @@
+@import "../../css/_module-imports";
+
+.u4m-content-with-blog-card {
+  .blog_card_wrap {
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    box-shadow: $shadow2;
+  }
+
+  .intro_content {
+    padding: 0;
+    padding-top: 40rem;
+  }
+
+  .flex_row {
+    margin: 0 -15px;
+    @include tabletvert {
+      margin: auto;
+    }
+  }
+
+  .bl_post_img {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+    background-size: cover;
+    background-position: center;
+    height: 120px;
+    @include tabletvert {
+      margin-bottom: 20px;
+    }
+  }
+
+  .blog_btn_wrap {
+    margin-top: 20px;
+  }
+
+  .bl_title {
+    @include h4;
+    padding: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .bl_date {
+    @include b4;
+    font-weight: 600;
+    color: rgba($slateBlue, 0.5);
+    line-height: 2em;
+    margin-bottom: 6px;
+  }
+
+  .bl_content {
+    @include b4;
+    line-height: 2em;
+  }
+
+  .bl_post_img a.overlay_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

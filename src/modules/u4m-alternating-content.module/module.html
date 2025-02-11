@@ -17,10 +17,15 @@
 {% set imgcolWidth = "col5 col"%}
 {% endif %}
 
+{% if module.module_settings.column_width_ratio == "full_width" %}
+{% set contcolWidth = "col12 col"%}
+{% set imgcolWidth = "col12 col"%}
+{% endif %}
 
 
 
-<div class="page-center {% if module.module_settings.remove_intro_content_group %} remove_intro_content_group{% endif %}{% if module.module_settings.remove_content_group %} remove_content_group{% endif %}{% if module.module_settings.remove_media_group %} remove_media_group{% endif %} imgAl_{{ module.module_settings.image_column_alignment }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+<div class="page-center {{module.module_settings.column_width_ratio}}_col {% if module.module_settings.remove_intro_content_group %} remove_intro_content_group{% endif %}{% if module.module_settings.remove_content_group %} remove_content_group{% endif %}{% if module.module_settings.remove_media_group %} remove_media_group{% endif %} imgAl_{{ module.module_settings.image_column_alignment }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
 
 	{% if module.module_settings.remove_intro_content_group == false %}
@@ -33,7 +38,7 @@
 
 		<div class="flex_row">
 			{% if module.module_settings.remove_content_group == false %}
-			<div class="content_col verAl_{{ module.module_settings.content_vertical_alignment }} {{contcolWidth}}">
+			<div class="content_col text_{{ module.module_settings.content_group_alignment }} verAl_{{ module.module_settings.content_vertical_alignment }} {{contcolWidth}}">
 				<div class="content_col_inner">
 					{{macros.introGroup(module.content_group)}}
 				</div>
@@ -70,7 +75,14 @@
 							</a>
 							{% endif %}
 							{% endif %}
+
+							{% if module.media_column.enable_parallax %}
+							<div class="simpleParallax_wrap">
+								<img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
+							</div>
+							{% else %}
 							<img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
+							{% endif %}
 						</div>
 						{% endif %}
 
@@ -152,3 +164,19 @@
 </style>
 {% end_require_css %}
 
+
+
+{% if module.module_settings.remove_media_group == false %}
+{% if module.media_column.select_media_type == "image" %}
+{% if module.media_column.enable_parallax %}
+
+
+{% require_js %}
+<script>
+	var images = document.querySelectorAll('.{{name}} .simpleParallax_wrap img');
+																				 new simpleParallax(images);
+</script>
+{% end_require_js %}
+{% endif %}
+{% endif %}
+{% endif %}

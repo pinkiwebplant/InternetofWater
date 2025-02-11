@@ -18,13 +18,20 @@ html {
 //
 
 :root {
-  --gradient1: linear-gradient(180deg, rgba($black, 0) 0%, $azure 100%);
-  --gradient2: linear-gradient(180deg, rgba($black, 0) 0%, $darkblue 100%);
+  --gradient1: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0b3160 100%);
+  --gradient2: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%);
+  --gradient3: linear-gradient(
+    180deg,
+    rgba(#0b3160, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  --gradient4: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #151f33 100%);
 }
 
 @font-face {
   font-family: "ETmodules";
-  src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
+  src:
+    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
       format("embedded-opentype"),
     url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
     url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
@@ -827,4 +834,120 @@ section[class*="u4m-"] {
   display: flex;
   flex-wrap: wrap;
   row-gap: 30rem;
+}
+
+.gradient1 {
+  background-image: $gradient1;
+}
+.gradient2 {
+  background-image: $gradient2;
+}
+.gradient3 {
+  background-image: $gradient3;
+}
+.gradient4 {
+  background-image: $gradient4;
+}
+
+//
+
+.popup_content_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  display: none;
+  pointer-events: none;
+
+  &.activeModal {
+    display: flex;
+    pointer-events: all;
+  }
+
+  .popup_content_modal_container {
+    min-width: 320px;
+    padding: 20px 10px;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 90%;
+    margin: auto;
+    background: $white;
+    position: relative;
+    z-index: 5;
+  }
+
+  .modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: rgba($black, 0.55);
+    backdrop-filter: saturate(180%) blur(5px);
+    -webkit-backdrop-filter: saturate(180%) blur(5px);
+  }
+
+  span.close_content_modal {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    display: block;
+    font-family:
+      Courier New,
+      monospace;
+    font-size: 20px;
+    font-weight: 700;
+    height: 30px;
+    line-height: 30px;
+    opacity: 0.7;
+    pointer-events: all;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 30px;
+    background: #fff2;
+    -webkit-box-shadow: 0 0 3px 1px #00000008;
+    box-shadow: 0 0 3px 1px #00000008;
+    color: #333;
+  }
+
+  span.close_content_modal:after {
+    content: "×";
+  }
+
+  span.close_content_modal:hover {
+    background: #fff;
+    -webkit-box-shadow:
+      0 0 4px 0 #0002,
+      0 0 3px 1px #0001;
+    box-shadow:
+      0 0 4px 0 #0002,
+      0 0 3px 1px #0001;
+    color: $black;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .popup_content_modal_inner_container {
+    max-width: 1080px;
+    width: 80%;
+    margin: 30px auto;
+
+    @include tabletvert {
+      width: 90%;
+    }
+  }
+}
+
+main form {
+  @include form;
 }

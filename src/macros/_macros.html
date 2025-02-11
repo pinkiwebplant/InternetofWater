@@ -55,6 +55,9 @@
 
 {% if item.button_type == "popup_content" and item.popup_content %}
 <div class="popup_content_modal" data-modal-id="modal{{loop.index}}{{name}}">
+	<div class="modal_overlay">
+		
+	</div>
 	<div class="popup_content_modal_container">
 		<span class="close_content_modal"></span>
 		<div class="popup_content_modal_inner_container">
@@ -80,6 +83,9 @@
 {% if items %}
 {% for item in items %}
 <div class="popup_content_modal" data-modal-id="modal{{loop.index}}{{name}}">
+		<div class="modal_overlay">
+		
+	</div>
 	<div class="popup_content_modal_container">
 		<span class="close_content_modal"></span>
 		<div class="popup_content_modal_inner_container">
@@ -147,6 +153,9 @@
 
 {% if item.button_type == "popup_content" and item.popup_content %}
 <div class="popup_content_modal" data-modal-id="modal{{loop.index}}{{name}}">
+		<div class="modal_overlay">
+		
+	</div>
 	<div class="popup_content_modal_container">
 		<span class="close_content_modal"></span>
 		<div class="popup_content_modal_inner_container">
@@ -173,11 +182,11 @@
 
 {# #}
 
-{% macro introGroup(group, settings)%}
+{% macro introGroup(group, settings, overrides)%}
 {% if group.include_eyebrow_text or group.include_heading or group.include_content or  group.include_button%}
-<div class="intro_content {{settings.intro_content_alignment}}">
+<div class="intro_content {% if settings %}{{settings.intro_content_alignment}}{% endif %}">
 
-	<div class="intro__inner">
+	<div class="intro__inner ">
 		{% if group.include_eyebrow_text and group.include_top_border == false %}
 		<div class="eyebrow_text">
 			{{ group.eyebrow_text }}
@@ -197,7 +206,7 @@
 			{% endif %}
 
 			{% if group.include_content %}
-			<div class="intro_desc {{ group.content_style }}">
+			<div class="intro_desc {{ group.content_style }} {{settings.select_content_bg_color}}">
 		{{ group.content }}
 	</div>
 	{% endif %}

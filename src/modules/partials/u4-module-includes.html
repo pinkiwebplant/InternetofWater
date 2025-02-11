@@ -67,13 +67,29 @@ require_css (get_asset_url('../../css/styles.css')) }} {% endif %}
 			{% if  module.module_overrides.background_settings.select_gradient  %} 
 				{% if  module.module_overrides.background_settings.select_gradient == "gradient1" %}
 				.{{ moduleName}}.{{ name }} .bg_image.gradient1{
-					background-image: linear-gradient(180deg,rgba(0,0,0,0) 0%,#0b3160 100%), url({{ module.module_overrides.background_settings.background_image.src }});
+/* 					background-image: linear-gradient(180deg,rgba(0,0,0,0) 0%,#0b3160 100%), url({{ module.module_overrides.background_settings.background_image.src }}); */
+										background-image: var(--gradient1), url({{ module.module_overrides.background_settings.background_image.src }});
 				}
 				{% endif %}
 
 				{% if  module.module_overrides.background_settings.select_gradient == "gradient2" %}
 				.{{ moduleName}}.{{ name }} .bg_image.gradient2{
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%), url({{ module.module_overrides.background_settings.background_image.src }});
+{# 					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%), url({{ module.module_overrides.background_settings.background_image.src }}); #}
+										background-image: var(--gradient2), url({{ module.module_overrides.background_settings.background_image.src }});
+				}
+				{% endif %}
+		
+				{% if  module.module_overrides.background_settings.select_gradient == "gradient3" %}
+				.{{ moduleName}}.{{ name }} .bg_image.gradient3{
+{# 					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%), url({{ module.module_overrides.background_settings.background_image.src }}); #}
+										background-image: var(--gradient3), url({{ module.module_overrides.background_settings.background_image.src }});
+				}
+				{% endif %}
+		
+				{% if  module.module_overrides.background_settings.select_gradient == "gradient4" %}
+				.{{ moduleName}}.{{ name }} .bg_image.gradient4{
+{# 					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%), url({{ module.module_overrides.background_settings.background_image.src }}); #}
+										background-image: var(--gradient4), url({{ module.module_overrides.background_settings.background_image.src }});
 				}
 				{% endif %}
 
