@@ -1,0 +1,235 @@
+{% set moduleName = 'u4m-library-filter' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{% set table =  module.hubdbtable_field  %}
+{% set query = ""%}
+
+{% set batch_num = 10 %}
+
+{% if not request.query_dict.page_num %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+{% elif request.query_dict.page_num %}
+{% set page_num = request.query_dict.page_num %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+
+
+{% set limit = "&limit=" ~ batch_num ~ "&offset=" ~ offset_num %}
+
+
+{% set query =  "orderBy=hs_created_at" %}
+
+
+
+{% if request.query_dict.type %}
+{% set query = query ~ '&type__in=' ~ request.query_dict.type|urlencode %}
+{% endif %}
+
+{% if request.query_dict.tag %}
+{% set query = query  ~ '&tag__in=' ~ request.query_dict.tag|urlencode %}
+{% endif %}
+
+
+{% if request.query_dict.search %}
+{% set query = query  ~ '&name__icontains=' ~ request.query_dict.search|urlencode %}
+{% endif %}
+
+
+{% set resouces = hubdb_table_rows(table,query ~ limit) %}
+{% set rowType = [] %}
+{% set rowTagsType = [] %}
+{% set rowTypeType = [] %}
+
+
+{#  <p> request.query_dict.topic -  {{request.query_dict.topic|urlencode}}</p> #}
+
+{% set query2 = "orderBy=hs_created_at" %}
+
+{% set ft_resouces = hubdb_table_rows(table,query~"&limit=1000") %}
+
+{% for tableData in ft_resouces %}
+{% if tableData.type.name == request.query_dict.type %} 
+
+{% for tag in tableData.tag %}
+{% do rowTagsType.append(tag.name) %}
+{% endfor %}
+
+{% for type in tableData.type %}
+{% do rowTypeType.append(type.name) %}
+{% endfor %}
+
+{% else %}
+
+{% for tag in tableData.tag %}
+{% do rowTagsType.append(tag.name) %}
+{% endfor %}
+{% for type in tableData.type %}
+{% do rowTypeType.append(type.name) %}
+{% endfor %}
+
+{% endif %}
+{% endfor %}
+
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	{{macros.introGroup(module.intro_content, module.module_settings)}}
+	<div class="filter_inr"> 
+		<div class="main-listing {{ module.filtered_content.select_bg_color }}">
+			<div class='site-search-wrap'>
+				<div class='page-center updated'>
+
+					<div class=" SearchBtn search-col">
+						<div class="srchSection">
+							<label class="wpv-custom-search-filter__label" for="title">Search</label>
+							<input type="text" value="" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" name="search" placeholder="" class="resourceInput">
+							<!-- <div class="Searchbtn">
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.29922C0 2.82065 2.82065 0 6.29923 0C9.7778 0 12.5985 2.82065 12.5985 6.29922C12.5985 7.78304 12.0805 9.15487 11.2196 10.2327L13.7953 12.8084C14.0682 13.0814 14.0682 13.5223 13.7953 13.7953C13.5223 14.0683 13.0814 14.0683 12.8084 13.7953L10.2327 11.2196C9.15487 12.0805 7.79004 12.5984 6.29923 12.5984C2.82065 12.5984 0 9.7778 0 6.29922ZM6.29923 1.39983C3.59056 1.39983 1.39983 3.59056 1.39983 6.29922C1.39983 9.00789 3.59056 11.1986 6.29923 11.1986C7.65006 11.1986 8.87487 10.6527 9.76377 9.76381C10.6527 8.87492 11.1986 7.65006 11.1986 6.29922C11.1986 3.59056 9.00789 1.39983 6.29923 1.39983Z" fill="#00161D"></path>
+								</svg></div> -->
+						</div>
+					</div> 
+ 
+					<div class=" selctArrow tag-col">   
+						<div class="filter_label type_filter_label" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
+							Categories
+						</div>
+						<div class="filter_dropdown tagSelect resourceSelect type_filter" data-value="">
+							{% for tag in rowTagsType|unique  %}
+							<div>
+								<label for="tag{{loop.index}}">
+									<input type="checkbox" class="tagInput" data-tag="{{ tag|urlencode }}" id="tag{{loop.index}}" name="tag" label="{{ tag }}" value="{{ tag|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing tag|urlencode %}checked{% endif %} />
+									<span class="tag_name">{{ tag }}</span>
+								</label>
+							</div>
+							{% endfor %}
+						</div>
+					</div>   
+
+
+					<div class=" selctArrow tag-col">   
+						<div class="filter_label topic_filter_label" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
+							Library Item Types
+						</div>
+						<div class="filter_dropdown typeSelect resourceSelect topic_filter" data-value="">
+
+							{% for type in rowTypeType|unique  %}
+							<div>
+								<label for="type{{loop.index}}">
+									
+									<input type="checkbox" class="typeInput" data-type="{{ type|urlencode }}" id="type{{loop.index}}" name="type" label="{{ type }}" value="{{ type|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing type|urlencode %}checked{% endif %} />
+									<span class="tag_name">{{ type }}</span>
+								</label>
+							</div>
+							{% endfor %}
+						</div>
+					</div>  
+
+				</div>
+			</div>
+			<div class='listing-wrap'>
+				<div class='page-center cardSctn'>
+					<div class='flex-row resourceList'>
+						{% set resouceCount = resouces|length%}
+						{% for row in resouces %}
+						<div class='resourceCard post-item {{ row.type.name|lower|replace(' ','-') }} {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-') }} {% endfor %}'>
+							<div class='post-item-inner  {% if not row.image.url %}noImage{% endif %}'>
+								 
+
+								<div class="post-content">
+									<h5 class="restitle">
+										<a href="{{ row.page_url }}">{{ row.name }}</a>
+									</h5>
+									<div class="tagwrap">
+										{% if row.type.name %}
+								<div class='featured-tag tag_{{ row.type.name|lower|replace(' ','-') }}'><strong>Type: </strong> {{ row.type.name }}</div>
+								{% endif %}
+									
+									<div class='post-item-topic'><strong>Categories: </strong>
+										{% for tag in row.tag %}{{ tag.name|lower|replace(' ','-')|replace('-',' ') }}{% if not loop.last%}, {% endif %}{% endfor %}
+									</div>
+								</div>
+								 <div class="cnt">
+									 {{ row.content }}
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+
+
+						{% if resouceCount == 0%}
+						<div class="blank_contentWrap">
+							<h4>
+								Nothing found, Try another combination.
+							</h4>
+						</div>
+						{% endif %}
+
+					</div>
+				</div>
+
+				<div class="pagi_wranation" >
+
+					{% set nav = hubdb_table_rows(table, query) %}
+					{% set total_pages = (nav|length/batch_num)|round(0, 'ceil') %} 
+					{% set more_pages = nav|length % batch_num %}
+
+					<nav  id="pagination{{ name|replace('widget_','')|replace('module_','') }}" class="hbdb_dsp_table_pagination pagination" data-total="{{total_pages}}" data-page="{{page_num}}">
+						<div class="nav-links">
+
+
+							{% if page_num > 1 %}
+							<a class="prev page-numbers" href="{{ content.absolute_url }}?topic={{request.query_dict.topic|urlencode}}&type={{request.query_dict.type|urlencode}}&page_num={{ page_num|add(-1) }}" data-page-num="{{ page_num|add(-1) }}">
+								Previous
+							</a>
+							{% endif %}
+
+
+							{% set page_list = [-2, -1, 0, 1, 2] %}
+							{% if total_pages - page_num == 1 %}{% set offset = -1 %}
+							{% elif total_pages - page_num == 0 %}{% set offset = -2 %}
+							{% elif page_num == 2 %}{% set offset = 1 %}
+							{% elif page_num == 1 %}{% set offset = 2 %}
+							{% else %}{% set offset = 0 %}{% endif %}
+
+
+							{% for page in page_list %}
+							{% set this_page = page_num|add(page)|add(offset) %}
+							{% if this_page > 0 and this_page <= total_pages %}
+							<a {% if this_page == page_num %}class="active"{% endif %} href="{{ content.absolute_url }}?topic={{request.query_dict.topic|urlencode}}&type={{request.query_dict.type|urlencode}}&page_num={{ this_page }}">{{ this_page }}</a>
+							{% endif %}
+							{% endfor %}
+
+
+
+							{% if total_pages > page_num %}
+							<a class="next page-numbers {% if page_num >= total_pages %}hide page_num{% endif %}" href="{{ content.absolute_url }}?topic={{request.query_dict.topic|urlencode}}&type={{request.query_dict.type|urlencode}}&page_num={{ page_num|add(1) }}" data-page-num="{{ page_num|add(1) }}">
+								Next
+							</a>
+							{% endif %}
+
+
+
+						</div>
+					</nav>
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
