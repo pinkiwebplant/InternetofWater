@@ -17,18 +17,14 @@ html {
 
 //
 
-
-:root{
-  --gradient1  : $gradient1;
-  --gradient2  : $gradient2;
-  --gradient3  : $gradient3;
+:root {
+  --gradient1: linear-gradient(180deg, rgba($black, 0) 0%, $azure 100%);
+  --gradient2: linear-gradient(180deg, rgba($black, 0) 0%, $darkblue 100%);
 }
-
 
 @font-face {
   font-family: "ETmodules";
-  src:
-    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
+  src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
       format("embedded-opentype"),
     url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
     url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
@@ -649,8 +645,6 @@ section[class*="u4m-"] {
       padding-top: 30px;
       padding-bottom: 30px;
     }
-
-
   }
 }
 

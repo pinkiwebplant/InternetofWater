@@ -1,0 +1,50 @@
+{% set moduleName = 'u4m-scroll-banner' %}
+
+{% include "../partials/u4-module-includes.html" %}
+{% if module.module_overrides.background_settings.background_type == 'image' %}
+<div class="banner_bg bg_overlay bg_image bnrBg simpleParallax_wrap {% if module.module_overrides.background_settings.include_parallax %} notImg{% endif %}" 	{% if not module.module_overrides.background_settings.include_parallax %} style="background-image:url({{ module.module_overrides.background_settings.background_image.src }})"{%  endif %}>
+	{% if module.module_overrides.background_settings.include_parallax %}
+	<img src="{{ module.module_overrides.background_settings.background_image.src }}" alt="{{ module.module_overrides.background_settings.background_image.alt }}">
+	{% endif %}
+</div>
+<div class="bg_overlay {{ module.module_overrides.background_settings.select_gradient }} bnrBg"></div>
+{% if module.module_overrides.background_settings.include_parallax %}
+
+{% require_js %} 
+<script>
+	var images = document.querySelectorAll('.{{name}} .simpleParallax_wrap img');
+																				 new simpleParallax(images);
+</script>
+{% end_require_js %}
+{% endif %}
+{% endif %}
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+	<div class="banner_inr {{ module.module_settings.content_alignment }}">
+		<div class="bnr_cnt">
+			{% if  module.banner_heading %}
+			<h1>{{ module.banner_heading }}</h1>
+			{% endif %}
+			{% if  module.content %}
+			{{ module.content }}
+			{% endif %}
+		</div>
+		<div class="bnr_btn">
+			{{macros.buttonGroup(module.button_group, false)}}
+		</div>
+		<div class="arrowBtn" >
+			<div class="scroll-down-container" id="scrollButton">
+					<span class="scroll-down et-pb-icon">"</span>  
+				</div>
+		</div>
+	</div>
+
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}

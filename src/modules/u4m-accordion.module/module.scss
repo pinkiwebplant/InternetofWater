@@ -1,11 +1,14 @@
 @import "../../css/_module-imports";
 
 .u4m-accordion.dnd_padd {
+  &.reverse-text .accordionInr .accItems .accItem .cntInr {
+    color: $white;
+  }
   .accordionInr {
     .accItems {
       padding: 13px 0;
       .accItem {
-        margin-bottom: 20px;
+        padding-bottom: 20px;
         &.active .accTtl {
           background-color: $lightGray;
           h4:before {
@@ -19,6 +22,9 @@
           color: $azure;
           font-size: 14px;
           line-height: 1.7em;
+          p:last-child {
+            margin-bottom: 0;
+          }
           @include tabletvert {
             padding: 30px 20px 0 25px;
           }
