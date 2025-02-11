@@ -1,24 +1,30 @@
 [ {
   "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
   "name" : "intro_content",
-  "display_width" : null,
   "label" : "Intro Content",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "c5ccdda8-6960-e255-a51f-c61077a633ca",
     "name" : "include_eyebrow_text",
-    "display_width" : null,
     "label" : "Include Eyebrow Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_top_border",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   }, {
     "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
     "name" : "eyebrow_text",
-    "display_width" : null,
     "label" : "Eyebrow Text",
     "required" : false,
     "locked" : false,
@@ -34,21 +40,39 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "Eyebrow Text"
+  }, {
+    "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
+    "name" : "include_top_border",
+    "label" : "Include Top Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_eyebrow_text",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
     "name" : "include_heading",
-    "display_width" : null,
     "label" : "Include Heading",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : true
   }, {
     "id" : "aef5e961-e297-2654-68e0-6128687770bf",
     "name" : "heading_size",
-    "display_width" : null,
     "label" : "Heading Size",
     "required" : false,
     "locked" : false,
@@ -66,11 +90,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "h2"
   }, {
     "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
     "name" : "heading",
-    "display_width" : null,
     "label" : "Heading",
     "required" : false,
     "locked" : false,
@@ -86,21 +110,61 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Frequently asked questions"
+    "display_width" : null,
+    "default" : "Frequently Asked Questions"
+  }, {
+    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
+    "name" : "include_heading_border",
+    "label" : "Include Heading Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.heading",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
-    "display_width" : null,
     "label" : "Include Content",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : true
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
+    "name" : "content_style",
+    "label" : "Content Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bodystyle3"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
-    "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
@@ -113,21 +177,21 @@
       "access" : null
     },
     "type" : "richtext",
+    "display_width" : null,
     "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
-    "display_width" : null,
     "label" : "Include Button",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   }, {
     "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
     "name" : "button_group",
-    "display_width" : null,
     "label" : "Button Group",
     "required" : false,
     "locked" : false,
@@ -148,65 +212,42 @@
     "children" : [ {
       "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "name" : "button_type",
-      "display_width" : null,
       "label" : "Button Type",
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : "std"
     }, {
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
-      "display_width" : null,
       "label" : "Button Style",
       "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_value_regex" : "std|popup_content",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "arrow-link", "Arrow Link" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "hs-button"
-    }, {
-      "id" : "819d4b45-006f-1b23-11ba-72b2c39b6f6e",
-      "name" : "button_theme",
       "display_width" : null,
-      "label" : "Button Theme",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "theme1"
+      "default" : "hs-button"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
-      "display_width" : null,
       "label" : "Button Text",
       "required" : false,
       "locked" : false,
@@ -214,19 +255,19 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_value_regex" : "std|popup_content",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
+      "display_width" : null,
       "default" : "Button"
     }, {
       "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
       "name" : "link",
-      "display_width" : null,
       "label" : "Link",
       "required" : false,
       "locked" : false,
@@ -241,6 +282,7 @@
       "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
       "show_advanced_rel_options" : false,
       "type" : "link",
+      "display_width" : null,
       "default" : {
         "url" : {
           "content_id" : null,
@@ -251,27 +293,8 @@
         "no_follow" : false
       }
     }, {
-      "id" : "d2f74da7-e18a-7c36-926e-f71b30005ccb",
-      "name" : "enable_arrow",
-      "display_width" : null,
-      "label" : "Enable Arrow",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_style",
-        "controlling_value_regex" : "hs-button",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "default" : false
-    }, {
       "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
       "name" : "cta",
-      "display_width" : null,
       "label" : "CTA",
       "required" : false,
       "locked" : false,
@@ -283,16 +306,33 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "type" : "cta"
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "b6aabd88-017b-65ec-24a7-10528e4fb2be",
+      "name" : "popup_content",
+      "label" : "Popup Content",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "popup_content",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "richtext",
+      "display_width" : null
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -302,12 +342,10 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      },
-      "boolean_field" : false
+      }
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -317,27 +355,29 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      },
-      "boolean_field" : false
+      }
     } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "include_eyebrow_text" : false,
     "eyebrow_text" : "Eyebrow Text",
+    "include_top_border" : false,
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
-    "include_content" : true,
+    "heading" : "Frequently Asked Questions",
+    "include_heading_border" : false,
+    "include_content" : false,
+    "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -347,12 +387,10 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      },
-      "boolean_field" : false
+      }
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -362,27 +400,24 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      },
-      "boolean_field" : false
+      }
     } ]
   }
 }, {
-  "id" : "9e2eb338-ee6c-36cd-c9d7-761428f50104",
+  "id" : "694ed8a7-993c-c611-d763-8429c9339a3c",
   "name" : "accordion",
-  "display_width" : null,
   "label" : "Accordion",
   "required" : false,
   "locked" : false,
   "occurrence" : {
     "min" : null,
     "max" : null,
-    "sorting_label_field" : "9788d4fd-5252-51b3-ec25-bc5077273f53",
-    "default" : 5
+    "sorting_label_field" : "09e38f49-21de-43d0-01ce-8f2b675a4d2e",
+    "default" : 4
   },
   "children" : [ {
-    "id" : "9788d4fd-5252-51b3-ec25-bc5077273f53",
+    "id" : "09e38f49-21de-43d0-01ce-8f2b675a4d2e",
     "name" : "title",
-    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -390,59 +425,146 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Veniam aliquip aute ex reprehenderit voluptate laboris non proident minim dolor sunt duis minim."
-  }, {
-    "id" : "e71f7565-5d77-4b74-c0bc-f5edd614d292",
-    "name" : "content",
     "display_width" : null,
+    "default" : "What are FAIR data practices?"
+  }, {
+    "id" : "52075158-914e-c613-cc69-b406e5119b86",
+    "name" : "icon_image",
+    "label" : "Icon Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/learning.svg",
+      "alt" : "learning",
+      "loading" : "lazy",
+      "width" : 453,
+      "height" : 453,
+      "max_width" : 453,
+      "max_height" : 453
+    }
+  }, {
+    "id" : "b71b49cc-731e-3c1f-29fe-0601a5166cb7",
+    "name" : "content",
     "label" : "Content",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
-    "default" : "<p>Dolore dolore sint magna sint. Velit nulla irure sit enim reprehenderit nostrud consequat et ex ea laboris. Ipsum proident ea duis dolore in magna est. Adipisicing dolor ullamco ut sit magna aliqua dolor eiusmod nulla cupidatat eiusmod in duis qui.</p>"
+    "display_width" : null,
+    "default" : "<p>FAIR data is data that are findable, accessible, interoperable, and reusable.</p>\n<p>The Future of Research Communication and e-Scholarship (FORCE11) are working towards facilitating knowledge creation and sharing. FORCE11 convened a 2014 workshop in the Netherlands that found that all research objects should be Findable, Accessible, Interoperable, and Reusable (FAIR). For more information: Wilkinson, et al. 2016. <a href=\"https://www.nature.com/articles/sdata201618\">The FAIR Guiding Principles for scientific data management and stewardship</a></p>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
-    "title" : "Veniam aliquip aute ex reprehenderit voluptate laboris non proident minim dolor sunt duis minim.",
-    "content" : "<p>Dolore dolore sint magna sint. Velit nulla irure sit enim reprehenderit nostrud consequat et ex ea laboris. Ipsum proident ea duis dolore in magna est. Adipisicing dolor ullamco ut sit magna aliqua dolor eiusmod nulla cupidatat eiusmod in duis qui.</p>"
+    "title" : "What are FAIR data practices?",
+    "icon_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/learning.svg",
+      "alt" : "learning",
+      "loading" : "lazy",
+      "width" : 453,
+      "height" : 453,
+      "max_width" : 453,
+      "max_height" : 453
+    },
+    "content" : "<p>FAIR data is data that are findable, accessible, interoperable, and reusable.</p>\n<p>The Future of Research Communication and e-Scholarship (FORCE11) are working towards facilitating knowledge creation and sharing. FORCE11 convened a 2014 workshop in the Netherlands that found that all research objects should be Findable, Accessible, Interoperable, and Reusable (FAIR). For more information: Wilkinson, et al. 2016. <a href=\"https://www.nature.com/articles/sdata201618\">The FAIR Guiding Principles for scientific data management and stewardship</a></p>"
   }, {
-    "title" : "Veniam aliquip aute ex reprehenderit voluptate laboris non proident minim dolor sunt duis minim.",
-    "content" : "<p>Dolore dolore sint magna sint. Velit nulla irure sit enim reprehenderit nostrud consequat et ex ea laboris. Ipsum proident ea duis dolore in magna est. Adipisicing dolor ullamco ut sit magna aliqua dolor eiusmod nulla cupidatat eiusmod in duis qui.</p>"
+    "title" : "What are FAIR data practices?",
+    "icon_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/learning.svg",
+      "alt" : "learning",
+      "loading" : "lazy",
+      "width" : 453,
+      "height" : 453,
+      "max_width" : 453,
+      "max_height" : 453
+    },
+    "content" : "<p>FAIR data is data that are findable, accessible, interoperable, and reusable.</p>\n<p>The Future of Research Communication and e-Scholarship (FORCE11) are working towards facilitating knowledge creation and sharing. FORCE11 convened a 2014 workshop in the Netherlands that found that all research objects should be Findable, Accessible, Interoperable, and Reusable (FAIR). For more information: Wilkinson, et al. 2016. <a href=\"https://www.nature.com/articles/sdata201618\">The FAIR Guiding Principles for scientific data management and stewardship</a></p>"
   }, {
-    "title" : "Veniam aliquip aute ex reprehenderit voluptate laboris non proident minim dolor sunt duis minim.",
-    "content" : "<p>Dolore dolore sint magna sint. Velit nulla irure sit enim reprehenderit nostrud consequat et ex ea laboris. Ipsum proident ea duis dolore in magna est. Adipisicing dolor ullamco ut sit magna aliqua dolor eiusmod nulla cupidatat eiusmod in duis qui.</p>"
+    "title" : "What are FAIR data practices?",
+    "icon_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/learning.svg",
+      "alt" : "learning",
+      "loading" : "lazy",
+      "width" : 453,
+      "height" : 453,
+      "max_width" : 453,
+      "max_height" : 453
+    },
+    "content" : "<p>FAIR data is data that are findable, accessible, interoperable, and reusable.</p>\n<p>The Future of Research Communication and e-Scholarship (FORCE11) are working towards facilitating knowledge creation and sharing. FORCE11 convened a 2014 workshop in the Netherlands that found that all research objects should be Findable, Accessible, Interoperable, and Reusable (FAIR). For more information: Wilkinson, et al. 2016. <a href=\"https://www.nature.com/articles/sdata201618\">The FAIR Guiding Principles for scientific data management and stewardship</a></p>"
   }, {
-    "title" : "Veniam aliquip aute ex reprehenderit voluptate laboris non proident minim dolor sunt duis minim.",
-    "content" : "<p>Dolore dolore sint magna sint. Velit nulla irure sit enim reprehenderit nostrud consequat et ex ea laboris. Ipsum proident ea duis dolore in magna est. Adipisicing dolor ullamco ut sit magna aliqua dolor eiusmod nulla cupidatat eiusmod in duis qui.</p>"
-  }, {
-    "title" : "Veniam aliquip aute ex reprehenderit voluptate laboris non proident minim dolor sunt duis minim.",
-    "content" : "<p>Dolore dolore sint magna sint. Velit nulla irure sit enim reprehenderit nostrud consequat et ex ea laboris. Ipsum proident ea duis dolore in magna est. Adipisicing dolor ullamco ut sit magna aliqua dolor eiusmod nulla cupidatat eiusmod in duis qui.</p>"
+    "title" : "What are FAIR data practices?",
+    "icon_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/learning.svg",
+      "alt" : "learning",
+      "loading" : "lazy",
+      "width" : 453,
+      "height" : 453,
+      "max_width" : 453,
+      "max_height" : 453
+    },
+    "content" : "<p>FAIR data is data that are findable, accessible, interoperable, and reusable.</p>\n<p>The Future of Research Communication and e-Scholarship (FORCE11) are working towards facilitating knowledge creation and sharing. FORCE11 convened a 2014 workshop in the Netherlands that found that all research objects should be Findable, Accessible, Interoperable, and Reusable (FAIR). For more information: Wilkinson, et al. 2016. <a href=\"https://www.nature.com/articles/sdata201618\">The FAIR Guiding Principles for scientific data management and stewardship</a></p>"
   } ]
+}, {
+  "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
+  "name" : "module_settings",
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
+    "name" : "intro_content_alignment",
+    "label" : "Intro Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "intro_content_alignment" : "left"
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
-  "display_width" : null,
   "label" : "Module Overrides",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "enable_overrides",
     "name" : "enable_overrides",
-    "display_width" : null,
     "label" : "Enable Overrides",
     "help_text" : "Toggle to override section ID and vertical margin. ",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : true
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
-    "display_width" : null,
     "label" : "Section ID",
     "help_text" : "The value you type here will be the anchor link for this section. Should be all lowercase and include dashes instead of spaces. This should be a unique value per module.",
     "required" : false,
@@ -458,11 +580,11 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "display_width" : null
   }, {
     "id" : "module_overrides.top_margin",
     "name" : "top_margin",
-    "display_width" : null,
     "label" : "Top Margin",
     "required" : false,
     "locked" : false,
@@ -480,11 +602,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "top-margin-none"
   }, {
     "id" : "custom_top_margin",
     "name" : "custom_top_margin",
-    "display_width" : null,
     "label" : "Custom Top Margin",
     "required" : false,
     "locked" : false,
@@ -499,11 +621,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_top_margin_mobile",
     "name" : "custom_top_margin_mobile",
-    "display_width" : null,
     "label" : "Custom Top Margin Mobile",
     "required" : false,
     "locked" : false,
@@ -518,11 +640,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_margin",
     "name" : "bottom_margin",
-    "display_width" : null,
     "label" : "Bottom Margin",
     "required" : false,
     "locked" : false,
@@ -540,11 +662,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "bottom-margin-none"
   }, {
     "id" : "custom_bottom_margin",
     "name" : "custom_bottom_margin",
-    "display_width" : null,
     "label" : "Custom Bottom Margin",
     "required" : false,
     "locked" : false,
@@ -559,11 +681,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_bottom_margin_mobile",
     "name" : "custom_bottom_margin_mobile",
-    "display_width" : null,
     "label" : "Custom Bottom Margin Mobile",
     "required" : false,
     "locked" : false,
@@ -578,11 +700,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.top_padding",
     "name" : "top_padding",
-    "display_width" : null,
     "label" : "Top Padding",
     "required" : false,
     "locked" : false,
@@ -600,11 +722,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "top-padding-default"
   }, {
     "id" : "custom_top_padding",
     "name" : "custom_top_padding",
-    "display_width" : null,
     "label" : "Custom Top Padding",
     "required" : false,
     "locked" : false,
@@ -619,11 +741,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_top_padding_mobile",
     "name" : "custom_top_padding_mobile",
-    "display_width" : null,
     "label" : "Custom Top Padding Mobile",
     "required" : false,
     "locked" : false,
@@ -638,11 +760,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_padding",
     "name" : "bottom_padding",
-    "display_width" : null,
     "label" : "Bottom Padding",
     "required" : false,
     "locked" : false,
@@ -660,11 +782,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "bottom-padding-default"
   }, {
     "id" : "custom_bottom_padding",
     "name" : "custom_bottom_padding",
-    "display_width" : null,
     "label" : "Custom Bottom Padding",
     "required" : false,
     "locked" : false,
@@ -679,11 +801,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
-    "display_width" : null,
     "label" : "Custom Bottom Padding Mobile",
     "required" : false,
     "locked" : false,
@@ -698,11 +820,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "3eccf45d-b0dc-4bac-42a0-f923e4405158",
     "name" : "reverse_text",
-    "display_width" : null,
     "label" : "Dark Theme",
     "required" : false,
     "locked" : false,
@@ -716,11 +838,11 @@
     },
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
-    "display_width" : null,
     "label" : "Background Settings",
     "required" : false,
     "locked" : false,
@@ -735,21 +857,20 @@
     "children" : [ {
       "id" : "3c812905-0c66-421d-6e7e-7a7109acdd49",
       "name" : "background_type",
-      "display_width" : null,
       "label" : "Background Type",
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "color", "Color" ], [ "image", "Image" ], [ "gradient", "Gradient" ] ],
+      "choices" : [ [ "color", "Color" ], [ "image", "Image" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : "color"
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
       "name" : "background_image",
-      "display_width" : null,
       "label" : "Background Image",
       "required" : false,
       "locked" : false,
@@ -765,6 +886,7 @@
       "resizable" : false,
       "show_loading" : false,
       "type" : "image",
+      "display_width" : null,
       "default" : {
         "size_type" : "auto",
         "src" : "",
@@ -774,7 +896,6 @@
     }, {
       "id" : "4ea36da9-c8a6-adf2-7460-cbf4d98190fd",
       "name" : "select_color",
-      "display_width" : null,
       "label" : "Select Color",
       "required" : false,
       "locked" : false,
@@ -787,39 +908,59 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "prismic_mango_bg", "Prismic Mango" ], [ "prismic_mint_bg", "Prismic Mint" ], [ "frostee_bg", "Frostee" ], [ "mint_cream_bg", "Mint Cream" ], [ "menthol_bg", "Menthol" ], [ "l2l_green_bg", "L2L Green" ], [ "fern_green_bg", "Fern Green" ], [ "dark_jungle_bg", "Dark Jungle" ], [ "mystic_green_bg", "Mystic Green" ], [ "lime_green_bg", "Lime Green" ], [ "white_bg", "White" ] ],
+      "choices" : [ [ "sunsetOrange_bg", "Sunset Orange" ], [ "slateBlue_bg", "Slate Blue" ], [ "tealGreen_bg", "Teal Green" ], [ "darkGray_bg", "Dark Gray" ], [ "azure_bg", "Azure" ], [ "cadetGray_bg", "Cadet Gray" ], [ "whiteSmoke_bg", "White Smoke" ], [ "lightGray_bg", "Light Gray" ], [ "white_bg", "White" ], [ "black_bg", "Black" ], [ "darkblue_bg", "Dark Blue" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "frostee_bg"
-    }, {
-      "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
-      "name" : "select_gradient",
       "display_width" : null,
-      "label" : "Select Gradient",
+      "default" : ""
+    }, {
+      "id" : "4baef2f7-8322-2e7f-7fe8-79b1db53248f",
+      "name" : "include_overlay_gradient",
+      "label" : "Include Overlay Gradient",
       "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "module_overrides.background_settings.background_type",
-        "controlling_value_regex" : "gradient",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
+      "name" : "select_gradient",
+      "label" : "Select Gradient",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.include_overlay_gradient",
+        "controlling_value_regex" : "true",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ], [ "gradient5", "Gradient 5" ], [ "gradient6", "Gradient 6" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : true,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : {
       "background_type" : "color",
       "background_image" : {
@@ -828,74 +969,30 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "frostee_bg",
+      "select_color" : "",
+      "include_overlay_gradient" : false,
       "select_gradient" : ""
     }
   }, {
-    "id" : "c813f3af-99b7-d54e-7ce2-b074f008a27c",
-    "name" : "container",
-    "display_width" : null,
-    "label" : "Container",
+    "id" : "fc248331-90d9-cb7e-66f6-4b85de179aa9",
+    "name" : "container_size",
+    "label" : "Container Size",
     "required" : false,
     "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "module_overrides.enable_overrides",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "87361475-d2b5-329d-45b2-227103ad95d9",
-      "name" : "size",
-      "display_width" : null,
-      "label" : "Size",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "theme", "Theme" ], [ "full-width", "Full Width" ], [ "custom", "Custom" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "theme"
-    }, {
-      "id" : "b9865f26-0901-d5ad-66a2-7c6ecacec658",
-      "name" : "custom_size",
-      "display_width" : null,
-      "label" : "Custom Size",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "module_overrides.container.size",
-        "controlling_value_regex" : "custom",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "slider",
-      "min" : 500,
-      "max" : 1920,
-      "step" : 1,
-      "suffix" : "px",
-      "type" : "number",
-      "default" : 1296
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : {
-      "size" : "theme",
-      "custom_size" : 1296
-    }
+    "display" : "select",
+    "choices" : [ [ "theme", "Theme" ], [ "full_width", "Full Width" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "theme"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "enable_overrides" : true,
     "top_margin" : "top-margin-none",
@@ -919,12 +1016,10 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "frostee_bg",
+      "select_color" : "",
+      "include_overlay_gradient" : false,
       "select_gradient" : ""
     },
-    "container" : {
-      "size" : "theme",
-      "custom_size" : 1296
-    }
+    "container_size" : "theme"
   }
 } ]

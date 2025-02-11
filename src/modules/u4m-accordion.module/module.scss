@@ -1,4 +1,69 @@
 @import "../../css/_module-imports";
 
 .u4m-accordion.dnd_padd {
+  .accordionInr {
+    .accItems {
+      padding: 13px 0;
+      .accItem {
+        margin-bottom: 20px;
+        &.active .accTtl {
+          background-color: $lightGray;
+          h4:before {
+            display: inline;
+            content: "- ";
+            font-size: 32px;
+          }
+        }
+        .cntInr {
+          padding: 30px 40px 0 45px;
+          color: $azure;
+          font-size: 14px;
+          line-height: 1.7em;
+          @include tabletvert {
+            padding: 30px 20px 0 25px;
+          }
+        }
+        .accTtl {
+          position: relative;
+          padding: 20px 3em 20px 25px;
+          background-color: $white;
+          filter: drop-shadow($shadow3);
+          cursor: pointer;
+          h4 {
+            font-weight: 600;
+            color: $tealGreen;
+            margin: auto;
+            letter-spacing: normal;
+            line-height: 1;
+
+            &:before {
+              position: relative;
+              display: inline;
+              font-size: 30px;
+              font-weight: 700;
+              line-height: 20px;
+              top: unset;
+              content: "+ ";
+            }
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              right: 20px;
+              width: 2em;
+              height: 2em;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+        &:first-child .accTtl {
+          border-top-left-radius: 30px;
+        }
+        &:last-child .accTtl {
+          border-bottom-right-radius: 30px;
+        }
+      }
+    }
+  }
 }
