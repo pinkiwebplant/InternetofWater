@@ -9,9 +9,11 @@
 
 	<div class="cmVideoGalleryWrap">
 		<div class="innerVideoGallery">
-			<div class="slider-for">
-				{% for item in module.items %}
-				<div class="item-slick">
+			<div class="slider-for" id="primary_slider">
+				<div class="splide__track">
+					<div class="splide__list">
+						{% for item in module.items %}
+				<div class="item-slick splide__slide">
 					<div class="videoWrapper">
 						{% if item.select_video_type == "hubspot_video" %}
 					<video width="320" height="240" controls src="{{ item.file_field }}"></video>
@@ -23,12 +25,17 @@
 					</div>
 				</div>
 				{% endfor %}
+					</div>
+				</div>
 			</div>
-			<div class="slider-nav">
-				{% for item in module.items %}
-				<div class="item-slick">
+			<div class="slider-nav" id="thumbnail_slider">
+				<div class="splide__track">
+					<div class="splide__list">
+						{% for item in module.items %}
+				<div class="item-slick splide__slide">
 						{% if item.poster_image.src %}
-						<div class="cm_video_overlay" style="background-image: url({{ item.poster_image.src }});">
+						<div class="cm_video_overlay">
+							<img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
 							<div class="cm_video_overlay_hover">
 								<a href="#" class="cm_video_play"></a>
 							</div>
@@ -36,6 +43,8 @@
 					</div>
 				</div>
 				{% endfor %}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
