@@ -3,10 +3,14 @@
 
 .u4m-partners {
 	.btmCntt {
+		.flex_row {
+			align-items: center;
+			row-gap: 40rem;
 		.col.items {
 			.innerImg {
 				text-align: center;
 			}
 		}
 	}
+}
 }

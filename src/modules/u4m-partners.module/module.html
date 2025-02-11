@@ -67,5 +67,19 @@
 		{% endif %}
 		{% endfor %}
 	}
+	{% if module.module_settings.logo_spacing_group.top_spacing or module.module_settings.logo_spacing_group.bottom_spacing %}
+	.u4m-partners.{{name}} .btmCntt .col.items{
+		padding-top:{{ module.module_settings.logo_spacing_group.top_spacing }}px;
+		padding-bottom:{{ module.module_settings.logo_spacing_group.bottom_spacing }}px;
+	}
+	{% endif %}
+	{% if module.module_settings.logo_spacing_group.change_spacing_in_mobile %}
+	@media(max-width:767px){
+		.u4m-partners.{{name}} .btmCntt .col.items{
+			padding-top:{{ module.module_settings.logo_spacing_group.mobile_spacing_group.top_spacing }}px;
+			padding-bottom:{{ module.module_settings.logo_spacing_group.mobile_spacing_group.bottom_spacing }}px;
+		}
+	}
+	{% endif %}
 </style>
 

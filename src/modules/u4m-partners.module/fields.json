@@ -623,6 +623,93 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "col20"
+  }, {
+    "id" : "b476074f-8cef-de3e-3ad2-317723e72424",
+    "name" : "logo_spacing_group",
+    "label" : "Logo Spacing Group",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "265ea0cf-41af-b32f-c23e-104e612178eb",
+      "name" : "top_spacing",
+      "label" : "Top Spacing",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null
+    }, {
+      "id" : "6ea0b922-22f7-e3e7-2b37-91136a1da803",
+      "name" : "bottom_spacing",
+      "label" : "Bottom Spacing",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null
+    }, {
+      "id" : "640d2b50-4ac2-c8e6-141e-2caf94e47252",
+      "name" : "change_spacing_in_mobile",
+      "label" : "Change spacing in mobile",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "6317673f-7c75-751a-1ef3-764e26e21449",
+      "name" : "mobile_spacing_group",
+      "label" : "Mobile Spacing Group",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_settings.logo_spacing_group.change_spacing_in_mobile",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "33772592-7751-d9f9-2dd2-4b3de5b24e96",
+        "name" : "top_spacing",
+        "label" : "Top Spacing",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null
+      }, {
+        "id" : "7e1bf0d7-7e4d-4537-64d7-e6153a7327a3",
+        "name" : "bottom_spacing",
+        "label" : "Bottom Spacing",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "change_spacing_in_mobile" : false,
+      "mobile_spacing_group" : { }
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -631,7 +718,11 @@
   "display_width" : null,
   "default" : {
     "intro_content_alignment" : "left",
-    "column_count" : "col20"
+    "column_count" : "col20",
+    "logo_spacing_group" : {
+      "change_spacing_in_mobile" : false,
+      "mobile_spacing_group" : { }
+    }
   }
 }, {
   "id" : "module_overrides",
