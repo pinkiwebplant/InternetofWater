@@ -193,3 +193,16 @@
     width: 80px;
   }
 }
+
+
+
+@mixin link{
+  color: $tealGreen;
+  cursor: pointer;
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+    color: $tealGreen;
+  }
+}
+

@@ -190,8 +190,6 @@
 // Links
 @mixin link {
   text-decoration: none;
-  /* Remove default underline */
-
   transition: $animation1;
   display: inline-block;
 }

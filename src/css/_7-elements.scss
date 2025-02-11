@@ -20,10 +20,10 @@ html {
 @font-face {
   font-family: "ETmodules";
   src:
-    url("{{ get_asset_url('./fonts/u4m-modules.eot') }}")
+    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
       format("embedded-opentype"),
-    url("{{ get_asset_url('./fonts/u4m-modules.woff') }}") format("woff"),
-    url("{{ get_asset_url('./fonts/u4m-modules.ttf') }}") format("truetype");
+    url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: block;
@@ -824,5 +824,9 @@ section[class*="u4m-"] {
 .flex_row {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 15rem;
+  row-gap: 30rem;
+}
+
+.gradient3{
+  @include gradient3;
 }
