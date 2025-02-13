@@ -176,3 +176,31 @@ section.u4m-subscriptions-confirmation {
 .systems-page form input.hs-button {
   margin-top: 30rem;
 }
+
+section.u4m-membership-register form input[type="checkbox"],
+section.u4m-membership-register form input[type="radio"] {
+  width: auto !important;
+  display: inline-block !important;
+}
+
+section.u4m-membership-register form input[type="checkbox"] + *,
+section.u4m-membership-register form input[type="radio"] + * {
+  display: inline-block !important;
+  width: auto !important;
+}
+
+.systems-page form input#hs-register-widget-explicit-consent {
+  margin-right: 20px;
+  margin-right: 11px;
+}
+
+.systems-page form input#hs-register-widget-explicit-consent + label {
+  width: calc(100% - 33px);
+}
+
+.systems-page
+  form
+  .hs-form-field:has(input#hs-register-widget-explicit-consent) {
+  display: flex;
+  flex-wrap: wrap;
+}
