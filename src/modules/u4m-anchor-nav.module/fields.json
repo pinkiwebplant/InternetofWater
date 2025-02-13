@@ -1,4 +1,14 @@
 [ {
+  "id" : "b66352ab-9c67-1710-c864-f95ea6f525d4",
+  "name" : "enable_sticky",
+  "label" : "Enable Sticky",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
   "id" : "345e97ba-d593-cf1a-0bd8-e19e813df442",
   "name" : "nav_item",
   "label" : "Nav Item",
@@ -141,6 +151,51 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null
+  }, {
+    "id" : "87b0d70f-cffb-9950-c295-ca4e3e8ed154",
+    "name" : "item_settings",
+    "label" : "Item Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_item.select_icon_type",
+      "controlling_value_regex" : "custom_class|icon",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "d5b0080d-90a3-2f7d-7c53-23610e48ccba",
+      "name" : "select_color",
+      "label" : "Icon Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "sunsetOrange", "Sunset Orange" ], [ "slateBlue", "Slate Blue" ], [ "tealGreen", "Teal Green" ], [ "darkGray", "Dark Gray" ], [ "azure", "Azure" ], [ "cadetGray", "Cadet Gray" ], [ "whiteSmoke", "White Smoke" ], [ "lightGray", "Light Gray" ], [ "white", "White" ], [ "black", "Black" ], [ "darkblue", "Dark Blue" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : ""
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_color" : ""
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -170,6 +225,9 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
+    },
+    "field_group" : {
+      "select_color" : ""
     }
   }, {
     "select_icon_type" : "image",
@@ -194,6 +252,9 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
+    },
+    "field_group" : {
+      "select_color" : ""
     }
   }, {
     "select_icon_type" : "image",
@@ -218,6 +279,9 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
+    },
+    "field_group" : {
+      "select_color" : ""
     }
   }, {
     "select_icon_type" : "image",
@@ -242,6 +306,9 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
+    },
+    "field_group" : {
+      "select_color" : ""
     }
   }, {
     "select_icon_type" : "image",
@@ -266,6 +333,9 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
+    },
+    "field_group" : {
+      "select_color" : ""
     }
   } ]
 }, {
@@ -697,6 +767,28 @@
       "select_gradient" : ""
     }
   }, {
+    "id" : "550e28f6-6f35-3378-c207-862a88082509",
+    "name" : "navbar_background_color",
+    "label" : "Navbar Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.background_settings.background_type",
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "sunsetOrange_bg", "Sunset Orange" ], [ "slateBlue_bg", "Slate Blue" ], [ "tealGreen_bg", "Teal Green" ], [ "darkGray_bg", "Dark Gray" ], [ "azure_bg", "Azure" ], [ "cadetGray_bg", "Cadet Gray" ], [ "whiteSmoke_bg", "White Smoke" ], [ "lightGray_bg", "Light Gray" ], [ "white_bg", "White" ], [ "black_bg", "Black" ], [ "darkblue_bg", "Dark Blue" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "white_bg"
+  }, {
     "id" : "fc248331-90d9-cb7e-66f6-4b85de179aa9",
     "name" : "container_size",
     "label" : "Container Size",
@@ -743,16 +835,7 @@
       "include_overlay_gradient" : false,
       "select_gradient" : ""
     },
+    "navbar_background_color" : "white_bg",
     "container_size" : "theme"
   }
-}, {
-  "id" : "b66352ab-9c67-1710-c864-f95ea6f525d4",
-  "name" : "enable_sticky",
-  "label" : "Enable Sticky",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
 } ]

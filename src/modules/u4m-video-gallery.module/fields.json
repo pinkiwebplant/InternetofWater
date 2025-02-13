@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
     "name" : "include_heading_border",
@@ -369,7 +369,7 @@
     "include_top_border" : false,
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
+    "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : true,
     "content_style" : "bodystyle3",
@@ -413,7 +413,7 @@
     "min" : null,
     "max" : null,
     "sorting_label_field" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
-    "default" : null
+    "default" : 5
   },
   "children" : [ {
     "id" : "3a1ae446-12b4-47af-02be-9ff94aadaaff",
@@ -440,10 +440,14 @@
     "type" : "image",
     "display_width" : null,
     "default" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "size_type" : "auto_custom_max",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "alt" : "justin",
+      "loading" : "lazy",
+      "width" : 2560,
+      "height" : 1438,
+      "max_width" : 2000,
+      "max_height" : 1123.4375
     }
   }, {
     "picker" : "video",
@@ -480,14 +484,75 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "https://www.youtube.com/embed/EngW7tLk6R8"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : [ ]
+  "default" : [ {
+    "poster_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "alt" : "justin",
+      "loading" : "lazy",
+      "width" : 2560,
+      "height" : 1438,
+      "max_width" : 2000,
+      "max_height" : 1123.4375
+    },
+    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+  }, {
+    "poster_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "alt" : "justin",
+      "loading" : "lazy",
+      "width" : 2560,
+      "height" : 1438,
+      "max_width" : 2000,
+      "max_height" : 1123.4375
+    },
+    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+  }, {
+    "poster_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "alt" : "justin",
+      "loading" : "lazy",
+      "width" : 2560,
+      "height" : 1438,
+      "max_width" : 2000,
+      "max_height" : 1123.4375
+    },
+    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+  }, {
+    "poster_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "alt" : "justin",
+      "loading" : "lazy",
+      "width" : 2560,
+      "height" : 1438,
+      "max_width" : 2000,
+      "max_height" : 1123.4375
+    },
+    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+  }, {
+    "poster_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "alt" : "justin",
+      "loading" : "lazy",
+      "width" : 2560,
+      "height" : 1438,
+      "max_width" : 2000,
+      "max_height" : 1123.4375
+    },
+    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+  } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",

@@ -80,8 +80,10 @@ section.u4m-cards {
   }
 
   .title {
+    margin-bottom: 8rem;
     & > a {
       color: inherit;
+      text-decoration: none;
     }
     &.small {
       @include b4;

@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
     "name" : "include_heading_border",
@@ -369,7 +369,7 @@
     "include_top_border" : false,
     "include_heading" : false,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
+    "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : false,
     "content_style" : "bodystyle3",
@@ -1028,6 +1028,28 @@
     "display_width" : null,
     "default" : false
   }, {
+    "id" : "a85f5925-55a1-9d48-90c6-60a6607dcf2c",
+    "name" : "select_border_color",
+    "label" : "Select Border Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.background_settings.background_type",
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "sunsetOrange_border", "Sunset Orange" ], [ "slateBlue_border", "Slate Blue" ], [ "tealGreen_border", "Teal Green" ], [ "darkGray_border", "Dark Gray" ], [ "azure_border", "Azure" ], [ "cadetGray_border", "Cadet Gray" ], [ "whiteSmoke_border", "White Smoke" ], [ "lightGray_border", "Light Gray" ], [ "white_border", "White" ], [ "black_border", "Black" ], [ "darkblue_border", "Dark Blue" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "cadetGray_border"
+  }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
     "label" : "Background Settings",
@@ -1195,6 +1217,7 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
+    "select_border_color" : "cadetGray_border",
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {

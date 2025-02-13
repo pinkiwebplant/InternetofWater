@@ -178,7 +178,7 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p style=\"color: #444;\"><strong>The Internet of Water Coalition seeks to advance the transformation and modernization of water data infrastructure in the United States by developing affordable, open-source technologies for sharing and integrating water data, and demonstrate, through a national network of partners, the power of those technologies to improve sustainable, equitable, and resilient water outcomes.</strong></p>"
+    "default" : "<p><strong>The Internet of Water Coalition seeks to advance the transformation and modernization of water data infrastructure in the United States by developing affordable, open-source technologies for sharing and integrating water data, and demonstrate, through a national network of partners, the power of those technologies to improve sustainable, equitable, and resilient water outcomes.</strong></p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -418,7 +418,7 @@
     "include_heading_border" : true,
     "include_content" : true,
     "content_style" : "themeStyle",
-    "content" : "<p style=\"color: #444;\"><strong>The Internet of Water Coalition seeks to advance the transformation and modernization of water data infrastructure in the United States by developing affordable, open-source technologies for sharing and integrating water data, and demonstrate, through a national network of partners, the power of those technologies to improve sustainable, equitable, and resilient water outcomes.</strong></p>",
+    "content" : "<p><strong>The Internet of Water Coalition seeks to advance the transformation and modernization of water data infrastructure in the United States by developing affordable, open-source technologies for sharing and integrating water data, and demonstrate, through a national network of partners, the power of those technologies to improve sustainable, equitable, and resilient water outcomes.</strong></p>",
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -745,7 +745,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "bottom-padding-default"
+    "default" : "bottom-padding-custom"
   }, {
     "id" : "custom_bottom_padding",
     "name" : "custom_bottom_padding",
@@ -801,7 +801,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -956,7 +956,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "full_width"
+    "default" : "theme"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -974,10 +974,10 @@
     "top_padding" : "top-padding-default",
     "custom_top_padding" : 100,
     "custom_top_padding_mobile" : 50,
-    "bottom_padding" : "bottom-padding-default",
+    "bottom_padding" : "bottom-padding-custom",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
-    "reverse_text" : false,
+    "reverse_text" : true,
     "background_settings" : {
       "background_type" : "image",
       "background_image" : {
@@ -994,6 +994,6 @@
       "include_overlay_gradient" : true,
       "select_gradient" : "gradient2"
     },
-    "container_size" : "full_width"
+    "container_size" : "theme"
   }
 } ]

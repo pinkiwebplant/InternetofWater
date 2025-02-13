@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
     "name" : "include_heading_border",
@@ -188,7 +188,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
     "name" : "button_group",
@@ -369,12 +369,12 @@
     "include_top_border" : false,
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
+    "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : true,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
-    "include_button" : true,
+    "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -413,7 +413,7 @@
     "min" : 1,
     "max" : null,
     "sorting_label_field" : "cdd6a85b-b488-7d67-ed2d-14076cb1f40f",
-    "default" : 1
+    "default" : 4
   },
   "children" : [ {
     "id" : "6d54786a-3b60-5507-e65b-380283c365be",
@@ -476,6 +476,18 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
+    "number_field" : 990,
+    "title" : "Participants in the IoW Network",
+    "content" : "<p>From membership in our P2P Network to collaborative project partners to membership on our listservs, the IoW seeks to grow our connections.</p>"
+  }, {
+    "number_field" : 990,
+    "title" : "Participants in the IoW Network",
+    "content" : "<p>From membership in our P2P Network to collaborative project partners to membership on our listservs, the IoW seeks to grow our connections.</p>"
+  }, {
+    "number_field" : 990,
+    "title" : "Participants in the IoW Network",
+    "content" : "<p>From membership in our P2P Network to collaborative project partners to membership on our listservs, the IoW seeks to grow our connections.</p>"
+  }, {
     "number_field" : 990,
     "title" : "Participants in the IoW Network",
     "content" : "<p>From membership in our P2P Network to collaborative project partners to membership on our listservs, the IoW seeks to grow our connections.</p>"

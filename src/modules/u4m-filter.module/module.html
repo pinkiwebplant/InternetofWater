@@ -1,3 +1,64 @@
+
+{% set dynamic_page_hubdb_table_id = module.hubdbtable_field  %}
+{% if dynamic_page_hubdb_row %}
+
+<div class="filter_post_page">
+	<div class="page-center full_width">
+
+		<div class="back_to_listing">
+			{% set href = module.post_page.seelct_listing_page.url.href %}
+			{% if module.post_page.seelct_listing_page.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a
+				 {% if module.post_page.seelct_listing_page.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+				 {% else %}
+				 href="{{ href|escape_url }}"
+				 {% endif %}
+				 {% if module.post_page.seelct_listing_page.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if module.post_page.seelct_listing_page.rel %}
+				 rel="{{ module.post_page.seelct_listing_page.rel|escape_attr }}"
+				 {% endif %}
+				 >
+				<span class="back-arrow">←</span>
+				{{ module.post_page.back_to_listing_text }}
+			</a>
+
+		</div>
+
+		<div class="filter_post_date bodyStyle3 sunsetOrange">
+			{{ dynamic_page_hubdb_row.publish_date_local_time.strftime('%b %d, %Y') }}
+		</div>
+		<div class="filter_post_title bodyStyle3 sunsetOrange">
+			<h2>
+				{{ dynamic_page_hubdb_row.name }}{{ dynamic_page_hubdb_row.hs_name }}
+			</h2>
+		</div>
+
+		<div class="filter_post_contet_wrap">
+			<div class="flex_row">
+				<div class="col9 fl_right">
+					<div class="filter_post_desc">
+						{{ dynamic_page_hubdb_row.content }}
+					</div>
+				</div>
+				<div class="col3 fl_left">
+					<a href="{{ dynamic_page_hubdb_row.button_link }}" class="hs-button">
+						{{ dynamic_page_hubdb_row.button_text }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% elif dynamic_page_hubdb_table_id %}
+
+
 {% set moduleName = 'u4m-library-filter' %}
 {% include "../partials/u4-module-includes.html" %}
 
@@ -86,12 +147,12 @@
 							<label class="wpv-custom-search-filter__label" for="title">Search</label>
 							<input type="text" value="" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" name="search" placeholder="" class="resourceInput">
 							<!-- <div class="Searchbtn">
-								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.29922C0 2.82065 2.82065 0 6.29923 0C9.7778 0 12.5985 2.82065 12.5985 6.29922C12.5985 7.78304 12.0805 9.15487 11.2196 10.2327L13.7953 12.8084C14.0682 13.0814 14.0682 13.5223 13.7953 13.7953C13.5223 14.0683 13.0814 14.0683 12.8084 13.7953L10.2327 11.2196C9.15487 12.0805 7.79004 12.5984 6.29923 12.5984C2.82065 12.5984 0 9.7778 0 6.29922ZM6.29923 1.39983C3.59056 1.39983 1.39983 3.59056 1.39983 6.29922C1.39983 9.00789 3.59056 11.1986 6.29923 11.1986C7.65006 11.1986 8.87487 10.6527 9.76377 9.76381C10.6527 8.87492 11.1986 7.65006 11.1986 6.29922C11.1986 3.59056 9.00789 1.39983 6.29923 1.39983Z" fill="#00161D"></path>
-								</svg></div> -->
+ <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.29922C0 2.82065 2.82065 0 6.29923 0C9.7778 0 12.5985 2.82065 12.5985 6.29922C12.5985 7.78304 12.0805 9.15487 11.2196 10.2327L13.7953 12.8084C14.0682 13.0814 14.0682 13.5223 13.7953 13.7953C13.5223 14.0683 13.0814 14.0683 12.8084 13.7953L10.2327 11.2196C9.15487 12.0805 7.79004 12.5984 6.29923 12.5984C2.82065 12.5984 0 9.7778 0 6.29922ZM6.29923 1.39983C3.59056 1.39983 1.39983 3.59056 1.39983 6.29922C1.39983 9.00789 3.59056 11.1986 6.29923 11.1986C7.65006 11.1986 8.87487 10.6527 9.76377 9.76381C10.6527 8.87492 11.1986 7.65006 11.1986 6.29922C11.1986 3.59056 9.00789 1.39983 6.29923 1.39983Z" fill="#00161D"></path>
+ </svg></div> -->
 						</div>
 					</div> 
- 
+
 					<div class=" selctArrow tag-col">   
 						<div class="filter_label type_filter_label" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
 							Categories
@@ -118,7 +179,7 @@
 							{% for type in rowTypeType|unique  %}
 							<div>
 								<label for="type{{loop.index}}">
-									
+
 									<input type="checkbox" class="typeInput" data-type="{{ type|urlencode }}" id="type{{loop.index}}" name="type" label="{{ type }}" value="{{ type|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing type|urlencode %}checked{% endif %} />
 									<span class="tag_name">{{ type }}</span>
 								</label>
@@ -136,7 +197,7 @@
 						{% for row in resouces %}
 						<div class='resourceCard post-item {{ row.type.name|lower|replace(' ','-') }} {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-') }} {% endfor %}'>
 							<div class='post-item-inner  {% if not row.image.url %}noImage{% endif %}'>
-								 
+
 
 								<div class="post-content">
 									<h5 class="restitle">
@@ -144,15 +205,15 @@
 									</h5>
 									<div class="tagwrap">
 										{% if row.type.name %}
-								<div class='featured-tag tag_{{ row.type.name|lower|replace(' ','-') }}'><strong>Type: </strong> {{ row.type.name }}</div>
-								{% endif %}
-									
-									<div class='post-item-topic'><strong>Categories: </strong>
-										{% for tag in row.tag %}{{ tag.name|lower|replace(' ','-')|replace('-',' ') }}{% if not loop.last%}, {% endif %}{% endfor %}
+										<div class='featured-tag tag_{{ row.type.name|lower|replace(' ','-') }}'><strong>Type: </strong> {{ row.type.name }}</div>
+										{% endif %}
+
+										<div class='post-item-topic'><strong>Categories: </strong>
+											{% for tag in row.tag %}{{ tag.name|lower|replace(' ','-')|replace('-',' ') }}{% if not loop.last%}, {% endif %}{% endfor %}
+										</div>
 									</div>
-								</div>
-								 <div class="cnt">
-									 {{ row.content }}
+									<div class="cnt">
+										{{ row.content }}
 									</div>
 								</div>
 							</div>
@@ -232,4 +293,7 @@
 {# button group popup modal#}
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+
 {% endif %}

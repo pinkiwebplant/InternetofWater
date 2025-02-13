@@ -7,35 +7,35 @@
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 	<div class="counter-section">
-   <div class="counter_section_inner row_spacing">
-		 <div class="flex_row col3_row">
-			  {% for item in module.counter_items %}
-      <div class="counter_item col col3">
-         <div class="title_wrapper">
-            <div class="number_wrapper">
-               <p>
-								 {% if item.prefix %}
-								 <span class="prefix">{{ item.prefix }}</span>
-								  {% endif %}
-								 <span class="count" data-count="{{ item.number_field }}">0</span>
-								 {% if item.surfix %}
-								 <span class="surfix">{{ item.surfix }}</span>
-								  {% endif %}
+		<div class="counter_section_inner row_spacing">
+			<div class="flex_row col3_row">
+				{% for item in module.counter_items %}
+				<div class="counter_item col col3">
+					<div class="title_wrapper">
+						<div class="number_wrapper">
+							<p>
+								{% if item.prefix %}
+								<span class="prefix">{{ item.prefix }}</span>
+								{% endif %}
+								<span class="count counter" >{{ item.number_field }}</span>
+								{% if item.surfix %}
+								<span class="surfix">{{ item.surfix }}</span>
+								{% endif %}
 							</p>
-            </div>
-            <h5 class="title">{{ item.title }}</h5>
-           
-         </div>
-         <div class="counter_summary">
-           {{ item.content }}
-         </div>
-      </div>
-		 {% endfor %}
-		 </div>
-		
-   </div>
-  
-</div>
+						</div>
+						<h5 class="title">{{ item.title }}</h5>
+
+					</div>
+					<div class="counter_summary">
+						{{ item.content }}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+
+	</div>
 </div>
 </section>
 
@@ -46,59 +46,15 @@
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
 
+
 {% require_js %}
+<script src="https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/js/jquery-2.2.4.min.js"></script>
+<script src="https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/js/waypoints.min.js"></script>
+<script src="https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/js/jquery.counterup.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Function to start the counting animation
-    function startCountingAnimation() {
-        document.querySelectorAll('.cmCounterSection.{{name}} .count').forEach(function(element) {
-            var countTo = element.getAttribute('data-count');
-            var countNum = parseInt(element.textContent, 2);
-            
-            var animateCount = function() {
-                countNum++;
-                element.textContent = Math.floor(countNum);
-
-                if (countNum < countTo) {
-                    requestAnimationFrame(animateCount); // Continue the animation
-                } else {
-                    element.textContent = countTo; // Final value
-                }
-            };
-            
-            // Start the animation
-            setTimeout(animateCount, 1);
-        });
-    }
-
-    // Intersection Observer setup
-    var observerOptions = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
-
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                // Start animation when the element is in view
-                startCountingAnimation();
-                // Optional: Unobserve after animation starts if only needed once
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe the .counter-section element
-    document.querySelectorAll('.cmCounterSection.{{name}} .counter-section').forEach(function(section) {
-        observer.observe(section);
-    });
-});
-
+	$('.counter').counterUp({
+				delay: 10,
+		time: 1000
+	});
 </script>
-{% end_require_js %}
-
-
-
-
-
+{% end_require_js %} 

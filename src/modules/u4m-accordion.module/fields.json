@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently Asked Questions"
+    "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
     "name" : "include_heading_border",
@@ -369,7 +369,7 @@
     "include_top_border" : false,
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Frequently Asked Questions",
+    "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : false,
     "content_style" : "bodystyle3",
@@ -536,6 +536,16 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "left"
+  }, {
+    "id" : "c2236fff-f8e1-e3fb-a314-63554b170e91",
+    "name" : "mark_first_active",
+    "label" : "Mark First Active",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -543,7 +553,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left"
+    "intro_content_alignment" : "left",
+    "mark_first_active" : true
   }
 }, {
   "id" : "module_overrides",

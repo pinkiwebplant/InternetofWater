@@ -19,8 +19,8 @@
       "access" : null
     },
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : true
   }, {
     "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
@@ -39,8 +39,8 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Eyebrow Text"
   }, {
     "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
@@ -57,8 +57,8 @@
       "access" : null
     },
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
@@ -67,8 +67,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : true
   }, {
     "id" : "aef5e961-e297-2654-68e0-6128687770bf",
@@ -89,8 +89,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "h2"
   }, {
     "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
@@ -109,8 +109,8 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
@@ -127,8 +127,8 @@
       "access" : null
     },
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
@@ -137,8 +137,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : true
   }, {
     "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
@@ -159,8 +159,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "bodystyle3"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
@@ -176,8 +176,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "richtext",
     "display_width" : null,
+    "type" : "richtext",
     "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
@@ -186,8 +186,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
@@ -220,8 +220,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "std"
     }, {
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
@@ -242,8 +242,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "hs-button"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
@@ -262,8 +262,8 @@
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Button"
     }, {
       "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
@@ -281,8 +281,8 @@
       },
       "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
       "show_advanced_rel_options" : false,
-      "type" : "link",
       "display_width" : null,
+      "type" : "link",
       "default" : {
         "url" : {
           "content_id" : null,
@@ -306,8 +306,8 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "type" : "cta",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "cta"
     }, {
       "id" : "b6aabd88-017b-65ec-24a7-10528e4fb2be",
       "name" : "popup_content",
@@ -322,14 +322,14 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "type" : "richtext",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "richtext"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -361,8 +361,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "include_eyebrow_text" : true,
     "eyebrow_text" : "Eyebrow Text",
@@ -426,8 +426,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "image"
   }, {
     "id" : "b40c3717-64cf-63a1-9c33-913d10bb3998",
@@ -446,8 +446,8 @@
     "responsive" : false,
     "resizable" : true,
     "show_loading" : false,
-    "type" : "image",
     "display_width" : null,
+    "type" : "image",
     "default" : {
       "size_type" : "exact",
       "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/Pages-from-FHAB-Data-Ingestion-Model-Recommendation-Document_FINAL-scaled.jpg",
@@ -471,8 +471,8 @@
       "access" : null
     },
     "icon_set" : "fontawesome-5.14.0",
-    "type" : "icon",
     "display_width" : null,
+    "type" : "icon",
     "default" : { }
   }, {
     "id" : "f9d18eee-773c-a075-f766-3abf8577a731",
@@ -491,8 +491,8 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
   }, {
     "id" : "07861b33-e9f6-eeb4-f904-e01057b8e584",
     "name" : "include_link_on_icon",
@@ -500,8 +500,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "7f428e66-1c4c-ee7d-fe60-90419d1d911e",
@@ -522,8 +522,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "choice"
   }, {
     "id" : "0ec25366-bda8-9630-2414-cb18b4456203",
     "name" : "select_link",
@@ -540,8 +540,8 @@
     },
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -565,8 +565,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "richtext",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "richtext"
   }, {
     "id" : "713a536b-329c-744f-474d-e4d60e894bfb",
     "name" : "title",
@@ -584,8 +584,8 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Technology Adoption at Public Agencies"
   }, {
     "id" : "3bac1e46-4b88-bc4a-9636-5d8c4ccc4ca6",
@@ -594,8 +594,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "a5862b93-7872-1b9c-9e6e-7ed1296be52a",
@@ -608,8 +608,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "medium"
   }, {
     "id" : "dbf45016-acfe-cd89-66f8-3fe2a58d065f",
@@ -617,8 +617,8 @@
     "label" : "Content",
     "required" : false,
     "locked" : false,
-    "type" : "richtext",
     "display_width" : null,
+    "type" : "richtext",
     "default" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>"
   }, {
     "id" : "17db7b43-910e-a64f-59b3-b2cba3e1ad5a",
@@ -643,8 +643,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "std"
     }, {
       "id" : "f687afc1-0756-6767-7ee1-c62c548357ab",
@@ -665,8 +665,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "hs-button"
     }, {
       "id" : "63d223d7-c3ce-d2eb-5ed2-a18eb9dea80e",
@@ -685,8 +685,8 @@
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Button"
     }, {
       "id" : "38406305-b530-822a-0ea3-2d19b1d6d343",
@@ -704,8 +704,8 @@
       },
       "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
       "show_advanced_rel_options" : false,
-      "type" : "link",
       "display_width" : null,
+      "type" : "link",
       "default" : {
         "url" : {
           "content_id" : null,
@@ -729,8 +729,8 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "type" : "cta",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "cta"
     }, {
       "id" : "a4b6d870-8603-95b0-8fcd-a398c86c5d69",
       "name" : "popup_content",
@@ -745,14 +745,14 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "type" : "richtext",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "richtext"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : [ ]
   }, {
     "id" : "ef1b3fd2-a18e-cdc7-358a-4400bfd553e5",
@@ -779,15 +779,15 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : {
       "select_icon_color" : ""
     }
@@ -795,8 +795,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "select_image_type" : "image",
     "image" : {
@@ -905,8 +905,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "center"
   }, {
     "id" : "dbd32239-93f4-ec91-a621-a027f5721d8f",
@@ -919,8 +919,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "center"
   }, {
     "id" : "6e57a0b5-40dd-c767-73eb-1b0eb21f2896",
@@ -933,8 +933,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "col4"
   }, {
     "id" : "a64f39d6-da3a-bfb6-afa4-99c0f877480c",
@@ -947,8 +947,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "bodystyle3"
   }, {
     "id" : "72e31845-9c84-2a1b-7902-0a89e878076c",
@@ -965,8 +965,8 @@
       "access" : null
     },
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "2c3e34c4-4884-9d5a-7bb0-8e687166f012",
@@ -975,8 +975,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "e745bb6b-a7fe-a5ed-9ab6-b689c5856112",
@@ -985,8 +985,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "d0b837e7-e3af-12c2-77c1-b3d6600fd332",
@@ -1007,14 +1007,14 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "choice"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "intro_content_alignment" : "center",
     "card_content_alignment" : "center",
@@ -1038,8 +1038,8 @@
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : true
   }, {
     "id" : "module_overrides.section_id",
@@ -1059,8 +1059,8 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
   }, {
     "id" : "module_overrides.top_margin",
     "name" : "top_margin",
@@ -1080,8 +1080,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "top-margin-none"
   }, {
     "id" : "custom_top_margin",
@@ -1099,8 +1099,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 100
   }, {
     "id" : "custom_top_margin_mobile",
@@ -1118,8 +1118,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_margin",
@@ -1140,8 +1140,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "bottom-margin-none"
   }, {
     "id" : "custom_bottom_margin",
@@ -1159,8 +1159,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 100
   }, {
     "id" : "custom_bottom_margin_mobile",
@@ -1178,8 +1178,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 50
   }, {
     "id" : "module_overrides.top_padding",
@@ -1200,8 +1200,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "top-padding-default"
   }, {
     "id" : "custom_top_padding",
@@ -1219,8 +1219,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 100
   }, {
     "id" : "custom_top_padding_mobile",
@@ -1238,8 +1238,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_padding",
@@ -1260,8 +1260,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "bottom-padding-default"
   }, {
     "id" : "custom_bottom_padding",
@@ -1279,8 +1279,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 100
   }, {
     "id" : "custom_bottom_padding_mobile",
@@ -1298,8 +1298,8 @@
     },
     "display" : "text",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 50
   }, {
     "id" : "3eccf45d-b0dc-4bac-42a0-f923e4405158",
@@ -1316,8 +1316,8 @@
       "access" : null
     },
     "display" : "checkbox",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : false
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
@@ -1344,8 +1344,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "color"
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
@@ -1364,8 +1364,8 @@
       "responsive" : true,
       "resizable" : false,
       "show_loading" : false,
-      "type" : "image",
       "display_width" : null,
+      "type" : "image",
       "default" : {
         "size_type" : "auto",
         "src" : "",
@@ -1391,8 +1391,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : ""
     }, {
       "id" : "4baef2f7-8322-2e7f-7fe8-79b1db53248f",
@@ -1409,8 +1409,8 @@
         "access" : null
       },
       "display" : "checkbox",
-      "type" : "boolean",
       "display_width" : null,
+      "type" : "boolean",
       "default" : false
     }, {
       "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
@@ -1431,15 +1431,15 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : true,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : {
       "background_type" : "color",
       "background_image" : {
@@ -1463,15 +1463,15 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "theme"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "enable_overrides" : true,
     "top_margin" : "top-margin-none",

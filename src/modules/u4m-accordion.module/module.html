@@ -9,7 +9,7 @@
 	<div class="accordionInr">
 		<div class="accItems">
 			{% for item in module.accordion %}
-			<div class="accItem {% if loop.first %}active{% endif %}">
+			<div class="accItem {% if module.module_settings.mark_first_active %}{% if loop.first %}active{% endif %}{% endif %}">
 				<div class="accTtl accTtl{{ loop.index }}">
 					{% if item.title %}
 					<h4>{{ item.title }}</h4>
@@ -23,7 +23,8 @@
 					</style>
 					{% endif %}
 				</div>
-				<div class="accContent" style="{% if loop.first %}display:block;{% else %}display:none;{% endif %}">
+				
+				<div class="accContent" style="{% if module.module_settings.mark_first_active %}{% if loop.first %}display:block;{% else %}display:none;{% endif %}{% else %}display:none;{% endif %}">
 					{% if item.content %}
 					<div class="cntInr">
 						{{ item.content }}

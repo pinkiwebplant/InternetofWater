@@ -7,24 +7,25 @@
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 
+	{#
 	<div class="cmVideoGalleryWrap">
 		<div class="innerVideoGallery">
 			<div class="slider-for" id="primary_slider">
 				<div class="splide__track">
 					<div class="splide__list">
 						{% for item in module.items %}
-				<div class="item-slick splide__slide">
-					<div class="videoWrapper">
-						{% if item.select_video_type == "hubspot_video" %}
-					<video width="320" height="240" controls src="{{ item.file_field }}"></video>
-					{% elif item.select_video_type == "external_video" %}
-					{% if item.video_url %}
-					<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
-					{% endif %}
-					{% endif %}
-					</div>
-				</div>
-				{% endfor %}
+						<div class="item-slick splide__slide">
+							<div class="videoWrapper">
+								{% if item.select_video_type == "hubspot_video" %}
+								<video muted  src="{{ item.file_field }}"></video>
+								{% elif item.select_video_type == "external_video" %}
+								{% if item.video_url %}
+								<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
+								{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -32,19 +33,63 @@
 				<div class="splide__track">
 					<div class="splide__list">
 						{% for item in module.items %}
-				<div class="item-slick splide__slide">
-						{% if item.poster_image.src %}
-						<div class="cm_video_overlay">
-							<img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
-							<div class="cm_video_overlay_hover">
-								<a href="#" class="cm_video_play"></a>
+						<div class="item-slick splide__slide">
+							{% if item.poster_image.src %}
+							<div class="cm_video_overlay">
+								<img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
+								<div class="cm_video_overlay_hover">
+									<a href="#" class="cm_video_play"></a>
+								</div>
+								{% endif %}
 							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	#}
+
+	<div class="cmVideoGalleryWrap">
+		<div class="innerVideoGallery">
+			<div class="slider-for" id="primary_slider">
+				<div class="splide__track">
+					<div class="splide__list">
+						{% for item in module.items %}
+						<div class="item-slick splide__slide">
+							<div class="videoWrapper">
+								{% if item.select_video_type == "hubspot_video" %}
+								<video muted  src="{{ item.file_field }}"></video>
+								{% elif item.select_video_type == "external_video" %}
+								{% if item.video_url %}
+								<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
+								{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="slider-nav" id="thumbnail_slider">
+				<!-- 				<div class="splide__track">
+		 <div class="splide__list"> -->
+				{% for item in module.items %}
+				<div class="item-slick splide__slide">
+					{% if item.poster_image.src %}
+					<div class="cm_video_overlay">
+						<img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
+						<div class="cm_video_overlay_hover">
+							<a href="#" class="cm_video_play"></a>
+						</div>
 						{% endif %}
 					</div>
 				</div>
 				{% endfor %}
-					</div>
-				</div>
+				<!-- 					</div>
+		</div> -->
 			</div>
 		</div>
 	</div>
@@ -57,4 +102,22 @@
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
+
+
+<style>
+	.videoWrapper {
+		position: relative;
+	}
+
+	.videoWrapper  video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
+
+
 

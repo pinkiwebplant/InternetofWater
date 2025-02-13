@@ -1,48 +1,48 @@
 @import "../../css/_module-imports";
 
-
 .u4m-newsletter {
-	.intro_content {
-		.eyebrow_text{
-&:after{
-	display: none;
-}
-		}
-		h2{
-			&.intro_title{
-            @include tabletMin{
-                font-size: 40px;
-            }
-			font-weight: 700;
-			margin-bottom: 0;
-			padding-top: 10px;
-			padding-bottom: 3px;
-		}
-	}
-	}
-	.page-center {
-		.cntt {
-			padding: 40px 60px;
-			padding-top: 8vw;
-			padding-bottom: 12vw;
-			.intro_content {
-				max-width: 100%;
-				padding: 0;
-			}
-			.intro_desc.bodystyle1 {
-				font-size: 22px;
-				line-height: 1.7em;
-				margin-bottom: 45px;
-			}
-			a.hs-sec-btn {
-				letter-spacing: 2px;
-				font-size: 22px;
-				font-weight: 700 !important;
-				text-transform: uppercase !important;
-			}
-			@include tabletvert{
-				padding: 8vw 25px 12vw;
-			}
-		}
-	}
+  padding: 0;
+  .intro_content {
+    .eyebrow_text {
+      &:after {
+        display: none;
+      }
+    }
+    h2 {
+      &.intro_title {
+        @include tabletMin {
+          font-size: 40px;
+        }
+        font-weight: 700;
+        margin-bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+  .page-center {
+    .cntt {
+      padding: 40px 60px;
+      padding-top: 8vw;
+      padding-bottom: 12vw;
+      .intro_content {
+        max-width: 100%;
+        padding: 0;
+      }
+      .intro_desc.bodystyle1 {
+        font-size: 22px;
+        line-height: 1.7em;
+        margin-bottom: 45px;
+      }
+      a.hs-sec-btn {
+        letter-spacing: 2px;
+        font-size: 22px;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+      }
+      @include tabletvert {
+        padding: 8vw 25px 12vw;
+      }
+    }
+  }
 }

@@ -5,12 +5,8 @@
   "module_id" : 185972992416,
   "js_assets" : [ {
     "autoload" : true,
-    "path" : "../../js/megnific.js",
-    "name" : "megnific.js"
-  }, {
-    "autoload" : true,
-    "path" : "../../js/splide.js",
-    "name" : "splide.js"
+    "path" : "../../js/slick.js",
+    "name" : "slick.js"
   } ],
   "label" : "Video Gallery",
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",

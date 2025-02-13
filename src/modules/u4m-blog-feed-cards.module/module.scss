@@ -80,6 +80,7 @@ section.u4m-blogcards {
   }
 
   .title {
+    margin-bottom: 8rem;
     & > a {
       color: inherit;
       text-decoration: none;
@@ -96,5 +97,9 @@ section.u4m-blogcards {
   }
   .blogcard_text + .intro_btn_wrap {
     margin-top: 30px;
+  }
+
+  .blogcard_img {
+    margin-bottom: 15rem;
   }
 }

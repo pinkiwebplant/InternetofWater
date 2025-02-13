@@ -1,56 +1,54 @@
 @import "../../css/_module-imports";
 
-
 .cmBorderCards {
-    .cmBorderCardWrap {
-        padding: 13px 0;
+  .cmBorderCardWrap {
+    padding: 13px 0;
 
-        .innerBorderCard {
+    .innerBorderCard {
+      .cmCards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        padding: 0;
 
-            .cmCards {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: stretch;
-                padding: 0;
+        .textWrap {
+          border-radius: 10px 0 0 0;
+          border-top-width: 3px;
+          border-left-width: 3px;
+          border-left-style: solid;
+          border-top-style: solid;
+          padding-top: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-bottom: 10px;
 
-                .textWrap {
-                    border-radius: 10px 0 0 0;
-                    border-top-width: 3px;
-                    border-left-width: 3px;
-                    border-left-style: solid;
-                    border-top-style: solid;
-                    border-color: $cadetGray;
-                    padding-top: 20px;
-                    padding-left: 20px;
-                    margin-bottom: 10px;
-
-                    .textInnerWrap {
-                        .cmTitle {
-                            margin: 0;
-                            padding: 10px 0;
-                            text-transform: uppercase;
-                            line-height: 1.6em;
-                        }
-
-                        .cntWrapper {
-                            p {
-                                &:last-of-type {
-                                    margin: 0;
-                                }
-                            }
-                        }
-
-                        .cntWrapper.bodystyle3 {
-                            line-height: 2em;
-                        }
-                    }
-                }
-
-                .intro_btn_wrap {
-                    margin-top: auto;
-                    justify-content: flex-start;
-                }
+          .textInnerWrap {
+            .cmTitle {
+              margin: 0;
+              padding: 10px 0;
+              text-transform: uppercase;
+              line-height: 1.6em;
             }
+
+            .cntWrapper {
+              p {
+                &:last-of-type {
+                  margin: 0;
+                }
+              }
+            }
+
+            .cntWrapper.bodystyle3 {
+              line-height: 2em;
+            }
+          }
         }
+
+        .intro_btn_wrap {
+          margin-top: auto;
+          justify-content: flex-start;
+        }
+      }
     }
+  }
 }

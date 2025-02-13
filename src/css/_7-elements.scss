@@ -772,6 +772,54 @@ section[class*="u4m-"] {
 
 //
 
+//
+
+.sunsetOrange_border {
+  border-color: $sunsetOrange;
+}
+
+.slateBlue_border {
+  border-color: $slateBlue;
+}
+
+.tealGreen_border {
+  border-color: $tealGreen;
+}
+
+.darkGray_border {
+  border-color: $darkGray;
+}
+
+.azure_border {
+  border-color: $azure;
+}
+
+.cadetGray_border {
+  border-color: $cadetGray;
+}
+
+.whiteSmoke_border {
+  border-color: $whiteSmoke;
+}
+
+.lightGray_border {
+  border-color: $lightGray;
+}
+
+.white_border {
+  border-color: $white;
+}
+
+.black_border {
+  border-color: $black;
+}
+
+.darkblue_border {
+  border-color: $darkblue;
+}
+
+//
+
 .bg_overlay {
   position: absolute;
   top: 0;
@@ -950,4 +998,14 @@ section[class*="u4m-"] {
 
 main form {
   @include form;
+}
+
+.reverse-text {
+  .hs-ter-btn {
+    color: $white;
+
+    &:hover {
+      color: $sunsetOrange;
+    }
+  }
 }

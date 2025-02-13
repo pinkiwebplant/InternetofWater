@@ -1,0 +1,29 @@
+<div class="footer_social_icon">
+	<ul>
+		{% for item in module.icons %}
+		<li class="et-social-icon et-social-{{ item.select_icon }}">
+			{% set href = item.link_field.url.href %}
+			{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a class="icon"
+				 {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}" 
+				 {% else %}
+				 href="{{ href|escape_url }}"
+				 {% endif %}
+				 {% if item.link_field.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if item.link_field.rel %}
+				 rel="{{ item.link_field.rel|escape_attr }}"
+				 {% endif %}>
+			</a>
+
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+
+
+

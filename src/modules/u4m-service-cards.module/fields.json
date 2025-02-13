@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Top Heading"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -351,7 +351,7 @@
     "include_top_border" : false,
     "include_heading" : false,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
+    "heading" : "Top Heading",
     "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
@@ -1194,7 +1194,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : ""
+      "default" : "darkblue_bg"
     }, {
       "id" : "4baef2f7-8322-2e7f-7fe8-79b1db53248f",
       "name" : "include_overlay_gradient",
@@ -1249,7 +1249,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "",
+      "select_color" : "darkblue_bg",
       "include_overlay_gradient" : false,
       "select_gradient" : ""
     }
@@ -1296,7 +1296,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "",
+      "select_color" : "darkblue_bg",
       "include_overlay_gradient" : false,
       "select_gradient" : ""
     },

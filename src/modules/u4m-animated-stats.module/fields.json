@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
     "name" : "include_heading_border",
@@ -369,7 +369,7 @@
     "include_top_border" : false,
     "include_heading" : false,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
+    "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : false,
     "content_style" : "bodystyle3",

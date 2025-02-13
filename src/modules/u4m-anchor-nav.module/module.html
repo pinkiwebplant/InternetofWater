@@ -2,14 +2,14 @@
 
 {% include "../partials/u4-module-includes.html" %}
 
-<div class="anchor_nav_inner">
+<div class="anchor_nav_outer {% if module.enable_sticky %}sticky_navbar{% endif %}">
+<div class="anchor_nav_inner {{ module.module_overrides.navbar_background_color }}">
 
-	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
-
+	<div class="page-center row_spacing {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
 		<div class="flex_row">
 			{% for item in module.nav_item %}
-			<div class="col nav_item_col ty_{{item.select_icon_type}}">
+			<div class="col nav_item_col nav{{loop.index}} ty_{{item.select_icon_type}}">
 
 				{% set href = item.link.url.href %}
 				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
@@ -34,7 +34,7 @@
 
 					<div class="icon_image_wrap">
 						{% if item.select_icon_type == "icon"%}
-						<span class="text_icon svg_icon"> {% icon
+						<span class="text_icon svg_icon {{ item.item_settings.select_color }}"> {% icon
 		name="{{ item.icon.name }}"
 		style="{{ item.icon.type }}"
 		unicode="{{ item.icon.unicode }}"
@@ -43,7 +43,7 @@
 						{% endif %}
 						{% if item.select_icon_type == "custom_class"%}
 
-						<span class="text_icon custom_icon"><span class="{{ item.custom_class }}"></span></span>
+						<span class="text_icon custom_icon {{ item.item_settings.select_color }}"><span class="{{ item.custom_class }}"></span></span>
 						{% endif %}
 						{% if item.select_icon_type == "image"%}
 						<span class="img_icon"><img src="{{ item.image.src }}" alt="{{ item.image.alt }}"></span>
@@ -63,5 +63,7 @@
 
 	</div>
 </div>
+	</div>
 </section>
+
 

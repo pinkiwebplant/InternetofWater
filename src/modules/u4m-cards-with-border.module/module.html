@@ -10,8 +10,8 @@
 	<div class="cmBorderCardWrap">
 		<div class="innerBorderCard flex_row col4_row">
 			{% for item in module.cards %}
-			<div class="cmCards cmItem_{{loop.index}} col4 col">
-				<div class="textWrap">
+			<div class="cmCards cmItem_{{loop.index}} col4 col ">
+				<div class="textWrap {{ module.module_overrides.select_border_color }}">
 					<div class="textInnerWrap">
 						{% if item.heading %}
 						<{{ item.heading_size }} class="cmTitle">{{ item.heading }}</{{ item.heading_size }}>

@@ -111,7 +111,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently asked questions"
+    "default" : "Top Heading"
   }, {
     "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
     "name" : "include_heading_border",
@@ -369,7 +369,7 @@
     "include_top_border" : false,
     "include_heading" : false,
     "heading_size" : "h2",
-    "heading" : "Frequently asked questions",
+    "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : false,
     "content_style" : "bodystyle3",
@@ -423,198 +423,6 @@
   "type" : "number",
   "display_width" : null,
   "default" : 12
-}, {
-  "id" : "288ea647-d3b0-f438-be11-4903d4fbf27c",
-  "name" : "cards",
-  "label" : "Cards",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "e9827a85-f4d5-efbe-19f4-551665c23c80",
-    "default" : 3
-  },
-  "children" : [ {
-    "id" : "2bddfc24-018a-4f04-34cc-26dff32e771e",
-    "name" : "include_image",
-    "label" : "Include Image",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "fa71daaf-9a2f-0858-3aa5-251be74be841",
-    "name" : "image",
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "cards.include_image",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/mark-stenglein-HdaSAGhRnf8-unsplash.jpg",
-      "alt" : "Card Image",
-      "loading" : "lazy",
-      "width" : 6048,
-      "height" : 4024,
-      "max_width" : 2000,
-      "max_height" : 1330.6878306878307
-    }
-  }, {
-    "id" : "e9827a85-f4d5-efbe-19f4-551665c23c80",
-    "name" : "title",
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Volume 25 | March 2024"
-  }, {
-    "id" : "6fd681f1-9a20-1471-8aba-a20995f1661c",
-    "name" : "title_size",
-    "label" : "Title Size",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "cards.title",
-      "controlling_value_regex" : null,
-      "property" : null,
-      "operator" : "NOT_EMPTY",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "h5"
-  }, {
-    "id" : "50e336e7-a328-234a-22ce-e858ce75deb1",
-    "name" : "link",
-    "label" : "Link",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "display_width" : null,
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "id" : "8f8ace81-8691-de7b-0e57-625ab48d01a6",
-    "name" : "description",
-    "label" : "Description",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<ul>\n<li>Updates from the Interstate Commission on the Potomac River Basin</li>\n<li>#GageGreatness is live on X</li>\n<li>Job Openings with Open Environmental Data Project, California Water Data Consortium, and Center for Geospatial Solutions</li>\n</ul>"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "include_image" : true,
-    "image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/mark-stenglein-HdaSAGhRnf8-unsplash.jpg",
-      "alt" : "Card Image",
-      "loading" : "lazy",
-      "width" : 6048,
-      "height" : 4024,
-      "max_width" : 2000,
-      "max_height" : 1330.6878306878307
-    },
-    "title" : "Volume 25 | March 2024",
-    "title_size" : "h5",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    },
-    "description" : "<ul>\n<li>Updates from the Interstate Commission on the Potomac River Basin</li>\n<li>#GageGreatness is live on X</li>\n<li>Job Openings with Open Environmental Data Project, California Water Data Consortium, and Center for Geospatial Solutions</li>\n</ul>"
-  }, {
-    "include_image" : true,
-    "image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/mark-stenglein-HdaSAGhRnf8-unsplash.jpg",
-      "alt" : "Card Image",
-      "loading" : "lazy",
-      "width" : 6048,
-      "height" : 4024,
-      "max_width" : 2000,
-      "max_height" : 1330.6878306878307
-    },
-    "title" : "Volume 25 | March 2024",
-    "title_size" : "h5",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    },
-    "description" : "<ul>\n<li>Updates from the Interstate Commission on the Potomac River Basin</li>\n<li>#GageGreatness is live on X</li>\n<li>Job Openings with Open Environmental Data Project, California Water Data Consortium, and Center for Geospatial Solutions</li>\n</ul>"
-  }, {
-    "include_image" : true,
-    "image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/mark-stenglein-HdaSAGhRnf8-unsplash.jpg",
-      "alt" : "Card Image",
-      "loading" : "lazy",
-      "width" : 6048,
-      "height" : 4024,
-      "max_width" : 2000,
-      "max_height" : 1330.6878306878307
-    },
-    "title" : "Volume 25 | March 2024",
-    "title_size" : "h5",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    },
-    "description" : "<ul>\n<li>Updates from the Interstate Commission on the Potomac River Basin</li>\n<li>#GageGreatness is live on X</li>\n<li>Job Openings with Open Environmental Data Project, California Water Data Consortium, and Center for Geospatial Solutions</li>\n</ul>"
-  } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
