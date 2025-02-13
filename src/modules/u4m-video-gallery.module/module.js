@@ -1,155 +1,97 @@
+
+
 $("#primary_slider .splide__list").slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  fade: false,
-  infinite: true,
-  speed: 1000,
-  asNavFor: "#thumbnail_slider",
-  arrows: true,
-  prevArrow:
-    '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
-  nextArrow:
-    '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: true,
+	fade: true,
+	infinite: true,
+	speed: 1000,
+	asNavFor: "#thumbnail_slider",
+	arrows: true,
+	prevArrow:
+	'<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+	nextArrow:
+	'<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
 });
 $("#thumbnail_slider").slick({
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  infinite: true,
-  asNavFor: "#primary_slider .splide__list",
-  dots: false,
-  centerMode: false,
-  focusOnSelect: true,
-  arrows: true,
-  prevArrow:
-    '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
-  nextArrow:
-    '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
+	slidesToShow: 3,
+	slidesToScroll: 3,
+	infinite: true,
+	asNavFor: "#primary_slider .splide__list",
+	dots: false,
+	centerMode: false,
+	focusOnSelect: true,
+	arrows: true,
+	prevArrow:
+	'<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+	nextArrow:
+	'<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
 });
 
-// // // Primary slider.
-// // var primarySlider = new Splide("#primary_slider", {
-// //   type: "fade",
-// //   heightRatio: 0.5,
-// //   pagination: false,
-// //   arrows: true,
-// //   cover: true,
-// //   perPage: 1,
-// //   perMove: 1,
-// // });
 
-// // // Thumbnails slider.
-// // var thumbnailSlider = new Splide("#thumbnail_slider", {
-// //   rewind: true,
-// //   type: "loop",
-// //   isNavigation: true,
-// //   gap: 10,
-// //   pagination: false,
-// //   perPage: 3,
-// //   perMove: 3,
-// //   breakpoints: {
-// //     479: {
-// //       perPage: 3,
-// //       perMove: 3,
-// //       perPage: 2,
-// //       perMove: 1,
-// //     },
-// //   },
-// // }).mount();
 
-// // // sync the thumbnails slider as a target of primary slider.
-// // primarySlider.sync(thumbnailSlider).mount();
 
-// // Primary slider
-// // var primarySlider = new Splide("#primary_slider", {
-// // 	heightRatio: 0.5,
-// // 	type: "loop",
-// // 	// 	pagination: false,
-// // 	// 	arrows: true,
-// // 	perPage: 1,
-// // 	perMove: 1
-// // });
-// // // primarySlider.mount();
-// // // Thumbnails slider
-// // var thumbnailSlider = new Splide("#thumbnail_slider", {
-// // 	gap: 10,
-// // 	type: "loop",
-// // 	focus: "center",
-// // 	perPage: 3,
-// // 	pagination: false,
-// // 	arrows: true,
-// // 	isNavigation: true,
 
-// // 	breakpoints: {
-// // 		479: {
-// // 			perPage: 2, // Fixed duplicate perPage
-// // 			perMove: 1, // Fixed duplicate perMove
-// // 		},
-// // 	},
-// // });
-// // // thumbnailSlider.mount();
+var mainSlider = document.querySelector("#primary_slider");
 
-// // // primarySlider.sync(thumbnailSlider);
+var thumbnailSlider = document.querySelector("#thumbnail_slider");
 
-// // primarySlider.sync(thumbnailSlider);
-// // primarySlider.mount();
-// // thumbnailSlider.mount();
+$("#thumbnail_slider, .innerVideoGallery .slick-arrow").on("click", ".slick-slide", function () {
+	$('#primary_slider .item-slick').each(function () {
+		var $this = $(this); 
+		var getIframeSrc = $this.attr('data-src');
+		var getVideoSrc = $this.attr('data-video-src');
 
-// // // Primary slider.
-// // var primarySlider = new Splide('#primary_slider', {
-// //      type: "fade",
-// //     heightRatio: 0.5,
-// //     pagination: false,
-// //     arrows: true,
-// //    perPage: 1,
-// //    perPage: 1,
-// //   perMove: 1,
-// // });
+		if (getIframeSrc) {
+			$this.find('iframe').attr('src', getIframeSrc);
+		}
+		if (getVideoSrc) {
+			$this.find('video').attr('src', getVideoSrc);
+		}
+	});
+});
 
-// // // Thumbnails slider.
-// // var thumbnailSlider = new Splide('#thumbnail_slider', {
-// //     rewind: true,
-// //     fixedHeight: 64,
-// //     isNavigation: true,
-// //     gap: 10,
-// //    type: 'loop',
-// //       rewind: true,
-// //     pagination: false,
-// //    perPage: 3,
-// //   perMove: 1
-// // }).mount();
 
-// // // sync the thumbnails slider as a target of primary slider.
-// // primarySlider.sync(thumbnailSlider).mount();
+$("#primary_slider").on("afterChange", function (event) {
+	$('#primary_slider .item-slick').each(function () {
+		// 		if ($(this).hasClass('slick-current')) { // ✅ Remove dot from hasClass
 
-// // var main = new Splide("#primary_slider", {
-// // 	type: "fade",
-// // 	perPage: 1,
-// // 	pagination: false,
-// // 	arrows: true,
-// // });
+		// 			var getPrev = $(this).prev(); 
+		// 			if (getPrev.length) { // ✅ Check if previous exists
+		// 				var prevgetIframeSrc = getPrev.attr('data-src');
+		// 				var prevgetVideoSrc = getPrev.attr('data-video-src');
 
-// var main = new Splide('#primary_slider', {
-// 	type: "fade",
-// 	heightRatio: 0.5,
-// 	pagination: false,
-// 	arrows: false,
-// });
+		// 				if (prevgetIframeSrc) {
+		// 					getPrev.find('iframe').attr('src', prevgetIframeSrc);
+		// 				}
+		// 				if (prevgetVideoSrc) {
+		// 					getPrev.find('video').attr('src', prevgetVideoSrc);
+		// 				}
+		// 			}
 
-// var thumbnails = new Splide("#thumbnail_slider", {
-// 	type: "loop",
-// 	focus: "center",
-// 	perPage: 3,
-// 	pagination: false,
-// 	arrows: true,
-// 	isNavigation: true,
-// 	breakpoints: {
-// 		640: {
-// 			perPage: 2,
-// 		}
-// 	}
-// });
+		// 			var getNext = $(this).next();
+		// 			if (getNext.length) { // ✅ Check if next exists
+		// 				var nextgetIframeSrc = getNext.attr('data-src');
+		// 				var nextgetVideoSrc = getNext.attr('data-video-src');
 
-// main.sync(thumbnails);
-// main.mount();
-// thumbnails.mount();
+		// 				if (nextgetIframeSrc) {
+		// 					getNext.find('iframe').attr('src', nextgetIframeSrc);
+		// 				}
+		// 				if (nextgetVideoSrc) {
+		// 					getNext.find('video').attr('src', nextgetVideoSrc);
+		// 				}
+		// 			}
+		// 		}
+		var $this = $(this); 
+		var getIframeSrc = $this.attr('data-src');
+		var getVideoSrc = $this.attr('data-video-src');
+
+		if (getIframeSrc) {
+			$this.find('iframe').attr('src', getIframeSrc);
+		}
+		if (getVideoSrc) {
+			$this.find('video').attr('src', getVideoSrc);
+		}
+	});
+});

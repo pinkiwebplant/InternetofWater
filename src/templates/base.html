@@ -35,8 +35,23 @@ isAvailableForNewContent: false
 			{% endblock footer %}
 			{{ require_js(get_asset_url('../js/jquery.js')) }} 
 			{{ require_js(get_asset_url('../js/aos.js')) }} 
+
+
+			{{ require_js(get_asset_url('../js/waypoint.js')) }} 
+			{{ require_js(get_asset_url('../js/counterUp.js')) }} 
+			{% require_js %}
+			<script>
+				$(document).ready(function(){
+					$('.counter').counterUp({
+						delay: 10,
+						time: 1000
+					});
+				})
+			</script>
+			{% end_require_js %}
 			{{ require_js(get_asset_url('../js/main.js')) }} 
 			{{ standard_footer_includes }}
+
 		</div>
 	</body>
 </html>

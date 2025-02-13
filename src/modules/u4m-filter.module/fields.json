@@ -413,6 +413,74 @@
   "display_width" : null,
   "default" : 108733185
 }, {
+  "id" : "d8d0c877-eec8-2158-6223-de5f906d3cf5",
+  "name" : "post_page",
+  "label" : "Post Page",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "db828063-82fd-d228-92ee-f0bb269a53cf",
+    "name" : "back_to_listing_text",
+    "label" : "Back to Listing Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Back to Library"
+  }, {
+    "id" : "fa8cb6ec-367a-97de-a6b4-aa5eab047e2f",
+    "name" : "post_page_parent_path",
+    "label" : "Post Page Parent Path",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "/library"
+  }, {
+    "id" : "1ec4e768-e6a7-d9c7-e390-c0bd7322d392",
+    "name" : "seelct_listing_page",
+    "label" : "Seelct Listing Page",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "back_to_listing_text" : "Back to Library",
+    "post_page_parent_path" : "/library",
+    "seelct_listing_page" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
   "label" : "Module Settings",
@@ -917,60 +985,5 @@
       "select_gradient" : ""
     },
     "container_size" : "theme"
-  }
-}, {
-  "id" : "d8d0c877-eec8-2158-6223-de5f906d3cf5",
-  "name" : "post_page",
-  "label" : "Post Page",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "db828063-82fd-d228-92ee-f0bb269a53cf",
-    "name" : "back_to_listing_text",
-    "label" : "Back to Listing Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Back to Library"
-  }, {
-    "id" : "1ec4e768-e6a7-d9c7-e390-c0bd7322d392",
-    "name" : "seelct_listing_page",
-    "label" : "Seelct Listing Page",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "display_width" : null,
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : {
-    "back_to_listing_text" : "Back to Library",
-    "seelct_listing_page" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
   }
 } ]

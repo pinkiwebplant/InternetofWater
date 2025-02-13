@@ -8,20 +8,13 @@ section.u4m-drag-and-drop-area {
 
 .dnd_padd,
 .dnd-section {
-  padding: 100rem 0;
+  padding: 50rem 0;
   form {
     @include form;
   }
-  @include tablet {
-    padding: 60rem 0;
-  }
 
   @include tabletvert {
-    padding: 50rem 0;
-  }
-
-  @include phone {
-    padding: 40rem 0;
+    padding: 35rem 0;
   }
 }
 

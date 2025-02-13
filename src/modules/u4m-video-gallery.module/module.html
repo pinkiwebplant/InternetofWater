@@ -52,19 +52,19 @@
 
 	#}
 
-	<div class="cmVideoGalleryWrap">
+	<div class="cmVideoGalleryWrap row_spacing">
 		<div class="innerVideoGallery">
 			<div class="slider-for" id="primary_slider">
 				<div class="splide__track">
 					<div class="splide__list">
 						{% for item in module.items %}
-						<div class="item-slick splide__slide">
+						<div class="item-slick splide__slide" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-video-src="{{ item.file_field }}">
 							<div class="videoWrapper">
 								{% if item.select_video_type == "hubspot_video" %}
-								<video muted  src="{{ item.file_field }}"></video>
+								<video muted controls src="{{ item.file_field }}"></video>
 								{% elif item.select_video_type == "external_video" %}
 								{% if item.video_url %}
-								<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
+								<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
 								{% endif %}
 								{% endif %}
 							</div>
@@ -75,13 +75,13 @@
 			</div>
 			<div class="slider-nav" id="thumbnail_slider">
 				<!-- 				<div class="splide__track">
-		 <div class="splide__list"> -->
+ <div class="splide__list"> -->
 				{% for item in module.items %}
 				<div class="item-slick splide__slide">
 					{% if item.poster_image.src %}
 					<div class="cm_video_overlay">
 						<img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
-						<div class="cm_video_overlay_hover">
+						<div class="cm_video_overlay_hover" data-iframe="{{ item.video_url|split('?') }}?controls=1&rel=0&autoplay=0" data-video="{{ item.file_field }}">
 							<a href="#" class="cm_video_play"></a>
 						</div>
 						{% endif %}
@@ -89,7 +89,7 @@
 				</div>
 				{% endfor %}
 				<!-- 					</div>
-		</div> -->
+ </div> -->
 			</div>
 		</div>
 	</div>
@@ -117,7 +117,100 @@
 		height: 100%;
 		object-fit: cover;
 	}
+
+
+	div#primary_slider {
+		margin-bottom: 10px;
+	}
+
+
+	.innerVideoGallery button.slick-arrow {
+		top: 50%;
+		transform: translateY(-50%);
+		width: 48px;
+		height: 48px;
+		font-size: 0;
+		z-index: 4;
+		opacity: 0;
+		-webkit-transition: all .2s ease-in-out;
+		transition: all .2s ease-in-out;
+	}
+
+	.innerVideoGallery button.slick-prev {
+		left: -22px;
+	}
+
+	.innerVideoGallery button.slick-next {
+		right: 0;
+	}
+
+	.innerVideoGallery button.slick-arrow:before {
+		content: "4";
+		font-family: ETmodules !important;
+		speak: none;
+		font-style: normal;
+		font-weight: 400;
+		-webkit-font-feature-settings: normal;
+		font-feature-settings: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-shadow: 0 0;
+		direction: ltr;
+		font-size: 48px;
+	}
+
+	.innerVideoGallery button.slick-next:before {
+		content: "5";
+	}
+
+	.slick-slider:hover {
+	}
+
+	.innerVideoGallery .slick-slider:hover button.slick-prev {
+		left: 22px;
+		opacity: 1;
+	}
+
+	.innerVideoGallery .slick-slider:hover button.slick-next {
+		right: 22px;
+		opacity: 1;
+	}
+
+	.cm_video_overlay_hover a:after {
+		font-family: ETmodules;
+		content: "I";
+	}
+
+	.cm_video_overlay_hover a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 44px;
+		line-height: 1;
+	}
+
+	.cm_video_overlay:after {
+		content: '';
+		padding-bottom: 56%;
+		display: block;
+		width: 100%;
+	}
+
+	.cm_video_overlay img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+
 </style>
+
+
 
 
 

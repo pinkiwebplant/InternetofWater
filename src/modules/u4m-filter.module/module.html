@@ -2,10 +2,10 @@
 {% set dynamic_page_hubdb_table_id = module.hubdbtable_field  %}
 {% if dynamic_page_hubdb_row %}
 
-<div class="filter_post_page">
-	<div class="page-center full_width">
+<div class="filter_post_page row_spacing">
+	<div class="page-center full_width row_spacing">
 
-		<div class="back_to_listing">
+		<div class="back_to_listing bodystyle3">
 			{% set href = module.post_page.seelct_listing_page.url.href %}
 			{% if module.post_page.seelct_listing_page.url.type is equalto "EMAIL_ADDRESS" %}
 			{% set href = "mailto:" + href %}
@@ -29,23 +29,24 @@
 
 		</div>
 
-		<div class="filter_post_date bodyStyle3 sunsetOrange">
-			{{ dynamic_page_hubdb_row.publish_date_local_time.strftime('%b %d, %Y') }}
+
+		<div class="filter_post_date bodystyle3 sunsetOrange">
+			<span class="sunsetOrangeDark">{{ dynamic_page_hubdb_row.date|datetimeformat("MMMM YYYY", "America/New_York", "en") }}</span>
 		</div>
-		<div class="filter_post_title bodyStyle3 sunsetOrange">
+		<div class="filter_post_title">
 			<h2>
-				{{ dynamic_page_hubdb_row.name }}{{ dynamic_page_hubdb_row.hs_name }}
+				{{ dynamic_page_hubdb_row.name }}
 			</h2>
 		</div>
 
 		<div class="filter_post_contet_wrap">
 			<div class="flex_row">
-				<div class="col9 fl_right">
+				<div class="col10 fl_left">
 					<div class="filter_post_desc">
 						{{ dynamic_page_hubdb_row.content }}
 					</div>
 				</div>
-				<div class="col3 fl_left">
+				<div class="col2 fl_right">
 					<a href="{{ dynamic_page_hubdb_row.button_link }}" class="hs-button">
 						{{ dynamic_page_hubdb_row.button_text }}
 					</a>
@@ -188,12 +189,19 @@
 						</div>
 					</div>  
 
+					<div class="clear_button_wrap">
+						<span class="hs-button clearfilter_button">
+							× Clear all filters
+						</span>
+					</div>
+
 				</div>
 			</div>
 			<div class='listing-wrap'>
 				<div class='page-center cardSctn'>
 					<div class='flex-row resourceList'>
 						{% set resouceCount = resouces|length%}
+
 						{% for row in resouces %}
 						<div class='resourceCard post-item {{ row.type.name|lower|replace(' ','-') }} {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-') }} {% endfor %}'>
 							<div class='post-item-inner  {% if not row.image.url %}noImage{% endif %}'>
@@ -201,7 +209,7 @@
 
 								<div class="post-content">
 									<h5 class="restitle">
-										<a href="{{ row.page_url }}">{{ row.name }}</a>
+										<a href="{{ request.path }}/{{ row.hs_path }}">{{ row.name }}</a>
 									</h5>
 									<div class="tagwrap">
 										{% if row.type.name %}
@@ -297,3 +305,4 @@
 
 
 {% endif %}
+

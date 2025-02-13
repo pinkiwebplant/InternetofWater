@@ -38,4 +38,64 @@
   "type" : "boolean",
   "display_width" : null,
   "default" : true
+}, {
+  "id" : "d2db2d9b-0e4c-9f65-c9f8-39ccbf12882f",
+  "name" : "module_settings",
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "58bc830e-322d-301d-d234-dc5d8ed77b73",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/background.png",
+      "alt" : "background",
+      "loading" : "lazy",
+      "width" : 509,
+      "height" : 515,
+      "max_width" : 509,
+      "max_height" : 515
+    }
+  }, {
+    "id" : "1c331b82-7a04-6888-d5f6-304f4172e0d3",
+    "name" : "background_image_size",
+    "label" : "Background Image Size",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "cover", "Cover" ], [ "auto", "Auto" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "auto"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/background.png",
+      "alt" : "background",
+      "loading" : "lazy",
+      "width" : 509,
+      "height" : 515,
+      "max_width" : 509,
+      "max_height" : 515
+    },
+    "background_image_size" : "auto"
+  }
 } ]
