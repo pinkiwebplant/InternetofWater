@@ -1,4 +1,33 @@
 // *********************************************************************************************************************************************************************
+
+@mixin inputStyle {
+  border: 1px solid $lightShade;
+  @include b3;
+  border-radius: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 20rem;
+  background-color: $white;
+  width: 100%;
+  appearance: none;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  padding: 7px 0;
+  text-indent: 2%;
+  margin: 0;
+  margin-bottom: 3%;
+  line-height: normal;
+  outline: none;
+  &.error,
+  &.invalid {
+    border: 1rem solid $Error;
+  }
+
+  &::placeholder {
+    color: rgba($gray3, 1);
+  }
+}
+
 @mixin form {
   padding: 20rem;
   max-width: 600rem;
@@ -64,31 +93,7 @@
       input[type="tel"],
       input[type="email"],
       input[type="file"] {
-        border: 1px solid $lightShade;
-        @include b3;
-        border-radius: 4rem;
-        margin-top: 2rem;
-        margin-bottom: 20rem;
-        background-color: $white;
-        width: 100%;
-        appearance: none;
-        border-radius: 3px;
-        display: block;
-        width: 100%;
-        padding: 7px 0;
-        text-indent: 2%;
-        margin: 0;
-        margin-bottom: 3%;
-        line-height: normal;
-        outline: none;
-        &.error,
-        &.invalid {
-          border: 1rem solid $Error;
-        }
-
-        &::placeholder {
-          color: rgba($gray3, 1);
-        }
+        @include inputStyle;
       }
 
       input[type="checkbox"],

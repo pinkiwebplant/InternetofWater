@@ -37,12 +37,11 @@ section.u4m-backup-unsubscribe {
     }
 
     input {
-      border: 1rem solid transparent;
       border-radius: 4rem;
       margin-top: 2rem;
       margin-bottom: 0;
       font-size: 16rem !important;
-      padding: 16rem !important;
+      // padding: 16rem !important;
       width: 100% !important;
     }
 
@@ -77,7 +76,7 @@ section.u4m-password-prompt {
       margin-top: 2rem;
       margin-bottom: 20rem;
       font-size: 16rem !important;
-      padding: 16rem !important;
+      // padding: 16rem !important;
       width: 100% !important;
       background-color: $white;
     }
@@ -152,4 +151,28 @@ section.u4m-subscriptions-confirmation {
     margin-top: 30rem;
     font-weight: bold;
   }
+}
+
+.systems-page form input[type="password"],
+.systems-page form input[type="text"],
+.systems-page form input[type="number"],
+.systems-page form input[type="tel"],
+.systems-page form input[type="email"],
+.systems-page form input[type="file"] {
+  @include inputStyle;
+}
+
+.systems-page form .hs-form-field > label {
+  display: inline-block !important;
+}
+
+.systems-page form .hs-form-field > label + a {
+  float: right;
+}
+.systems-page form .hs-form-field input + label {
+  display: inline-block;
+  width: auto;
+}
+.systems-page form input.hs-button {
+  margin-top: 30rem;
 }
