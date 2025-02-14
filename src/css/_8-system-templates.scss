@@ -195,7 +195,7 @@ section.u4m-membership-register form input[type="radio"] + * {
 }
 
 .systems-page form input#hs-register-widget-explicit-consent + label {
-  width: calc(100% - 33px);
+  width: calc(100% - 33px) !important;
 }
 
 .systems-page
