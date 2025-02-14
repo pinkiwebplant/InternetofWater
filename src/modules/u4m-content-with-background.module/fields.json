@@ -197,7 +197,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 2,
+      "max" : 3,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 1
     },
@@ -851,7 +851,7 @@
       "display_width" : null,
       "default" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
         "alt" : "Background Image",
         "loading" : "lazy",
         "width" : 2560,
@@ -931,7 +931,7 @@
       "background_type" : "image",
       "background_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
         "alt" : "Background Image",
         "loading" : "lazy",
         "width" : 2560,
@@ -982,7 +982,7 @@
       "background_type" : "image",
       "background_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/elena-kuchko-hgLk4h8AkJY-unsplash-scaled.jpg",
         "alt" : "Background Image",
         "loading" : "lazy",
         "width" : 2560,

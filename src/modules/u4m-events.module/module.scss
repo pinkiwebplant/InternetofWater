@@ -251,4 +251,76 @@
       }
     }
   }
+
+  //
+
+  @include tabletMid {
+    .eventsWrap .flex_row .leftSec,
+    .eventsWrap .flex_row .rightSec {
+      width: 100%;
+    }
+
+    .eventsWrap .flex_row .rightSec {
+      order: 1;
+    }
+
+    .eventsWrap .flex_row .leftSec {
+      order: 2;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta {
+      width: 120px;
+      text-align: center;
+      padding: 20px;
+      flex-shrink: 0;
+    }
+
+    .eventsWrap
+      .flex_row
+      .leftSec
+      .events-grid
+      .event-item
+      .event-meta
+      .date-wrapper {
+      width: 100%;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta .date {
+      font-size: 30px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta .month {
+      font-size: 15px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta .time {
+      font-size: 14px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item {
+      display: flex;
+      align-items: flex-start;
+
+      @include tabletvert {
+        gap: 20px;
+        flex-direction: column;
+      }
+    }
+
+    .eventsWrap .flex_row .rightSec {
+      padding: 20px 30px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .contentWrapper {
+      padding: 0 20px;
+
+      @include tabletvert {
+        padding: 0;
+      }
+
+      .clearfix {
+        display: none;
+      }
+    }
+  }
 }

@@ -188,7 +188,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
     "name" : "button_group",
@@ -374,7 +374,7 @@
     "include_content" : true,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
-    "include_button" : true,
+    "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -427,7 +427,8 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "external_video"
   }, {
     "id" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
     "name" : "poster_image",
@@ -441,7 +442,7 @@
     "display_width" : null,
     "default" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
       "alt" : "justin",
       "loading" : "lazy",
       "width" : 2560,
@@ -493,9 +494,10 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
+    "select_video_type" : "external_video",
     "poster_image" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
       "alt" : "justin",
       "loading" : "lazy",
       "width" : 2560,
@@ -505,9 +507,10 @@
     },
     "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
   }, {
+    "select_video_type" : "external_video",
     "poster_image" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
       "alt" : "justin",
       "loading" : "lazy",
       "width" : 2560,
@@ -517,9 +520,10 @@
     },
     "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
   }, {
+    "select_video_type" : "external_video",
     "poster_image" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
       "alt" : "justin",
       "loading" : "lazy",
       "width" : 2560,
@@ -529,9 +533,10 @@
     },
     "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
   }, {
+    "select_video_type" : "external_video",
     "poster_image" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
       "alt" : "justin",
       "loading" : "lazy",
       "width" : 2560,
@@ -541,9 +546,10 @@
     },
     "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
   }, {
+    "select_video_type" : "external_video",
     "poster_image" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/justin.jpg",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
       "alt" : "justin",
       "loading" : "lazy",
       "width" : 2560,

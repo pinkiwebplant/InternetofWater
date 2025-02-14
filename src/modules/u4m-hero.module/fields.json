@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Hero Heading"
+    "default" : "Who We Are "
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -155,7 +155,7 @@
       "min" : null,
       "max" : 3,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 1
+      "default" : 3
     },
     "visibility" : {
       "controlling_field" : null,
@@ -299,6 +299,32 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
     } ]
   } ],
   "tab" : "CONTENT",
@@ -311,12 +337,38 @@
     "eyebrow_text" : "Eyebrow Text",
     "include_heading" : true,
     "heading_size" : "h1",
-    "heading" : "Hero Heading",
+    "heading" : "Who We Are ",
     "include_content" : true,
     "content_style" : "bodystyle3",
     "content" : "<h5>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</h5>",
     "include_button" : true,
     "button_group" : [ {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
       "button_type" : "std",
       "button_style" : "hs-button",
       "button_text" : "Button",
@@ -738,7 +790,7 @@
       "display_width" : null,
       "default" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/hero-img.jpg",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/hero-img.jpg",
         "alt" : "hero-img",
         "loading" : "lazy",
         "width" : 2560,
@@ -818,7 +870,7 @@
       "background_type" : "image",
       "background_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/hero-img.jpg",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/hero-img.jpg",
         "alt" : "hero-img",
         "loading" : "lazy",
         "width" : 2560,
@@ -869,7 +921,7 @@
       "background_type" : "image",
       "background_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/InternetofWater-u4m/images/hero-img.jpg",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/hero-img.jpg",
         "alt" : "hero-img",
         "loading" : "lazy",
         "width" : 2560,

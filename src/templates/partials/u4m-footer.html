@@ -5,43 +5,44 @@
 
 
 <footer id="main-footer">
-	<div class="page-center">
-		<div id="footer-widgets" class="clearfix">
-			<div class="footer-widget">
-				<div class="fwidget et_pb_widget widget_block widget_media_image">
-					{% module "footer_image" path="@hubspot/linked_image", label="Footer Logo", img={ "src": "{{ get_asset_url('../../templates/images/internet-of-water-coalition-logo_footer.png') }}", "width":372, "alt": "Internet of Water Coalition logo"} %}
-				</div>
-			</div>
-			<div class="footer-widget">
-				{% module_block module "footer_heading" path="@hubspot/rich_text" label="Footer Heading"%}
-				{% module_attribute "html" %}
-				<h2>Better Water Data for Better Water Management</h2>
-				{% end_module_attribute %}
-				{% end_module_block %}
+  <div class="page-center">
+    <div id="footer-widgets" class="clearfix">
+      <div class="footer-widget">
+        <div class="fwidget et_pb_widget widget_block widget_media_image">
+          {% set logo_file =  get_asset_url('../../templates/images/internet-of-water-coalition-logo_footer.png') %}
+          {% module "footer_image" path="@hubspot/linked_image", label="Footer Logo", img={ "src": "{{ logo_file }}", "width":372, "alt": "Internet of Water Coalition logo"} %}
+        </div>
+      </div>
+      <div class="footer-widget">
+        {% module_block module "footer_heading" path="@hubspot/rich_text" label="Footer Heading"%}
+        {% module_attribute "html" %}
+        <h2>Better Water Data for Better Water Management</h2>
+        {% end_module_attribute %}
+        {% end_module_block %}
 
-			</div>
-			<div class="footer-widget">
-				<div id="menu-footer-menu" class="menu">
-					{% menu "footer_menu" id=185916497156, flyouts=false, label='Footer Menu' %}
-				</div>
-			</div>
-			<div class="footer-widget">
-				<div class="fwidget et_pb_widget widget_block">
-					<div class="footer-link-text">
-						{% module_block module "footer_link_text" path="@hubspot/rich_text" label="Footer Link Text"%}
-						{% module_attribute "html" %}
-						<a href="/#" target="_blank" rel="noopener">Join Our Mailing List</a>
-						<p>Contact us: <strong><u><a href="#">internetofwater@lincolninst.edu</a></u></strong></p>
-						{% end_module_attribute %}
-						{% end_module_block %}
-					</div>
+      </div>
+      <div class="footer-widget">
+        <div id="menu-footer-menu" class="menu">
+          {% menu "footer_menu" id=186153107264, flyouts=false, label='Footer Menu' %}
+        </div>
+      </div>
+      <div class="footer-widget">
+        <div class="fwidget et_pb_widget widget_block">
+          <div class="footer-link-text">
+            {% module_block module "footer_link_text" path="@hubspot/rich_text" label="Footer Link Text"%}
+            {% module_attribute "html" %}
+            <a href="/#" target="_blank" rel="noopener">Join Our Mailing List</a>
+            <p>Contact us: <strong><u><a href="#">internetofwater@lincolninst.edu</a></u></strong></p>
+            {% end_module_attribute %}
+            {% end_module_block %}
+          </div>
 
-				</div>
-			</div>
-			<div class="footer-widget">
-				<div class="social_icon_wrapper">
+        </div>
+      </div>
+      <div class="footer-widget">
+        <div class="social_icon_wrapper">
 
-					{% module "social_icons"
+          {% module "social_icons"
         path="../../modules/u4m-footer-social-icon",
         offset=0,
         width=12,
@@ -67,25 +68,25 @@
           "select_icon" : "linkedin"
         } ]
       %}
-				</div>
-			</div>
+        </div>
+      </div>
 
-		</div>
-	</div>
-	<div id="footer-bottom">
-		<div class="page-center clearfix">
-			<div class="bottom-bar bottom-bar-1">
+    </div>
+  </div>
+  <div id="footer-bottom">
+    <div class="page-center clearfix">
+      <div class="bottom-bar bottom-bar-1">
 
-				<aside class="copyright_text">
-					{% module_block module "copyright_text" path="@hubspot/rich_text" label="Copyright Text"%}
-					{% module_attribute "html" %}
-					<p>© Copyright {{ year }} <a href="/" target="_blank" rel="noopener">Center for Geospatial Solutions</a> / <a href="/" target="_blank" rel="noopener">Lincoln Institute of Land Policy</a></p>
-					{% end_module_attribute %}
-					{% end_module_block %}
+        <aside class="copyright_text">
+          {% module_block module "copyright_text" path="@hubspot/rich_text" label="Copyright Text"%}
+          {% module_attribute "html" %}
+          <p>© Copyright {{ year }} <a href="/" target="_blank" rel="noopener">Center for Geospatial Solutions</a> / <a href="/" target="_blank" rel="noopener">Lincoln Institute of Land Policy</a></p>
+          {% end_module_attribute %}
+          {% end_module_block %}
 
-				</aside>
-			</div>
-		</div>
-	</div>
+        </aside>
+      </div>
+    </div>
+  </div>
 
 </footer>

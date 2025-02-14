@@ -58,6 +58,11 @@ section.u4m-cards {
 
   .card_img {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 
     .icon_img img {
       height: auto;

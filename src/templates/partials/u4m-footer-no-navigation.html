@@ -3,21 +3,26 @@
  label: Footer no navigation
  -->
 
-
 <footer id="main-footer">
-	<div id="footer-bottom">
-		<div class="page-center clearfix">
-			<div class="bottom-bar bottom-bar-1">
-				<aside class="copyright_text">
-					{% module_block module "copyright_text" path="@hubspot/rich_text" label="Copyright Text"%}
-					{% module_attribute "html" %}
-					<p>© Copyright {{ year }} <a href="/" target="_blank" rel="noopener">Center for Geospatial Solutions</a> / <a href="/" target="_blank" rel="noopener">Lincoln Institute of Land Policy</a></p>
-					{% end_module_attribute %}
-					{% end_module_block %}
-
-				</aside>
-			</div>
-		</div>
-	</div>
-
+  <div id="footer-bottom">
+    <div class="page-center clearfix">
+      <div class="bottom-bar bottom-bar-1">
+        <aside class="copyright_text">
+          {% module_block module "copyright_text" path="@hubspot/rich_text"
+          label="Copyright Text"%} {% module_attribute "html" %}
+          <p>
+            © Copyright {{ year }}
+            <a href="/" target="_blank" rel="noopener"
+              >Center for Geospatial Solutions</a
+            >
+            /
+            <a href="/" target="_blank" rel="noopener"
+              >Lincoln Institute of Land Policy</a
+            >
+          </p>
+          {% end_module_attribute %} {% end_module_block %}
+        </aside>
+      </div>
+    </div>
+  </div>
 </footer>

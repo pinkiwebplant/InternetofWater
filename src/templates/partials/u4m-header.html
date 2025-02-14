@@ -7,12 +7,12 @@ label: Header
    <div class="page-center et_menu_container">
       <div class="logo_container">
 				<span class="logo_helper"></span>
-			{% set logo_file =  get_asset_url('../..//templates/images/internet-of-water-coalition-logo.png') %}
+			{% set logo_file =  get_asset_url('../../templates/images/internet-of-water-coalition-logo.png') %}
       {% module "header_logo" path="@hubspot/logo", label="Header Logo", link='/', img={src="{{logo_file}}", width=173, alt= Internet of Water, override_inherited_src= true} %}
       </div>
       <div id="et-top-navigation">
          <nav id="top-menu-nav">
-           {% menu "header_menu" id=185872674707, flyouts=false, label='Header Menu' %}
+           {% menu "header_menu" id=186147986055, flyouts=false, label='Header Menu' %}
          </nav>
          <div id="et_top_search">
             <span id="et_search_icon"></span>
@@ -21,7 +21,7 @@ label: Header
             <div class="mobile_nav closed">
                <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
                <div id="mobile_menu" class="et_mobile_menu">
-                   {% menu "header_mobile_menu" id=185872674707, flyouts=false, label='Header Mobile Menu' %}
+                   {% menu "header_mobile_menu" id=186147986055, flyouts=false, label='Header Mobile Menu' %}
                </div>
             </div>
          </div>

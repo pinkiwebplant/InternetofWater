@@ -161,7 +161,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "bodystyle3"
+    "default" : "themeStyle"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -178,7 +178,7 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+    "default" : "<p>The Coalition is a group of organizations working together with federal, state, and local government partners to build foundational water data infrastructure across the US and create a community of people and organizations using water data to make better decisions.</p>\n<p>Through close collaboration and engagement, we help partners modernize their water data infrastructure to make more effective water management decisions. We provide tools that improve the discoverability, accessibility, and usability of water data, develop educational programs for data producers, users, and decision-makers, and build access to a nationwide community of practice.</p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -359,8 +359,8 @@
     "heading" : "Top Heading",
     "include_heading_border" : false,
     "include_content" : true,
-    "content_style" : "bodystyle3",
-    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "content_style" : "themeStyle",
+    "content" : "<p>The Coalition is a group of organizations working together with federal, state, and local government partners to build foundational water data infrastructure across the US and create a community of people and organizations using water data to make better decisions.</p>\n<p>Through close collaboration and engagement, we help partners modernize their water data infrastructure to make more effective water management decisions. We provide tools that improve the discoverability, accessibility, and usability of water data, develop educational programs for data producers, users, and decision-makers, and build access to a nationwide community of practice.</p>",
     "include_button" : true,
     "button_group" : [ {
       "button_type" : "std",

@@ -204,3 +204,7 @@ section.u4m-membership-register form input[type="radio"] + * {
   display: flex;
   flex-wrap: wrap;
 }
+
+.systems-page form input[type="password"] {
+  height: auto !important;
+}
