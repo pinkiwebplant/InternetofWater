@@ -3,7 +3,35 @@
 {% include "../partials/u4-module-includes.html" %}
 
 
-<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+{% set getButtonLength = module.intro_content.button_group|length %}
+
+
+{% if getButtonLength == 1 %}
+{% set rowWrap = "col1_row"%}
+{% endif  %}
+
+{% if getButtonLength == 2 %}
+{% set rowWrap = "col2_row"%}
+{% endif  %}
+
+{% if getButtonLength == 3 %}
+{% set rowWrap = "col3_row"%}
+{% endif  %}
+
+{% if getButtonLength == 4 %}
+{% set rowWrap = "col4_row"%}
+{% endif  %}
+
+{% if getButtonLength == 5 %}
+{% set rowWrap = "col5_row"%}
+{% endif  %}
+
+{% if getButtonLength == 6 %}
+{% set rowWrap = "col6_row"%}
+{% endif  %}
+
+
+<div class="page-center buttoncount_{{getButtonLength}} {{getButtonLength}} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 	

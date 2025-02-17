@@ -1,33 +1,43 @@
-{% set moduleName = 'u4m-hero' %}
-{% set moduleExtraName =  module.module_settings.select_height %}
+<div class="u4m_hero_outer_wrap">
+  {% set moduleName = 'u4m-hero' %}
+  {% set moduleExtraName =  module.module_settings.select_height %}
 
-{% include "../partials/u4-module-includes.html" %}
+  {% include "../partials/u4-module-includes.html" %}
 
 
-<div class="page-center  {% if 	module.intro_content.include_button %}buttonAdded {% endif %} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+  <div class="page-center  {% if 	module.intro_content.include_button %}buttonAdded {% endif %} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-  <div class="hero_inner_wrap row_spacing fade-in" data-aos="fade-up" data-aos-delay="1000">
-    {{macros.introGroup(module.intro_content, module.module_settings)}}
+    <div class="hero_inner_wrap row_spacing fade-in" data-aos="fade-up" data-aos-delay="1000">
+      {{macros.introGroup(module.intro_content, module.module_settings)}}
 
-    {% if module.intro_content.include_content_button %}
-    <div class="content_button_wrap">
-      {{macros.buttonGroup(module.intro_content.content_button_group, false)}}
+      {% if module.intro_content.include_content_button %}
+      <div class="content_button_wrap">
+        {{macros.buttonGroup(module.intro_content.content_button_group, false)}}
+      </div>
+      {% endif %}
+
     </div>
-    {% endif %}
 
   </div>
 
-</div>
 
-{% if module.intro_content.include_button %}
-<div class="btn_bottom_wrap">
-  {{macros.buttonGroup(module.intro_content.button_group, false)}}
+
+  {% if module.intro_content.include_button %}
+  <div class="btn_bottom_wrap">
+    {{macros.buttonGroup(module.intro_content.button_group, false)}}
+  </div>
+  {% endif %}
+
+
+  </section>
+
+{% if module.intro_content.include_credit_text and module.intro_content.credit_text  %}
+<div class="bottom_credit">
+  <div class="cmCreditCnt">
+    <div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
+  </div>
 </div>
 {% endif %}
-
-
-</section>
-
 
 
 {# button group popup modal#}
@@ -50,3 +60,5 @@
 {% endif %}
 
 
+
+</div>

@@ -17,6 +17,7 @@
 
       .intro_desc {
         margin-bottom: 0;
+        color: $black;
       }
     }
   }
@@ -57,6 +58,15 @@
 
 .bottom_credit {
   padding-bottom: 13rem;
+
+  &.position_inside_container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    padding: 0;
+  }
 
   .cmCreditCnt {
     margin-left: 15rem;

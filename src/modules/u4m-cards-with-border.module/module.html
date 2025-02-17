@@ -2,15 +2,15 @@
 
 {% include "../partials/u4-module-includes.html" %}
 
-
+{% set settings = module.module_settings %}
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 
 	<div class="cmBorderCardWrap">
-		<div class="innerBorderCard flex_row col4_row">
+		<div class="innerBorderCard flex_row {% if settings.cards_vertically_stack %}cards_vertical_stack{% else %}{{ settings.columns_count_in_row }}_row{% endif %}">
 			{% for item in module.cards %}
-			<div class="cmCards cmItem_{{loop.index}} col4 col ">
+			<div class="cmCards cmItem_{{loop.index}} {% if settings.cards_vertically_stack %}col12{% else %}{{ settings.columns_count_in_row }}{% endif %} col ">
 				<div class="textWrap {{ module.module_overrides.select_border_color }}">
 					<div class="textInnerWrap">
 						{% if item.heading %}

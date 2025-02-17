@@ -183,7 +183,7 @@
 {# #}
 
 {% macro introGroup(group, settings, overrides)%}
-{% if group.include_eyebrow_text or group.include_heading or group.include_content or  group.include_button%}
+{% if group.include_eyebrow_text or group.include_heading or group.include_top_border or group.include_content or  group.include_button%}
 <div class="intro_content {% if settings %}{{settings.intro_content_alignment}}{% endif %}">
 
 	<div class="intro__inner ">
@@ -193,7 +193,7 @@
 		</div>
 		{% endif %}
 
-		{% if group.include_top_border and group.include_eyebrow_text == false %}
+		{% if group.include_top_border %}
 		<div class="heading_top_border">
 			<span></span>
 		</div>

@@ -3,48 +3,57 @@
 {% include "../partials/u4-module-includes.html" %}
 
 
-<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}   {% if module.include_bottom_content %}bottom_rich_textAdded{% endif %}">
 
-	{{macros.introGroup(module.intro_content, module.module_settings)}}
+  {{macros.introGroup(module.intro_content, module.module_settings)}}
 
-	<div class="btmCntt row_spacing">
-		<div class="flex_row {{ module.module_settings.column_count }}_row">
-			{% for item in module.partners_items_group %}
-			<div class="col items {{ module.module_settings.column_count }} item_{{loop.index}}">
-				<div class="innerImg">
-					{% set href = item.link_field.url.href %}
-					{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-					{% set href = "mailto:" + href %}
-					{% endif %}
-					{% if href 	%}<a
-													 {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
-													 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-													 {% else %}
-													 href="{{ href|escape_url }}"
-													 {% endif %}
-													 {% if item.link_field.open_in_new_tab %}
-													 target="_blank"
-													 {% endif %}
-													 {% if item.link_field.rel %}
-													 rel="{{ item.link_field.rel|escape_attr }}"
-													 {% endif %}
-													 > {% endif %}
-					{% if item.image_field.src %}
-					{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
-					{% if item.image_field.size_type == 'auto' %}
-					{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-					{% elif item.image_field.size_type == 'auto_custom_max' %}
-					{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-					{% endif %}
-					{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-					<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-					{% endif %}
-					{% if href 	%}	</a> {% endif %}
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
+  <div class="btmCntt row_spacing">
+    <div class="flex_row {{ module.module_settings.column_count }}_row">
+      {% for item in module.partners_items_group %}
+      <div class="col items {{ module.module_settings.column_count }} item_{{loop.index}}">
+        <div class="innerImg">
+          {% set href = item.link_field.url.href %}
+          {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          {% if href 	%}<a
+                           {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+                           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                           {% else %}
+                           href="{{ href|escape_url }}"
+                           {% endif %}
+                           {% if item.link_field.open_in_new_tab %}
+                           target="_blank"
+                           {% endif %}
+                           {% if item.link_field.rel %}
+                           rel="{{ item.link_field.rel|escape_attr }}"
+                           {% endif %}
+                           > {% endif %}
+          {% if item.image_field.src %}
+          {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+          {% if item.image_field.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.image_field.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+          {% if href 	%}	</a> {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if module.include_bottom_content %}
+  <div class="bottom_rich_text row_spacing {{ module.bottom_content_group.content_style }}">
+    {{ module.bottom_content_group.content }}
+  </div>
+  {% endif %}  
+  
+  
+  
 </div>
 </section>
 
@@ -57,29 +66,29 @@
 
 
 <style> 
-	@media(max-width:991px){
-		{% for item in module.partners_items_group %}
-		{% if item.change_the_image_width_for_mobile %}
-		.u4m-partners.{{name}} .btmCntt .col.items.item_{{loop.index}} .innerImg{
-			width:{{ item.image_width }}px;
-			margin: 0 auto;
-		}
-		{% endif %}
-		{% endfor %}
-	}
-	{% if module.module_settings.logo_spacing_group.top_spacing or module.module_settings.logo_spacing_group.bottom_spacing %}
-	.u4m-partners.{{name}} .btmCntt .col.items{
-		padding-top:{{ module.module_settings.logo_spacing_group.top_spacing }}px;
-		padding-bottom:{{ module.module_settings.logo_spacing_group.bottom_spacing }}px;
-	}
-	{% endif %}
-	{% if module.module_settings.logo_spacing_group.change_spacing_in_mobile %}
-	@media(max-width:767px){
-		.u4m-partners.{{name}} .btmCntt .col.items{
-			padding-top:{{ module.module_settings.logo_spacing_group.mobile_spacing_group.top_spacing }}px;
-			padding-bottom:{{ module.module_settings.logo_spacing_group.mobile_spacing_group.bottom_spacing }}px;
-		}
-	}
-	{% endif %}
+  @media(max-width:991px){
+    {% for item in module.partners_items_group %}
+    {% if item.change_the_image_width_for_mobile %}
+    .u4m-partners.{{name}} .btmCntt .col.items.item_{{loop.index}} .innerImg{
+      width:{{ item.image_width }}px;
+      margin: 0 auto;
+    }
+    {% endif %}
+    {% endfor %}
+  }
+  {% if module.module_settings.logo_spacing_group.top_spacing or module.module_settings.logo_spacing_group.bottom_spacing %}
+  .u4m-partners.{{name}} .btmCntt .col.items{
+    padding-top:{{ module.module_settings.logo_spacing_group.top_spacing }}px;
+    padding-bottom:{{ module.module_settings.logo_spacing_group.bottom_spacing }}px;
+  }
+  {% endif %}
+  {% if module.module_settings.logo_spacing_group.change_spacing_in_mobile %}
+  @media(max-width:767px){
+    .u4m-partners.{{name}} .btmCntt .col.items{
+      padding-top:{{ module.module_settings.logo_spacing_group.mobile_spacing_group.top_spacing }}px;
+      padding-bottom:{{ module.module_settings.logo_spacing_group.mobile_spacing_group.bottom_spacing }}px;
+    }
+  }
+  {% endif %}
 </style>
 

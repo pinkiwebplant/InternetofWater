@@ -8,6 +8,12 @@ section.u4m-hero {
     .page-center {
       margin-bottom: 50px;
     }
+
+    &.full_height {
+      @include tabletvert {
+        height: auto;
+      }
+    }
   }
 
   &.full_height {

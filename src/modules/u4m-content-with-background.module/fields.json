@@ -355,6 +355,24 @@
     "display_width" : null,
     "default" : false
   }, {
+    "id" : "cfbd83df-0c9d-3b97-b167-bbd19b2ec2cb",
+    "name" : "position_inside_container",
+    "label" : "Credit Text Position Inside Container",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.enable_credit_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "2b60c1b9-db0c-9ea6-b2d5-effb61bcb026",
     "name" : "credit_text",
     "label" : "Credit Text",
@@ -435,6 +453,7 @@
       }
     } ],
     "enable_credit_text" : false,
+    "position_inside_container" : false,
     "enable_float_credit_text" : false
   }
 }, {
@@ -914,7 +933,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

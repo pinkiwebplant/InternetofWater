@@ -22,7 +22,7 @@ html {
   --gradient2: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%);
   --gradient3: linear-gradient(
     180deg,
-    rgba(#0b3160, 0) 0%,
+    rgba(11, 49, 96, 0) 0%,
     rgba(0, 0, 0, 1) 100%
   );
   --gradient4: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #151f33 100%);
@@ -521,7 +521,7 @@ section[class*="u4m-"] {
 
   .eyebrow_text {
     @include eyebrow;
-    margin-bottom: 11rem;
+    margin-bottom: 15rem;
     position: relative;
 
     &:after {
@@ -547,6 +547,12 @@ section[class*="u4m-"] {
     margin-bottom: 20px;
     position: relative;
 
+    &:empty {
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+    }
+
     &.hd_border {
       span {
         height: 3px;
@@ -561,6 +567,11 @@ section[class*="u4m-"] {
         transform: translateX(-50%);
       }
     }
+  }
+
+  h3.intro_title {
+    font-weight: 500;
+    color: $cadetGray;
   }
 
   h4.intro_title .hd_border {
@@ -1021,6 +1032,13 @@ main form {
   text-decoration: none;
 }
 .u4m-alternating-content {
+  .intro_desc {
+    h4 {
+      @include eyebrowText2;
+      margin-bottom: 15rem;
+    }
+  }
+
   .text_right {
     max-width: 100%;
     text-align: right;
@@ -1042,6 +1060,16 @@ main form {
     }
     .intro_btn_wrap {
       justify-content: right;
+    }
+
+    .intro_desc {
+      h4 {
+        &:after {
+          left: auto;
+          right: 0;
+          transform: none;
+        }
+      }
     }
   }
 
@@ -1067,6 +1095,16 @@ main form {
 
     .intro_btn_wrap {
       justify-content: left;
+    }
+
+    .intro_desc {
+      h4 {
+        &:after {
+          left: 0;
+          right: auto;
+          transform: none;
+        }
+      }
     }
   }
 }

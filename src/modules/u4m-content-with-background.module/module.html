@@ -1,28 +1,43 @@
 <div class="content_wid_bg_outer parent{{name}}">
-	
-	{% set moduleName = 'u4m-content-with-background' %}
 
-{% include "../partials/u4-module-includes.html" %}
+  {% set moduleName = 'u4m-content-with-background' %}
 
-<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+  {% include "../partials/u4-module-includes.html" %}
 
-	{{macros.introGroup(module.intro_content, module.module_settings)}}
+  <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-</div>
-	{% if module.intro_content.enable_float_credit_text %}
-	<div class="floating_text">
-		<div class="floatInner">
-			{{ module.intro_content.float_credit_text }}
-		</div>
-	</div>
-	{% endif %}
-</section>
+    {{macros.introGroup(module.intro_content, module.module_settings)}}
+
+ 
+
+  </div>
+  {% if module.intro_content.enable_float_credit_text %}
+  <div class="floating_text">
+    <div class="floatInner">
+      {{ module.intro_content.float_credit_text }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if module.intro_content.enable_credit_text %}
+  {% if module.intro_content.position_inside_container %}
+  <div class="bottom_credit position_inside_container">
+    <div class="cmCreditCnt">
+      <div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  </section>
 {% if module.intro_content.enable_credit_text %}
+  {% if module.intro_content.position_inside_container == false %}
 <div class="bottom_credit">
-	<div class="cmCreditCnt">
-		<div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
-	</div>
+  <div class="cmCreditCnt">
+    <div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
+  </div>
 </div>
+{% endif %}
 {% endif %}
 
 </div>
@@ -35,18 +50,18 @@
 
 {% require_css %}
 <style>
-	{% if module.module_settings.set_height %}
-	.u4m-content-with-background.{{name}}{
-		min-height :{{ module.module_settings.height }}px;
-	}
-{% endif %}
-{% if module.module_settings.enable_fade_effect %}
-	.u4m-content-with-background.{{name}} .bg_image{
-		box-shadow: inset 0px 240px 120px -80px #ffffff;
-	}
-{% endif %}
+  {% if module.module_settings.set_height %}
+  .u4m-content-with-background.{{name}}{
+    min-height :{{ module.module_settings.height }}px;
+  }
+  {% endif %}
+  {% if module.module_settings.enable_fade_effect %}
+  .u4m-content-with-background.{{name}} .bg_image{
+    box-shadow: inset 0px 240px 120px -80px #ffffff;
+  }
+  {% endif %}
 </style>
-	
+
 {% end_require_css %}
 
 

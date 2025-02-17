@@ -723,6 +723,38 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "left"
+  }, {
+    "id" : "1ca003d3-e31f-04d2-08fd-92d469fd96cf",
+    "name" : "cards_vertically_stack",
+    "label" : "Cards Vertically Stack",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "74ceb3d9-ae4f-7ee5-7577-653ae6e506b2",
+    "name" : "columns_count_in_row",
+    "label" : "Columns Count in Row",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.cards_vertically_stack",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "col12", "One" ], [ "col6", "Two" ], [ "col4", "Three" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "col4"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -730,7 +762,9 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left"
+    "intro_content_alignment" : "left",
+    "cards_vertically_stack" : false,
+    "columns_count_in_row" : "col4"
   }
 }, {
   "id" : "module_overrides",

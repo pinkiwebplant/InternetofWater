@@ -1,19 +1,66 @@
 @import "../../css/_module-imports";
 
-
 .u4m-advanced-button {
-	.intro_content {
-		a.hs-button {
-			padding: 10px;
-		}
-		max-width: 100%;
-		.intro_title {
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 6px;
-			line-height: 1.8em;
-			margin-bottom: 25px;
-			padding-bottom: 10px;
-		}
-	}
+  .intro_content {
+    a.hs-button {
+      padding: 10px;
+    }
+    max-width: 100%;
+    .intro_title {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      line-height: 1.8em;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .buttoncount_4 .intro_btn_wrap,
+  .buttoncount_3 .intro_btn_wrap {
+    column-gap: 0;
+  }
+
+  .buttoncount_3 .btn_item,
+  .buttoncount_4 .btn_item {
+    padding: 0 15px;
+  }
+  .buttoncount_4 .btn_item {
+    width: 25%;
+
+    @include tablet {
+      width: 33.33%;
+    }
+
+    @include tabletMid {
+      width: 50%;
+    }
+  }
+
+  .buttoncount_3 .btn_item {
+    width: 33.33%;
+
+    @include tabletMid {
+      width: 50%;
+    }
+  }
+
+  .buttoncount_5 .intro_btn_wrap,
+  .buttoncount_4 .intro_btn_wrap,
+  .buttoncount_3 .intro_btn_wrap,
+  .buttoncount_2 .intro_btn_wrap {
+    @include tabletMid {
+      column-gap: 0;
+    }
+  }
+
+  .buttoncount_5 .btn_item,
+  .buttoncount_4 .btn_item,
+  .buttoncount_3 .btn_item,
+  .buttoncount_2 .btn_item {
+    @include tabletMid {
+      width: 50%;
+      padding: 0 15px;
+    }
+  }
 }
