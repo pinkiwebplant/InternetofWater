@@ -30,8 +30,7 @@ html {
 
 @font-face {
   font-family: "ETmodules";
-  src:
-    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
+  src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
       format("embedded-opentype"),
     url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
     url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
@@ -861,7 +860,10 @@ section[class*="u4m-"] {
 .hs-ter-btn {
   @include buttonThird;
 }
-
+.hs-white-btn {
+  @include buttonThird;
+  @include whitebutton;
+}
 .modal_trigger {
   cursor: pointer !important;
 }
@@ -948,9 +950,7 @@ section[class*="u4m-"] {
     box-sizing: content-box;
     cursor: pointer;
     display: block;
-    font-family:
-      Courier New,
-      monospace;
+    font-family: Courier New, monospace;
     font-size: 20px;
     font-weight: 700;
     height: 30px;
@@ -978,12 +978,8 @@ section[class*="u4m-"] {
 
   span.close_content_modal:hover {
     background: #fff;
-    -webkit-box-shadow:
-      0 0 4px 0 #0002,
-      0 0 3px 1px #0001;
-    box-shadow:
-      0 0 4px 0 #0002,
-      0 0 3px 1px #0001;
+    -webkit-box-shadow: 0 0 4px 0 #0002, 0 0 3px 1px #0001;
+    box-shadow: 0 0 4px 0 #0002, 0 0 3px 1px #0001;
     color: $black;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -1016,4 +1012,59 @@ main form {
 
 .u4m-blog-listing a {
   text-decoration: none;
+}
+.u4m-alternating-content {
+  .text_right {
+    max-width: 100%;
+    text-align: right;
+    .heading_top_border {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .intro_title span {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    .eyebrow_text:after {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+    .intro_btn_wrap {
+      justify-content: right;
+    }
+  }
+
+  .text_left {
+    text-align: left;
+    max-width: 100%;
+    .heading_top_border {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .intro_title span {
+      left: 0;
+      right: auto;
+      transform: none;
+    }
+
+    .eyebrow_text:after {
+      left: 0;
+      right: auto;
+      transform: none;
+    }
+
+    .intro_btn_wrap {
+      justify-content: left;
+    }
+  }
+}
+
+.dnd_padd.moduleIsInPreview [data-aos*="fade"] {
+  opacity: 1 !important;
+  transform: none !important;
 }

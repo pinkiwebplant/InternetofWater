@@ -91,7 +91,20 @@
     border-color: rgba($sunsetOrange, 0.67);
   }
 }
-
+@mixin whitebutton {
+  color: $darkGray;
+  background: $white;
+  padding: 0.3em 1em;
+  border-width: 2px;
+  border-color: $white;
+  font-size: $baseFontSize;
+  letter-spacing: 2px;
+  margin-right: 15px;
+  &:hover {
+    color: $azure;
+    background-color: $sunsetOrange;
+  }
+}
 //
 @mixin buttonSmall {
   @include button;
@@ -271,9 +284,7 @@
   &.x2 .lines:before,
   &.x2 .lines:after {
     transform-origin: 50% 50%;
-    transition:
-      top 0.3s 0.6s ease,
-      transform 0.3s ease;
+    transition: top 0.3s 0.6s ease, transform 0.3s ease;
   }
 
   &.x2.close .lines {
@@ -283,9 +294,7 @@
 
   &.x2.close .lines:before,
   &.x2.close .lines:after {
-    transition:
-      top 0.3s ease,
-      transform 0.3s 0.5s ease;
+    transition: top 0.3s ease, transform 0.3s 0.5s ease;
     top: 0;
     width: 30rem;
   }
