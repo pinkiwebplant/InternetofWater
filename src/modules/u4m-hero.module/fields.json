@@ -136,9 +136,200 @@
     "display_width" : null,
     "default" : "<h5>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</h5>"
   }, {
+    "id" : "3d285b3c-dbf8-e5b6-3976-cb61cf867986",
+    "name" : "include_content_button",
+    "label" : "Include Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "0e73e218-7129-608f-6c7f-a19dc9791c44",
+    "name" : "content_button_group",
+    "label" : "Button Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 3,
+      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "f5a3876e-f708-1b7a-199a-c50683bcd9cd",
+      "name" : "button_type",
+      "label" : "Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "std"
+    }, {
+      "id" : "1afe39da-a5b4-1d14-be70-58153d9861e6",
+      "name" : "button_style",
+      "label" : "Button Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.content_button_group.button_type",
+        "controlling_value_regex" : "std|popup_content",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ], [ "hs-white-btn", "Quarternary" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "hs-button"
+    }, {
+      "id" : "c4710c8d-8c9c-7a0e-17d5-749126a74b69",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.content_button_group.button_type",
+        "controlling_value_regex" : "std|popup_content",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Button"
+    }, {
+      "id" : "77ead345-9d09-91fa-b6fe-08758ed85b48",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.content_button_group.button_type",
+        "controlling_value_regex" : "std",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "a3823922-db66-cc04-ca24-d14596f7ed54",
+      "name" : "cta",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.content_button_group.button_type",
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null
+    }, {
+      "id" : "7ac5e843-3123-8280-16d2-207a72d82fcc",
+      "name" : "popup_content",
+      "label" : "Popup Content",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.content_button_group.button_type",
+        "controlling_value_regex" : "popup_content",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "richtext",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
-    "label" : "Include Button",
+    "label" : "Include Bottom Button",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
@@ -148,7 +339,7 @@
   }, {
     "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
     "name" : "button_group",
-    "label" : "Button Group",
+    "label" : "Bottom Button Group",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -341,6 +532,47 @@
     "include_content" : true,
     "content_style" : "bodystyle3",
     "content" : "<h5>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</h5>",
+    "include_content_button" : false,
+    "content_button_group" : [ {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_type" : "std",
+      "button_style" : "hs-button",
+      "button_text" : "Button",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
     "include_button" : true,
     "button_group" : [ {
       "button_type" : "std",

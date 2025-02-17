@@ -6,15 +6,22 @@
 
 <div class="page-center  {% if 	module.intro_content.include_button %}buttonAdded {% endif %} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-	<div class="hero_inner_wrap fade-in" data-aos="fade-up" data-aos-delay="1000">
-		{{macros.introGroup(module.intro_content, module.module_settings)}}
-	</div>
+  <div class="hero_inner_wrap row_spacing fade-in" data-aos="fade-up" data-aos-delay="1000">
+    {{macros.introGroup(module.intro_content, module.module_settings)}}
+
+    {% if module.intro_content.include_content_button %}
+    <div class="content_button_wrap">
+      {{macros.buttonGroup(module.intro_content.content_button_group, false)}}
+    </div>
+    {% endif %}
+
+  </div>
 
 </div>
 
 {% if module.intro_content.include_button %}
 <div class="btn_bottom_wrap">
-	{{macros.buttonGroup(module.intro_content.button_group, false)}}
+  {{macros.buttonGroup(module.intro_content.button_group, false)}}
 </div>
 {% endif %}
 
@@ -27,14 +34,17 @@
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
+{% if module.intro_content.include_content_button %}
+{{macros.buttonGroup(module.intro_content.content_button_group, true)}}
+{% endif %}
 
 
 {% if module.module_settings.select_height == "custom" %}
 {% require_css %}
 <style>
-	.{{name}} .page-center{
-		max-height:  {{ module.module_settings.custom_height }}rem;
-	}
+  .{{name}} .page-center{
+    max-height:  {{ module.module_settings.custom_height }}rem;
+  }
 </style>
 {% end_require_css %}
 {% endif %}

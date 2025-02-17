@@ -44,6 +44,8 @@ section.u4m-hero {
   .intro_content {
     max-width: 100%;
     width: 80%;
+    padding-top: 0;
+    padding-bottom: 0;
     .intro_btn_wrap {
       display: none;
     }
@@ -69,7 +71,7 @@ section.u4m-hero {
       z-index: 4;
       flex-wrap: nowrap;
       gap: 0;
-      flex-direction: row-reverse;
+      // flex-direction: row-reverse;
       align-items: flex-end;
 
       @include tabletMid {
@@ -103,16 +105,16 @@ section.u4m-hero {
           width: 100%;
         }
 
-        &:last-child > a {
+        &:first-child > a {
           border-radius: 10px 0 0 0;
         }
 
-        &:last-child:hover > a {
+        &:first-child:hover > a {
           border-radius: 10px 10px 0 0;
         }
 
         &:nth-child(2):not(:last-of-type):hover > a,
-        &:nth-child(1):not(:last-of-type):hover > a {
+        &:nth-child(3):hover > a {
           border-radius: 10px 10px 0 0;
         }
       }
