@@ -31,6 +31,16 @@ section.u4m-cards {
   }
 
   .car_item {
+    &.col12 {
+      .card_inner {
+        max-width: 510px;
+        margin: 0 auto;
+        width: 50%;
+        @include tabletvert {
+          width: 100%;
+        }
+      }
+    }
     &.cardShdw {
       .card_inner {
         box-shadow: $cardShdw;

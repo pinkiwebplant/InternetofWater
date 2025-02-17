@@ -914,6 +914,18 @@
       "suffix" : "px",
       "type" : "number",
       "display_width" : null
+    }, {
+      "id" : "af9bc357-7749-8167-80b9-f34cf8c2a645",
+      "name" : "heading_color",
+      "label" : "Heading Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -921,7 +933,11 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "change_mobile_spacing" : false
+      "change_mobile_spacing" : false,
+      "heading_color" : {
+        "color" : null,
+        "opacity" : null
+      }
     }
   } ],
   "tab" : "CONTENT",
@@ -969,7 +985,11 @@
       }
     } ],
     "column_settings" : {
-      "change_mobile_spacing" : false
+      "change_mobile_spacing" : false,
+      "heading_color" : {
+        "color" : null,
+        "opacity" : null
+      }
     }
   }
 }, {

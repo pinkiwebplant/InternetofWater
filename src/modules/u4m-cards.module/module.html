@@ -210,7 +210,11 @@
 
         </div>
         {# #}
-
+        {% if module.bottom_content %}
+        <div class="bottom_cnt ">
+            {{macros.introGroup(module.bottom_content)}}
+        </div>
+        {% endif %}
 
       </div>
       </section>

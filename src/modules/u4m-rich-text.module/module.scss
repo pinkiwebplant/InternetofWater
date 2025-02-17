@@ -1,13 +1,37 @@
 @import "../../css/_module-imports";
 
 .cmRichText {
+  .hd_right {
+    .eyebrow_text,
+    .intro_content .intro_title {
+      text-align: right;
+    }
+    .intro_content .heading_top_border {
+      margin-left: auto;
+      margin-right: 0;
+    }
+    .intro_content.left .eyebrow_text:after {
+      left: auto;
+      right: 0;
+    }
+  }
+  .hd_center {
+    .eyebrow_text,
+    .intro_content .intro_title {
+      text-align: center;
+    }
+    .intro_content .heading_top_border {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .intro_content.left .eyebrow_text:after {
+      left: 0;
+      right: 0;
+    }
+  }
   .intro_content {
     .intro_desc {
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-bottom: 78px;
       margin-bottom: 39px;
-      padding-top: 43px;
 
       @include tabletvert {
         padding-left: 30px;
@@ -21,7 +45,7 @@
 
       h4 {
         @include eyebrowText2;
-
+        margin-bottom: 30rem;
         &:after {
           margin-left: 0;
           transform: none;

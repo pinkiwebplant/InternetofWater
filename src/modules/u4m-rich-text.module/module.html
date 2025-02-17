@@ -3,9 +3,9 @@
 {% include "../partials/u4-module-includes.html" %}
 
 
-<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }} hd_{{ module.module_settings.top_heading_alignment }}">
 
-	{{macros.introGroup(module.intro_content, module.module_settings)}}
+  {{macros.introGroup(module.intro_content, module.module_settings)}}
 
 </div>
 </section>
@@ -20,16 +20,21 @@
 
 {% require_css %}
 <style>
-	.cmRichText.{{name}} .intro_content .intro__inner .intro_btn_wrap {
-		justify-content: {{ module.module_settings.button_alignment }};
-	}
-	{% if module.module_settings.enable_shadow %}
-	.cmRichText.{{name}} .bg_image{
-		box-shadow: inset 0px 240px 120px -80px #ffffff;
-	}
-	{% endif %}
-	
-	
+  .cmRichText.{{name}} .intro_content .intro__inner .intro_btn_wrap {
+    justify-content: {{ module.module_settings.button_alignment }};
+  }
+  {% if module.module_settings.enable_shadow %}
+  .cmRichText.{{name}} .bg_image{
+    box-shadow: inset 0px 240px 120px -80px #ffffff;
+  }
+  {% endif %}
+  .cmRichText .intro_content .intro_desc{
+    padding-top:{{ module.module_settings.spacing.top }}px;
+    padding-bottom:{{ module.module_settings.spacing.bottom }}px;
+    padding-left:{{ module.module_settings.spacing.left }}px;
+    padding-right:{{ module.module_settings.spacing.right }}px;
+  }
+
 </style>
 {% end_require_css %}
 
