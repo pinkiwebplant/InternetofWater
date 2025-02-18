@@ -255,9 +255,9 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_value_regex" : "std|popup_content",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "allow_new_line" : false,

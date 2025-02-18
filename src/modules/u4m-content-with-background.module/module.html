@@ -60,6 +60,11 @@
     box-shadow: inset 0px 240px 120px -80px #ffffff;
   }
   {% endif %}
+  {% if module.module_settings.button_spacing != type1 %} 
+  .u4m-content-with-background.{{name}} .intro_btn_wrap{
+    justify-content: {{ module.module_settings.button_spacing }};
+  }
+  {% endif %}
 </style>
 
 {% end_require_css %}

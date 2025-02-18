@@ -515,6 +515,20 @@
     "suffix" : "px",
     "type" : "number",
     "display_width" : null
+  }, {
+    "id" : "ed86293a-a802-5c81-dc07-76124407eb52",
+    "name" : "button_spacing",
+    "label" : "Button Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "type1", "Type1" ], [ "space-around", "Type2" ], [ "space-between", "Type3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "type1"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -524,7 +538,8 @@
   "default" : {
     "intro_content_alignment" : "left",
     "enable_fade_effect" : true,
-    "set_height" : false
+    "set_height" : false,
+    "button_spacing" : "type1"
   }
 }, {
   "id" : "module_overrides",
