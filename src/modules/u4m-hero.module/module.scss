@@ -1,7 +1,9 @@
 @import "../../css/_module-imports";
 section.u4m-hero {
   position: relative;
-
+  .page-center {
+    width: 100%;
+  }
   &:has(.buttonAdded) {
     padding-bottom: 0;
 
@@ -95,9 +97,7 @@ section.u4m-hero {
         width: 100%;
         border: none;
         border-radius: 0;
-        transition:
-          margin 300ms ease 0ms,
-          padding 300ms ease 0ms,
+        transition: margin 300ms ease 0ms, padding 300ms ease 0ms,
           border-radius 300ms ease;
         &:hover {
           padding: 35px 20px !important;

@@ -7,7 +7,7 @@
 
   <div class="page-center  {% if 	module.intro_content.include_button %}buttonAdded {% endif %} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-    <div class="hero_inner_wrap row_spacing fade-in" data-aos="fade-up" data-aos-delay="1000">
+    <div class="hero_inner_wrap row_spacing fade-in" data-aos="fade-up" >
       {{macros.introGroup(module.intro_content, module.module_settings)}}
 
       {% if module.intro_content.include_content_button %}
@@ -49,15 +49,39 @@
 {% endif %}
 
 
-{% if module.module_settings.select_height == "custom" %}
+
 {% require_css %}
 <style>
+  {% if module.module_settings.select_height == "custom" %}
   .{{name}} .page-center{
     max-height:  {{ module.module_settings.custom_height }}rem;
   }
+  {% endif %}
+  .{{name}}.u4m-hero .intro_title{
+    font-size:{{ module.module_settings.heading_font.font_size }}vw;
+    line-height:{{ module.module_settings.heading_font.line_height }}em;
+    {% if module.module_settings.heading_font.bottom_padding %}
+    padding-bottom:{{ module.module_settings.heading_font.bottom_padding }}px;
+    {% endif %}
+    {% if module.module_settings.content_font.color %}
+    color:{{ module.module_settings.heading_font.color.rgba }};  
+    {% endif %}
+  }
+  .{{name}}.u4m-hero .intro_desc *{ 
+    {% if module.module_settings.content_font.color.rgba %}
+    color:{{ module.module_settings.content_font.color.rgba }};   
+    {% endif %}
+  }
+  .{{name}}.u4m-hero .intro_desc{
+    font-size:{{ module.module_settings.content_font.font_size }}rem;
+    line-height:{{ module.module_settings.content_font.line_height }}em;
+    max-width:{{ module.module_settings.content_font.max_width }}px;
+    margin-left:auto;
+    margin-right:auto;
+  }
 </style>
 {% end_require_css %}
-{% endif %}
+
 
 
 
