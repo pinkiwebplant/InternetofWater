@@ -8,7 +8,7 @@
   {{macros.introGroup(module.intro_content, module.module_settings)}}
 
   <div class="btmCntt row_spacing">
-    <div class="flex_row {{ module.module_settings.column_count }}_row">
+    <div class="flex_row {{ module.module_settings.column_count }}_row" style="row-gap:{{ module.module_settings.row_gap }}rem;">
       {% for item in module.partners_items_group %}
       <div class="col items {{ module.module_settings.column_count }} item_{{loop.index}}">
         <div class="innerImg">

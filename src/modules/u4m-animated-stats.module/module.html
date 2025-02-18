@@ -10,7 +10,7 @@
 		<div class="stats_inner">
 			<div class="flex_row">
 				{% if module.stats_items.left_column.embed_url.href|escape_url or module.stats_items.left_column.embed_text %}
-				<div class="stats_left col col4">
+				<div class="stats_left col col{{ module.module_settings.column_type }}">
 					<div class="embed_url">
 						<div class="video-wrapper">
 							<iframe loading="lazy" src="{{ module.stats_items.left_column.embed_url.href|escape_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid0"></iframe>
@@ -27,20 +27,25 @@
 				</div>
 				{% endif %}
 				{% for item in module.stats_items.right_column %}
-				<div class="stats_right col col4">
+				<div class="stats_right col col{{ module.module_settings.column_type }}">
 
 					<div class="number_count">
 						<p>
 							{% if item.prefix %}
 							<span class="prefix">{{ item.prefix }}</span>
 							{% endif %}
-							<span class="counter">{{ item.number }}</span>
+							<span {% if module.module_settings.enable_counter %}class="counter"{% endif %}>{{ item.number }}</span>
 							{% if item.surfix %}
 							<span class="surfix">{{ item.surfix }}</span>
 							{% endif %}
 						</p>
 					</div>
 					<h5 class="title">{{ item.title }}</h5>
+          {% if item.content %}
+          <div class="cnt">
+            {{ item.content }}
+          </div>
+          {% endif %}
 				</div>
 				{% endfor %}
 			</div>
@@ -56,13 +61,3 @@
 {% endif %}
 
 
-
-
-{# {% require_js %}
-<script src="https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/js/jquery-2.2.4.min.js"></script>
-<script src="https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/js/waypoints.min.js"></script>
-<script src="https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/js/jquery.counterup.min.js"></script>
-<script>
-
-</script>
-{% end_require_js %}  #}

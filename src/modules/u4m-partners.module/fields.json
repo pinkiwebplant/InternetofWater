@@ -765,6 +765,17 @@
       "change_spacing_in_mobile" : false,
       "mobile_spacing_group" : { }
     }
+  }, {
+    "id" : "712e0472-3631-9c93-de5a-b9fd433e6142",
+    "name" : "row_gap",
+    "label" : "Row Gap",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "rem",
+    "type" : "number",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,

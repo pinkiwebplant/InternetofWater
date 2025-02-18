@@ -1,6 +1,11 @@
 @import "../../css/_module-imports";
 section.u4m-alternating-content {
   .page-center {
+    @include tabletvert {
+      .main_content .flex_row {
+        flex-direction: column-reverse !important;
+      }
+    }
     &.full_width {
       padding-top: 0;
       padding-bottom: 0;
@@ -258,6 +263,9 @@ section.u4m-alternating-content {
     font-size: 11px;
     line-height: 1.2em;
     line-height: 1.7em;
+    &.notBox {
+      box-shadow: none;
+    }
   }
 
   .image_box {
