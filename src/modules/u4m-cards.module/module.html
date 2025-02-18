@@ -25,7 +25,7 @@
           {% if item.select_image_type == "image" %}
           <span class="icon_box icon_img">
 
-
+            
             {% if item.include_link_on_icon %}
 
             {% if item.link_type == "popup_content" %}
@@ -169,30 +169,30 @@
 
                   {% if item.include_link_on_title %}
                   {% if item.link_type == "popup_content" %}
-                  <a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
-                    {{ item.title }}
-                  </a>
-                  {% else %}
+                    <a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+                      {{ item.title }}
+                    </a>
+                    {% else %}
 
-                  {% set href = item.select_link.url.href %}
-                  {% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
-                  {% set href = "mailto:" + href %}
-                  {% endif %}
-                  <a
-                     {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
-                     href="{{ href }}" 
-                     {% else %}
-                     href="{{ href|escape_url }}"
-                     {% endif %}
-                     {% if item.select_link.open_in_new_tab %}
-                     target="_blank"
-                     {% endif %}
-                     {% if item.select_link.rel %}
-                     rel="{{ item.select_link.rel|escape_attr }}"
-                     {% endif %}
-                     >	{{ item.title }}
-                  </a>
-                  {% endif %}
+                    {% set href = item.select_link.url.href %}
+                    {% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a
+                       {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
+                       href="{{ href }}" 
+                       {% else %}
+                       href="{{ href|escape_url }}"
+                       {% endif %}
+                       {% if item.select_link.open_in_new_tab %}
+                       target="_blank"
+                       {% endif %}
+                       {% if item.select_link.rel %}
+                       rel="{{ item.select_link.rel|escape_attr }}"
+                       {% endif %}
+                       >	{{ item.title }}
+                    </a>
+                    {% endif %}
                   {% else %}
                   {{ item.title }}
                   {% endif %}

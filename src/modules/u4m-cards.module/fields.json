@@ -604,14 +604,6 @@
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "card_group.include_link_on_icon",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
@@ -620,7 +612,7 @@
   }, {
     "id" : "3bac1e46-4b88-bc4a-9636-5d8c4ccc4ca6",
     "name" : "include_link_on_title",
-    "label" : "Include Link on Title",
+    "label" : "Include Image Link on Title",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
