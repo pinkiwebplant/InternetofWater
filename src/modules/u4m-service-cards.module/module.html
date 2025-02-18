@@ -10,7 +10,7 @@
 	<div class="service-cardsWrap">
 		<div class="innerService-cards">
 			{% for item in module.cards %}
-			<div class="cmCard cmItem_{{loop.index}}">
+			<div class="cmCard cmItem_{{loop.index}} {{ item.card_setting.select_card_size }}">
 				<div class="cmInnerCard {% if item.background_settings.background_type =="color" %}{{ item.background_settings.select_color }}{% endif %}">
 					<div class="cm_description">
 						{% if item.title %}
@@ -62,5 +62,8 @@
 	{% endfor %}
 </style>
 {% end_require_css %}
+
+
+
 
 

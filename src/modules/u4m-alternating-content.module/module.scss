@@ -237,6 +237,18 @@ section.u4m-alternating-content {
     margin-right: auto;
   }
 
+  .imgAl_left {
+    &:not(.full_width) {
+      .content_col_inner {
+        @include tabletvertmin {
+          display: block;
+          width: calc(100% - 15px);
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
   .credit_text_wrap {
     display: table;
     background: $white;

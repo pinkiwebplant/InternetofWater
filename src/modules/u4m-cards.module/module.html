@@ -7,6 +7,13 @@
 
   {{macros.introGroup(module.intro_content, module.module_settings)}}
 
+  {% if module.include_label_text %}
+  <div class="label_text_wrap row_spacing">
+    <h4 class="label_text">
+      {{ module.label_text }}
+    </h4>
+  </div>
+  {% endif %}
 
 
   <div class="cards_row flex_row {{ module.module_settings.cards_count_in_row }}_row row_spacing">
@@ -212,7 +219,7 @@
         {# #}
         {% if module.bottom_content %}
         <div class="bottom_cnt ">
-            {{macros.introGroup(module.bottom_content)}}
+          {{macros.introGroup(module.bottom_content)}}
         </div>
         {% endif %}
 

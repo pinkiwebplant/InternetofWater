@@ -1,0 +1,236 @@
+{% set moduleName = 'u4m-events' %}
+{% set moduleExtraName = 'u4m-upcoming-events' %}
+
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+  {% set dynamic_page_hubdb_table_id = module.select_table  %}
+  {% if dynamic_page_hubdb_row %}
+  {# ================= Post dynamic================= #}
+  <div class="eventsPost">
+    <div class="gomainpg cmpd">
+      <div class="gomainpgin">
+        {% set href = module.select_listing_link.url.href %}
+        {% if module.select_listing_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+           {% if module.select_listing_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if module.select_listing_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if module.select_listing_link.rel %}
+           rel="{{ module.select_listing_link.rel|escape_attr }}"
+           {% endif %}
+           >
+          <i class="fas fa-arrow-left"></i> All Webinars
+        </a>
+      </div>
+    </div>
+    <div class="eventDetails cmpd">
+      <div class="eventTtl">
+        <h2 class="entry-title">{{ dynamic_page_hubdb_row.hs_name }}</h2>
+      </div>
+      <div class="eventTwoCol flex_row">
+        <div class="eventTwoCollft col6">
+          <div class="flex_row">
+            <div class="col6 cmDateTime">
+              <div class="text_inner">
+                <h2>Date &amp; Time</h2>
+                <p>{{ dynamic_page_hubdb_row.event_start_date|datetimeformat('%A, %B %d, %Y') }}</p>
+                <p>{{ dynamic_page_hubdb_row.event_start_date|datetimeformat('%I:%m %p') }}-{{ dynamic_page_hubdb_row.event_end_date|datetimeformat('%I:%m %p %Z') }}</p>
+              </div>
+            </div>
+            <div class="col6 cmContact">
+              <div class="text_inner">
+                <h2>Contact</h2>
+                <p>{{ dynamic_page_hubdb_row.contact_person }}</p>
+                <p>{{ dynamic_page_hubdb_row.email_id}}</p> 
+              </div>
+            </div>
+            {% if dynamic_page_hubdb_row.registration_details %}
+            <div class="cmRegistration">
+              <div class="text_inner">
+                <h2>Registration</h2>
+                {{ dynamic_page_hubdb_row.registration_details }}
+              </div>
+            </div>
+            {% endif %}
+            <div class="cmRegistrationbtn">
+              {% if dynamic_page_hubdb_row.youtube_link %}
+              <div class="field-link">
+                <a class="read-more hs-button" href="{{dynamic_page_hubdb_row.youtube_link}}" target="_blank">
+                  Watch the Video            
+                </a>
+              </div>
+              {% endif %}
+              <a class="hs-button" href="{{dynamic_page_hubdb_row.registration_link}}">{{dynamic_page_hubdb_row.button_text}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="eventTwoColrgt col6">
+          {% if dynamic_page_hubdb_row.image.url %}
+          <div class="eventTwoColrgtimg">
+            <img src="{{ dynamic_page_hubdb_row.image.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}">
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="eventContent cmpd">
+      {{ dynamic_page_hubdb_row.content }}
+    </div>
+    {% if dynamic_page_hubdb_row.logo.url %}
+    <div class="event-logos-grid cmpd">
+      <div class="event-icon">
+        <img alt="{{ dynamic_page_hubdb_row.logo.alt }}" src="{{ dynamic_page_hubdb_row.logo.url }}">
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+
+  {# ================= Post dynamic ends================= #}
+  {% elif dynamic_page_hubdb_table_id %}
+  {# ================= Listing dynamic================= #}
+
+  {{macros.introGroup(module.intro_content, module.module_settings)}}
+  <div class="eventsWrap">
+    {% set table_id = module.select_table %}
+    {% set rows = hubdb_table_rows(table_id, queryparam="limit=500") %}
+    {% set current_date_str = unixtimestamp(today("America/New_York").plusDays(1)) %}
+
+    {% set past_events = [] %}
+    {% set upcoming_events = [] %}
+
+    {% for row in rows %}
+    {% if row.event_end_date and row.event_start_date %}
+    {% if row.event_end_date < current_date_str %}
+    {% do past_events.append(row) %}
+    {% elif row.event_start_date > current_date_str %}
+    {% do upcoming_events.append(row) %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+
+    <!-- Sort Events -->
+    {% set past_events = past_events|sort(True, True, "event_start_date") %}
+    {% set upcoming_events = upcoming_events|sort(False, False, "event_start_date") %}
+
+    <!-- Define Page Size -->
+    {% set page_size = 2 %}
+    {% set tab = request.query_dict.tab|default("past") %}
+    {% set past_page = request.query_dict.past_page|default(1)|int %}
+    {% set upcoming_page = request.query_dict.upcoming_page|default(1)|int %}
+
+    {% set past_paginated = past_events[(past_page - 1) * page_size:past_page * page_size] %}
+    {% set upcoming_paginated = upcoming_events[(upcoming_page - 1) * page_size:upcoming_page * page_size] %}
+
+    <!-- Calculate Total Pages -->
+    {% set past_total_pages = (past_events|length + page_size - 1) // page_size %}
+    {% set upcoming_total_pages = (upcoming_events|length + page_size - 1) // page_size %}
+
+
+    <div class="flex_row">
+      <div class="leftSec">
+        <!-- Upcoming Events Section -->
+        <div id="upcoming-events" class="event-tab">
+          <h2>{{ module.title }}</h2>
+
+          {% if module.include_content %}
+          <div class="top_content {{ module.select_content_style }}">
+            {{ module.content }}
+          </div>
+          {% endif %}
+
+          <div class="events-grid">
+            {% for event in upcoming_paginated %}
+            <div class="event-item">
+              <div class="event-meta droplet">
+                <div class="meta date-wrapper">
+                  <span class="month">{{ event.event_start_date|datetimeformat('%b') }}</span>
+                  <span class="date">{{ event.event_start_date|datetimeformat('%d') }}</span>
+                  <span class="time">{{ event.event_start_date|datetimeformat('%I:%m %p') }}</span>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="contentWrapper">
+                <div class="field field-title">
+
+                  <a href="{{ request.path }}/{{ event.hs_path }}">{{ event.hs_name }}</a>
+                </div>
+                <div class="field-excerpt">
+                  {{ event.description}}
+                </div>
+                {% if event.logo.url %}
+                <div class="event-icon">
+                  <img alt="{{ event.logo.alt }}" src="{{ event.logo.url }}">
+                </div>
+                {% endif %}
+                {% if event.youtube_link %}
+                <div class="field-link">
+                  <a class="read-more" href="{{event.youtube_link}}" target="_blank">
+                    View Video              
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="paginationItems">
+            {% if upcoming_page > 1 %}
+            <a class="prev page-numbers" href="?tab=upcoming&upcoming_page={{ upcoming_page - 1 }}&past_page={{ past_page }}">&lt; BACK</a>
+            {% endif %}
+            {% for i in range(1, upcoming_total_pages + 1) %}
+            {% if i == upcoming_page %}
+            <span class="page-numbers current">{{ i }}</span>
+            {% else %}
+            <a class="page-numbers" href="?tab=upcoming&upcoming_page={{ i }}&past_page={{ past_page }}">{{ i }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if upcoming_page < upcoming_total_pages %}
+            <a class="next page-numbers" href="?tab=upcoming&upcoming_page={{ upcoming_page + 1 }}&past_page={{ past_page }}">NEXT ></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="rightSec">
+        <!-- Tab Navigation -->
+        <!-- Tab Navigation -->
+        {% if module.button_group %}
+        {{ macros.singlebuttonGroup(module.button_group, false)}}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {# ================= Listing dynamic ends================= #}
+
+</div>
+</section>
+
+
+{% if module.button_group %}
+{{ macros.singlebuttonGroup(module.button_group, true)}}
+{% endif %}
+
+{# button group popup modal#}
+{# {% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+{% require_js %}
+<script>
+  function switchTab(tab) {
+    const pageParam = tab === 'past' ? 'past_page=1&upcoming_page=1' : 'upcoming_page=1&past_page=1';
+    window.location.href = `?tab=${tab}&${pageParam}`;
+  }
+</script>
+{% end_require_js %} #}

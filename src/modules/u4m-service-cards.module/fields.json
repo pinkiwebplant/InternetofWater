@@ -690,6 +690,35 @@
         "no_follow" : false
       }
     }
+  }, {
+    "id" : "783bb119-7574-409b-8954-332f5c4755d5",
+    "name" : "card_setting",
+    "label" : "Card Setting",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "95d54bdb-89cb-078f-002c-7642c7d68480",
+      "name" : "select_card_size",
+      "label" : "Select Card Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "large", "Large" ], [ "small", "Small" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "large"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_card_size" : "large"
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -728,6 +757,9 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    },
+    "field_group" : {
+      "select_card_size" : "large"
     }
   }, {
     "background_settings" : {
@@ -761,6 +793,9 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    },
+    "field_group" : {
+      "select_card_size" : "large"
     }
   }, {
     "background_settings" : {
@@ -794,6 +829,9 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    },
+    "field_group" : {
+      "select_card_size" : "large"
     }
   } ]
 }, {

@@ -168,6 +168,10 @@
       position: relative;
       transition: color 300ms ease 0s;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       &:before {
         font-family: $iconFont;
         speak: none;

@@ -23,7 +23,14 @@ section.u4m-cards {
   }
 
   .cards_row {
-    row-gap: 15rem;
+    row-gap: 40rem;
+
+    @include tabletvertmin {
+      .col {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
   }
 
   .icon_box > a {

@@ -404,6 +404,36 @@
     } ]
   }
 }, {
+  "id" : "48807d6a-24e7-82dd-424c-032c2a1b32fd",
+  "name" : "include_label_text",
+  "label" : "Include Label Text",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "cc9ca6ee-d773-8a24-1ed7-5e39ac0cb063",
+  "name" : "label_text",
+  "label" : "Label Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "include_label_text",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Label Text"
+}, {
   "id" : "0b82b4a1-bc2f-325e-0669-d003f7a36adb",
   "name" : "card_group",
   "label" : "Card Group",
@@ -900,14 +930,6 @@
     "label" : "Include Top Border",
     "required" : false,
     "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_eyebrow_text",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
