@@ -34,7 +34,13 @@
 
   </div>
 
-
+  {% if module.intro_content.include_float_credit_text %}
+  <div class="floating_text">
+    <div class="floatInner">
+      {{ module.intro_content.float_credit_text }}
+    </div>
+  </div>
+  {% endif %}
 
   {% if module.intro_content.include_button %}
   <div class="btn_bottom_wrap">
@@ -66,14 +72,22 @@
 
 {% require_css %}
 <style>
+  {% if module.module_settings.content_overflow  %}
+  {% scope_css %}
+  .u4m_hero_outer_wrap{
+    overflow:{{ module.module_settings.content_overflow }};
+  }
+  {% end_scope_css %}
+  {% endif %}
   {% if module.module_settings.select_height == "custom" %}
   .{{name}} .page-center{
-    max-height:  {{ module.module_settings.custom_height }}rem;
+    min-height:  {{ module.module_settings.custom_height }}rem;
   }
   {% endif %}
   .{{name}}.u4m-hero .intro_title{
     font-size:{{ module.module_settings.heading_font.font_size }}vw;
     line-height:{{ module.module_settings.heading_font.line_height }}em;
+    letter-spacing:{{ module.module_settings.heading_font.letter_spacing }}px;
     {% if module.module_settings.heading_font.bottom_padding %}
     padding-bottom:{{ module.module_settings.heading_font.bottom_padding }}px;
     {% endif %}
@@ -92,6 +106,9 @@
     max-width:{{ module.module_settings.content_font.max_width }}px;
     margin-left:auto;
     margin-right:auto;
+  }
+  .{{name}}.u4m-hero .btn_bottom_wrap .intro_btn_wrap{
+        justify-content: {{ module.module_settings.button_alignment }};
   }
 </style>
 {% end_require_css %}

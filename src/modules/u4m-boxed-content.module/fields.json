@@ -933,13 +933,34 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "theme", "Theme" ], [ "full_width", "Full Width" ] ],
+    "choices" : [ [ "theme", "Theme" ], [ "full_width", "Full Width" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
     "default" : "theme"
+  }, {
+    "id" : "fd64fa10-360b-2b6d-26d0-eaf3c310620c",
+    "name" : "custom_container",
+    "label" : "Custom Container",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.container_size",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 800,
+    "max" : 2500,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 930
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -973,6 +994,7 @@
       "include_overlay_gradient" : false,
       "select_gradient" : ""
     },
-    "container_size" : "theme"
+    "container_size" : "theme",
+    "custom_container" : 930
   }
 } ]
