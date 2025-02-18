@@ -5,17 +5,17 @@
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-	{{macros.introGroup(module.intro_content, module.module_settings)}}
+  {{macros.introGroup(module.intro_content, module.module_settings)}}
 
-	<div class="cmBoxWrapper">
-		<div class="innerBoxWrapper">
-			{% if module.box_content.include_content %}
-			<div class="contentWrap {{ module.box_content.content_style }}">
-				{{ module.box_content.content }}
-			</div>
-			{% endif %}
-		</div>
-	</div>
+  <div class="cmBoxWrapper">
+    <div class="innerBoxWrapper">
+      {% if module.box_content.include_content %}
+      <div class="contentWrap {{ module.box_content.content_style }}">
+        {{ module.box_content.content }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
 
 </div>
 </section>
@@ -26,7 +26,13 @@
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
-
-
-
+{% if module.module_overrides.container_size=="custom" %}
+{% require_css %}
+<style>
+  .{{ name }} .page-center.custom{
+    max-width:{{ module.module_overrides.custom_container }}px;
+  }
+</style>
+{% end_require_css %}
+{% endif %}
 

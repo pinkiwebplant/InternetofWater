@@ -1,4 +1,5 @@
 @import "../../css/_module-imports";
+
 section.u4m-hero {
   position: relative;
   .page-center {
@@ -205,6 +206,29 @@ section.u4m-hero {
           }
         }
       }
+    }
+  }
+
+  .floating_text {
+    position: absolute !important;
+    transform: rotateZ(-90deg);
+    transform-origin: 100% 0;
+    top: 20px;
+    line-height: 1em;
+    right: 3em;
+    height: 3em;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    background: $white;
+    font-size: 9px;
+    font-weight: 700;
+    border-top-right-radius: 10px;
+    top: 180px;
+    opacity: 0.5;
+    color: $darkGray;
+    z-index: 5;
+    @include tabletMid {
+      display: none;
     }
   }
 }

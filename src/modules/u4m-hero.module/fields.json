@@ -367,52 +367,35 @@
     "display_width" : null,
     "default" : false
   }, {
-    "id" : "41e74076-959f-152d-89cf-4a3254c79cc1",
-    "name" : "featured_items",
-    "label" : "Featured Items",
+    "id" : "68944f14-c2b7-c8a4-041c-1879a5a9640f",
+    "name" : "include_float_credit_text",
+    "label" : "Include Float Credit Text",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 4,
-      "sorting_label_field" : null,
-      "default" : 4
-    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "b0d0835f-ce17-9b91-9188-afb7228922e8",
+    "name" : "float_credit_text",
+    "label" : "Float Credit Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_featured_items",
+      "controlling_field_path" : "intro_content.include_float_credit_text",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
     },
-    "children" : [ {
-      "id" : "ac263d3a-771f-0bec-8d51-8befec28f0b2",
-      "name" : "text",
-      "label" : "Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "A linked system of web pages about hydrologic features"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
     "display_width" : null,
-    "default" : [ {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A persistent identifier service"
-    }, {
-      "text" : "A web crawler that harvests links between data and hyrdologic features"
-    }, {
-      "text" : "A free and open water-data-specific search engine"
-    } ]
+    "default" : "Elena Kuchko @ Unsplash "
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -663,15 +646,8 @@
       }
     } ],
     "include_featured_items" : false,
-    "featured_items" : [ {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    } ],
+    "include_float_credit_text" : false,
+    "float_credit_text" : "Elena Kuchko @ Unsplash ",
     "include_button" : true,
     "button_group" : [ {
       "button_type" : "std",
@@ -798,6 +774,17 @@
       "display_width" : null,
       "default" : 1.4
     }, {
+      "id" : "4d48368a-f22d-4a14-e5e2-4dc41c91e9d6",
+      "name" : "letter_spacing",
+      "label" : "Letter Spacing",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null
+    }, {
       "id" : "4e7c760e-44fa-32d6-06f7-61ddefc212ca",
       "name" : "color",
       "label" : "color",
@@ -896,6 +883,34 @@
         "opacity" : null
       }
     }
+  }, {
+    "id" : "c71b9530-924b-1e6a-c9ba-eddf7b4926a9",
+    "name" : "content_overflow",
+    "label" : "Content Overflow",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "visible", "Visible" ], [ "hidden", "Hidden" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "17f6dbfe-7f9c-d1dc-3db2-274a8e77fd0a",
+    "name" : "button_alignment",
+    "label" : "Button Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "flex-start", "Left" ], [ "center", "Center" ], [ "flex-end", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "flex-end"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -918,7 +933,9 @@
         "color" : null,
         "opacity" : null
       }
-    }
+    },
+    "content_overflow" : "",
+    "button_alignment" : "flex-end"
   }
 }, {
   "id" : "module_overrides",
