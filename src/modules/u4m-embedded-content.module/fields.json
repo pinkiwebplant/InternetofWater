@@ -432,6 +432,29 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null
+  }, {
+    "id" : "ae42f37e-95ca-1f3a-3c7b-1ff25b4a12d3",
+    "name" : "iframe_height",
+    "label" : "Iframe Height",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 750
+  }, {
+    "id" : "14fc7ece-a972-b46a-e55e-5cf4656a5969",
+    "name" : "mobile_iframe_height",
+    "label" : "Mobile Iframe Height",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -439,7 +462,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "embedded" : "https://storymaps.arcgis.com/stories/6ba78af2a202448e8325273323682eeb"
+    "embedded" : "https://storymaps.arcgis.com/stories/6ba78af2a202448e8325273323682eeb",
+    "iframe_height" : 750
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",

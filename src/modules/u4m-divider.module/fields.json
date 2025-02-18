@@ -45,7 +45,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "left"
+    "default" : "center"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -54,6 +54,6 @@
   "display_width" : null,
   "default" : {
     "container_size" : "theme",
-    "border_alignment" : "left"
+    "border_alignment" : "center"
   }
 } ]

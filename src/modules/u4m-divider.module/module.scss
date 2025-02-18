@@ -3,8 +3,20 @@
 .u4m_divider_wrap {
   span {
     display: block;
-    width: 150px;
+    width: 80px;
     margin: auto;
     height: 3px;
+  }
+
+  .border_wrap.left {
+    text-align: left;
+  }
+
+  .border_wrap.left span {
+    margin-left: 0;
+  }
+
+  .border_wrap.right span {
+    margin-right: 0;
   }
 }

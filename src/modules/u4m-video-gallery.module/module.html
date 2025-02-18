@@ -3,96 +3,103 @@
 {% include "../partials/u4-module-includes.html" %}
 
 
-<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-  {{macros.introGroup(module.intro_content, module.module_settings)}}
 
-  {#
-	<div class="cmVideoGalleryWrap">
-		<div class="innerVideoGallery">
-			<div class="slider-for" id="primary_slider">
-				<div class="splide__track">
-					<div class="splide__list">
-						{% for item in module.items %}
-						<div class="item-slick splide__slide">
-							<div class="videoWrapper">
-								{% if item.select_video_type == "hubspot_video" %}
-								<video muted  src="{{ item.file_field }}"></video>
-								{% elif item.select_video_type == "external_video" %}
-								{% if item.video_url %}
-								<iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
-								{% endif %}
-								{% endif %}
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-			<div class="slider-nav" id="thumbnail_slider">
-				<div class="splide__track">
-					<div class="splide__list">
-						{% for item in module.items %}
-						<div class="item-slick splide__slide">
-							{% if item.poster_image.src %}
-							<div class="cm_video_overlay">
-								<img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
-								<div class="cm_video_overlay_hover">
-									<a href="#" class="cm_video_play"></a>
-								</div>
-								{% endif %}
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	#}
+<div class="page-center ratio_{{module.module_settings.column_width_ratio}} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-  <div class="cmVideoGalleryWrap row_spacing">
-    <div class="innerVideoGallery">
-      <div class="slider-for primary_slider" >
-        <div class="splide__track">
-          <div class="splide__list">
-            {% for item in module.items %}
-            <div class="item-slick splide__slide" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-video-src="{{ item.file_field }}">
-              <div class="videoWrapper">
-                {% if item.select_video_type == "hubspot_video" %}
-                <video muted controls src="{{ item.file_field }}"></video>
-                {% elif item.select_video_type == "external_video" %}
-                {% if item.video_url %}
-                <iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
-                {% endif %}
+
+  <div class="flex_row">
+    <div class="left_group col {{ module.module_settings.column_width_ratio == "half" ? "col6" : "col12" }}">
+      {{macros.introGroup(module.left_group.intro_content, module.module_settings)}}
+      <div class="cmVideoGalleryWrap row_spacing">
+        <div class="innerVideoGallery">
+          <div class="slider-for primary_slider" >
+            <div class="splide__track">
+              <div class="splide__list">
+                {% for item in module.left_group.items %}
+                <div class="item-slick splide__slide" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-video-src="{{ item.file_field }}">
+                  <div class="videoWrapper">
+                    {% if item.select_video_type == "hubspot_video" %}
+                    <video muted controls src="{{ item.file_field }}"></video>
+                    {% elif item.select_video_type == "external_video" %}
+                    {% if item.video_url %}
+                    <iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
+                    {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="slider-nav thumbnail_slider" >
+            <!-- 				<div class="splide__track">
+ <div class="splide__list"> -->
+            {% for item in module.left_group.items %}
+            <div class="item-slick splide__slide">
+              {% if item.poster_image.src %}
+              <div class="cm_video_overlay">
+                <img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
+                <div class="cm_video_overlay_hover" data-iframe="{{ item.video_url|split('?') }}?controls=1&rel=0&autoplay=0" data-video="{{ item.file_field }}">
+                  <a href="#" class="cm_video_play"></a>
+                </div>
                 {% endif %}
               </div>
             </div>
             {% endfor %}
+            <!-- 					</div>
+ </div> -->
           </div>
         </div>
       </div>
-      <div class="slider-nav thumbnail_slider" >
-        <!-- 				<div class="splide__track">
- <div class="splide__list"> -->
-        {% for item in module.items %}
-        <div class="item-slick splide__slide">
-          {% if item.poster_image.src %}
-          <div class="cm_video_overlay">
-            <img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
-            <div class="cm_video_overlay_hover" data-iframe="{{ item.video_url|split('?') }}?controls=1&rel=0&autoplay=0" data-video="{{ item.file_field }}">
-              <a href="#" class="cm_video_play"></a>
+    </div>
+    <div class="right_group col {{ module.module_settings.column_width_ratio == "half" ? "col6" : "col12" }}">
+      {{macros.introGroup(module.left_group.intro_content, module.module_settings)}}
+      <div class="cmVideoGalleryWrap row_spacing">
+        <div class="innerVideoGallery">
+          <div class="slider-for primary_slider" >
+            <div class="splide__track">
+              <div class="splide__list">
+                {% for item in module.left_group.items %}
+                <div class="item-slick splide__slide" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-video-src="{{ item.file_field }}">
+                  <div class="videoWrapper">
+                    {% if item.select_video_type == "hubspot_video" %}
+                    <video muted controls src="{{ item.file_field }}"></video>
+                    {% elif item.select_video_type == "external_video" %}
+                    {% if item.video_url %}
+                    <iframe loading="lazy" title="North Carolina Water Supply Dashboard - Introduction" src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid3"></iframe>
+                    {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
-            {% endif %}
+          </div>
+          <div class="slider-nav thumbnail_slider" >
+            <!-- 				<div class="splide__track">
+ <div class="splide__list"> -->
+            {% for item in module.left_group.items %}
+            <div class="item-slick splide__slide">
+              {% if item.poster_image.src %}
+              <div class="cm_video_overlay">
+                <img src="{{ item.poster_image.src }}" alt="{{ item.poster_image.alt }}">
+                <div class="cm_video_overlay_hover" data-iframe="{{ item.video_url|split('?') }}?controls=1&rel=0&autoplay=0" data-video="{{ item.file_field }}">
+                  <a href="#" class="cm_video_play"></a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+            <!-- 					</div>
+ </div> -->
           </div>
         </div>
-        {% endfor %}
-        <!-- 					</div>
- </div> -->
       </div>
     </div>
   </div>
+
 </div>
 </section>
 
@@ -220,25 +227,25 @@
 
 
 
-  $(".{{name}} .primary_slider .splide__list").slick({
+  $(".{{name}} .left_group .primary_slider .splide__list").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     fade: true,
     infinite: true,
     speed: 1000,
-    asNavFor: ".{{name}} .thumbnail_slider",
+    asNavFor: ".{{name}} .left_group .thumbnail_slider",
     arrows: true,
     prevArrow:
     '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
     nextArrow:
     '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
     });
-  $(".{{name}} .thumbnail_slider").slick({
+  $(".{{name}} .left_group .thumbnail_slider").slick({
     slidesToShow: 3,
     slidesToScroll: 3,
     infinite: true,
-    asNavFor: ".{{name}} .primary_slider .splide__list",
+    asNavFor: ".{{name}} .left_group .primary_slider .splide__list",
     dots: false,
     centerMode: false,
     focusOnSelect: true,
@@ -253,11 +260,11 @@
 
 
 
-  var mainSlider = document.querySelector(".{{name}} .primary_slider");
+  var mainSlider = document.querySelector(".{{name}} .left_group .primary_slider");
 
-                                          var thumbnailSlider = document.querySelector(".{{name}} .thumbnail_slider");
+                                          var thumbnailSlider = document.querySelector(".{{name}} .left_group .thumbnail_slider");
 
-                                          $(".{{name}} .thumbnail_slider, .innerVideoGallery .slick-arrow").on("click", ".slick-slide", function () {
+                                          $(".{{name}} .left_group .thumbnail_slider, .innerVideoGallery .slick-arrow").on("click", ".slick-slide", function () {
                                           $('.{{name}} .primary_slider .item-slick').each(function () {
                                           var $this = $(this); 
   var getIframeSrc = $this.attr('data-src');
@@ -273,7 +280,7 @@
   });
 
 
-  $(".{{name}} .primary_slider").on("afterChange", function (event) {
+  $(".{{name}} .left_group .primary_slider").on("afterChange", function (event) {
     $('.{{name}} .primary_slider .item-slick').each(function () {
 
     var $this = $(this); 
@@ -288,6 +295,80 @@
   }
   });
   });
+
+  //============================
+  //============================
+
+  $(".{{name}} .right_group .primary_slider .splide__list").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    infinite: true,
+    speed: 1000,
+    asNavFor: ".{{name}} .right_group .thumbnail_slider",
+    arrows: true,
+    prevArrow:
+    '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+    nextArrow:
+    '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
+    });
+  $(".{{name}} .right_group .thumbnail_slider").slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinite: true,
+    asNavFor: ".{{name}} .right_group .primary_slider .splide__list",
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    arrows: true,
+    prevArrow:
+    '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+    nextArrow:
+    '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
+    });
+
+
+
+
+
+  var mainSlider = document.querySelector(".{{name}} .right_group .primary_slider");
+
+                                          var thumbnailSlider = document.querySelector(".{{name}} .right_group .thumbnail_slider");
+
+                                          $(".{{name}} .right_group .thumbnail_slider, .innerVideoGallery .slick-arrow").on("click", ".slick-slide", function () {
+                                          $('.{{name}} .primary_slider .item-slick').each(function () {
+                                          var $this = $(this); 
+  var getIframeSrc = $this.attr('data-src');
+  var getVideoSrc = $this.attr('data-video-src');
+
+  if (getIframeSrc) {
+    $this.find('iframe').attr('src', getIframeSrc);
+  }
+  if (getVideoSrc) {
+    $this.find('video').attr('src', getVideoSrc);
+  }
+  });
+  });
+
+
+  $(".{{name}} .right_group .primary_slider").on("afterChange", function (event) {
+    $('.{{name}} .primary_slider .item-slick').each(function () {
+
+    var $this = $(this); 
+  var getIframeSrc = $this.attr('data-src');
+  var getVideoSrc = $this.attr('data-video-src');
+
+  if (getIframeSrc) {
+    $this.find('iframe').attr('src', getIframeSrc);
+  }
+  if (getVideoSrc) {
+    $this.find('video').attr('src', getVideoSrc);
+  }
+  });
+  });
+
+
 
 </script>
 {% end_require_js %}

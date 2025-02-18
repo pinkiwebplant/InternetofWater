@@ -5,24 +5,24 @@
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-	{{macros.introGroup(module.intro_content, module.module_settings)}}
+  {{macros.introGroup(module.intro_content, module.module_settings)}}
 
-	<div class="embedded_contentWrap">
-	<div class="innerEmbedded_cnt">
-		{% if module.embedded_content.embedded %}
-		<div class="mainFrameRow">
-			<iframe src="{{ module.embedded_content.embedded }}" width="100%" height="750px" frameborder="0" allowfullscreen="" allow="allowfullscreen"></iframe>
-		</div>
-		{% endif %}
-		{% if module.embedded_content.credit_text %}
-		<div class="credit_text">
-			<p>
-				<i>{{ module.embedded_content.credit_text }}</i>
-			</p>
-		</div>
-		{% endif %}
-	</div>
-	</div>	
+  <div class="embedded_contentWrap">
+    <div class="innerEmbedded_cnt">
+      {% if module.embedded_content.embedded %}
+      <div class="mainFrameRow">
+        <iframe src="{{ module.embedded_content.embedded }}" width="100%" height="750px" frameborder="0" allowfullscreen="" allow="allowfullscreen"></iframe>
+      </div>
+      {% endif %}
+      {% if module.embedded_content.credit_text %}
+      <div class="credit_text">
+        <p>
+          <i>{{ module.embedded_content.credit_text }}</i>
+        </p>
+      </div>
+      {% endif %}
+    </div>
+  </div>	
 </div>
 </section>
 
@@ -32,3 +32,19 @@
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
+
+
+<style>
+  {% if module.embedded_content.iframe_height %}
+  .{{name}} iframe{
+    height: {{ module.embedded_content.iframe_height }}px;
+  }
+  {% endif %}
+  {% if module.embedded_content.mobile_iframe_height %}
+  @media(max-width: 767px){
+    .{{name}} iframe{
+      height: {{ module.embedded_content.mobile_iframe_height }}px;
+    }
+  }
+  {% endif %}
+</style>

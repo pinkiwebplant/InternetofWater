@@ -1,261 +1,44 @@
 [ {
-  "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
-  "name" : "intro_content",
-  "label" : "Intro Content",
+  "id" : "1603acd0-f836-f219-9e62-0fef21185030",
+  "name" : "left_group",
+  "label" : "Left Group",
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "c5ccdda8-6960-e255-a51f-c61077a633ca",
-    "name" : "include_eyebrow_text",
-    "label" : "Include Eyebrow Text",
+    "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
+    "name" : "intro_content",
+    "label" : "Intro Content",
     "required" : false,
     "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_top_border",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
-    "name" : "eyebrow_text",
-    "label" : "Eyebrow Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_eyebrow_text",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Eyebrow Text"
-  }, {
-    "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
-    "name" : "include_top_border",
-    "label" : "Include Top Border",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_eyebrow_text",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
-    "name" : "include_heading",
-    "label" : "Include Heading",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "aef5e961-e297-2654-68e0-6128687770bf",
-    "name" : "heading_size",
-    "label" : "Heading Size",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_heading",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "h2"
-  }, {
-    "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
-    "name" : "heading",
-    "label" : "Heading",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Top Heading"
-  }, {
-    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
-    "name" : "include_heading_border",
-    "label" : "Include Heading Border",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.heading",
-      "controlling_value_regex" : "false",
-      "property" : null,
-      "operator" : "NOT_EMPTY",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
-    "name" : "include_content",
-    "label" : "Include Content",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
-    "name" : "content_style",
-    "label" : "Content Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "bodystyle3"
-  }, {
-    "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
-  }, {
-    "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
-    "name" : "include_button",
-    "label" : "Include Button",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
-    "name" : "button_group",
-    "label" : "Button Group",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 2,
-      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 2
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
     "children" : [ {
-      "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "name" : "button_type",
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "std"
-    }, {
-      "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
-      "name" : "button_style",
-      "label" : "Button Style",
+      "id" : "c5ccdda8-6960-e255-a51f-c61077a633ca",
+      "name" : "include_eyebrow_text",
+      "label" : "Include Eyebrow Text",
       "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std|popup_content",
+        "controlling_field_path" : "left_group.intro_content.include_top_border",
+        "controlling_value_regex" : "false",
         "property" : null,
-        "operator" : "MATCHES_REGEX",
+        "operator" : "EQUAL",
         "access" : null
       },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
+      "display" : "checkbox",
+      "type" : "boolean",
       "display_width" : null,
-      "default" : "hs-button"
+      "default" : true
     }, {
-      "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
-      "name" : "button_text",
-      "label" : "Button Text",
+      "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
+      "name" : "eyebrow_text",
+      "label" : "Eyebrow Text",
       "required" : false,
       "locked" : false,
       "validation_regex" : "",
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_field_path" : "left_group.intro_content.include_eyebrow_text",
+        "controlling_value_regex" : "true",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
@@ -264,66 +47,452 @@
       "show_emoji_picker" : false,
       "type" : "text",
       "display_width" : null,
-      "default" : "Button"
+      "default" : "Eyebrow Text"
     }, {
-      "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
-      "name" : "link",
-      "label" : "Link",
+      "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
+      "name" : "include_top_border",
+      "label" : "Include Top Border",
       "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_field_path" : "left_group.intro_content.include_eyebrow_text",
+        "controlling_value_regex" : "false",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
+      "display" : "checkbox",
+      "type" : "boolean",
       "display_width" : null,
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
+      "default" : false
     }, {
-      "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
-      "name" : "cta",
-      "label" : "CTA",
+      "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
+      "name" : "include_heading",
+      "label" : "Include Heading",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "aef5e961-e297-2654-68e0-6128687770bf",
+      "name" : "heading_size",
+      "label" : "Heading Size",
       "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "cta",
+        "controlling_field_path" : "left_group.intro_content.include_heading",
+        "controlling_value_regex" : "true",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
       },
-      "type" : "cta",
-      "display_width" : null
+      "display" : "select",
+      "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "h2"
     }, {
-      "id" : "b6aabd88-017b-65ec-24a7-10528e4fb2be",
-      "name" : "popup_content",
-      "label" : "Popup Content",
+      "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
+      "name" : "heading",
+      "label" : "Heading",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Top Heading"
+    }, {
+      "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
+      "name" : "include_heading_border",
+      "label" : "Include Heading Border",
       "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "popup_content",
+        "controlling_field_path" : "left_group.intro_content.include_heading",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
+      "name" : "include_content",
+      "label" : "Include Content",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
+      "name" : "content_style",
+      "label" : "Content Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.intro_content.include_content",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "bodystyle3"
+    }, {
+      "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.intro_content.include_content",
+        "controlling_value_regex" : "true",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
       },
       "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+    }, {
+      "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
+      "name" : "include_button",
+      "label" : "Include Button",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
+      "name" : "button_group",
+      "label" : "Button Group",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : 2,
+        "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+        "default" : 2
+      },
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.intro_content.include_button",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+        "name" : "button_type",
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "std"
+      }, {
+        "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
+        "name" : "button_style",
+        "label" : "Button Style",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "left_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "std|popup_content",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "hs-button"
+      }, {
+        "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "left_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "std|popup_content",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Button"
+      }, {
+        "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "left_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
+        "name" : "cta",
+        "label" : "CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "left_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "cta",
+        "display_width" : null
+      }, {
+        "id" : "b6aabd88-017b-65ec-24a7-10528e4fb2be",
+        "name" : "popup_content",
+        "label" : "Popup Content",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "left_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "popup_content",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "richtext",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "include_eyebrow_text" : true,
+      "eyebrow_text" : "Eyebrow Text",
+      "include_top_border" : false,
+      "include_heading" : true,
+      "heading_size" : "h2",
+      "heading" : "Top Heading",
+      "include_heading_border" : false,
+      "include_content" : true,
+      "content_style" : "bodystyle3",
+      "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+      "include_button" : false,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }
+  }, {
+    "id" : "9dd8ad8f-9161-2e6b-f8d9-e530a3a9e318",
+    "name" : "items",
+    "label" : "Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "3a1ae446-12b4-47af-02be-9ff94aadaaff",
+      "name" : "select_video_type",
+      "label" : "Select Video Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "external_video", "External" ], [ "hubspot_video", "HubSpot" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "external_video"
+    }, {
+      "id" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
+      "name" : "poster_image",
+      "label" : "Poster Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      }
+    }, {
+      "picker" : "video",
+      "id" : "1c2e6f58-7951-678b-1002-6b94dae97693",
+      "name" : "file_field",
+      "label" : "File",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.items.select_video_type",
+        "controlling_value_regex" : "hubspot_video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "file",
       "display_width" : null
+    }, {
+      "id" : "fe6cd221-db86-49c1-b0c0-1c8097a18b9b",
+      "name" : "video_url",
+      "label" : "Video URL",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.items.select_video_type",
+        "controlling_value_regex" : "external_video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.youtube.com/embed/EngW7tLk6R8"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -331,31 +500,70 @@
     "type" : "group",
     "display_width" : null,
     "default" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
     }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -364,201 +572,794 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow_text" : true,
-    "eyebrow_text" : "Eyebrow Text",
-    "include_top_border" : false,
-    "include_heading" : true,
-    "heading_size" : "h2",
-    "heading" : "Top Heading",
-    "include_heading_border" : false,
-    "include_content" : true,
-    "content_style" : "bodystyle3",
-    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
-    "include_button" : false,
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
+    "intro_content" : {
+      "include_eyebrow_text" : true,
+      "eyebrow_text" : "Eyebrow Text",
+      "include_top_border" : false,
+      "include_heading" : true,
+      "heading_size" : "h2",
+      "heading" : "Top Heading",
+      "include_heading_border" : false,
+      "include_content" : true,
+      "content_style" : "bodystyle3",
+      "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+      "include_button" : false,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    },
+    "items" : [ {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
     }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
     } ]
   }
 }, {
-  "id" : "9dd8ad8f-9161-2e6b-f8d9-e530a3a9e318",
-  "name" : "items",
-  "label" : "Items",
+  "id" : "68014ffb-91b1-6431-1b88-f22a27eded9b",
+  "name" : "right_group",
+  "label" : "Right Group",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
-    "default" : 5
-  },
   "children" : [ {
-    "id" : "3a1ae446-12b4-47af-02be-9ff94aadaaff",
-    "name" : "select_video_type",
-    "label" : "Select Video Type",
+    "id" : "a1beeb7c-94a7-50be-0da0-3ddd57fe418b",
+    "name" : "intro_content",
+    "label" : "Intro Content",
     "required" : false,
     "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "external_video", "External" ], [ "hubspot_video", "HubSpot" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "external_video"
-  }, {
-    "id" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
-    "name" : "poster_image",
-    "label" : "Poster Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
+    "children" : [ {
+      "id" : "238e4be7-fd46-c9ee-b5d4-61622c9ec8a7",
+      "name" : "include_eyebrow_text",
+      "label" : "Include Eyebrow Text",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_top_border",
+        "controlling_value_regex" : "false",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "4b20b00b-bb32-34cd-3432-f8a6d6c14bae",
+      "name" : "eyebrow_text",
+      "label" : "Eyebrow Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_eyebrow_text",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Eyebrow Text"
+    }, {
+      "id" : "9e110358-2520-dfac-953c-614e4e8f747d",
+      "name" : "include_top_border",
+      "label" : "Include Top Border",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_eyebrow_text",
+        "controlling_value_regex" : "false",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "afbdf173-7c48-4988-489b-5097f2befeb7",
+      "name" : "include_heading",
+      "label" : "Include Heading",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "3b340d84-be1f-a51d-0853-f4a923dc3fe0",
+      "name" : "heading_size",
+      "label" : "Heading Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_heading",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "h2"
+    }, {
+      "id" : "ad0b56ad-25d3-96c0-76fd-47f1b719614e",
+      "name" : "heading",
+      "label" : "Heading",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "afbdf173-7c48-4988-489b-5097f2befeb7",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Top Heading"
+    }, {
+      "id" : "0974b354-f7f6-9362-ec8d-09f2146d8833",
+      "name" : "include_heading_border",
+      "label" : "Include Heading Border",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_heading",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "a9b0b64a-a8da-f913-6350-a2d27ada90c5",
+      "name" : "include_content",
+      "label" : "Include Content",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "d9a7f4a9-465b-d596-587b-e6b6b88d2bdb",
+      "name" : "content_style",
+      "label" : "Content Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_content",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "bodystyle3"
+    }, {
+      "id" : "a33fa85b-f56a-d762-f521-179d13c38912",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_content",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+    }, {
+      "id" : "047efab3-5e91-6332-6286-49b38d6ef5df",
+      "name" : "include_button",
+      "label" : "Include Button",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "15cc0041-6779-4da2-8e3c-f4a30e6232d4",
+      "name" : "button_group",
+      "label" : "Button Group",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : 2,
+        "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+        "default" : 2
+      },
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_group.intro_content.include_button",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "f618e2b3-aa81-a7fc-d01f-c49e8e977a1f",
+        "name" : "button_type",
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "std"
+      }, {
+        "id" : "09cfd2c8-7f9e-4b12-ff88-01969b97418e",
+        "name" : "button_style",
+        "label" : "Button Style",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "right_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "std|popup_content",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "hs-button"
+      }, {
+        "id" : "a639632d-4a99-4bc7-6ddb-aeff372e9d87",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "right_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "std|popup_content",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Button"
+      }, {
+        "id" : "efa45265-473b-c5c3-f651-7c0d072060a4",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "right_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "bb565cc9-4292-4d09-ec4b-737da82caea0",
+        "name" : "cta",
+        "label" : "CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "right_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "cta",
+        "display_width" : null
+      }, {
+        "id" : "45fa29c0-b78f-21b9-6dd2-0510ac4d24d1",
+        "name" : "popup_content",
+        "label" : "Popup Content",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "right_group.intro_content.button_group.button_type",
+          "controlling_value_regex" : "popup_content",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "richtext",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
     "display_width" : null,
     "default" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
-      "alt" : "justin",
-      "loading" : "lazy",
-      "width" : 2560,
-      "height" : 1438,
-      "max_width" : 2000,
-      "max_height" : 1123.4375
+      "include_eyebrow_text" : true,
+      "eyebrow_text" : "Eyebrow Text",
+      "include_top_border" : false,
+      "include_heading" : true,
+      "heading_size" : "h2",
+      "heading" : "Top Heading",
+      "include_heading_border" : false,
+      "include_content" : true,
+      "content_style" : "bodystyle3",
+      "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+      "include_button" : false,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
     }
   }, {
-    "picker" : "video",
-    "id" : "1c2e6f58-7951-678b-1002-6b94dae97693",
-    "name" : "file_field",
-    "label" : "File",
+    "id" : "dc628670-961f-8928-51b4-51bc66bb20bf",
+    "name" : "items",
+    "label" : "Items",
     "required" : false,
     "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "items.select_video_type",
-      "controlling_value_regex" : "hubspot_video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "5cf69d17-8518-09e6-8392-ef45a92b9740",
+      "default" : 5
     },
-    "type" : "file",
-    "display_width" : null
-  }, {
-    "id" : "fe6cd221-db86-49c1-b0c0-1c8097a18b9b",
-    "name" : "video_url",
-    "label" : "Video URL",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "items.select_video_type",
-      "controlling_value_regex" : "external_video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
+    "children" : [ {
+      "id" : "27b83d8f-c73c-7356-d994-df9376d7771e",
+      "name" : "select_video_type",
+      "label" : "Select Video Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "external_video", "External" ], [ "hubspot_video", "HubSpot" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "external_video"
+    }, {
+      "id" : "572af338-20ff-d1ec-dcdd-08f469f2e308",
+      "name" : "poster_image",
+      "label" : "Poster Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      }
+    }, {
+      "picker" : "video",
+      "id" : "cf2bca8d-6b7d-58d1-f887-b8b0d8713773",
+      "name" : "file_field",
+      "label" : "File",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.items.select_video_type",
+        "controlling_value_regex" : "hubspot_video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "file",
+      "display_width" : null
+    }, {
+      "id" : "02ce1ea1-8b52-4340-6a94-01b890d5b418",
+      "name" : "video_url",
+      "label" : "Video URL",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_group.items.select_video_type",
+        "controlling_value_regex" : "external_video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
     "display_width" : null,
-    "default" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    "default" : [ {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : [ {
-    "select_video_type" : "external_video",
-    "poster_image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
-      "alt" : "justin",
-      "loading" : "lazy",
-      "width" : 2560,
-      "height" : 1438,
-      "max_width" : 2000,
-      "max_height" : 1123.4375
+  "default" : {
+    "intro_content" : {
+      "include_eyebrow_text" : true,
+      "eyebrow_text" : "Eyebrow Text",
+      "include_top_border" : false,
+      "include_heading" : true,
+      "heading_size" : "h2",
+      "heading" : "Top Heading",
+      "include_heading_border" : false,
+      "include_content" : true,
+      "content_style" : "bodystyle3",
+      "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+      "include_button" : false,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
     },
-    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
-  }, {
-    "select_video_type" : "external_video",
-    "poster_image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
-      "alt" : "justin",
-      "loading" : "lazy",
-      "width" : 2560,
-      "height" : 1438,
-      "max_width" : 2000,
-      "max_height" : 1123.4375
-    },
-    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
-  }, {
-    "select_video_type" : "external_video",
-    "poster_image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
-      "alt" : "justin",
-      "loading" : "lazy",
-      "width" : 2560,
-      "height" : 1438,
-      "max_width" : 2000,
-      "max_height" : 1123.4375
-    },
-    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
-  }, {
-    "select_video_type" : "external_video",
-    "poster_image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
-      "alt" : "justin",
-      "loading" : "lazy",
-      "width" : 2560,
-      "height" : 1438,
-      "max_width" : 2000,
-      "max_height" : 1123.4375
-    },
-    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
-  }, {
-    "select_video_type" : "external_video",
-    "poster_image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
-      "alt" : "justin",
-      "loading" : "lazy",
-      "width" : 2560,
-      "height" : 1438,
-      "max_width" : 2000,
-      "max_height" : 1123.4375
-    },
-    "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
-  } ]
+    "items" : [ {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }, {
+      "select_video_type" : "external_video",
+      "poster_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/justin.jpg",
+        "alt" : "justin",
+        "loading" : "lazy",
+        "width" : 2560,
+        "height" : 1438,
+        "max_width" : 2000,
+        "max_height" : 1123.4375
+      },
+      "video_url" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    } ]
+  }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
@@ -579,6 +1380,20 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "center"
+  }, {
+    "id" : "8373b44d-8966-4b4d-bf4a-76ec3053e95b",
+    "name" : "column_width_ratio",
+    "label" : "Column Width Ratio",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "half", "50:50" ], [ "full_width", "100:100" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "full_width"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -586,7 +1401,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center"
+    "intro_content_alignment" : "center",
+    "column_width_ratio" : "full_width"
   }
 }, {
   "id" : "module_overrides",
