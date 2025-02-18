@@ -357,6 +357,63 @@
       }
     } ]
   }, {
+    "id" : "b169cb56-7dca-6e5b-53db-8dcd7a77e7b6",
+    "name" : "include_featured_items",
+    "label" : "Include Featured Items",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "41e74076-959f-152d-89cf-4a3254c79cc1",
+    "name" : "featured_items",
+    "label" : "Featured Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 4,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_featured_items",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "ac263d3a-771f-0bec-8d51-8befec28f0b2",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "A linked system of web pages about hydrologic features"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "text" : "A linked system of web pages about hydrologic features"
+    }, {
+      "text" : "A persistent identifier service"
+    }, {
+      "text" : "A web crawler that harvests links between data and hyrdologic features"
+    }, {
+      "text" : "A free and open water-data-specific search engine"
+    } ]
+  }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
     "label" : "Include Bottom Button",
@@ -604,6 +661,16 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    } ],
+    "include_featured_items" : false,
+    "featured_items" : [ {
+      "text" : "A linked system of web pages about hydrologic features"
+    }, {
+      "text" : "A linked system of web pages about hydrologic features"
+    }, {
+      "text" : "A linked system of web pages about hydrologic features"
+    }, {
+      "text" : "A linked system of web pages about hydrologic features"
     } ],
     "include_button" : true,
     "button_group" : [ {

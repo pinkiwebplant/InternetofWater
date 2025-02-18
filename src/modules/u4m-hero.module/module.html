@@ -15,7 +15,21 @@
         {{macros.buttonGroup(module.intro_content.content_button_group, false)}}
       </div>
       {% endif %}
-
+      {% if module.intro_content.include_featured_items %}
+      <div class="featuredItemswrap">
+        <div class="featuredItems flex_row">
+          {% for item in module.intro_content.featured_items %}
+          {% if item.text %}
+          <div class="ftritem">
+            <div class="ftritemin">
+              <h5>{{ item.text }}</h5> 
+            </div> 
+          </div> 
+          {% endif %}
+          {% endfor %}
+        </div> 
+      </div>
+      {% endif %}
     </div>
 
   </div>
