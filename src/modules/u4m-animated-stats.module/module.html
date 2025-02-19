@@ -8,7 +8,7 @@
 	{{macros.introGroup(module.intro_content, module.module_settings)}}
 	<div class="animated_stats_wrapper">
 		<div class="stats_inner">
-			<div class="flex_row">
+			<div class="flex_row" {% if module.module_settings.item_alignment %}style="justify-content: {{ module.module_settings.item_alignment }};"{% endif %}>
 				{% if module.stats_items.left_column.embed_url.href|escape_url or module.stats_items.left_column.embed_text %}
 				<div class="stats_left col col{{ module.module_settings.column_type }}">
 					<div class="embed_url">

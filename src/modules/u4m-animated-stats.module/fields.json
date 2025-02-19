@@ -569,6 +569,20 @@
     "display_width" : null,
     "default" : "center"
   }, {
+    "id" : "ec7d3935-aca2-4ea9-e7c1-70f34f5b856f",
+    "name" : "item_alignment",
+    "label" : "Item Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
     "id" : "f3e2cd1e-f8f3-c17b-a6d2-733adb6ad857",
     "name" : "enable_counter",
     "label" : "Enable Counter",
@@ -600,6 +614,7 @@
   "display_width" : null,
   "default" : {
     "intro_content_alignment" : "center",
+    "item_alignment" : "",
     "enable_counter" : true,
     "column_type" : "4"
   }

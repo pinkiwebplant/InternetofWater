@@ -64,7 +64,7 @@
       <div class="media {{imgcolWidth}}">
         <div class="media_col_inner">
 
-          <div class="media_box	{% if module.media_column.enable_credit_text %}credit_textEnable{% endif %}">
+          <div class="media_box	{% if module.media_column.enable_credit_text %}credit_textEnable{% endif %}" {% if module.module_settings.image_position %}style="display: flex;justify-content:{{ module.module_settings.image_position }}"{% endif %}>
             {% if module.media_column.select_media_type == "image" %}
 
             {% if module.media_column.image.src %}
