@@ -628,6 +628,20 @@
     "display_width" : null,
     "default" : "bodystyle3"
   }, {
+    "id" : "b9691689-a3d6-f0c4-22eb-def0c4636139",
+    "name" : "content_alignment",
+    "label" : "Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
     "id" : "18cccb40-29e1-2ef9-9067-057bdd0c71ea",
     "name" : "content",
     "label" : "Content",
@@ -642,7 +656,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "content_style" : "bodystyle3"
+    "content_style" : "bodystyle3",
+    "content_alignment" : "left"
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",

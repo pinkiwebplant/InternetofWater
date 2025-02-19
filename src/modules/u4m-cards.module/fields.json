@@ -610,16 +610,6 @@
     "display_width" : null,
     "default" : "Technology Adoption at Public Agencies"
   }, {
-    "id" : "3bac1e46-4b88-bc4a-9636-5d8c4ccc4ca6",
-    "name" : "include_link_on_title",
-    "label" : "Include Image Link on Title",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
     "id" : "a5862b93-7872-1b9c-9e6e-7ed1296be52a",
     "name" : "title_size",
     "label" : "Title Size",
@@ -633,6 +623,80 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "medium"
+  }, {
+    "id" : "3bac1e46-4b88-bc4a-9636-5d8c4ccc4ca6",
+    "name" : "include_link_on_title",
+    "label" : "Include Link on Title",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "5e40c730-ed18-082c-d07f-49844eb718ea",
+    "name" : "title_link_type",
+    "label" : "Title Link Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_group.include_link_on_title",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "link", "Page Link" ], [ "popup_content", "Popup Content" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "62330db3-3fd6-35c9-5532-c0052b25df1d",
+    "name" : "select_title_link",
+    "label" : "Select Title Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_group.title_link_type",
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "f2bdd2bc-72ed-596f-ee15-bd9a73ce2ff7",
+    "name" : "title_popup_content",
+    "label" : "Title Popup Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card_group.title_link_type",
+      "controlling_value_regex" : "popup_content",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null
   }, {
     "id" : "dbf45016-acfe-cd89-66f8-3fe2a58d065f",
     "name" : "content",
@@ -842,6 +906,15 @@
     },
     "title" : "Technology Adoption at Public Agencies",
     "include_link_on_title" : false,
+    "select_title_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
     "title_size" : "medium",
     "content" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>",
     "button_group" : [ ],
@@ -872,6 +945,15 @@
     },
     "title" : "Technology Adoption at Public Agencies",
     "include_link_on_title" : false,
+    "select_title_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
     "title_size" : "medium",
     "content" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>",
     "button_group" : [ ],
@@ -902,6 +984,15 @@
     },
     "title" : "Technology Adoption at Public Agencies",
     "include_link_on_title" : false,
+    "select_title_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
     "title_size" : "medium",
     "content" : "<p>A whitepaper detailing research conducted by the Water Policy Program at Duke University’s Nicholas Institute into technology adoption at water sector public agencies.</p>",
     "button_group" : [ ],

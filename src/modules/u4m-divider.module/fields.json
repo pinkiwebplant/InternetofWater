@@ -1,7 +1,21 @@
 [ {
+  "id" : "d7a94346-f1a9-277f-cef1-c9d1f5b7a1cd",
+  "name" : "select_bg_color",
+  "label" : "Select Background Color",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "sunsetOrange_bg", "Sunset Orange" ], [ "slateBlue_bg", "Slate Blue" ], [ "tealGreen_bg", "Teal Green" ], [ "darkGray_bg", "Dark Gray" ], [ "azure_bg", "Azure" ], [ "cadetGray_bg", "Cadet Gray" ], [ "whiteSmoke_bg", "White Smoke" ], [ "lightGray_bg", "Light Gray" ], [ "white_bg", "White" ], [ "black_bg", "Black" ], [ "darkblue_bg", "Dark Blue" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : ""
+}, {
   "id" : "4ea36da9-c8a6-adf2-7460-cbf4d98190fd",
   "name" : "select_background_color",
-  "label" : "Select Background Color",
+  "label" : "Select Border Color",
   "required" : false,
   "locked" : false,
   "display" : "select",

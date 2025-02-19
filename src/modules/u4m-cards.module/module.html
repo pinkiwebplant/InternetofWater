@@ -25,11 +25,11 @@
           {% if item.select_image_type == "image" %}
           <span class="icon_box icon_img">
 
-            
+
             {% if item.include_link_on_icon %}
 
             {% if item.link_type == "popup_content" %}
-            <a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+            <a href="javascript:;" class="modal_trigger pop_modal{{loop.index}}{{name}}" data-modal="pop_modal{{loop.index}}{{name}}">
 
               {% else %}
 
@@ -78,7 +78,7 @@
               {% if item.include_link_on_icon %}
 
               {% if item.link_type == "popup_content" %}
-              <a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+              <a href="javascript:;" class="modal_trigger pop_modal{{loop.index}}{{name}}" data-modal="pop_modal{{loop.index}}{{name}}">
 
                 {% else %}
 
@@ -120,7 +120,7 @@
                 {% if item.include_link_on_icon %}
 
                 {% if item.link_type == "popup_content" %}
-                <a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
+                <a href="javascript:;" class="modal_trigger pop_modal{{loop.index}}{{name}}" data-modal="pop_modal{{loop.index}}{{name}}">
 
                   {% else %}
 
@@ -165,38 +165,31 @@
 
               <div class="card_desc {{ module.module_settings.card_content_style }}">
                 <div class="title {{ item.title_size }}">
-                  {% if item.include_link_on_icon %}
-
                   {% if item.include_link_on_title %}
-                  {% if item.link_type == "popup_content" %}
-                    <a href="javascript:;" class="modal_trigger modal{{loop.index}}{{name}}" data-modal="modal{{loop.index}}{{name}}">
-                      {{ item.title }}
-                    </a>
-                    {% else %}
-
-                    {% set href = item.select_link.url.href %}
-                    {% if item.select_link.url.type is equalto "EMAIL_ADDRESS" %}
-                    {% set href = "mailto:" + href %}
-                    {% endif %}
-                    <a
-                       {% if item.select_link.url.type is equalto "CALL_TO_ACTION"  %}
-                       href="{{ href }}" 
-                       {% else %}
-                       href="{{ href|escape_url }}"
-                       {% endif %}
-                       {% if item.select_link.open_in_new_tab %}
-                       target="_blank"
-                       {% endif %}
-                       {% if item.select_link.rel %}
-                       rel="{{ item.select_link.rel|escape_attr }}"
-                       {% endif %}
-                       >	{{ item.title }}
-                    </a>
-                    {% endif %}
+                  {% if item.title_link_type == "popup_content" %}
+                  <a href="javascript:;" class="modal_trigger title_modal{{loop.index}}{{name}}" data-modal="title_modal{{loop.index}}{{name}}">
+                    {{ item.title }}
+                  </a>
                   {% else %}
-                  {{ item.title }}
+                  {% set href = item.select_title_link.url.href %}
+                  {% if item.select_title_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
                   {% endif %}
-
+                  <a
+                     {% if item.select_title_link.url.type is equalto "CALL_TO_ACTION"  %}
+                     href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                     {% else %}
+                     href="{{ href|escape_url }}"
+                     {% endif %}
+                     {% if item.select_title_link.open_in_new_tab %}
+                     target="_blank"
+                     {% endif %}
+                     {% if item.select_title_link.rel %}
+                     rel="{{ item.select_title_link.rel|escape_attr }}"
+                     {% endif %}
+                     >	{{ item.title }}
+                  </a>
+                  {% endif %}
                   {% else %}
                   {{ item.title }}
                   {% endif %}
@@ -218,7 +211,7 @@
         </div>
         {# #}
         {% if module.bottom_content %}
-        <div class="bottom_cnt ">
+        <div class="bottom_cnt row_spacing">
           {{macros.introGroup(module.bottom_content)}}
         </div>
         {% endif %}
@@ -246,6 +239,15 @@
     {% endif %}
     {% endif %}
     {# #}
+
+    {# Title Popup #}
+    {% if item.include_link_on_title %}
+    {% if item.title_link_type == "popup_content" %}
+    {{macros.title_popup_contentloop(item)}}
+    {% endif %}
+    {% endif %}
+    {# #}
+
 
     {% endfor %}
 

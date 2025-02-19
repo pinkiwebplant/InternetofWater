@@ -47,7 +47,7 @@
   </div>
 
   {% if module.include_bottom_content %}
-  <div class="bottom_rich_text row_spacing {{ module.bottom_content_group.content_style }}">
+  <div class="bottom_rich_text row_spacing {{ module.bottom_content_group.content_style }}" style="text-align:{{ module.bottom_content_group.content_alignment }};">
     {{ module.bottom_content_group.content }}
   </div>
   {% endif %}  
