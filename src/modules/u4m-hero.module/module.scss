@@ -227,6 +227,11 @@ section.u4m-hero {
     opacity: 0.5;
     color: $darkGray;
     z-index: 5;
+    top: 50%;
+    right: 26rem;
+    top: 50%;
+    transform: rotate(-90deg) translateX(50%);
+    color: $baseColor;
     @include tabletMid {
       display: none;
     }

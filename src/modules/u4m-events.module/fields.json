@@ -8,6 +8,62 @@
   "display_width" : null,
   "default" : 109175378
 }, {
+  "id" : "6e765dff-5a5e-1001-4f19-ebae0d146626",
+  "name" : "show_upcoming_events",
+  "label" : "Show Upcoming Events",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "remove_upcoming_events",
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "c959e77e-e5f4-6f37-5326-b821e2361180",
+  "name" : "remove_upcoming_events",
+  "label" : "Remove Upcoming Events",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "6a3dd974-1c14-41dd-243d-5691b0d2f2ef",
+  "name" : "show_past_events",
+  "label" : "Show Past Events",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "remove_past_events",
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "44d48a51-9e98-6dac-61d1-d7644c5ac534",
+  "name" : "remove_past_events",
+  "label" : "Remove Past Events",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
   "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
   "name" : "button_group",
   "label" : "Button Group",

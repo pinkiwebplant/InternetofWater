@@ -20,19 +20,54 @@ html {
 :root {
   --gradient1: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0b3160 100%);
   --gradient2: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%);
-  --gradient3: linear-gradient(180deg, rgba(11, 49, 96, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  --gradient3: linear-gradient(
+    180deg,
+    rgba(11, 49, 96, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
   --gradient4: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #151f33 100%);
 }
 
 @font-face {
   font-family: "ETmodules";
   src:
-    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
+      format("embedded-opentype"),
     url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
     url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: block;
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src:
+    url("{{ get_asset_url('../fonts/fa-solid-900.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/fa-solid-900.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/fa-solid-900.ttf') }}") format("truetype");
+
+  font-display: block;
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src:
+    url("{{ get_asset_url('../fonts/fa-solid-900.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/fa-solid-900.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/fa-solid-900.ttf') }}") format("truetype");
+
+  font-display: block;
+}
+
+@font-face {
+  font-family: Ionicons;
+  src:
+    url("{{ get_asset_url('../fonts/ionicons.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/ionicons.ttf') }}") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 
 /* make html visible after Firefox flash in hack */

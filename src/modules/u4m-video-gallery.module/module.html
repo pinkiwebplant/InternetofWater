@@ -3,15 +3,28 @@
 {% include "../partials/u4-module-includes.html" %}
 
 
-
-
-
 <div class="page-center ratio_{{module.module_settings.column_width_ratio}} {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
+  <div>
+    {{macros.introGroup(module.intro_content, module.module_settings)}}
+  </div>
 
   <div class="flex_row">
+
+    {% set leftColLength = module.left_group.items|length%}
+    {% if leftColLength > 0%}
+
     <div class="left_group col {{ module.module_settings.column_width_ratio == "half" ? "col6" : "col12" }}">
-      {{macros.introGroup(module.left_group.intro_content, module.module_settings)}}
+      {#       {{macros.introGroup(module.left_group.intro_content, module.module_settings)}} #}
+
+      {% if module.left_group.label_text %}
+      <div class="lebal_text row_spacing">
+        <h4>
+          {{ module.left_group.label_text }}
+        </h4>
+      </div>
+      {% endif %}
+
       <div class="cmVideoGalleryWrap row_spacing">
         <div class="innerVideoGallery">
           <div class="slider-for primary_slider" >
@@ -54,14 +67,24 @@
         </div>
       </div>
     </div>
+    {% endif %}
+
+    {% set rightColLength = module.right_group.items|length%}
+    {% if rightColLength > 0%}
     <div class="right_group col {{ module.module_settings.column_width_ratio == "half" ? "col6" : "col12" }}">
-      {{macros.introGroup(module.left_group.intro_content, module.module_settings)}}
+      {% if module.right_group.label_text %}
+      <div class="lebal_text row_spacing">
+        <h4>
+          {{ module.right_group.label_text }}
+        </h4>
+      </div>
+      {% endif %}
       <div class="cmVideoGalleryWrap row_spacing">
         <div class="innerVideoGallery">
           <div class="slider-for primary_slider" >
             <div class="splide__track">
               <div class="splide__list">
-                {% for item in module.left_group.items %}
+                {% for item in module.right_group.items %}
                 <div class="item-slick splide__slide" data-src="{{ item.video_url }}?controls=1&rel=0&autoplay=0" data-video-src="{{ item.file_field }}">
                   <div class="videoWrapper">
                     {% if item.select_video_type == "hubspot_video" %}
@@ -80,7 +103,7 @@
           <div class="slider-nav thumbnail_slider" >
             <!-- 				<div class="splide__track">
  <div class="splide__list"> -->
-            {% for item in module.left_group.items %}
+            {% for item in module.right_group.items %}
             <div class="item-slick splide__slide">
               {% if item.poster_image.src %}
               <div class="cm_video_overlay">
@@ -98,6 +121,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
   </div>
 
 </div>

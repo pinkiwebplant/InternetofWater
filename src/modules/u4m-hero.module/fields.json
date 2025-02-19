@@ -265,7 +265,7 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -496,7 +496,7 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -897,20 +897,6 @@
     "type" : "choice",
     "display_width" : null,
     "default" : ""
-  }, {
-    "id" : "17f6dbfe-7f9c-d1dc-3db2-274a8e77fd0a",
-    "name" : "button_alignment",
-    "label" : "Button Alignment",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "flex-start", "Left" ], [ "center", "Center" ], [ "flex-end", "Right" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "flex-end"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -934,8 +920,7 @@
         "opacity" : null
       }
     },
-    "content_overflow" : "",
-    "button_alignment" : "flex-end"
+    "content_overflow" : ""
   }
 }, {
   "id" : "module_overrides",
@@ -1351,6 +1336,24 @@
       "type" : "choice",
       "display_width" : null,
       "default" : "gradient1"
+    }, {
+      "id" : "e8c16401-3f8a-f8c2-c382-a82be9b79c84",
+      "name" : "scrolling_effect",
+      "label" : "Scrolling Effect",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
     } ],
     "tab" : "CONTENT",
     "expanded" : true,
@@ -1371,7 +1374,8 @@
       },
       "select_color" : "",
       "include_overlay_gradient" : true,
-      "select_gradient" : "gradient1"
+      "select_gradient" : "gradient1",
+      "scrolling_effect" : false
     }
   }, {
     "id" : "fc248331-90d9-cb7e-66f6-4b85de179aa9",
@@ -1422,7 +1426,8 @@
       },
       "select_color" : "",
       "include_overlay_gradient" : true,
-      "select_gradient" : "gradient1"
+      "select_gradient" : "gradient1",
+      "scrolling_effect" : false
     },
     "container_size" : "theme"
   }
