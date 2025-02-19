@@ -1,0 +1,515 @@
+$formButtonBg: #111;
+$formInputErrorBordr: #e85c41;
+$theme1inputbordercolor: #bcbcbc;
+$theme1inputButtoncolor: #e6000b;
+
+$theme2inputbordercolor: #ddd;
+$theme2BtnBg: #44b0ec;
+
+$theme2InputError: #c74a4a;
+
+$theme2CheckIcon: #aaa;
+$theme2CheckIconActive: #3ba1da;
+
+@import "../../css/_module-imports";
+.u4m-contentWForm {
+  .form_wrapper {
+    .form-title:empty {
+      display: none;
+    }
+    form {
+      @include form;
+      max-width: 100%;
+      width: 100%;
+      padding: 20rem;
+      margin: auto;
+
+      legend.hs-field-desc {
+        font-size: 11rem;
+        letter-spacing: 0.5rem;
+      }
+
+      .hs-form-field {
+        margin-bottom: 17rem;
+
+        .input {
+          select,
+          textarea,
+          input.hs-input {
+            margin-bottom: 0;
+            padding: 8rem 10rem;
+            text-indent: 0;
+
+            &.invalid.error {
+              border: 2rem solid $formInputErrorBordr;
+            }
+          }
+        }
+        ul.no-list.hs-error-msgs label {
+          font-size: 14rem;
+        }
+      }
+
+      .hs-form-field.hs-fieldtype-checkbox,
+      .hs-form-field.hs-fieldtype-radio {
+        & > label {
+          font-weight: 700;
+        }
+
+        ul.inputs-list.multi-container {
+          margin: 0;
+          padding: 5rem 0;
+          list-style: none;
+          line-height: 26rem;
+          li {
+            display: block;
+            display: block;
+            padding: 3rem 0;
+            margin: 0;
+
+            input {
+              margin-top: 2rem;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 8rem;
+            }
+
+            input + * {
+              vertical-align: middle;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .actions {
+        .hs-button {
+          background-color: $formButtonBg;
+          border: 0 none;
+          border-radius: 4rem;
+          transition: all 0.23s ease-in-out 0s;
+          color: $white;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 15rem;
+          font-weight: normal;
+          height: 32rem;
+          line-height: 32rem;
+          margin: 0 5rem 10rem 0;
+          padding: 0 22rem;
+          text-align: center;
+          text-decoration: none;
+          vertical-align: top;
+          white-space: nowrap;
+          text-transform: none;
+
+          &:focus,
+          &:active,
+          &:hover {
+            background-color: $formButtonBg;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  //theme1
+
+  .form_wrapper.form_theme1 {
+    .form-title:empty {
+      display: none;
+    }
+    form {
+      @include form;
+      max-width: 100%;
+      width: 100%;
+      padding: 20rem;
+      margin: auto;
+
+      .hs-form-field {
+        margin-bottom: 18rem;
+
+        .input {
+          select,
+          textarea,
+          input.hs-input:not(input[type="radio"]):not(input[type="checkbox"]) {
+            width: 100%;
+            margin: 0;
+            border: 2rem solid $theme1inputbordercolor;
+            border-radius: 4rem;
+            font-size: 16rem;
+            padding: 5rem 10rem;
+            background-color: $white;
+            text-indent: 0;
+
+            &.invalid.error {
+              border: 2rem solid $theme1inputbordercolor;
+            }
+          }
+        }
+        ul.no-list.hs-error-msgs label {
+          font-size: 14rem;
+        }
+      }
+
+      .hs-form-field.hs-fieldtype-checkbox,
+      .hs-form-field.hs-fieldtype-radio {
+        & > label {
+          font-weight: 700;
+        }
+
+        ul.inputs-list.multi-container {
+          margin: 0;
+          padding: 5rem 0;
+          list-style: none;
+          line-height: 26rem;
+          li {
+            display: block;
+            display: block;
+            padding: 3rem 0;
+            margin: 0;
+
+            input {
+              margin-top: 2rem;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 8rem;
+            }
+
+            input + * {
+              vertical-align: middle;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .actions {
+        .hs-button {
+          border: 2rem solid $theme1inputButtoncolor;
+          color: $theme1inputButtoncolor;
+          border-radius: 15rem;
+          padding: 10rem 30rem;
+          background: $white;
+          font-weight: 500;
+          font-size: 16rem;
+          height: auto;
+          cursor: pointer;
+          transition: 400ms background-colorease;
+          line-height: normal;
+
+          &:focus,
+          &:active,
+          &:hover {
+            background-color: $theme1inputButtoncolor;
+            color: $white;
+            border: 2rem solid $theme1inputButtoncolor;
+          }
+        }
+      }
+    }
+  }
+
+  //theme2
+
+  .form_wrapper.form_theme2 {
+    .form-title:empty {
+      display: none;
+    }
+    form {
+      @include form;
+      max-width: 100%;
+      width: 100%;
+      padding: 20rem;
+      margin: auto;
+
+      .field.hs-form-field {
+        margin-bottom: 18rem;
+
+        & > label {
+          font-size: 15rem;
+          line-height: 1.46666666667;
+          display: block;
+          margin: 0 0 8px 0;
+          font-family: $font1;
+          font-weight: 600;
+        }
+
+        .input {
+          select,
+          textarea,
+          input.hs-input:not(input[type="radio"]):not(input[type="checkbox"]) {
+            padding: 0 12px;
+            width: 100%;
+            display: block;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            outline: 0;
+            cursor: text;
+            font-size: 15px;
+            height: 40px;
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            position: static;
+            border: 1px solid $theme2inputbordercolor;
+            background-color: $white;
+            color: $baseColor;
+            text-indent: 0;
+            &.invalid.error {
+              border: 2rem solid $theme1inputbordercolor;
+            }
+          }
+        }
+        ul.no-list.hs-error-msgs {
+          li {
+            display: block;
+            width: 100%;
+          }
+          label {
+            font-size: 14rem;
+            width: auto;
+            max-width: 100%;
+            background: $theme2InputError;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            color: $white;
+            box-sizing: border-box;
+            position: relative;
+            padding: 12px;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 12px 0 0 0;
+            display: block;
+            width: 100%;
+            &:before {
+              font-family: FontAwesome;
+              font-style: normal;
+              font-weight: 400;
+              font-variant: normal;
+              text-transform: none;
+              speak: none;
+              line-height: 1;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              content: "\f0d8";
+              top: -17px;
+              left: 10px;
+              position: absolute;
+              z-index: 1;
+              color: $theme2InputError;
+              font-size: 28px;
+              line-height: 1em;
+            }
+          }
+        }
+      }
+
+      .hs-form-field.hs-fieldtype-radio {
+        & > label {
+          font-weight: 700;
+        }
+
+        ul.inputs-list.multi-container {
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 20px;
+        }
+
+        ul.inputs-list.multi-container > li {
+          width: calc(50% - 20px);
+          @include tabletvert {
+            width: 100%;
+          }
+        }
+
+        ul.inputs-list.multi-container {
+          margin: 0;
+          padding: 5rem 0;
+          list-style: none;
+          margin-left: 0;
+
+          li {
+            display: block;
+            display: block;
+            padding: 8rem 0;
+            margin: 0;
+            line-height: 1.6;
+
+            label {
+              position: relative;
+              width: 100%;
+              display: block;
+              &:before {
+                content: "";
+                display: block;
+                width: 18rem;
+                height: 18rem;
+                border: 2rem solid $baseColor;
+                border-radius: 100%;
+                position: absolute;
+                top: 6px;
+                left: 0;
+              }
+              &:after {
+                content: "";
+                display: block;
+                width: 14rem;
+                height: 14rem;
+                background-color: $baseColor;
+                border-radius: 100%;
+                position: absolute;
+                display: block;
+                height: 10.5rem;
+                left: 4px;
+                position: absolute;
+                top: 9.7px;
+                width: 10.5rem;
+                opacity: 0;
+              }
+            }
+
+            label:has(input:checked) {
+              &:after {
+                opacity: 1;
+              }
+            }
+
+            input {
+              margin-top: 2rem;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 8rem;
+              display: none;
+            }
+
+            input + * {
+              vertical-align: middle;
+              display: inline-block;
+              margin-left: 36rem;
+              font-size: 15rem;
+            }
+          }
+        }
+      }
+      .hs-form-field.hs-fieldtype-checkbox {
+        & > label {
+          font-weight: 700;
+        }
+
+        ul.inputs-list.multi-container {
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 20px;
+        }
+
+        ul.inputs-list.multi-container > li {
+          width: calc(50% - 20px);
+          @include tabletvert {
+            width: 100%;
+          }
+        }
+
+        ul.inputs-list.multi-container {
+          margin: 0;
+          padding: 5rem 0;
+          list-style: none;
+          margin-left: 0;
+
+          li {
+            display: block;
+            display: block;
+            padding: 8rem 0;
+            margin: 0;
+            line-height: 1.6;
+
+            label {
+              position: relative;
+              width: 100%;
+              display: block;
+              &:before {
+                content: "";
+                display: block;
+                border-radius: 100%;
+                position: absolute;
+                top: 6px;
+                left: 0;
+                font-size: 24px;
+                line-height: 24px;
+                font-family: Ionicons !important;
+                font-style: normal !important;
+                font-weight: 400 !important;
+                font-variant: normal !important;
+                text-transform: none !important;
+                speak: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\f372";
+                font-size: 24px;
+                line-height: 24px;
+                height: 24px;
+                color: $theme2CheckIcon;
+                top: 3px;
+              }
+            }
+
+            label:has(input:checked) {
+              &:before {
+                color: $theme2CheckIcon;
+                color: $theme2CheckIconActive;
+                content: "\f373";
+              }
+            }
+
+            input {
+              margin-top: 2rem;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 8rem;
+              display: none;
+            }
+
+            input + * {
+              vertical-align: middle;
+              display: inline-block;
+              margin-left: 36rem;
+              font-size: 15rem;
+            }
+          }
+        }
+      }
+
+      .actions {
+        text-align: center;
+        .hs-button {
+          margin: 0;
+          font-size: 15px;
+          background: $azure;
+          border-radius: 4rem;
+          border: 0;
+          color: $white;
+          min-width: 250px;
+          line-height: 1em;
+          padding: 16px 20px;
+          text-decoration: none;
+          text-align: center;
+          text-transform: none;
+          font-weight: 400;
+          overflow: hidden;
+          position: relative;
+          transition: 0.25s;
+          box-sizing: border-box;
+          height: auto;
+          &:focus,
+          &:active,
+          &:hover {
+            color: $white;
+            background-color: $theme2BtnBg;
+          }
+        }
+      }
+    }
+  }
+}

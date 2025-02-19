@@ -1,0 +1,326 @@
+@import "../../css/_module-imports";
+
+.u4m-events {
+  font-size: 14px;
+  line-height: 1.7em;
+  .eventsWrap {
+    .flex_row {
+      align-items: start;
+
+      .leftSec {
+        width: 75%;
+        .events-grid {
+          padding-top: 20px;
+          .event-item {
+            position: relative;
+            clear: left;
+            margin-bottom: 40px;
+            .event-meta {
+              border-top-left-radius: 40px;
+              border-bottom-right-radius: 40px;
+              background-color: $white;
+              box-shadow: $shadow3;
+              padding: 40px 20px;
+              float: left;
+              width: 100%;
+              @include tabletMidmin {
+                width: 33%;
+                max-width: 120px;
+                padding: 20px;
+              }
+              .date-wrapper {
+                float: left;
+                width: 40%;
+                font-family: "Quicksand", "Open Sans", sans;
+                color: $tealGreen;
+                text-align: center;
+                @include tabletMidmin {
+                  width: 100%;
+                }
+              }
+              .month {
+                display: block;
+                font-size: 20px;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+              }
+              .date {
+                display: block;
+                font-size: 40px;
+                margin-bottom: 5px;
+              }
+              .time {
+                display: block;
+                font-size: 18px;
+              }
+            }
+            .contentWrapper {
+              padding: 0 40px;
+              @include tabletMidmin {
+                margin-left: 120px;
+              }
+              .field-title {
+                margin-bottom: 1em;
+                a {
+                  font-family: "Quicksand", "Open Sans", sans;
+                  color: $tealGreen;
+                  font-weight: 700;
+                  font-size: 20px;
+                  text-decoration: none;
+                }
+              }
+              .field-excerpt {
+                font-size: 18px;
+                margin-bottom: 1em;
+                p {
+                  padding-bottom: 1em;
+                  margin: 0;
+                  &:last-child {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+              .event-icon {
+                width: auto;
+                margin-left: 10px;
+                margin-bottom: 35px;
+                @include phoneMin {
+                  margin-bottom: 10px;
+                  float: right;
+                }
+              }
+              .field-link {
+                display: inline-block;
+                padding-right: 90px;
+                padding-top: 10px;
+                font-size: 18px;
+                .read-more {
+                  font-family: "Quicksand", "Open Sans", sans;
+                  color: $azure;
+                  font-weight: 700;
+                  text-decoration: none;
+                  &:after {
+                    position: relative;
+                    content: "▶";
+                    left: 0;
+                    transition: 0.2s leftease;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .paginationItems {
+          margin-bottom: 60px;
+          @include tabletMidmin {
+            text-align: right;
+          }
+          .page-numbers {
+            color: $Silver;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.3em 0.3em;
+            line-height: 16px;
+            width: 16px;
+            box-sizing: content-box;
+            display: inline;
+            text-decoration: none;
+            &.current {
+              color: $tealGreen;
+              border: 2px solid $tealGreen;
+              border-radius: 50%;
+            }
+            &:not(.prev):not(.next) {
+              display: inline-block;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .rightSec {
+        width: 25%;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        background-color: $white;
+        padding: 40px;
+        box-shadow: $shadow3;
+        .tabber {
+          button {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            color: $darkGray;
+            background: none;
+            border: none;
+            text-align: left;
+            &:hover {
+              color: $tealGreen;
+            }
+          }
+          .tabberin {
+            margin-bottom: 0.5em;
+            button {
+              margin-bottom: 0.5em;
+              margin-left: 15px;
+            }
+          }
+          button.innerbtn {
+            color: $tealGreen;
+            font-size: 25px;
+            margin-bottom: 0.5em;
+            padding-bottom: 0.3em;
+          }
+          a.hs-button {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    .clearfix:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  }
+
+  .eventsPost {
+    .cmpd {
+      padding: 13px 0;
+    }
+    .gomainpg {
+      a {
+        text-decoration: none;
+      }
+    }
+    .eventTwoCol {
+      column-gap: 20px;
+      row-gap: 30px;
+      flex-wrap: nowrap;
+      .text_inner {
+        h2 {
+          margin: 0;
+          color: $tealGreen;
+          font-size: 20px;
+          font-weight: bold;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          line-height: 1em;
+        }
+        p {
+          line-height: 2em;
+          padding-bottom: 1em;
+          margin: 0;
+        }
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+    .eventContent {
+      h2 {
+        margin: 0;
+        color: $tealGreen;
+        font-size: 20px;
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 1em;
+      }
+    }
+    .cmRegistration {
+      width: 100%;
+    }
+    .cmRegistrationbtn {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .hs-button {
+        font-size: 20px;
+      }
+    }
+    .event-logos-grid {
+      display: flex;
+      justify-content: center;
+      .event-icon {
+        margin: 20px;
+      }
+    }
+  }
+
+  //
+
+  @include tabletMid {
+    .eventsWrap .flex_row .leftSec,
+    .eventsWrap .flex_row .rightSec {
+      width: 100%;
+    }
+
+    .eventsWrap .flex_row .rightSec {
+      order: 1;
+    }
+
+    .eventsWrap .flex_row .leftSec {
+      order: 2;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta {
+      width: 120px;
+      text-align: center;
+      padding: 20px;
+      flex-shrink: 0;
+    }
+
+    .eventsWrap
+      .flex_row
+      .leftSec
+      .events-grid
+      .event-item
+      .event-meta
+      .date-wrapper {
+      width: 100%;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta .date {
+      font-size: 30px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta .month {
+      font-size: 15px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta .time {
+      font-size: 14px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item {
+      display: flex;
+      align-items: flex-start;
+
+      @include tabletvert {
+        gap: 20px;
+        flex-direction: column;
+      }
+    }
+
+    .eventsWrap .flex_row .rightSec {
+      padding: 20px 30px;
+    }
+
+    .eventsWrap .flex_row .leftSec .events-grid .event-item .contentWrapper {
+      padding: 0 20px;
+
+      @include tabletvert {
+        padding: 0;
+      }
+
+      .clearfix {
+        display: none;
+      }
+    }
+  }
+}
