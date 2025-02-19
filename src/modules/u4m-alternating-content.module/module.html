@@ -37,12 +37,12 @@
 <div class="page-center {{module.module_settings.column_width_ratio}}_col {% if module.module_settings.remove_intro_content_group %} remove_intro_content_group{% endif %}{% if module.module_settings.remove_content_group %} remove_content_group{% endif %}{% if module.module_settings.remove_media_group %} remove_media_group{% endif %} imgAl_{{ module.module_settings.image_column_alignment }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }} {% if module.media_column.select_media_type == "image" %}  {% if module.media_column.cover_image %}cover_image_media{% endif %}{% endif %}">
 
 
-  
-  
 
 
-  
-  
+
+
+
+
   {% if module.module_settings.remove_intro_content_group == false %}
   {% if module.intro_content %}
   {{macros.introGroup(module.intro_content, module.module_settings)}}
@@ -54,7 +54,7 @@
     <div class="flex_row">
       {% if module.module_settings.remove_content_group == false %}
       <div class="content_col text_{{ module.module_settings.content_group_alignment }} verAl_{{ module.module_settings.content_vertical_alignment }} {{contcolWidth}}">
-        <div class="content_col_inner">
+        <div class="content_col_inner {% if module.content_group.column_settings.remove_content_heading_border %}removehdgBdr{% endif %}">
           {{macros.introGroup(module.content_group)}}
         </div>
       </div>
@@ -64,7 +64,7 @@
       <div class="media {{imgcolWidth}}">
         <div class="media_col_inner">
 
-          <div class="media_box	{% if module.media_column.enable_credit_text %}credit_textEnable{% endif %}" {% if module.module_settings.image_position %}style="display: flex;justify-content:{{ module.module_settings.image_position }}"{% endif %}>
+          <div class="media_box {% if module.media_column.enable_floating_credit_text %}enabled_floating_credit_text{% endif %}	{% if module.media_column.enable_credit_text %}credit_textEnable{% endif %}" {% if module.module_settings.image_position %}style="display: flex;justify-content:{{ module.module_settings.image_position }}"{% endif %}>
             {% if module.media_column.select_media_type == "image" %}
 
             {% if module.media_column.image.src %}
@@ -128,38 +128,42 @@
               </a> 
               {% endif %}
             </div>
-           
-          <div class="large_button_link">
-            {% set href = module.media_column.video_button_group.link.url.href %}
-            {% if module.media_column.video_button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
-            {% set href = "mailto:" + href %}
+            {% if module.media_column.enable_button %}
+            <div class="large_button_link">
+              {% set href = module.media_column.video_button_group.link.url.href %}
+              {% if module.media_column.video_button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a style="color:{{ module.media_column.video_button_group.button_text_color.rgba }}"  class="{{ module.media_column.video_button_group.select_link_theme }}"
+                 {% if module.media_column.video_button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}" 
+                 {% else %}
+                 href="{{ href }}"
+                 {% endif %}
+                 {% if module.media_column.video_button_group.link.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if module.media_column.video_button_group.link.rel %}
+                 rel="{{ module.media_column.video_button_group.link.rel }}"
+                 {% endif %}
+                 >{{ module.media_column.video_button_group.link_text }}
+              </a>
+            </div> 
             {% endif %}
-            <a style="color:{{ module.media_column.video_button_group.button_text_color.rgba }}"  class="{{ module.media_column.video_button_group.select_link_theme }}"
-               {% if module.media_column.video_button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
-               href="{{ href }}" 
-               {% else %}
-               href="{{ href }}"
-               {% endif %}
-               {% if module.media_column.video_button_group.link.open_in_new_tab %}
-               target="_blank"
-               {% endif %}
-               {% if module.media_column.video_button_group.link.rel %}
-               rel="{{ module.media_column.video_button_group.link.rel }}"
-               {% endif %}
-               >{{ module.media_column.video_button_group.link_text }}
-            </a>
-          </div> 
             {% endif %}
-
-
-
+            {% if module.media_column.select_media_type == "box_content" %}
+            <div class="boxContent">
+              {{ module.media_column.box_content }}
+            </div>
+            {% endif %}
 
           </div>
-
+          {% if module.media_column.select_media_type == "image" %}
           {% if module.media_column.include_link %}
 
           {% if module.media_column.link_type == "button" %}
           <div class="large_button_link">
+            {% if module.media_column.button_group.button_type=="std" %}
             {% set href = module.media_column.button_group.link.url.href %}
             {% if module.media_column.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
             {% set href = "mailto:" + href %}
@@ -178,10 +182,13 @@
                {% endif %}
                >{{ module.media_column.button_group.link_text }}
             </a>
+            {% elif module.media_column.button_group.button_type=="popup" %}
+            <a href="javascript:;" class="modal_trigger img_modal{{name}}" data-modal="img_modal{{name}}">{{ module.media_column.button_group.link_text }}</a>
+            {% endif %}
           </div>
           {% endif %}
           {% endif %}
-
+          {% endif %}
           {% if module.media_column.enable_credit_text %}
           <div class="credit_text_wrap {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
             <span class="credit_text">
@@ -189,6 +196,21 @@
             </span>
           </div>
           {% endif %}
+
+
+          {% if module.media_column.enable_floating_credit_text %}
+          <div class="floating_text {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
+            <span class="credit_text">
+              {{ module.media_column.floating_credit_text }}
+            </span>
+          </div>
+          {% endif %}
+          {% if module.media_column.enable_content %}
+          <div class="bottomContent">
+            {{ module.media_column.content }}
+          </div>
+          {% endif %}
+
         </div>
       </div>
       {% endif %}
@@ -201,6 +223,27 @@
 </div>
 </section>
 
+{% if module.media_column.select_media_type == "image" %}
+{% if module.media_column.include_link %}
+{% if module.media_column.link_type == "button" %}
+{% if module.media_column.button_group.button_type=="popup" %}
+<div class="popup_content_modal" data-modal-id="img_modal{{name}}">
+  <div class="modal_overlay">
+
+  </div>
+  <div class="popup_content_modal_container">
+    <span class="close_content_modal"></span>
+    <div class="popup_content_modal_inner_container">
+      <div class="popup_content_text">
+        {{ module.media_column.button_group.popup_content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
 
 
 {# button group popup modal#}

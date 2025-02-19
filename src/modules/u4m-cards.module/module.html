@@ -20,7 +20,7 @@
     {% for item in module.card_group %}
     <div class="car_item col {% if module.module_settings.card_shadow %}cardShdw{% endif %} {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
       <div class="card_inner">
-
+        {% if item.select_image_type  %}
         <div class="card_img" {% if module.module_settings.include_icon_animation %}data-aos="{{ module.module_settings.icon_animation }}"{% endif %}>
           {% if item.select_image_type == "image" %}
           <span class="icon_box icon_img">
@@ -162,8 +162,9 @@
                 {% endif %}
 
                 </div>
-
+              {% endif %}
               <div class="card_desc {{ module.module_settings.card_content_style }}">
+                {% if item.title %}
                 <div class="title {{ item.title_size }}">
                   {% if item.include_link_on_title %}
                   {% if item.title_link_type == "popup_content" %}
@@ -194,15 +195,16 @@
                   {{ item.title }}
                   {% endif %}
                 </div>
+                {% endif %}
+                {% if item.content %}
                 <div class="card_text">
                   {{ item.content }}
                 </div>
-
-                {% if item.button_group %}
-                {{macros.buttonGroup(item.button_group, false)}}
                 {% endif %}
               </div>
-
+              {% if item.button_group %}
+              {{macros.buttonGroup(item.button_group, false)}}
+              {% endif %}
               </div>
             </div>
 
