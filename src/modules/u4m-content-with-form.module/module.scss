@@ -18,7 +18,6 @@ $theme2CheckIconActive: #3ba1da;
       display: none;
     }
     form {
-      @include form;
       max-width: 100%;
       width: 100%;
       padding: 20rem;
@@ -117,11 +116,7 @@ $theme2CheckIconActive: #3ba1da;
   //theme1
 
   .form_wrapper.form_theme1 {
-    .form-title:empty {
-      display: none;
-    }
     form {
-      @include form;
       max-width: 100%;
       width: 100%;
       padding: 20rem;
@@ -213,11 +208,7 @@ $theme2CheckIconActive: #3ba1da;
   //theme2
 
   .form_wrapper.form_theme2 {
-    .form-title:empty {
-      display: none;
-    }
     form {
-      @include form;
       max-width: 100%;
       width: 100%;
       padding: 20rem;
@@ -509,6 +500,36 @@ $theme2CheckIconActive: #3ba1da;
             color: $white;
             background-color: $theme2BtnBg;
           }
+        }
+      }
+    }
+  }
+  .form_wrapper.form_theme3 {
+    form {
+      padding: 0;
+      .field.hs-form-field {
+        margin-bottom: 1.3em;
+        .input {
+          select,
+          textarea,
+          input.hs-input:not(input[type="radio"]):not(input[type="checkbox"]) {
+            border-width: 2px;
+            border-color: $darkGray;
+            border-radius: 5px 5px 5px 5px;
+            font-size: 14px;
+            padding: 17px 16px;
+            &::placeholder {
+              color: $darkGray;
+            }
+          }
+        }
+      }
+
+      .actions {
+        .hs-button {
+          @include button;
+          height: auto;
+          min-height: 54px;
         }
       }
     }

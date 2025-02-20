@@ -137,9 +137,11 @@
 
             {% endif %}
             {% if module.media_column.select_media_type == "box_content" %}
+            {% if module.media_column.box_content %}
             <div class="boxContent">
               {{ module.media_column.box_content }}
             </div>
+            {% endif %}
             {% endif %}
 
           </div>
@@ -169,34 +171,33 @@
                >{{ module.media_column.button_group.link_text }}
             </a>
             {% elif module.media_column.button_group.button_type=="popup" %}
-            <a href="javascript:;" class="modal_trigger img_modal{{name}}" data-modal="img_modal{{name}}">{{ module.media_column.button_group.link_text }}</a>
+            <a href="javascript:;" class="modal_trigger img_modal{{name}} {{ module.media_column.button_group.select_link_theme }}" data-modal="img_modal{{name}}">{{ module.media_column.button_group.link_text }}</a>
             {% endif %}
           </div>
           {% endif %}
           {% endif %}
           {% endif %}
 
-          {#           {% if module.media_column.enable_credit_text %}
+          {% if module.media_column.enable_credit_text %}
           <div class="credit_text_wrap {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
             <span class="credit_text">
               {{ module.media_column.credit_text }}
             </span>
           </div>
-          {% endif %} #}
+          {% endif %}
 
-
-          {#           {% if module.media_column.enable_floating_credit_text %}
+          {% if module.media_column.enable_floating_credit_text %}
           <div class="floating_text {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
             <span class="credit_text">
               {{ module.media_column.floating_credit_text }}
             </span>
           </div>
-          {% endif %} #}
-          {#           {% if module.media_column.enable_content %}
+          {% endif %}
+          {% if module.media_column.enable_content %}
           <div class="bottomContent">
             {{ module.media_column.content }}
           </div>
-          {% endif %} #}
+          {% endif %}
 
         </div>
       </div>

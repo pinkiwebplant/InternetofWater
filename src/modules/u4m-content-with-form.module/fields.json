@@ -382,7 +382,7 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "default", "Default" ], [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ] ],
+    "choices" : [ [ "default", "Default" ], [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -492,15 +492,17 @@
     "display_width" : null,
     "default" : "left"
   }, {
-    "id" : "c2236fff-f8e1-e3fb-a314-63554b170e91",
-    "name" : "mark_first_active",
-    "label" : "Mark First Active",
+    "id" : "73134c78-a29a-5a52-a315-bcf9f7d7e4dd",
+    "name" : "form_width",
+    "label" : "Form Width",
     "required" : false,
     "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
+    "display" : "slider",
+    "min" : 400,
+    "max" : 2500,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -508,8 +510,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left",
-    "mark_first_active" : true
+    "intro_content_alignment" : "left"
   }
 }, {
   "id" : "module_overrides",

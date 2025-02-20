@@ -30,3 +30,12 @@
 {% if module.intro_content.include_button %}
 {{macros.buttonGroup(module.intro_content.button_group, true)}}
 {% endif %}
+{% if module.module_settings.form_width %}
+{% require_css %}
+<style>
+  .u4m-contentWForm.{{ name }} .form_wrapper{
+    max-width:{{ module.module_settings.form_width }}px;
+  }
+</style>
+{% end_require_css %}
+{% endif %}

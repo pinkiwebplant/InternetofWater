@@ -1154,7 +1154,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "button"
+    "default" : ""
   }, {
     "id" : "faea509f-04f4-bd2d-ae22-50335552b599",
     "name" : "link_on_image",
@@ -1219,9 +1219,9 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "media_column.button_group.button_type",
-        "controlling_value_regex" : "std",
+        "controlling_value_regex" : "std|popup",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "display" : "select",
@@ -1318,7 +1318,7 @@
     "name" : "enable_credit_text",
     "label" : "Enable Credit Text",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "visibility" : {
       "controlling_field" : null,
       "controlling_field_path" : "media_column.select_media_type",
@@ -1336,7 +1336,7 @@
     "name" : "credit_text",
     "label" : "Credit Text",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
@@ -1356,7 +1356,7 @@
     "name" : "enable_floating_credit_text",
     "label" : "Enable Floating Credit Text",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "visibility" : {
       "controlling_field" : null,
       "controlling_field_path" : "media_column.select_media_type",
@@ -1374,7 +1374,7 @@
     "name" : "floating_credit_text",
     "label" : "Floating Credit Text",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
@@ -1394,7 +1394,7 @@
     "name" : "enable_content",
     "label" : "Enable Content",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
@@ -1404,7 +1404,7 @@
     "name" : "content",
     "label" : "Content",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "visibility" : {
       "controlling_field" : null,
       "controlling_field_path" : "media_column.enable_content",
@@ -1436,7 +1436,7 @@
     "embedded_url" : "https://www.youtube.com/embed/fm_HxyfNvRU?feature=oembed",
     "enable_parallax" : true,
     "include_link" : true,
-    "link_type" : "button",
+    "link_type" : "",
     "link_on_image" : {
       "url" : {
         "content_id" : null,
