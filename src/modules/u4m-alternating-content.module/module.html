@@ -34,7 +34,7 @@
 
 
 
-<div class="page-center {{module.module_settings.column_width_ratio}}_col {% if module.module_settings.remove_intro_content_group %} remove_intro_content_group{% endif %}{% if module.module_settings.remove_content_group %} remove_content_group{% endif %}{% if module.module_settings.remove_media_group %} remove_media_group{% endif %} imgAl_{{ module.module_settings.image_column_alignment }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }} {% if module.media_column.select_media_type == "image" %}  {% if module.media_column.cover_image %}cover_image_media{% endif %}{% endif %}">
+<div class="page-center {{module.module_settings.column_width_ratio}}_col {% if module.module_settings.remove_intro_content_group %} remove_intro_content_group{% endif %}{% if module.module_settings.remove_content_group %} remove_content_group{% endif %}{% if module.module_settings.remove_media_group %} remove_media_group{% endif %} imgAl_{{ module.module_settings.image_column_alignment }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }} ">
 
 
 
@@ -68,16 +68,16 @@
             {% if module.media_column.select_media_type == "image" %}
 
             {% if module.media_column.image.src %}
-            <div class="image_box {% if module.media_column.cover_image %}cover_image{% endif %}">
+            <div class="image_box ">
               {% if module.media_column.include_link %}
-              {% if module.media_column.link_type == "img_link" %}
+              {% if  module.media_column.link_type == "img_link" %}
               {% set href = module.media_column.link_on_image.url.href %}
               {% if module.media_column.link_on_image.url.type is equalto "EMAIL_ADDRESS" %}
               {% set href = "mailto:" + href %}
               {% endif %}
-              <a  class="overlay_link"
+              <a class="overlay_link"
                  {% if module.media_column.link_on_image.url.type is equalto "CALL_TO_ACTION"  %}
-                 href="{{ href }}" 
+                 href="{{ href }}"
                  {% else %}
                  href="{{ href }}"
                  {% endif %}
@@ -86,7 +86,8 @@
                  {% endif %}
                  {% if module.media_column.link_on_image.rel %}
                  rel="{{ module.media_column.link_on_image.rel }}"
-                 {% endif %} >
+                 {% endif %}
+                 >
               </a>
               {% endif %}
               {% endif %}
@@ -98,6 +99,7 @@
               {% else %}
               <img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
               {% endif %}
+
             </div>
             {% endif %}
 
@@ -107,56 +109,32 @@
             <div class="video_box">
               <iframe style="z-index: 3;" title="water data community" src="{{ module.media_column.embedded_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid0"></iframe>
 
-              {% if module.media_column.video_overlay_link.include_overlay_link %}
-              {% set href = module.media_column.video_overlay_link.overlay_link.url.href %}
-              {% if module.media_column.video_overlay_link.overlay_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% if module.media_column.include_link %}
+              {% if  module.media_column.link_type == "img_link" %}
+              {% set href = module.media_column.link_on_image.url.href %}
+              {% if module.media_column.link_on_image.url.type is equalto "EMAIL_ADDRESS" %}
               {% set href = "mailto:" + href %}
               {% endif %}
-              <a class="overlay_link bg_overlay" style="z-index: 5;pointer-events: all;"
-                 {% if module.media_column.video_overlay_link.overlay_link.url.type is equalto "CALL_TO_ACTION"  %}
-                 href="{{ href }}" 
-                 {% else %}
-                 href="{{ href|escape_url }}"
-                 {% endif %}
-                 {% if module.media_column.video_overlay_link.overlay_link.open_in_new_tab %}
-                 target="_blank"
-                 {% endif %}
-                 {% if module.media_column.video_overlay_link.overlay_link.rel %}
-                 rel="{{ module.media_column.video_overlay_link.overlay_link.rel|escape_attr }}"
-                 {% endif %}
-                 >
-              </a> 
-              {% endif %}
-            </div>
-<<<<<<< Updated upstream
-            {% if module.media_column.enable_button %}
-=======
-
->>>>>>> Stashed changes
-            <div class="large_button_link">
-              {% set href = module.media_column.video_button_group.link.url.href %}
-              {% if module.media_column.video_button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
-              {% set href = "mailto:" + href %}
-              {% endif %}
-              <a style="color:{{ module.media_column.video_button_group.button_text_color.rgba }}"  class="{{ module.media_column.video_button_group.select_link_theme }}"
-                 {% if module.media_column.video_button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
-                 href="{{ href }}" 
+              <a class="overlay_link"
+                 {% if module.media_column.link_on_image.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}"
                  {% else %}
                  href="{{ href }}"
                  {% endif %}
-                 {% if module.media_column.video_button_group.link.open_in_new_tab %}
+                 {% if module.media_column.link_on_image.open_in_new_tab %}
                  target="_blank"
                  {% endif %}
-                 {% if module.media_column.video_button_group.link.rel %}
-                 rel="{{ module.media_column.video_button_group.link.rel }}"
+                 {% if module.media_column.link_on_image.rel %}
+                 rel="{{ module.media_column.link_on_image.rel }}"
                  {% endif %}
-                 >{{ module.media_column.video_button_group.link_text }}
+                 >
               </a>
-            </div> 
-<<<<<<< Updated upstream
-            {% endif %}
-=======
->>>>>>> Stashed changes
+              {% endif %}
+              {% endif %}
+
+            </div>
+
+
             {% endif %}
             {% if module.media_column.select_media_type == "box_content" %}
             <div class="boxContent">
@@ -165,7 +143,8 @@
             {% endif %}
 
           </div>
-          {% if module.media_column.select_media_type == "image" %}
+
+          {% if module.media_column.select_media_type == "image" or module.media_column.select_media_type == "video" %}
           {% if module.media_column.include_link %}
 
           {% if module.media_column.link_type == "button" %}
@@ -196,31 +175,28 @@
           {% endif %}
           {% endif %}
           {% endif %}
-          {% if module.media_column.enable_credit_text %}
+
+          {#           {% if module.media_column.enable_credit_text %}
           <div class="credit_text_wrap {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
             <span class="credit_text">
               {{ module.media_column.credit_text }}
             </span>
           </div>
-          {% endif %}
+          {% endif %} #}
 
 
-          {% if module.media_column.enable_floating_credit_text %}
+          {#           {% if module.media_column.enable_floating_credit_text %}
           <div class="floating_text {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
             <span class="credit_text">
               {{ module.media_column.floating_credit_text }}
             </span>
           </div>
-          {% endif %}
-<<<<<<< Updated upstream
-          {% if module.media_column.enable_content %}
+          {% endif %} #}
+          {#           {% if module.media_column.enable_content %}
           <div class="bottomContent">
             {{ module.media_column.content }}
           </div>
-          {% endif %}
-=======
-
->>>>>>> Stashed changes
+          {% endif %} #}
 
         </div>
       </div>
@@ -234,7 +210,7 @@
 </div>
 </section>
 
-{% if module.media_column.select_media_type == "image" %}
+{% if module.media_column.select_media_type == "image" or module.media_column.select_media_type == "video" %}
 {% if module.media_column.include_link %}
 {% if module.media_column.link_type == "button" %}
 {% if module.media_column.button_group.button_type=="popup" %}
