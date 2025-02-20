@@ -1,0 +1,210 @@
+{% set moduleName = 'u4m-content-with-image' %}
+
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+{% if module.module_settings.column_width_ratio == "one_one" %}
+{% set contcolWidth = "col6 col"%}
+{% set imgcolWidth = "col6 col"%}
+
+{% endif %}
+{% if module.module_settings.column_width_ratio == "two_three" %}
+{% set contcolWidth = "col5 col"%}
+{% set imgcolWidth = "col7 col"%}
+{% endif %}
+{% if module.module_settings.column_width_ratio == "three_two" %}
+{% set contcolWidth = "col7 col"%}
+{% set imgcolWidth = "col5 col"%}
+{% endif %}
+
+{% if module.module_settings.column_width_ratio == "two_four" %}
+{% set contcolWidth = "col4 col"%}
+{% set imgcolWidth = "col8 col"%}
+{% endif %}
+{% if module.module_settings.column_width_ratio == "four_two" %}
+{% set contcolWidth = "col8 col"%}
+{% set imgcolWidth = "col4 col"%}
+{% endif %}
+
+{% if module.module_settings.column_width_ratio == "full_width" %}
+{% set contcolWidth = "col12 col"%}
+{% set imgcolWidth = "col12 col"%}
+{% endif %}
+
+
+
+
+<div class="page-center {{module.module_settings.column_width_ratio}}_col {% if module.module_settings.remove_intro_content_group %} remove_intro_content_group{% endif %}{% if module.module_settings.remove_content_group %} remove_content_group{% endif %}{% if module.module_settings.remove_media_group %} remove_media_group{% endif %} imgAl_{{ module.module_settings.image_column_alignment }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }} {% if module.media_column.cover_image %}cover_image_media{% endif %}">
+
+
+  {% if module.module_settings.remove_intro_content_group == false %}
+  {% if module.intro_content %}
+  {{macros.introGroup(module.intro_content, module.module_settings)}}
+  {% endif %}
+  {% endif %}
+
+  <div class="main_content row_spacing">
+
+    <div class="flex_row">
+      {% if module.module_settings.remove_content_group == false %}
+      <div class="content_col text_{{ module.module_settings.content_group_alignment }} verAl_{{ module.module_settings.content_vertical_alignment }} {{contcolWidth}}">
+        <div class="content_col_inner {% if module.content_group.column_settings.remove_content_heading_border %}removehdgBdr{% endif %}">
+          {{macros.introGroup(module.content_group)}}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if module.module_settings.remove_media_group == false %}
+      <div class="media {{imgcolWidth}}">
+        <div class="media_col_inner">
+
+          <div class="media_box {% if module.media_column.enable_floating_credit_text %}enabled_floating_credit_text{% endif %}	{% if module.media_column.enable_credit_text %}credit_textEnable{% endif %}" {% if module.module_settings.image_position %}style="display: flex;justify-content:{{ module.module_settings.image_position }}"{% endif %}>
+
+            {% if module.media_column.image.src %}
+            <div class="image_box {% if module.media_column.cover_image %}cover_image{% endif %}">
+              {% if module.media_column.include_link %}
+              {% if module.media_column.link_type == "img_link" %}
+              {% set href = module.media_column.link_on_image.url.href %}
+              {% if module.media_column.link_on_image.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a  class="overlay_link"
+                 {% if module.media_column.link_on_image.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}" 
+                 {% else %}
+                 href="{{ href }}"
+                 {% endif %}
+                 {% if module.media_column.link_on_image.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if module.media_column.link_on_image.rel %}
+                 rel="{{ module.media_column.link_on_image.rel }}"
+                 {% endif %} >
+              </a>
+              {% endif %}
+              {% endif %}
+
+              {% if module.media_column.enable_parallax %}
+              <div class="simpleParallax_wrap">
+                <img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
+              </div>
+              {% else %}
+              <img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+
+
+          {% if module.media_column.enable_credit_text %}
+          <div class="credit_text_wrap {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
+            <span class="credit_text">
+              {{ module.media_column.credit_text }}
+            </span>
+          </div>
+          {% endif %}
+
+          {% if module.media_column.enable_floating_credit_text %}
+          <div class="floating_text {% if not module.module_settings.credit_text_settings.enable_box_shadow %}notBox{% endif %}" style="background-color:{{ module.module_settings.credit_text_settings.background_color.rgba }}">
+            <span class="credit_text">
+              {{ module.media_column.floating_credit_text }}
+            </span>
+          </div>
+          {% endif %}
+
+          {% if module.media_column.enable_content %}
+          <div class="bottomContent">
+            {{ module.media_column.content }}
+          </div>
+          {% endif %}
+
+
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+
+</div>
+</section>
+
+
+
+
+{# button group popup modal#}
+
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.content_group.button_group, true)}}
+{% endif %}
+
+
+{% set colSet = module.content_group.column_settings %}
+{% set contentImageSet = module.module_settings.content_image_top_bottom_spacing %}
+
+
+{% require_css %}
+<style>
+
+  .u4m-content-with-image.{{name}} .content_col{
+    padding-top :{{ colSet.top_spacing }}px !important;
+    padding-right :  {{ colSet.right_spacing }}px !important;
+    padding-bottom : {{ colSet.bottom_spacing }}px !important;
+    padding-left :  {{ colSet.left_spacing }}px !important;
+  }
+  {% if colSet.change_mobile_spacing %}
+  @media(max-width: 991px){
+    .u4m-content-with-image.{{name}} .content_col{
+      padding-top :{{ colSet.mobile_top_spacing }}px !important;
+      padding-right :  {{ colSet.mobile_right_spacing }}px !important;
+      padding-bottom : {{ colSet.mobile_bottom_spacing }}px !important;
+      padding-left :  {{ colSet.mobile_left_spacing }}px !important;
+    }
+  }
+  {% endif %}
+
+  /*  */
+  .u4m-content-with-image.{{name}} .intro_content .intro_title{
+    color:{{ module.content_group.column_settings.heading_color.rgba }}
+  }
+
+  /*    */
+  {% if module.module_settings.change_content_image_top_bottom_spacing %}
+  @media(min-width: 768px){
+    .u4m-content-with-image.{{name}} .main_content.row_spacing{
+      padding-top : {{ contentImageSet.spacing.top }}px;
+      padding-bottom :{{ contentImageSet.spacing.bottom }}px;
+    }
+  }
+
+  {% if contentImageSet.change_mobile_spacing %}
+  @media(max-width: 767px){
+    .u4m-content-with-image.{{name}} .main_content.row_spacing{
+      padding-top : {{ contentImageSet.mobile_spacing.top }}px;
+      padding-bottom :{{ contentImageSet.mobile_spacing.bottom }}px;
+    }
+  }
+  {% endif %}
+  {% endif %}
+
+</style>
+{% end_require_css %}
+
+
+{% if module.module_settings.remove_media_group == false %}
+{% if module.media_column.enable_parallax %}
+{% require_js %}
+<script>
+  var images = document.querySelectorAll('.{{name}} .simpleParallax_wrap img');
+                                         new simpleParallax(images);
+</script>
+{% end_require_js %}
+{% endif %}
+{% endif %}
