@@ -528,6 +528,33 @@
       "number" : "463591",
       "title" : "Bodies of Water in the U.S."
     } ]
+  }, {
+    "id" : "a9e2abdb-615a-08a1-dba2-f49d21860f26",
+    "name" : "right_column_spacing",
+    "label" : "Right Column Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "4f190fd5-56f4-ef3f-06cf-726e8a8d04e3",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "vw",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 6
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 6
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -546,7 +573,10 @@
     "right_column" : [ {
       "number" : "463591",
       "title" : "Bodies of Water in the U.S."
-    } ]
+    } ],
+    "right_column_spacing" : {
+      "top" : 6
+    }
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",

@@ -1,0 +1,12 @@
+@import "../../css/_module-imports";
+.u4m-table {
+    .intro_content {
+        .intro_desc {
+            padding: 13px 0 0;
+            margin: 0;
+            @include tabletMid {
+                padding: 30px 0 0;
+            }
+        }
+    }
+}

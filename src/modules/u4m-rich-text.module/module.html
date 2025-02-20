@@ -34,6 +34,22 @@
     padding-left:{{ module.module_settings.spacing.left }}px;
     padding-right:{{ module.module_settings.spacing.right }}px;
   }
+  {% if module.module_settings.content_list_type=="cm" %}
+  {% if module.module_settings.list_image.src %}
+  .cmRichText.{{name}} .intro_content .intro_desc ul {
+    padding: 0 0 23px 1em;
+    line-height: 26px;
+    list-style: none;
+    margin: 0;
+  }
+  .cmRichText.{{name}} .intro_content .intro_desc ul li {
+    background: url({{ module.module_settings.list_image.src }}) no-repeat left 7px;
+    background-size: 10px 15px;
+    padding: 3px 0px 3px 20px;
+    margin: 0;
+  }
+  {% endif %}
+  {% endif %}
 
 </style>
 {% end_require_css %}

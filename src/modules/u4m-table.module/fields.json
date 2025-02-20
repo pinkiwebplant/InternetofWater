@@ -1,7 +1,7 @@
 [ {
   "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
   "name" : "intro_content",
-  "label" : "Content",
+  "label" : "Intro Content",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -10,6 +10,14 @@
     "label" : "Include Eyebrow Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_top_border",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
@@ -35,6 +43,24 @@
     "display_width" : null,
     "default" : "Eyebrow Text"
   }, {
+    "id" : "130fb258-47da-ca55-2f91-a6b1b87e9be2",
+    "name" : "include_top_border",
+    "label" : "Include Top Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_eyebrow_text",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
     "name" : "include_heading",
     "label" : "Include Heading",
@@ -43,7 +69,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "aef5e961-e297-2654-68e0-6128687770bf",
     "name" : "heading_size",
@@ -65,7 +91,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "h1"
+    "default" : "h2"
   }, {
     "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
     "name" : "heading",
@@ -85,7 +111,25 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Who We Are "
+    "default" : "Top Heading"
+  }, {
+    "id" : "c0f36d17-f564-1d8b-f49f-f41fc7e9b6ab",
+    "name" : "include_heading_border",
+    "label" : "Include Heading Border",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.heading",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -95,7 +139,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
     "name" : "content_style",
@@ -134,40 +178,10 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<h5>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</h5>"
+    "default" : "<table style=\"height: 100px; width: 100%; border-width: 1px; border-style: solid;\">\n<tbody>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.lincolninst.edu/about-lincoln-institute/people/peter-colohan\">Kyle Onda, Interim</a> Chair</td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a href=\"https://www.lincolninst.edu\">Center for Geospatial Solutions, Lincoln Institute of Land Policy</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.lincolninst.edu/about-lincoln-institute/people/anne-scott\">Anne Scott</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.cuahsi.org/about/staff/\">Jerad Bales</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a href=\"https://www.cuahsi.org/\">Consortium of Universities for the Advancement of Hydrologic Science, Inc.</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.cuahsi.org/about/our-team\">Deanna McCay</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://nicholasinstitute.duke.edu/people/martin-doyle\">Martin Doyle</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a title=\"Martin Doyle\" href=\"https://nicholasinstitute.duke.edu\">Nicholas Institute for Energy, Environment &amp; Sustainability, Duke University</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://nicholasinstitute.duke.edu/people/ashley-ward\">Ashley Ward</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.linkedin.com/in/samantha-briggs-76828781/\">Samantha Briggs</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a href=\"https://waterdatacollaborative.org/\">Water Data Collaborative</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.linkedin.com/in/r-john-dawes-a541471b9/\">John Dawes</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://westernstateswater.org/staff/adel-abdallah/\">Adel Abdallah</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a title=\"Tony Willardson\" href=\"https://www.westernstateswater.org\">Western States Water Council, Water Data Exchange</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.westernstateswater.org/about-wswc/staff/tony-willardson/\">Tony Willardson</a>, vice-chair</td>\n</tr>\n</tbody>\n</table>"
   }, {
-    "id" : "8e8ee432-37ef-f989-2feb-2c3a2a228d4b",
-    "name" : "include_credit_text",
-    "label" : "Include Credit Text",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "f572a3ca-afe6-1a0c-2961-f2b0d52c90c2",
-    "name" : "credit_text",
-    "label" : "Credit Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_credit_text",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Photo By"
-  }, {
-    "id" : "3d285b3c-dbf8-e5b6-3976-cb61cf867986",
-    "name" : "include_content_button",
+    "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
+    "name" : "include_button",
     "label" : "Include Button",
     "required" : false,
     "locked" : false,
@@ -176,294 +190,16 @@
     "display_width" : null,
     "default" : false
   }, {
-    "id" : "0e73e218-7129-608f-6c7f-a19dc9791c44",
-    "name" : "content_button_group",
+    "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
+    "name" : "button_group",
     "label" : "Button Group",
     "required" : false,
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 3,
+      "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 3
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "f5a3876e-f708-1b7a-199a-c50683bcd9cd",
-      "name" : "button_type",
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ], [ "popup_content", "Popup Content" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "std"
-    }, {
-      "id" : "1afe39da-a5b4-1d14-be70-58153d9861e6",
-      "name" : "button_style",
-      "label" : "Button Style",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.content_button_group.button_type",
-        "controlling_value_regex" : "std|popup_content",
-        "property" : null,
-        "operator" : "MATCHES_REGEX",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ], [ "hs-white-btn", "Quarternary" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "hs-button"
-    }, {
-      "id" : "c4710c8d-8c9c-7a0e-17d5-749126a74b69",
-      "name" : "button_text",
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.content_button_group.button_type",
-        "controlling_value_regex" : "std|popup_content",
-        "property" : null,
-        "operator" : "MATCHES_REGEX",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Button"
-    }, {
-      "id" : "77ead345-9d09-91fa-b6fe-08758ed85b48",
-      "name" : "link",
-      "label" : "Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.content_button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "display_width" : null,
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "a3823922-db66-cc04-ca24-d14596f7ed54",
-      "name" : "cta",
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.content_button_group.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta",
-      "display_width" : null
-    }, {
-      "id" : "7ac5e843-3123-8280-16d2-207a72d82fcc",
-      "name" : "popup_content",
-      "label" : "Popup Content",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.content_button_group.button_type",
-        "controlling_value_regex" : "popup_content",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "richtext",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
-  }, {
-    "id" : "b169cb56-7dca-6e5b-53db-8dcd7a77e7b6",
-    "name" : "include_featured_items",
-    "label" : "Include Featured Items",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "b29297d9-b63b-72b6-9a3c-38d07157f2d9",
-    "name" : "featured_items",
-    "label" : "Featured Items",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : "a1720a71-00d5-4da4-b558-96395f1f12a8",
-      "default" : 4
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_featured_items",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "a1720a71-00d5-4da4-b558-96395f1f12a8",
-      "name" : "text",
-      "label" : "Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "A linked system of web pages about hydrologic features"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    } ]
-  }, {
-    "id" : "68944f14-c2b7-c8a4-041c-1879a5a9640f",
-    "name" : "include_float_credit_text",
-    "label" : "Include Float Credit Text",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "b0d0835f-ce17-9b91-9188-afb7228922e8",
-    "name" : "float_credit_text",
-    "label" : "Float Credit Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_float_credit_text",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Elena Kuchko @ Unsplash "
-  }, {
-    "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
-    "name" : "include_button",
-    "label" : "Include Bottom Button",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
-    "name" : "button_group",
-    "label" : "Bottom Button Group",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 3,
-      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 3
+      "default" : 2
     },
     "visibility" : {
       "controlling_field" : null,
@@ -543,7 +279,7 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG" ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -620,19 +356,6 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
     } ]
   } ],
   "tab" : "CONTENT",
@@ -643,82 +366,16 @@
   "default" : {
     "include_eyebrow_text" : true,
     "eyebrow_text" : "Eyebrow Text",
-    "include_heading" : true,
-    "heading_size" : "h1",
-    "heading" : "Who We Are ",
-    "include_content" : true,
+    "include_top_border" : false,
+    "include_heading" : false,
+    "heading_size" : "h2",
+    "heading" : "Top Heading",
+    "include_heading_border" : false,
+    "include_content" : false,
     "content_style" : "bodystyle3",
-    "content" : "<h5>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</h5>",
-    "include_credit_text" : false,
-    "credit_text" : "Photo By",
-    "include_content_button" : false,
-    "content_button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "include_featured_items" : false,
-    "featured_items" : [ {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    }, {
-      "text" : "A linked system of web pages about hydrologic features"
-    } ],
-    "include_float_credit_text" : false,
-    "float_credit_text" : "Elena Kuchko @ Unsplash ",
-    "include_button" : true,
+    "content" : "<table style=\"height: 100px; width: 100%; border-width: 1px; border-style: solid;\">\n<tbody>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.lincolninst.edu/about-lincoln-institute/people/peter-colohan\">Kyle Onda, Interim</a> Chair</td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a href=\"https://www.lincolninst.edu\">Center for Geospatial Solutions, Lincoln Institute of Land Policy</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.lincolninst.edu/about-lincoln-institute/people/anne-scott\">Anne Scott</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.cuahsi.org/about/staff/\">Jerad Bales</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a href=\"https://www.cuahsi.org/\">Consortium of Universities for the Advancement of Hydrologic Science, Inc.</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.cuahsi.org/about/our-team\">Deanna McCay</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://nicholasinstitute.duke.edu/people/martin-doyle\">Martin Doyle</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a title=\"Martin Doyle\" href=\"https://nicholasinstitute.duke.edu\">Nicholas Institute for Energy, Environment &amp; Sustainability, Duke University</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://nicholasinstitute.duke.edu/people/ashley-ward\">Ashley Ward</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.linkedin.com/in/samantha-briggs-76828781/\">Samantha Briggs</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a href=\"https://waterdatacollaborative.org/\">Water Data Collaborative</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.linkedin.com/in/r-john-dawes-a541471b9/\">John Dawes</a></td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://westernstateswater.org/staff/adel-abdallah/\">Adel Abdallah</a></td>\n<td style=\"width: 60.0212%; height: 20px; border-width: 1px; border-style: solid; padding: 2px;\" rowspan=\"2\">\n<h3><a title=\"Tony Willardson\" href=\"https://www.westernstateswater.org\">Western States Water Council, Water Data Exchange</a></h3>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"width: 18.1071%; height: 10px; border-width: 1px; border-style: solid; padding: 2px;\"><a href=\"https://www.westernstateswater.org/about-wswc/staff/tony-willardson/\">Tony Willardson</a>, vice-chair</td>\n</tr>\n</tbody>\n</table>",
+    "include_button" : false,
     "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
       "button_type" : "std",
       "button_style" : "hs-button",
       "button_text" : "Button",
@@ -755,7 +412,7 @@
   "children" : [ {
     "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
     "name" : "intro_content_alignment",
-    "label" : "Content Alignment",
+    "label" : "Intro Content Alignment",
     "required" : false,
     "locked" : false,
     "display" : "select",
@@ -765,194 +422,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "center"
-  }, {
-    "id" : "96314afb-598c-4372-9309-77e310d8aeb8",
-    "name" : "select_height",
-    "label" : "Select Height",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "full_height", "Full Window Height" ], [ "auto", "Auto Height" ], [ "custom", "Custom" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "full_height"
-  }, {
-    "id" : "85302039-2d51-4f91-72a4-a1c2cb3cce7d",
-    "name" : "custom_height",
-    "label" : "Custom Height",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "module_settings.select_height",
-      "controlling_value_regex" : "custom",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "text",
-    "step" : 1,
-    "suffix" : "rem",
-    "type" : "number",
-    "display_width" : null
-  }, {
-    "id" : "3ee53ac6-5615-a03e-2197-7d29e9b281bd",
-    "name" : "heading_font",
-    "label" : "Heading",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "43e4388f-1b3b-7d33-ee90-dae376fc15ea",
-      "name" : "font_size",
-      "label" : "Font Size",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "suffix" : "vw",
-      "type" : "number",
-      "display_width" : null,
-      "default" : 5.7
-    }, {
-      "id" : "0bdad6be-80d1-1374-83d4-ed0b55310dba",
-      "name" : "line_height",
-      "label" : "Line Height",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "suffix" : "em",
-      "type" : "number",
-      "display_width" : null,
-      "default" : 1.4
-    }, {
-      "id" : "4d48368a-f22d-4a14-e5e2-4dc41c91e9d6",
-      "name" : "letter_spacing",
-      "label" : "Letter Spacing",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "suffix" : "px",
-      "type" : "number",
-      "display_width" : null
-    }, {
-      "id" : "4e7c760e-44fa-32d6-06f7-61ddefc212ca",
-      "name" : "color",
-      "label" : "color",
-      "required" : false,
-      "locked" : false,
-      "type" : "color",
-      "display_width" : null,
-      "default" : {
-        "color" : null,
-        "opacity" : null
-      }
-    }, {
-      "id" : "0438d407-cd5e-7166-76f8-24c4227d6dec",
-      "name" : "bottom_padding",
-      "label" : "Bottom Padding",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "suffix" : "px",
-      "type" : "number",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "font_size" : 5.7,
-      "line_height" : 1.4,
-      "color" : {
-        "color" : null,
-        "opacity" : null
-      }
-    }
-  }, {
-    "id" : "0bd4b4d4-720a-3879-f600-3e1f354a33dc",
-    "name" : "content_font",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "e939b33a-8a56-ab1a-8617-72df15d8b907",
-      "name" : "font_size",
-      "label" : "Font Size",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "suffix" : "rem",
-      "type" : "number",
-      "display_width" : null
-    }, {
-      "id" : "f7ed536f-2785-ebf2-1ac4-c6dc198c1bba",
-      "name" : "line_height",
-      "label" : "Line Height",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "suffix" : "em",
-      "type" : "number",
-      "display_width" : null
-    }, {
-      "id" : "e304d977-9d2a-6ff2-a632-aae3f838ab9a",
-      "name" : "color",
-      "label" : "color",
-      "required" : false,
-      "locked" : false,
-      "type" : "color",
-      "display_width" : null,
-      "default" : {
-        "color" : null,
-        "opacity" : null
-      }
-    }, {
-      "id" : "a83bfe1c-7b28-4196-d7ee-af05f1a92392",
-      "name" : "max_width",
-      "label" : "Max Width",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "type" : "number",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "color" : {
-        "color" : null,
-        "opacity" : null
-      }
-    }
-  }, {
-    "id" : "c71b9530-924b-1e6a-c9ba-eddf7b4926a9",
-    "name" : "content_overflow",
-    "label" : "Content Overflow",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "visible", "Visible" ], [ "hidden", "Hidden" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : ""
+    "default" : "left"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -960,23 +430,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center",
-    "select_height" : "full_height",
-    "heading_font" : {
-      "font_size" : 5.7,
-      "line_height" : 1.4,
-      "color" : {
-        "color" : null,
-        "opacity" : null
-      }
-    },
-    "content_font" : {
-      "color" : {
-        "color" : null,
-        "opacity" : null
-      }
-    },
-    "content_overflow" : ""
+    "intro_content_alignment" : "left"
   }
 }, {
   "id" : "module_overrides",
@@ -1272,7 +726,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -1300,7 +754,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "image"
+      "default" : "color"
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
       "name" : "background_image",
@@ -1321,14 +775,10 @@
       "type" : "image",
       "display_width" : null,
       "default" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/hero-img.jpg",
-        "alt" : "hero-img",
-        "loading" : "lazy",
-        "width" : 2560,
-        "height" : 1707,
-        "max_width" : 2000,
-        "max_height" : 1333.59375
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
       }
     }, {
       "id" : "4ea36da9-c8a6-adf2-7460-cbf4d98190fd",
@@ -1369,7 +819,7 @@
       "display" : "checkbox",
       "type" : "boolean",
       "display_width" : null,
-      "default" : true
+      "default" : false
     }, {
       "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
       "name" : "select_gradient",
@@ -1391,25 +841,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "gradient1"
-    }, {
-      "id" : "e8c16401-3f8a-f8c2-c382-a82be9b79c84",
-      "name" : "scrolling_effect",
-      "label" : "Scrolling Effect",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "module_overrides.background_settings.background_type",
-        "controlling_value_regex" : "image",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "display_width" : null,
-      "default" : false
+      "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : true,
@@ -1417,21 +849,16 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "background_type" : "image",
+      "background_type" : "color",
       "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/hero-img.jpg",
-        "alt" : "hero-img",
-        "loading" : "lazy",
-        "width" : 2560,
-        "height" : 1707,
-        "max_width" : 2000,
-        "max_height" : 1333.59375
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
       },
       "select_color" : "",
-      "include_overlay_gradient" : true,
-      "select_gradient" : "gradient1",
-      "scrolling_effect" : false
+      "include_overlay_gradient" : false,
+      "select_gradient" : ""
     }
   }, {
     "id" : "fc248331-90d9-cb7e-66f6-4b85de179aa9",
@@ -1467,23 +894,18 @@
     "bottom_padding" : "bottom-padding-default",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
-    "reverse_text" : true,
+    "reverse_text" : false,
     "background_settings" : {
-      "background_type" : "image",
+      "background_type" : "color",
       "background_image" : {
-        "size_type" : "auto_custom_max",
-        "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/hero-img.jpg",
-        "alt" : "hero-img",
-        "loading" : "lazy",
-        "width" : 2560,
-        "height" : 1707,
-        "max_width" : 2000,
-        "max_height" : 1333.59375
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
       },
       "select_color" : "",
-      "include_overlay_gradient" : true,
-      "select_gradient" : "gradient1",
-      "scrolling_effect" : false
+      "include_overlay_gradient" : false,
+      "select_gradient" : ""
     },
     "container_size" : "theme"
   }

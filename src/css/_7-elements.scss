@@ -20,19 +20,14 @@ html {
 :root {
   --gradient1: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0b3160 100%);
   --gradient2: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #151f33 100%);
-  --gradient3: linear-gradient(
-    180deg,
-    rgba(11, 49, 96, 0) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  --gradient3: linear-gradient(180deg, rgba(11, 49, 96, 0) 0%, rgba(0, 0, 0, 1) 100%);
   --gradient4: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #151f33 100%);
 }
 
 @font-face {
   font-family: "ETmodules";
   src:
-    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
-      format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
     url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
     url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
   font-style: normal;
@@ -387,7 +382,6 @@ ol {
 
 li {
   margin-bottom: 5rem;
-  letter-spacing: 0.5rem;
 }
 
 ul ul,

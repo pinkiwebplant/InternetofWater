@@ -1,6 +1,11 @@
 @import "../../css/_module-imports";
 
 .u4m-animated-stats {
+  .intro_content {
+    .intro_desc {
+      margin-bottom: 0;
+    }
+  }
   .animated_stats_wrapper {
     padding-bottom: 0;
     padding-left: 0px;

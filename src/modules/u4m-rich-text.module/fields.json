@@ -519,6 +519,49 @@
       "left" : 50,
       "right" : 50
     }
+  }, {
+    "id" : "f3886071-cb93-fa41-7b82-c70175296115",
+    "name" : "content_list_type",
+    "label" : "Content List Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "df", "Default" ], [ "cm", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "df"
+  }, {
+    "id" : "24331310-499d-d40a-14a8-8124888d1ca7",
+    "name" : "list_image",
+    "label" : "List Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.content_list_type",
+      "controlling_value_regex" : "cm",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/drop.png",
+      "alt" : "drop",
+      "loading" : "lazy",
+      "width" : 10,
+      "height" : 15,
+      "max_width" : 10,
+      "max_height" : 15
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -536,6 +579,17 @@
       "bottom" : 78,
       "left" : 50,
       "right" : 50
+    },
+    "content_list_type" : "df",
+    "list_image" : {
+      "size_type" : "auto",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/drop.png",
+      "alt" : "drop",
+      "loading" : "lazy",
+      "width" : 10,
+      "height" : 15,
+      "max_width" : 10,
+      "max_height" : 15
     }
   }
 }, {

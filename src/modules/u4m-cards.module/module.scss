@@ -128,4 +128,58 @@ section.u4m-cards {
       @include b1;
     }
   }
+  .bottom_cnt {
+    &.right {
+      .intro_content {
+        max-width: 100%;
+        text-align: right;
+        .heading_top_border {
+          margin-left: auto;
+          margin-right: 0;
+        }
+
+        .intro_title span {
+          left: auto;
+          right: 0;
+          transform: none;
+        }
+
+        .eyebrow_text:after {
+          left: auto;
+          right: 0;
+          transform: none;
+        }
+        .intro_btn_wrap {
+          justify-content: right;
+        }
+      }
+    }
+
+    &.left {
+      .intro_content {
+        text-align: left;
+        max-width: 100%;
+        .heading_top_border {
+          margin-left: 0;
+          margin-right: auto;
+        }
+
+        .intro_title span {
+          left: 0;
+          right: auto;
+          transform: none;
+        }
+
+        .eyebrow_text:after {
+          left: 0;
+          right: auto;
+          transform: none;
+        }
+
+        .intro_btn_wrap {
+          justify-content: left;
+        }
+      }
+    }
+  }
 }

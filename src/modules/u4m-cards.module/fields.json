@@ -1013,6 +1013,14 @@
     "label" : "Include Top Border",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content.include_heading",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
@@ -1026,7 +1034,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "674cb030-bf15-7f97-d583-3d602ccd4842",
     "name" : "heading_size",
@@ -1035,7 +1043,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_heading",
+      "controlling_field_path" : "bottom_content.include_heading",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
@@ -1077,7 +1085,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "intro_content.heading",
+      "controlling_field_path" : "bottom_content.heading",
       "controlling_value_regex" : "false",
       "property" : null,
       "operator" : "NOT_EMPTY",
@@ -1096,7 +1104,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "f4b8fd96-25e6-7301-3be8-afe8ae274714",
     "name" : "content_style",
@@ -1105,7 +1113,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
+      "controlling_field_path" : "bottom_content.include_content",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
@@ -1127,7 +1135,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
+      "controlling_field_path" : "bottom_content.include_content",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
@@ -1141,7 +1149,7 @@
     "name" : "include_button",
     "label" : "Include Button",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
@@ -1151,7 +1159,7 @@
     "name" : "button_group",
     "label" : "Button Group",
     "required" : false,
-    "locked" : true,
+    "locked" : false,
     "occurrence" : {
       "min" : null,
       "max" : 2,
@@ -1160,7 +1168,7 @@
     },
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_button",
+      "controlling_field_path" : "bottom_content.include_button",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
@@ -1188,7 +1196,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "bottom_content.button_group.button_type",
         "controlling_value_regex" : "std|popup_content",
         "property" : null,
         "operator" : "MATCHES_REGEX",
@@ -1211,7 +1219,7 @@
       "validation_regex" : "",
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "bottom_content.button_group.button_type",
         "controlling_value_regex" : "std",
         "property" : null,
         "operator" : "EQUAL",
@@ -1230,7 +1238,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "bottom_content.button_group.button_type",
         "controlling_value_regex" : "std",
         "property" : null,
         "operator" : "EQUAL",
@@ -1257,7 +1265,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "bottom_content.button_group.button_type",
         "controlling_value_regex" : "cta",
         "property" : null,
         "operator" : "EQUAL",
@@ -1273,7 +1281,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "bottom_content.button_group.button_type",
         "controlling_value_regex" : "popup_content",
         "property" : null,
         "operator" : "EQUAL",
@@ -1322,11 +1330,11 @@
   "display_width" : null,
   "default" : {
     "include_top_border" : false,
-    "include_heading" : true,
+    "include_heading" : false,
     "heading_size" : "h2",
     "heading" : "",
     "include_heading_border" : false,
-    "include_content" : true,
+    "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "",
     "include_button" : false,
@@ -1479,6 +1487,20 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null
+  }, {
+    "id" : "f47f5688-3ba3-e49c-d109-f538c2484570",
+    "name" : "bottom_content_alignment",
+    "label" : "Bottom Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1492,7 +1514,8 @@
     "card_content_style" : "bodystyle3",
     "image_shadow" : false,
     "card_shadow" : false,
-    "include_icon_animation" : false
+    "include_icon_animation" : false,
+    "bottom_content_alignment" : "center"
   }
 }, {
   "id" : "module_overrides",

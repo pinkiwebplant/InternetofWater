@@ -213,9 +213,11 @@
         </div>
         {# #}
         {% if module.bottom_content %}
-        <div class="bottom_cnt row_spacing">
+        {% if module.bottom_content.include_heading ||  module.bottom_content.include_content ||  module.bottom_content.include_button %}
+        <div class="bottom_cnt row_spacing {{ module.module_settings.bottom_content_alignment }}">
           {{macros.introGroup(module.bottom_content)}}
         </div>
+        {% endif %}
         {% endif %}
 
       </div>
