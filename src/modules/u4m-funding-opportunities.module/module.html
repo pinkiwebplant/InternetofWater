@@ -1,0 +1,302 @@
+{% set moduleName = 'u4m-library-filter' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{% set table =  module.hubdbtable_field  %}
+{% set query = ""%}
+
+{% set batch_num = 10 %}
+
+{% if not request.query_dict.page_num %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+{% elif request.query_dict.page_num %}
+{% set page_num = request.query_dict.page_num %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+
+
+{% set limit = "&limit=" ~ batch_num ~ "&offset=" ~ offset_num %}
+
+
+{% set query =  "orderBy=hs_created_at" %} 
+
+{# ==== #}
+{% if request.query_dict.type %}
+{% set query = query ~ '&type__in=' ~ request.query_dict.type|urlencode %}
+{% endif %} 
+
+{# ==== #}
+{% if request.query_dict.tag %}
+{% set query = query  ~ '&tag__in=' ~ request.query_dict.tag|urlencode %}
+{% endif %}
+
+{# funds #}
+{% if request.query_dict.fundmin and request.query_dict.fundmin != '' %}
+{% set query = query ~ '&fundmin__gte=' ~ request.query_dict.fundmin|urlencode %}
+{% endif %}
+{% if request.query_dict.fund_max and request.query_dict.fund_max != '' %}
+{% set query = query ~ '&fund_max__lte=' ~ request.query_dict.fund_max|urlencode %}
+{% endif %}
+
+
+{# time #}
+
+
+{% if request.query_dict.time_min and request.query_dict.time_min != '' %}
+{% set query = query ~ '&time_min__gte=' ~ request.query_dict.time_min|urlencode %}
+{% endif %}
+{% if request.query_dict.time_max and request.query_dict.time_max != '' %}
+{% set query = query ~ '&time_max__lte=' ~ request.query_dict.time_max|urlencode %}
+{% endif %}
+
+{% if request.query_dict.exclude %}
+{% set query = query ~ '&exclude=false'%}
+{% endif %}
+
+
+{% set resouces = hubdb_table_rows(table,query ~ limit) %}
+
+{% set rowType = [] %}
+{% set rowTagsType = [] %}
+{% set rowTypeType = [] %}
+
+
+{#  <p> request.query_dict.topic -  {{request.query_dict.topic|urlencode}}</p> #}
+
+{% set query2 = "orderBy=hs_created_at" %}
+
+{% set ft_resouces = hubdb_table_rows(table,query~"&limit=1000") %}
+
+{% for tableData in ft_resouces %}
+{% if tableData.type.name == request.query_dict.type %} 
+
+{% for tag in tableData.tag %}
+{% do rowTagsType.append(tag.name) %}
+{% endfor %}
+
+{% for type in tableData.type %}
+{% do rowTypeType.append(type.name) %}
+{% endfor %}
+
+{% else %}
+
+{% for tag in tableData.tag %}
+{% do rowTagsType.append(tag.name) %}
+{% endfor %}
+{% for type in tableData.type %}
+{% do rowTypeType.append(type.name) %}
+{% endfor %}
+
+{% endif %}
+{% endfor %}
+
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+
+  {{ macros.introGroup(module.intro_content, module.module_settings) }}
+
+  <div class="filter_inr"> 
+    <div class="main-listing {{ module.filtered_content.select_bg_color }}">
+      <div class='site-search-wrap'>
+        <div class='page-center updated'>
+
+          <div class=" selctArrow tag-col">   
+            <div class="filter_label type_filter_label">
+              Who Can Apply?
+            </div>
+            <div class="filter_dropdown tagSelect resourceSelect type_filter" data-value="">
+              {% for tag in rowTagsType|unique  %}
+              <div>
+                <label for="tag{{loop.index}}">
+                  <input type="checkbox" class="tagInput" data-tag="{{ tag|urlencode }}" id="tag{{loop.index}}" name="tag" label="{{ tag }}" value="{{ tag|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing tag|urlencode %}checked{% endif %} />
+                  <span class="tag_name">{{ tag }}</span>
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>   
+
+          <div class=" fund_minWrap search-col">
+            <div class="srchSection">
+              <label class="wpv-custom-search-filter__label" for="title">Funding Range Minimum (USD)</label>
+              <input type="text" value="{{request.query_dict.fundmin}}" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" name="fundmin" placeholder="" class="resourceInput">
+            </div>
+          </div> 
+
+          <div class=" fund_maxWrap search-col">
+            <div class="srchSection">
+              <label class="wpv-custom-search-filter__label" for="title">Funding Range Maximum (USD)
+              </label>
+              <input type="text" value="{{request.query_dict.fund_max}}" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" name="fund_max" placeholder="" class="resourceInput1">
+            </div>
+          </div> 
+
+          <div class=" time_minWrap search-col">
+            <div class="srchSection">
+              <label class="wpv-custom-search-filter__label" for="title">Time Frame Minimum (Years)
+              </label>
+              <input type="text" value="{{request.query_dict.time_min}}" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" name="time_min" placeholder="" class="resourceInput2">
+            </div>
+          </div> 
+
+          <div class=" time_maxWrap search-col">
+            <div class="srchSection">
+              <label class="wpv-custom-search-filter__label" for="title">Time Frame Maximum (Years)
+              </label>
+              <input type="text" value="{{request.query_dict.time_max}}" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" name="time_max" placeholder="" class="resourceInput3">
+            </div>
+          </div> 
+
+          <div class=" selctArrow tag-col">   
+            <div class="filter_dropdown typeSelect excludeInputWrap resourceSelect topic_filter" data-value="">
+
+              {# 							{% for type in rowTypeType|unique  %} #}
+              <div>
+                <label for="exclude">
+                  {#                   <input type="checkbox" class="typeInput" data-type="{{ type|urlencode }}" id="type{{loop.index}}" name="type" label="{{ type }}" value="{{ type|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing type|urlencode %}checked{% endif %} /> #}
+                  <input type="checkbox" class="typeInput excludeInput" data-type="true" id="exclude" name="exclude"  value="false" data-query="">
+                  <span class="tag_name">Exclude grants with cost sharing</span>
+
+
+                </label>
+              </div>
+              {# 							{% endfor %} #}
+            </div>
+          </div> 
+
+
+          <div class="clear_button_wrap">
+            <span class="hs-button clearfilter_button">
+              × Clear all filters
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div class='listing-wrap'>
+        <div class='page-center cardSctn'>
+          <div class='flex-row resourceList'>
+
+
+            {% set resouceCount = resouces|length%}
+            {% if request.query_dict.exclude == true%}
+            {% set checkValue = 1 %}
+            {% endif %}
+
+            {% if request.query_dict.exclude == false%}
+            {% set checkValue = 0 %}
+            {% endif %}
+
+            {% for row in resouces %}
+
+
+            <div class='resourceCard post-item {{ row.exclude }} {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-') }} {% endfor %}'>
+              <div class='post-item-inner  {% if not row.image.url %}noImage{% endif %}'>
+                <div class="post-content">
+                  <h5 class="restitle">
+                    {{ row.name }} 
+                  </h5>
+                  <div class="tagwrap">
+
+                    <div class='post-item-topic'><strong>Who Can Apply </strong>
+                      {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-')|replace('-',' ') }}{% if not loop.last%}, {% endif %}{% endfor %}
+                    </div>
+                    <div class='fund_range'><strong>Funding range: </strong>
+                      ${{ row.fundmin }} to ${{ row.fund_max}}
+                    </div>
+                    <div class='time_range'><strong>Time frame: </strong>
+                      {{ row.time_min }}{% if row.time_max %} to {{ row.time_max}} {% endif%}years
+                    </div>
+
+                    {% if row.exclude %}
+                    <div class='grant'><strong>Grants: </strong> 
+                      Excluded
+                    </div>
+                    {% endif %} 
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            {% endfor %}
+
+
+            {% if resouceCount == 0%}
+            <div class="blank_contentWrap">
+              <h4>
+                Nothing found, Try another combination.
+              </h4>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+
+        <div class="pagi_wranation" >
+
+          {% set nav = hubdb_table_rows(table, query) %}
+          {% set total_pages = (nav|length/batch_num)|round(0, 'ceil') %} 
+          {% set more_pages = nav|length % batch_num %}
+
+          <nav  id="pagination{{ name|replace('widget_','')|replace('module_','') }}" class="hbdb_dsp_table_pagination pagination" data-total="{{total_pages}}" data-page="{{page_num}}">
+            <div class="nav-links">
+
+
+              {% if page_num > 1 %}
+              <a class="prev page-numbers" href="{{ content.absolute_url }}?topic={{request.query_dict.topic|urlencode}}&type={{request.query_dict.type|urlencode}}&page_num={{ page_num|add(-1) }}" data-page-num="{{ page_num|add(-1) }}">
+                Previous
+              </a>
+              {% endif %}
+
+
+              {% set page_list = [-2, -1, 0, 1, 2] %}
+              {% if total_pages - page_num == 1 %}{% set offset = -1 %}
+              {% elif total_pages - page_num == 0 %}{% set offset = -2 %}
+              {% elif page_num == 2 %}{% set offset = 1 %}
+              {% elif page_num == 1 %}{% set offset = 2 %}
+              {% else %}{% set offset = 0 %}{% endif %}
+
+
+              {% for page in page_list %}
+              {% set this_page = page_num|add(page)|add(offset) %}
+              {% if this_page > 0 and this_page <= total_pages %}
+              <a {% if this_page == page_num %}class="active"{% endif %} href="{{ content.absolute_url }}?topic={{request.query_dict.topic|urlencode}}&type={{request.query_dict.type|urlencode}}&page_num={{ this_page }}">{{ this_page }}</a>
+              {% endif %}
+              {% endfor %}
+
+
+
+              {% if total_pages > page_num %}
+              <a class="next page-numbers {% if page_num >= total_pages %}hide page_num{% endif %}" href="{{ content.absolute_url }}?topic={{request.query_dict.topic|urlencode}}&type={{request.query_dict.type|urlencode}}&page_num={{ page_num|add(1) }}" data-page-num="{{ page_num|add(1) }}">
+                Next
+              </a>
+              {% endif %}
+
+
+
+            </div>
+          </nav>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+{# button group popup modal#}
+{% if module.intro_content.include_button %}
+{{macros.buttonGroup(module.intro_content.button_group, true)}}
+{% endif %}
+
+
