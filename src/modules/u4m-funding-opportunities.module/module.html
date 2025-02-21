@@ -148,22 +148,28 @@
             </div>
           </div> 
 
-          <div class=" selctArrow tag-col">   
+     
+
+          <div class=" selctArrow tag-col excludeInputWrap_col">   
             <div class="filter_dropdown typeSelect excludeInputWrap resourceSelect topic_filter" data-value="">
 
-              {# 							{% for type in rowTypeType|unique  %} #}
+
               <div>
                 <label for="exclude">
-                  {#                   <input type="checkbox" class="typeInput" data-type="{{ type|urlencode }}" id="type{{loop.index}}" name="type" label="{{ type }}" value="{{ type|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing type|urlencode %}checked{% endif %} /> #}
+                 
                   <input type="checkbox" class="typeInput excludeInput" data-type="true" id="exclude" name="exclude"  value="false" data-query="">
                   <span class="tag_name">Exclude grants with cost sharing</span>
 
 
                 </label>
               </div>
-              {# 							{% endfor %} #}
+            
             </div>
           </div> 
+
+          <div class="tagline">
+<p><strong>            For best results, enter figures as numbers without commas or dollar signs, e.g., 50000</strong></p>
+          </div>
 
 
           <div class="clear_button_wrap">
