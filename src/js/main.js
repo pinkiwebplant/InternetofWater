@@ -106,11 +106,11 @@ window.addEventListener("scroll", function () {
 });
 
 const searchInput = document.querySelector(
-  ".et_search_outer form input[type=text]"
+  ".et_search_outer form input[type=search]"
 );
 const searchButton = document.getElementById("et_top_search");
 
-if (searchInput && searchButton) {
+if (searchButton) {
   searchButton.addEventListener("click", function (b) {
     document.body.classList.toggle("search-open");
     setTimeout(function () {
