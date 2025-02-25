@@ -32,6 +32,9 @@ section.u4m-hero {
 
     .page-center {
       margin-top: auto;
+      @include tabletvert {
+        margin-bottom: auto;
+      }
     }
   }
 
@@ -234,6 +237,24 @@ section.u4m-hero {
     color: $baseColor;
     @include tabletMid {
       display: none;
+    }
+  }
+}
+
+.u4m_hero_outer_wrap {
+  &.credit_text_inside {
+    .bottom_credit {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      padding: 0;
+      width: 100%;
+
+      .cmCreditCnt {
+        .cmCreditCnt_text {
+          color: $darkGray;
+        }
+      }
     }
   }
 }

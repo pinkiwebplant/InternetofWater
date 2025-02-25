@@ -107,7 +107,12 @@
 
             {% if module.media_column.select_media_type == "video" %}
             <div class="video_box">
+              
+              {% if  module.media_column.video_type == "file" %}
+              <video src="{{ module.media_column.select_video }}" controls muted></video>
+              {% else %}
               <iframe style="z-index: 3;" title="water data community" src="{{ module.media_column.embedded_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" name="fitvid0"></iframe>
+              {% endif %}
 
               {% if module.media_column.include_link %}
               {% if  module.media_column.link_type == "img_link" %}

@@ -3,12 +3,12 @@
 {% include "../partials/u4-module-includes.html" %}
 
 
-<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+<div class="page-center {{ module.module_settings.remove_outer_spacing ? "no_outer_spacing" : "" }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
   {{ macros.introGroup(module.intro_content, module.module_settings) }}
 
   {% if module.intro_content.include_form %}
-  <div class="form_wrapper form_{{ module.intro_content.select_form_theme }}">
+  <div class="form_wrapper al_{{ module.module_settings.form_alignment }} form_{{ module.intro_content.select_form_theme }}">
     {% form
 	form_to_use="{{ module.intro_content.select_form.form_id }}"
 	response_response_type="{{ module.intro_content.select_form.response_type }}"
@@ -35,6 +35,7 @@
 <style>
   .u4m-contentWForm.{{ name }} .form_wrapper{
     max-width:{{ module.module_settings.form_width }}px;
+    width: 100%;
   }
 </style>
 {% end_require_css %}

@@ -1078,6 +1078,28 @@
       "max_height" : 1125
     }
   }, {
+    "id" : "d269828a-e1fa-e3fc-36c3-18bb697060f4",
+    "name" : "video_type",
+    "label" : "Video Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_column.select_media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "embedded", "Embedded" ], [ "file", "File" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
     "id" : "74ad01a6-79a4-adf9-6fbf-3ce2dd3a2cce",
     "name" : "embedded_url",
     "label" : "Embedded URL",
@@ -1086,8 +1108,8 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "media_column.select_media_type",
-      "controlling_value_regex" : "video",
+      "controlling_field_path" : "media_column.video_type",
+      "controlling_value_regex" : "embedded",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
@@ -1097,6 +1119,24 @@
     "type" : "text",
     "display_width" : null,
     "default" : "https://www.youtube.com/embed/fm_HxyfNvRU?feature=oembed"
+  }, {
+    "picker" : "file",
+    "id" : "f1dae537-89fc-e395-1064-80cde24f6343",
+    "name" : "select_video",
+    "label" : "Select Video",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_column.video_type",
+      "controlling_value_regex" : "file",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null,
+    "default" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/videos/mov_bbb.mp4"
   }, {
     "id" : "18f6799e-7def-a7a3-396a-9d59cbb700a5",
     "name" : "enable_parallax",
@@ -1433,7 +1473,9 @@
       "max_width" : 2000,
       "max_height" : 1125
     },
+    "video_type" : "",
     "embedded_url" : "https://www.youtube.com/embed/fm_HxyfNvRU?feature=oembed",
+    "select_video" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/videos/mov_bbb.mp4",
     "enable_parallax" : true,
     "include_link" : true,
     "link_type" : "",

@@ -1,4 +1,4 @@
-<div class="u4m_hero_outer_wrap">
+<div class="u4m_hero_outer_wrap {% if module.intro_content.include_credit_text %}{% if module.intro_content.include_credit_text_inside == true %}credit_text_inside{% endif %}{% endif %}">
   {% set moduleName = 'u4m-hero' %}
   {% set moduleExtraName =  module.module_settings.select_height %}
 
@@ -42,6 +42,18 @@
   </div>
   {% endif %}
 
+    
+  
+  {% if module.intro_content.include_credit_text and module.intro_content.credit_text  %}
+{% if module.intro_content.include_credit_text_inside == true %}
+<div class="bottom_credit">
+  <div class="cmCreditCnt">
+    <div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+
   {% if module.intro_content.include_button %}
   <div class="btn_bottom_wrap">
     {{macros.buttonGroup(module.intro_content.button_group, false)}}
@@ -51,12 +63,16 @@
 
   </section>
 
+
+
 {% if module.intro_content.include_credit_text and module.intro_content.credit_text  %}
+{% if module.intro_content.include_credit_text_inside == false %}
 <div class="bottom_credit">
   <div class="cmCreditCnt">
     <div class="cmCreditCnt_text">{{ module.intro_content.credit_text }}</div>
   </div>
 </div>
+{% endif %}
 {% endif %}
 
 

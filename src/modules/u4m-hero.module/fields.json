@@ -146,6 +146,24 @@
     "display_width" : null,
     "default" : false
   }, {
+    "id" : "ea0fcecf-852d-b3c8-3b58-ac1065b7622f",
+    "name" : "include_credit_text_inside",
+    "label" : "Include Credit Text Inside Hero",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_credit_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "f572a3ca-afe6-1a0c-2961-f2b0d52c90c2",
     "name" : "credit_text",
     "label" : "Credit Text",
@@ -650,6 +668,7 @@
     "content_style" : "bodystyle3",
     "content" : "<h5>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</h5>",
     "include_credit_text" : false,
+    "include_credit_text_inside" : false,
     "credit_text" : "Photo By",
     "include_content_button" : false,
     "content_button_group" : [ {

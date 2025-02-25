@@ -123,8 +123,17 @@ section.u4m-content-with-image {
       left: 0;
       transform: none;
     }
-
+    &.text_left {
+      .heading_top_border {
+        margin-right: auto;
+        margin-left: 0;
+      }
+    }
     &.text_center {
+      .heading_top_border {
+        margin-right: auto;
+        margin-left: auto;
+      }
       .intro_content {
         text-align: center;
       }
@@ -141,6 +150,11 @@ section.u4m-content-with-image {
     }
 
     &.text_right {
+      .heading_top_border {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
       .intro_content {
         text-align: right;
       }

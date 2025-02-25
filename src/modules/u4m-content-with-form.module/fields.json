@@ -503,6 +503,30 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null
+  }, {
+    "id" : "1c39316c-0dd8-2303-252e-1dda559f9b7c",
+    "name" : "remove_outer_spacing",
+    "label" : "Remove Outer Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "249885f0-b681-4737-dfc5-d52b1a976810",
+    "name" : "form_alignment",
+    "label" : "Form Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -510,7 +534,9 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left"
+    "intro_content_alignment" : "left",
+    "remove_outer_spacing" : false,
+    "form_alignment" : "left"
   }
 }, {
   "id" : "module_overrides",

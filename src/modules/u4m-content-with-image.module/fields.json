@@ -246,7 +246,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ], [ "hs-white-btn", "Quaternary" ], [ "hs-white2-btn", "Quinary" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -659,7 +659,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "hs-ter-btn", "Tertiary" ], [ "hs-white-btn", "Quaternary" ], [ "hs-white2-btn", "Quinary" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

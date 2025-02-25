@@ -534,4 +534,31 @@ $theme2CheckIconActive: #3ba1da;
       }
     }
   }
+
+  .no_outer_spacing {
+    padding: 0;
+
+    .form_wrapper {
+      form {
+        padding: 0;
+      }
+    }
+  }
+
+  .form_wrapper {
+    &.al_left {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    &.al_right {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    &.al_center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
