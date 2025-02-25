@@ -59,6 +59,7 @@ section.u4m-cards {
 
     &.al_center {
       text-align: center;
+      justify-content: center;
     }
 
     &.al_right {
@@ -80,10 +81,10 @@ section.u4m-cards {
         .card_text {
           h6 {
             em {
-            line-height: 1em;
-            font-weight: 500;
-            font-size: 15px;
-            font-style: italic;
+              line-height: 1em;
+              font-weight: 500;
+              font-size: 15px;
+              font-style: italic;
             }
           }
         }

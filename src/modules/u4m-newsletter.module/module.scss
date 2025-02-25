@@ -12,11 +12,12 @@
       &.intro_title {
         @include tabletMin {
           font-size: 40px;
+          line-height: 1.6em;
         }
         font-weight: 700;
         margin-bottom: 0;
         padding-top: 10px;
-        padding-bottom: 3px;
+        padding-bottom: 10px;
       }
     }
   }
@@ -25,13 +26,15 @@
       padding: 40px 60px;
       padding-top: 8vw;
       padding-bottom: 12vw;
+      font-size: 14rem;
+      line-height: 1.7em;
       .intro_content {
         max-width: 100%;
         padding: 0;
       }
       .intro_desc.bodystyle1 {
         font-size: 22px;
-        line-height: 1.7em;
+        line-height: inherit;
         margin-bottom: 45px;
       }
       a.hs-sec-btn {

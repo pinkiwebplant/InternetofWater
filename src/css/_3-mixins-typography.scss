@@ -36,10 +36,10 @@
   margin-bottom: 10rem;
   line-height: 1.2;
   @include tablet {
-    font-size: 28rem;
+    font-size: 26rem;
   }
   @include tabletvert {
-    font-size: 23rem;
+    font-size: 20rem;
   }
 }
 @mixin h4 {
@@ -194,15 +194,12 @@
   }
 }
 
-
-
-@mixin link{
+@mixin link {
   color: $tealGreen;
   cursor: pointer;
   text-decoration: underline;
-  &:hover{
+  &:hover {
     text-decoration: none;
     color: $tealGreen;
   }
 }
-

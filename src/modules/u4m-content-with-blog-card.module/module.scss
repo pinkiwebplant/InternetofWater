@@ -36,6 +36,12 @@
 
   .blog_btn_wrap {
     margin-top: 20px;
+    .intro_btn_wrap {
+      justify-content: start;
+      .hs-button {
+        padding: 12px 30px;
+      }
+    }
   }
 
   .bl_title {
@@ -68,5 +74,10 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+  .content_group {
+    .themeStyle {
+      line-height: 2em;
+    }
   }
 }

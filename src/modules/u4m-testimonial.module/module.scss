@@ -32,12 +32,17 @@
             padding: 30px 35px;
 
             .testimonial_content {
-                p {
-                    font-style: italic;
-                    font-size: 19px;
-                    line-height: 1.8em;
+                font-style: italic;
+                line-height: 1.8em;
+                &.style1 {
+                    font-size: 26px;
                 }
-
+                &.style2 {
+                    font-size: 19px;
+                }
+                &.style3 {
+                    font-size: 17px;
+                }
                 padding-bottom: 1rem;
             }
         }
@@ -68,5 +73,4 @@
     .testimonials-wrpp.right {
         text-align: right;
     }
-
 }

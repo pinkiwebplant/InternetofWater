@@ -49,6 +49,20 @@
     "type" : "text",
     "display_width" : null,
     "default" : "Texas Water Foundation"
+  }, {
+    "id" : "42c384ba-2467-f8cc-a574-92fa9234c651",
+    "name" : "select_content_stying",
+    "label" : "Select Content Stying",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "style1", "Style 1" ], [ "style2", "Style 2" ], [ "style3", "Style 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "style1"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -59,7 +73,8 @@
     "content" : "<p>One of the great challenges in Texas water is how to provide the public, water professionals, and politicians the tools, data, context, and contacts they need to make meaningful decisions. We thought about that challenge a lot as we built the Texas Water Atlas and found that diverse partners were crucial to help us compile, organize, and distribute the data. TWDB’s Texas Water Data Hub is a significant step towards democratizing access to data crucial to anyone thinking about water in Texas, and we hope it will continue to offer meaningful partnership opportunities for others like us working in this space.</p>",
     "author_name" : "Sarah Schlessinger",
     "position" : "CEO",
-    "company" : "Texas Water Foundation"
+    "company" : "Texas Water Foundation",
+    "select_content_stying" : "style1"
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
