@@ -2,6 +2,7 @@
 
 section.u4m-hero {
   position: relative;
+  overflow: hidden;
 
   .bodystyle2 {
     @include tabletvert {
@@ -94,6 +95,7 @@ section.u4m-hero {
     position: static;
     width: 100%;
     margin-top: auto;
+
     @include tabletMid {
       position: relative;
     }
@@ -131,6 +133,7 @@ section.u4m-hero {
           border-radius 300ms ease;
         &:hover {
           padding: 35px 20px !important;
+          border-radius: 10px 10px 0 0 !important;
         }
       }
 
@@ -183,6 +186,17 @@ section.u4m-hero {
         :hover {
           padding: 35px 20px;
         }
+      }
+    }
+
+    .intro_btn_wrap {
+      bottom: -100px;
+      transition: 0.4s ease 0.3s;
+    }
+
+    &.animate_btn {
+      .intro_btn_wrap {
+        bottom: 0;
       }
     }
   }
