@@ -175,6 +175,14 @@
             </div>
             {% endfor %}
           </div>
+
+          {% if module.include_bottom_content %}
+          <div class="bottom_conetnt">
+            {{ module.bottom_content }}
+          </div>
+          {% endif %}
+
+
           <div class="paginationItems">
             {% if upcoming_page > 1 %}
             <a class="prev page-numbers" href="?tab=upcoming&upcoming_page={{ upcoming_page - 1 }}&past_page={{ past_page }}">&lt; BACK</a>
@@ -234,6 +242,12 @@
             </div>
             {% endfor %}
           </div>
+
+          {% if module.include_bottom_content %}
+          <div class="bottom_conetnt">
+            {{ module.bottom_content }}
+          </div>
+          {% endif %}
           <div class="paginationItems">
             {% if past_page > 1 %}
             <a class="prev page-numbers" href="?tab=past&past_page={{ past_page - 1 }}&upcoming_page={{ upcoming_page }}">&lt; BACK</a>

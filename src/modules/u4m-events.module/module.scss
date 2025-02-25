@@ -323,4 +323,13 @@
       }
     }
   }
+
+  .bottom_conetnt {
+    margin-bottom: 12px;
+    font-size: 13px;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

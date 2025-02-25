@@ -111,6 +111,8 @@
         max-width: none;
         font-weight: 600;
         font-family: $font1;
+        padding-bottom: 46px;
+        border-bottom: 2px solid rgba($black, 0);
 
         &:hover {
           border-bottom: 2px solid $tealGreen;

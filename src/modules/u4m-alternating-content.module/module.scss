@@ -262,8 +262,22 @@ section.u4m-alternating-content {
       .content_col_inner {
         @include tabletvertmin {
           display: block;
-          width: calc(100% - 15px);
+          width: calc(100% - 70px);
           margin-left: auto;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .imgAl_right {
+    &:not(.full_width) {
+      .content_col_inner {
+        @include tabletvertmin {
+          display: block;
+          width: calc(100% - 70px);
+          margin-left: 0;
+          margin-right: auto;
         }
       }
     }
