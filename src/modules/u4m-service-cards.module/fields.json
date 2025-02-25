@@ -854,6 +854,18 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "center"
+  }, {
+    "id" : "0308c7ab-e244-2be3-31e3-554ca2b3b932",
+    "name" : "card_content_line_height",
+    "label" : "Card Content Line Height",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "em",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 2
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -861,7 +873,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center"
+    "intro_content_alignment" : "center",
+    "card_content_line_height" : 2
   }
 }, {
   "id" : "module_overrides",
