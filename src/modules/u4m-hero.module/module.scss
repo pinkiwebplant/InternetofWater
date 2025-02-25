@@ -2,6 +2,13 @@
 
 section.u4m-hero {
   position: relative;
+
+  .bodystyle2 {
+    @include tabletvert {
+      line-height: 2em;
+    }
+  }
+
   .page-center {
     width: 100%;
   }
@@ -10,12 +17,18 @@ section.u4m-hero {
 
     .page-center {
       margin-bottom: 50px;
+      @include tabletMid {
+        margin-bottom: 20px;
+      }
     }
 
     &.full_height {
       @include tabletvert {
         height: auto;
       }
+    }
+    @include tabletMid {
+      padding-bottom: 0 !important;
     }
   }
 
@@ -61,6 +74,11 @@ section.u4m-hero {
     width: 80%;
     padding-top: 0;
     padding-bottom: 0;
+
+    @include tabletvert {
+      width: 100%;
+    }
+
     .intro_btn_wrap {
       display: none;
     }
@@ -76,6 +94,9 @@ section.u4m-hero {
     position: static;
     width: 100%;
     margin-top: auto;
+    @include tabletMid {
+      position: relative;
+    }
 
     .intro_btn_wrap {
       bottom: 0;

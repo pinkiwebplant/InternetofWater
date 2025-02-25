@@ -1799,6 +1799,16 @@
       },
       "enable_box_shadow" : true
     }
+  }, {
+    "id" : "50130c6b-5033-cc53-6038-5585934ac37b",
+    "name" : "image_column_position_bottom_at_mobile_view",
+    "label" : "Image Column Position Bottom At Mobile View",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1827,7 +1837,8 @@
         "opacity" : null
       },
       "enable_box_shadow" : true
-    }
+    },
+    "image_column_position_bottom_at_mobile_view" : false
   }
 }, {
   "id" : "module_overrides",

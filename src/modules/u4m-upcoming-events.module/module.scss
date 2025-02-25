@@ -1,6 +1,6 @@
 @import "../../css/_module-imports";
 
-.u4m-events {
+.u4m-upcoming-events {
   font-size: 14px;
   line-height: 1.7em;
   .eventsWrap {
@@ -261,11 +261,11 @@
     }
 
     .eventsWrap .flex_row .rightSec {
-      order: 1;
+      order: 2;
     }
 
     .eventsWrap .flex_row .leftSec {
-      order: 2;
+      order: 1;
     }
 
     .eventsWrap .flex_row .leftSec .events-grid .event-item .event-meta {
@@ -343,6 +343,12 @@
 
           .btn_item {
             width: 33.33%;
+            @include tabletvert {
+              width: 50%;
+            }
+            @include phone {
+              width: 100%;
+            }
             a {
               width: 100%;
               border: none;
@@ -362,6 +368,9 @@
           }
           .btn_item:last-child > a {
             border-radius: 10px 0 0 10px;
+            @include phone {
+              border-radius: 10px;
+            }
           }
         }
       }

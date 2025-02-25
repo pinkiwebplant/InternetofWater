@@ -83,6 +83,10 @@ section.u4m-alternating-content {
       .large_button_link {
         a {
           border-radius: 0 0 10px 0;
+
+          @include tabletvert {
+            border-radius: 0 0 10px 10px;
+          }
         }
       }
 
@@ -113,6 +117,34 @@ section.u4m-alternating-content {
       .large_button_link {
         a {
           border-radius: 0 0 10px 10px;
+        }
+      }
+    }
+  }
+
+  .page-center {
+    &.two_three_col {
+      .main_content .flex_row {
+        @include tabletMid {
+          flex-direction: column-reverse;
+        }
+      }
+
+      .media,
+      .content_col {
+        @include tabletMid {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &.img_bottAtMob {
+      .main_content {
+        > .flex_row {
+          @include tabletvert {
+            flex-direction: column !important;
+          }
         }
       }
     }
@@ -247,6 +279,9 @@ section.u4m-alternating-content {
         color: $azure;
         box-shadow: 0px 12px 100px -6px rgba($sunsetOrange, 0.6);
       }
+      @include tabletvert {
+        border-radius: 0 0 10px 10px;
+      }
     }
   }
 
@@ -357,6 +392,9 @@ section.u4m-alternating-content {
     &.cover_image {
       padding-bottom: 56.29%;
       position: relative;
+      @include tabletvert {
+        padding-bottom: 36vw;
+      }
 
       img {
         position: absolute;
@@ -371,6 +409,9 @@ section.u4m-alternating-content {
     .simpleParallax {
       padding-bottom: 56.29%;
       position: relative;
+      @include tabletvert {
+        padding-bottom: 36vw;
+      }
 
       img {
         bottom: 0;
