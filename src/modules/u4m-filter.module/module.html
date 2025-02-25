@@ -206,8 +206,13 @@
 						<div class='resourceCard post-item {{ row.type.name|lower|replace(' ','-') }} {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-') }} {% endfor %}'>
 							<div class='post-item-inner  {% if not row.image.url %}noImage{% endif %}'>
 
-
+								{% if row.image.url %}
+								<div class="logoIcon">
+									<img src="{{ row.image.url }}" alt="{{ row.image.alt }}" />
+								</div>
+								{% endif %}
 								<div class="post-content">
+									
 									<h5 class="restitle">
 										<a href="{{ request.path }}/{{ row.hs_path }}">{{ row.name }}</a>
 									</h5>

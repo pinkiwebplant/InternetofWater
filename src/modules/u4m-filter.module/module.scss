@@ -61,8 +61,28 @@
         box-shadow: 0 0 15px rgba($black, 0.2);
         padding: 30px 40px;
         width: 100%;
-
+        .post-item-inner  {
+          display: flex;
+          flex-wrap: wrap;
+          .logoIcon {
+            order: 2;
+            width: 130px;
+            @include phone {
+              display: none;
+            }
+          }
+          
+          .post-content {
+              order: 1;
+              width: calc(100% - 130px);
+              @include phone {
+                width: 100%;
+              }
+          }
+        
+        }
         .post-content {
+         
           .restitle {
             padding-bottom: 15px;
             margin: 0;

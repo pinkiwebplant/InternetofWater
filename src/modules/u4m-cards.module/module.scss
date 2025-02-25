@@ -77,6 +77,16 @@ section.u4m-cards {
       flex-direction: column;
       .card_desc {
         margin-bottom: 30px;
+        .card_text {
+          h6 {
+            em {
+            line-height: 1em;
+            font-weight: 500;
+            font-size: 15px;
+            font-style: italic;
+            }
+          }
+        }
       }
       .intro_btn_wrap {
         margin-top: auto;
@@ -120,6 +130,7 @@ section.u4m-cards {
     }
     &.small {
       @include b4;
+      color: $azure;
     }
     &.medium {
       @include b2;

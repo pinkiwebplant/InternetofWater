@@ -5,12 +5,23 @@
 		.flex_row {
 			align-items: center;
 			row-gap: 40rem;
+			@include tabletvert {
+				column-gap: 5rem;
+			}
 			.col.items {
+				
 				padding: 0;
+				@include tabletvert {
+					width: 49%;
+				}
 				.innerImg {
 					text-align: center;
 				}
 			}
 		}
+	}
+	.bottom_rich_text.bodystyle1 {
+		color: $tealGreen;
+		font-weight: bold;
 	}
 }
