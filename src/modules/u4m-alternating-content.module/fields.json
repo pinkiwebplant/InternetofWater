@@ -1334,6 +1334,20 @@
       },
       "type" : "richtext",
       "display_width" : null
+    }, {
+      "id" : "83c5ec48-c415-6b1e-9dd9-d2638e1efa9e",
+      "name" : "shadow_type",
+      "label" : "Shadow Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "sdtype1", "Type 1" ], [ "sdtype2", "Type 2" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -1351,7 +1365,8 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       },
-      "link_text" : "Link Text"
+      "link_text" : "Link Text",
+      "shadow_type" : ""
     }
   }, {
     "id" : "835e7b7d-e37f-d106-b793-c8b8d2cd5440",
@@ -1499,7 +1514,8 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       },
-      "link_text" : "Link Text"
+      "link_text" : "Link Text",
+      "shadow_type" : ""
     },
     "enable_credit_text" : false,
     "credit_text" : "Photo By",

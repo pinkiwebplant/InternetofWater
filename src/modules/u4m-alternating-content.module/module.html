@@ -155,7 +155,7 @@
           {% if module.media_column.include_link %}
 
           {% if module.media_column.link_type == "button" %}
-          <div class="large_button_link">
+          <div class="large_button_link {{ module.media_column.button_group.shadow_type }}">
             {% if module.media_column.button_group.button_type=="std" %}
             {% set href = module.media_column.button_group.link.url.href %}
             {% if module.media_column.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}

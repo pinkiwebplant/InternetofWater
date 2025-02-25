@@ -1094,6 +1094,9 @@ main form {
   }
   .content_col {
     .intro_content {
+      h3.intro_title {
+        color: $azure;
+      }
       .themeStyle {
         line-height: 2em;
       }
