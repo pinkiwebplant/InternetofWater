@@ -30,6 +30,18 @@ $Silver: #bcbcbc;
       .card_item {
         margin-top: 30px;
 
+        .card_inner {
+          margin: auto;
+          width: 100%;
+          max-width: 100%;
+          @include phone {
+            max-width: 280px;
+            ul {
+              padding-left: 16rem;
+            }
+          }
+        }
+
         .featured-image {
           a {
             display: flex;
@@ -64,6 +76,10 @@ $Silver: #bcbcbc;
               text-decoration: underline;
               color: $azure;
             }
+          }
+
+          h5 {
+            font-size: 18rem;
           }
         }
       }

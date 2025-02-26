@@ -259,11 +259,11 @@
         <div class="tabber">
           <button class="innerbtn" onclick="switchTab('upcoming')">Webinars</button>
           <div class="tabberin">
-             {% if module.remove_upcoming_events == false %}
-            <button onclick="switchTab('upcoming')">Upcoming</button>
-             {% endif %}
+            {% if module.remove_upcoming_events == false %}
+            <button id="upcomingwebinar" onclick="switchTab('upcoming')">Upcoming</button>
+            {% endif %}
             {% if module.remove_past_events == false %}
-            <button onclick="switchTab('past')">Past Webinars</button>
+            <button id="pastwebinar" onclick="switchTab('past')">Past Webinars</button>
             {% endif %}
           </div>
           {{macros.singlebuttonGroup(module.button_group, false)}}
@@ -282,10 +282,10 @@
 {% endif %}
 {% require_js %}
 <script>
-//   function switchTab(tab) {
-//     const pageParam = tab === 'past' ? 'past_page=1&upcoming_page=1' : 'upcoming_page=1&past_page=1';
-//     window.location.href = `?tab=${tab}&${pageParam}`;
-//   }
+  //   function switchTab(tab) {
+  //     const pageParam = tab === 'past' ? 'past_page=1&upcoming_page=1' : 'upcoming_page=1&past_page=1';
+  //     window.location.href = `?tab=${tab}&${pageParam}`;
+  //   }
 
   function switchTab(tab) {
     const pageParam = tab;
@@ -311,7 +311,11 @@
 
   }
 
-
+  if (window.location.href.includes("archive")) {
+    // Trigger the past post button
+    document.querySelector("#pastwebinar")?.click();
+    console.log('pastwebinar active')
+  }
 
 </script>
 {% end_require_js %}

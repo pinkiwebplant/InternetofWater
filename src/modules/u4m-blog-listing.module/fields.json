@@ -9,6 +9,36 @@
   "display_width" : null,
   "default" : true
 }, {
+  "id" : "2be9bbbe-ff79-ffe8-cae7-69ffe3e24254",
+  "name" : "placeholder_image",
+  "label" : "Placeholder Image",
+  "inline_help_text" : "Fallback image will be used for posts that don’t have an image.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "featured_image",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/InternetofWater-u4m/images/elementor-placeholder-image.png",
+    "alt" : "elementor-placeholder-image",
+    "loading" : "lazy",
+    "width" : 1200,
+    "height" : 800,
+    "max_width" : 1200,
+    "max_height" : 800
+  }
+}, {
   "id" : "e5a26c51-ca62-3adc-cf5d-27458e41bfaa",
   "name" : "post_title",
   "label" : "Post Title",

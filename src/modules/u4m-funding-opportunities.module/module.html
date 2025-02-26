@@ -71,7 +71,7 @@
 {% if tableData.type.name == request.query_dict.type %} 
 
 {% for tag in tableData.tag %}
-{% do rowTagsType.append(tag.name) %}
+{% do rowTagsType.append(tag) %}
 {% endfor %}
 
 {% for type in tableData.type %}
@@ -81,7 +81,7 @@
 {% else %}
 
 {% for tag in tableData.tag %}
-{% do rowTagsType.append(tag.name) %}
+{% do rowTagsType.append(tag) %}
 {% endfor %}
 {% for type in tableData.type %}
 {% do rowTypeType.append(type.name) %}
@@ -89,6 +89,7 @@
 
 {% endif %}
 {% endfor %}
+
 
 
 
@@ -109,8 +110,8 @@
               {% for tag in rowTagsType|unique  %}
               <div>
                 <label for="tag{{loop.index}}">
-                  <input type="checkbox" class="tagInput" data-tag="{{ tag|urlencode }}" id="tag{{loop.index}}" name="tag" label="{{ tag }}" value="{{ tag|urlencode }}" data-query="{{ request.query_dict.type }}" {% if request.query_dict.type is containing tag|urlencode %}checked{% endif %} />
-                  <span class="tag_name">{{ tag }}</span>
+                  <input type="checkbox" class="tagInput" data-tag="{{ tag.name|urlencode }}" id="tag{{loop.index}}" name="tag" label="{{ tag.name }}" value="{{ tag.name|urlencode }}" data-query="{{ request.query_dict.tag }}" {% if request.query_dict.tag is containing tag.name|urlencode %}checked{% endif %} />
+                  <span class="tag_name">{{ tag.label }}</span>
                 </label>
               </div>
               {% endfor %}
@@ -148,7 +149,7 @@
             </div>
           </div> 
 
-     
+
 
           <div class=" selctArrow tag-col excludeInputWrap_col">   
             <div class="filter_dropdown typeSelect excludeInputWrap resourceSelect topic_filter" data-value="">
@@ -156,19 +157,19 @@
 
               <div>
                 <label for="exclude">
-                 
+
                   <input type="checkbox" class="typeInput excludeInput" data-type="true" id="exclude" name="exclude"  value="false" data-query="">
                   <span class="tag_name">Exclude grants with cost sharing</span>
 
 
                 </label>
               </div>
-            
+
             </div>
           </div> 
 
           <div class="tagline">
-<p><strong>            For best results, enter figures as numbers without commas or dollar signs, e.g., 50000</strong></p>
+            <p><strong>            For best results, enter figures as numbers without commas or dollar signs, e.g., 50000</strong></p>
           </div>
 
 
@@ -180,6 +181,7 @@
 
         </div>
       </div>
+
       <div class='listing-wrap'>
         <div class='page-center cardSctn'>
           <div class='flex-row resourceList'>
@@ -203,23 +205,49 @@
                   <h5 class="restitle">
                     {{ row.name }} 
                   </h5>
-                  <div class="tagwrap">
 
-                    <div class='post-item-topic'><strong>Who Can Apply </strong>
-                      {% for tag in row.tag %}{{ tag.name|lower|replace(' ','-')|replace('-',' ') }}{% if not loop.last%}, {% endif %}{% endfor %}
+
+                  <div class="content_box">
+                    {{ row.content }} 
+                  </div>
+
+                  <div class="tagwrap">
+                    {% if row.award_type %}
+                    <div class='award-type'><strong>Award type: </strong><br>
+                      {{row.award_type}}
                     </div>
-                    <div class='fund_range'><strong>Funding range: </strong>
-                      ${{ row.fundmin }} to ${{ row.fund_max}}
+                    {% endif %}
+
+                    {% if row.award_type %}
+                    <div class='award-type'><strong>Award type: </strong><br>
+                      {{row.award_type}}
                     </div>
-                    <div class='time_range'><strong>Time frame: </strong>
+                    {% endif %}
+                    {% if row.cost_share %}
+                    <div class='cost-share'><strong>Cost share:</strong><br>
+                      {{row.cost_share}}
+                    </div>
+                    {% endif %}
+                    {% if row.time_min or  row.time_max%}
+                    <div class='time_range'><strong>Time frame: </strong><br>
                       {{ row.time_min }}{% if row.time_max %} to {{ row.time_max}} {% endif%}years
                     </div>
-
-                    {% if row.exclude %}
-                    <div class='grant'><strong>Grants: </strong> 
-                      Excluded
+                    {% endif %}
+                    {% if row.fundmin or  row.fund_max%}
+                    <div class='fund_range'><strong>Funding range: </strong><br>
+                      ${{ row.fundmin }} to ${{ row.fund_max}}
                     </div>
-                    {% endif %} 
+                    {% endif %}
+                    {% if row.funding_cycle %}
+                    <div class='funding-cycle'><strong>Funding cycle:</strong><br>
+                      {{row.funding_cycle}}
+                    </div>
+                    {% endif %}
+                    {% if row.data_focus %}
+                    <div class='data-focus'><strong>Data focus?</strong><br>
+                      {{row.data_focus}}
+                    </div>
+                    {% endif %}
 
                   </div>
 

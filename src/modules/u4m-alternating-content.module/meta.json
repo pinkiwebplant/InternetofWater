@@ -5,8 +5,8 @@
   "module_id" : 185971617935,
   "js_assets" : [ {
     "autoload" : true,
-    "path" : "../../js/parallax.js",
-    "name" : "parallax.js"
+    "path" : "../../js/jarallax.js",
+    "name" : "jarallax.js"
   } ],
   "label" : "Alternating Content",
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",

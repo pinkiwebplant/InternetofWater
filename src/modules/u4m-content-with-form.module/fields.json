@@ -180,6 +180,24 @@
     "display_width" : null,
     "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
   }, {
+    "id" : "6678e1c3-fcfc-2266-336f-0b66e55669c2",
+    "name" : "custom_bullet_list_style",
+    "label" : "Custom Bullet List Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
     "label" : "Include Button",
@@ -414,6 +432,54 @@
       "webinar_source" : null,
       "form_type" : "HUBSPOT"
     }
+  }, {
+    "id" : "b9bfb538-3f7d-22d5-ce85-da0166a1d150",
+    "name" : "include_bottom_content",
+    "label" : "Include Bottom Content",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "40c9d035-9942-8597-52d2-ed852846a2d2",
+    "name" : "bottom_content_style",
+    "label" : "Bottom Content Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_bottom_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bodystyle3"
+  }, {
+    "id" : "f672663d-a70a-a10b-afb2-e13873c95659",
+    "name" : "bottom_content",
+    "label" : "Bottom Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_bottom_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -431,6 +497,7 @@
     "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "custom_bullet_list_style" : false,
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -469,7 +536,9 @@
       "webinar_id" : null,
       "webinar_source" : null,
       "form_type" : "HUBSPOT"
-    }
+    },
+    "include_bottom_content" : false,
+    "bottom_content_style" : "bodystyle3"
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
@@ -527,6 +596,45 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "left"
+  }, {
+    "id" : "a2f117f9-d41e-2ef2-7204-ef359adc0088",
+    "name" : "include_background_shape_image",
+    "label" : "Include Background Shape Image",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "372ad9e4-3d31-0023-4f2c-00646ad856b1",
+    "name" : "background_shape_image",
+    "label" : "Background Shape Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.include_background_shape_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/Imported%20sitepage%20images/background.png",
+      "alt" : "background",
+      "loading" : "lazy",
+      "width" : 509,
+      "height" : 515,
+      "max_width" : 509,
+      "max_height" : 515
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -536,7 +644,18 @@
   "default" : {
     "intro_content_alignment" : "left",
     "remove_outer_spacing" : false,
-    "form_alignment" : "left"
+    "form_alignment" : "left",
+    "include_background_shape_image" : false,
+    "background_shape_image" : {
+      "size_type" : "auto",
+      "src" : "https://48598847.fs1.hubspotusercontent-na1.net/hubfs/48598847/Imported%20sitepage%20images/background.png",
+      "alt" : "background",
+      "loading" : "lazy",
+      "width" : 509,
+      "height" : 515,
+      "max_width" : 509,
+      "max_height" : 515
+    }
   }
 }, {
   "id" : "module_overrides",

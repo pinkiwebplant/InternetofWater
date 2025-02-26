@@ -39,13 +39,11 @@
 
 
 
-
-
-
-
   {% if module.module_settings.remove_intro_content_group == false %}
   {% if module.intro_content %}
-  {{macros.introGroup(module.intro_content, module.module_settings)}}
+  <div class="intro_content_wrapper {% if module.intro_content.custom_bullet_list_style %}customList{% endif %}">
+    {{macros.introGroup(module.intro_content, module.module_settings)}}
+  </div>
   {% endif %}
   {% endif %}
 
@@ -54,7 +52,7 @@
     <div class="flex_row">
       {% if module.module_settings.remove_content_group == false %}
       <div class="content_col text_{{ module.module_settings.content_group_alignment }} verAl_{{ module.module_settings.content_vertical_alignment }} {{contcolWidth}}">
-        <div class="content_col_inner {% if module.content_group.column_settings.remove_content_heading_border %}removehdgBdr{% endif %}">
+        <div class="content_col_inner  {% if module.content_group.custom_bullet_list_style %}customList{% endif %} {% if module.content_group.column_settings.remove_content_heading_border %}removehdgBdr{% endif %}">
           {{macros.introGroup(module.content_group)}}
         </div>
       </div>
@@ -68,7 +66,7 @@
             {% if module.media_column.select_media_type == "image" %}
 
             {% if module.media_column.image.src %}
-            <div class="image_box ">
+            <div class="image_box {% if module.media_column.enable_parallax %}parallaxenabled{% endif %}">
               {% if module.media_column.include_link %}
               {% if  module.media_column.link_type == "img_link" %}
               {% set href = module.media_column.link_on_image.url.href %}
@@ -91,10 +89,9 @@
               </a>
               {% endif %}
               {% endif %}
-
+        
               {% if module.media_column.enable_parallax %}
-              <div class="simpleParallax_wrap">
-                <img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
+              <div class=" jarallax" style="background-image: url({{ module.media_column.image.src }})">
               </div>
               {% else %}
               <img src="{{ module.media_column.image.src }}" alt="{{ module.media_column.image.alt }}">
@@ -107,7 +104,7 @@
 
             {% if module.media_column.select_media_type == "video" %}
             <div class="video_box">
-              
+
               {% if  module.media_column.video_type == "file" %}
               <video src="{{ module.media_column.select_video }}" controls muted></video>
               {% else %}
@@ -299,6 +296,7 @@
   {% endif %}
   {% endif %}
 
+ 
 </style>
 {% end_require_css %}
 
@@ -311,8 +309,10 @@
 
 {% require_js %}
 <script>
-  var images = document.querySelectorAll('.{{name}} .simpleParallax_wrap img');
-                                         new simpleParallax(images);
+
+  jarallax(document.querySelectorAll('.jarallax'), {
+    speed: 0.2
+  });
 </script>
 {% end_require_js %}
 {% endif %}

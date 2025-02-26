@@ -391,6 +391,25 @@ section.u4m-alternating-content {
       vertical-align: middle;
     }
 
+    &.parallaxenabled{
+      position: relative;
+      z-index: 4;
+        overflow: hidden;
+    }
+
+    .jarallax {
+      position: relative;
+      z-index: 1 !important;
+    }
+    .jarallax:after{
+      content: '';
+      padding-bottom: 56.29%;
+      position: relative;
+      display: block;
+      padding-bottom: 56.29%;
+      position: relative;
+    }
+
     a.overlay_link {
       position: absolute;
       top: 0;
@@ -451,4 +470,7 @@ section.u4m-alternating-content {
       font-weight: 500;
     }
   }
+
+  //
 }
+

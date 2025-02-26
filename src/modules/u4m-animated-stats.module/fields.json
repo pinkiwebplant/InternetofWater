@@ -518,6 +518,36 @@
       "locked" : false,
       "type" : "richtext",
       "display_width" : null
+    }, {
+      "id" : "0a98a6e4-91a1-0f6b-7330-6e654bcae028",
+      "name" : "items_setting",
+      "label" : "Items Setting",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "05174dd7-ee5f-2e2a-8451-58a5f52dfbbe",
+        "name" : "count_color",
+        "label" : "Count Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "count_color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -526,7 +556,13 @@
     "display_width" : null,
     "default" : [ {
       "number" : "463591",
-      "title" : "Bodies of Water in the U.S."
+      "title" : "Bodies of Water in the U.S.",
+      "field_group" : {
+        "count_color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
     } ]
   }, {
     "id" : "a9e2abdb-615a-08a1-dba2-f49d21860f26",
@@ -572,7 +608,13 @@
     },
     "right_column" : [ {
       "number" : "463591",
-      "title" : "Bodies of Water in the U.S."
+      "title" : "Bodies of Water in the U.S.",
+      "field_group" : {
+        "count_color" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }
     } ],
     "right_column_spacing" : {
       "top" : 6

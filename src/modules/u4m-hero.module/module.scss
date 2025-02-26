@@ -219,6 +219,7 @@ section.u4m-hero {
       }
       .ftritem {
         width: 100%;
+        display: flex;
         @include tabletvertmin {
           width: 50%;
         }
@@ -227,6 +228,7 @@ section.u4m-hero {
         }
         float: left;
         .ftritemin {
+          width: 100%;
           border: 0 solid;
           border-top-width: 3px;
           border-left-width: 3px;

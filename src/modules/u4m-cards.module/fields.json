@@ -180,6 +180,24 @@
     "display_width" : null,
     "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
   }, {
+    "id" : "62e55db3-0c25-939d-0853-be7412cde921",
+    "name" : "custom_bullet_list_style",
+    "label" : "Custom Bullet List Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
     "label" : "Include Button",
@@ -374,6 +392,7 @@
     "include_content" : true,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "custom_bullet_list_style" : false,
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -1145,6 +1164,24 @@
     "display_width" : null,
     "default" : ""
   }, {
+    "id" : "b3f7b1ad-71b8-45b6-9c36-c289498487e9",
+    "name" : "custom_bullet_list_style",
+    "label" : "Custom Bullet List Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "5b5f93bc-8e37-7f8c-a213-1039eb4d85c9",
     "name" : "include_button",
     "label" : "Include Button",
@@ -1337,6 +1374,7 @@
     "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "",
+    "custom_bullet_list_style" : false,
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -1501,6 +1539,16 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "center"
+  }, {
+    "id" : "91a4c967-8603-e5a3-e191-7af20b110a17",
+    "name" : "round_card_image_corner",
+    "label" : "Round Card Image Corner",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1515,7 +1563,8 @@
     "image_shadow" : false,
     "card_shadow" : false,
     "include_icon_animation" : false,
-    "bottom_content_alignment" : "center"
+    "bottom_content_alignment" : "center",
+    "round_card_image_corner" : false
   }
 }, {
   "id" : "module_overrides",

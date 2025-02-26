@@ -1,85 +1,92 @@
 <div class="u4m-blog-listing {{name}}">
-	<div class="page-center">
-		<div class="blog-post-grid">
-			{% for content in contents %}
-			<div class="blog-post-item">
-				{% if module.featured_image  %}
-				{% if content.featured_image %}
-				<div class="image-column">
-					<a href="{{ content.absolute_url }}">
-						<div class="featured-image-blog-post" style="background-image: url({{ content.featured_image }});"></div>
-					</a>
-				</div>
-				{% endif %}
-				{% endif %}
-				<div class="post-info-column">
-					{% if module.meta %}
-					<div class="field field-date">
-						<span class="post-date">{{ content.publish_date_local_time.strftime('%B %e, %Y') }}</span>
-					</div>
-					{% endif %}
-					{% if module.post_title %}
-					<div class="field field-title">
-						<a href="{{ content.absolute_url }}">{{ content.name }}</a>
-					</div>
-					{% endif %}
-					<div class="field field-excerpt">	
-						{% if blog.listing_page_id %}
-						{% if module.description %}
-						{% if content.widgets.listing_summary.body.value %}
-						{{ content.widgets.listing_summary.body.value }}
-						{% else %}
-						{{ content.post_list_content|safe|striptags|truncatehtml(250, '.' , false) }}
-						{% endif %}
-						{% endif %}
-						{% endif %}
-					</div>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-		<!-- Pagination -->
-		{% if not simple_list_page %}
-		<nav class="blog-pagination">
-			<div class="nav-links">
-				{% set page_list = [-2, -1, 0, 1, 2] %}
-				{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
-				{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
-				{% elif current_page_num == 2 %}{% set offset = 1 %}
-				{% elif current_page_num == 1 %}{% set offset = 2 %}
-				{% else %}{% set offset = 0 %}{% endif %}
-				{% if last_page_num %}
-				<a class="prev page-numbers" href="{{ blog_page_link(last_page_num) }}">&lt; BACK</a>
-				{% endif %}
-				{% if contents.total_page_count > 5 %}
-				{% if current_page_num >= 4 %}
-				<a class="page-numbers" href="{{ blog_page_link(1) }}">1</a>
-				<span class="dots page-numbers">…</span>
-				{% endif %}
-				{% endif %}
-				{% for page in page_list %}
-				{% set this_page = current_page_num + page + offset %}
-				{% if this_page > 0 and this_page <= contents.total_page_count %}
-				{% if this_page == current_page_num %}
-				<span class="page-numbers current">{{ this_page }}</span>
-				{% else %}
-				<a class="page-numbers" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
-				{% endif %}
-				{% endif %}
-				{% endfor %}
-				{% if contents.total_page_count > 5 %}
-				{% if contents.total_page_count - current_page_num > 2 %}
-				<span class="dots page-numbers">…</span>
-				<a class="page-numbers" href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
-				{% endif %}
-				{% endif %}   
-				{% if next_page_num %}
-				<a class="next page-numbers" href="{{ blog_page_link(current_page_num + 1) }}">NEXT &gt;</a>
-				{% endif %}
-			</div>
-		</nav>
-		{% endif %}
-	</div>
+  <div class="page-center">
+    <div class="blog-post-grid">
+      {% for content in contents %}
+      <div class="blog-post-item">
+        {% if module.featured_image  %}
+        {% if content.featured_image %}
+        <div class="image-column">
+          <a href="{{ content.absolute_url }}">
+            <div class="featured-image-blog-post" style="background-image: url({{ content.featured_image }});"></div>
+          </a>
+        </div>
+        {% else %}
+        <div class="image-column">
+          <a href="{{ content.absolute_url }}">
+            <div class="featured-image-blog-post" style="background-image: url({{ module.placeholder_image.src }});"></div>
+          </a>
+        </div>
+        {% endif %}
+
+        {% endif %}
+        <div class="post-info-column">
+          {% if module.meta %}
+          <div class="field field-date">
+            <span class="post-date">{{ content.publish_date_local_time.strftime('%B %e, %Y') }}</span>
+          </div>
+          {% endif %}
+          {% if module.post_title %}
+          <div class="field field-title">
+            <a href="{{ content.absolute_url }}">{{ content.name }}</a>
+          </div>
+          {% endif %}
+          <div class="field field-excerpt">	
+            {% if blog.listing_page_id %}
+            {% if module.description %}
+            {% if content.widgets.listing_summary.body.value %}
+            {{ content.widgets.listing_summary.body.value }}
+            {% else %}
+            {{ content.post_list_content|safe|striptags|truncatehtml(250, '.' , false) }}
+            {% endif %}
+            {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Pagination -->
+    {% if not simple_list_page %}
+    <nav class="blog-pagination">
+      <div class="nav-links">
+        {% set page_list = [-2, -1, 0, 1, 2] %}
+        {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+        {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+        {% elif current_page_num == 2 %}{% set offset = 1 %}
+        {% elif current_page_num == 1 %}{% set offset = 2 %}
+        {% else %}{% set offset = 0 %}{% endif %}
+        {% if last_page_num %}
+        <a class="prev page-numbers" href="{{ blog_page_link(last_page_num) }}">&lt; BACK</a>
+        {% endif %}
+        {% if contents.total_page_count > 5 %}
+        {% if current_page_num >= 4 %}
+        <a class="page-numbers" href="{{ blog_page_link(1) }}">1</a>
+        <span class="dots page-numbers">…</span>
+        {% endif %}
+        {% endif %}
+        {% for page in page_list %}
+        {% set this_page = current_page_num + page + offset %}
+        {% if this_page > 0 and this_page <= contents.total_page_count %}
+        {% if this_page == current_page_num %}
+        <span class="page-numbers current">{{ this_page }}</span>
+        {% else %}
+        <a class="page-numbers" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% if contents.total_page_count > 5 %}
+        {% if contents.total_page_count - current_page_num > 2 %}
+        <span class="dots page-numbers">…</span>
+        <a class="page-numbers" href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
+        {% endif %}
+        {% endif %}   
+        {% if next_page_num %}
+        <a class="next page-numbers" href="{{ blog_page_link(current_page_num + 1) }}">NEXT &gt;</a>
+        {% endif %}
+      </div>
+    </nav>
+    {% endif %}
+  </div>
 </div>
 
 
@@ -87,21 +94,21 @@
 {% require_css %}
 
 <style>
-	.{{name}}{
-		background-image: url({{ module.module_settings.background_image.src }});
+  .{{name}}{
+    background-image: url({{ module.module_settings.background_image.src }});
 
-		{% if module.module_settings.background_image_size == "cover" %}
-		background-size: cover;
-		background-repeat: no-reapeat;
-		background-position: center;
-		{% endif %}
+    {% if module.module_settings.background_image_size == "cover" %}
+    background-size: cover;
+    background-repeat: no-reapeat;
+    background-position: center;
+    {% endif %}
 
-		{% if module.module_settings.background_image_size == "auto" %}
-		background-size: auto;
-		background-repeat: no-repeat;
-		background-position: bottom right;
-		{% endif %}
-	}
+    {% if module.module_settings.background_image_size == "auto" %}
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    {% endif %}
+  }
 </style>
 {% end_require_css %}
 

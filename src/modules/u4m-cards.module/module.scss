@@ -78,6 +78,9 @@ section.u4m-cards {
       flex-direction: column;
       .card_desc {
         margin-bottom: 30px;
+        @include tabletvert {
+          margin-bottom: 20px;
+        }
         .card_text {
           h6 {
             em {
@@ -87,6 +90,10 @@ section.u4m-cards {
               font-style: italic;
             }
           }
+        }
+
+        .card_text > *:last-child {
+          margin-bottom: 0;
         }
       }
       .intro_btn_wrap {
@@ -193,5 +200,9 @@ section.u4m-cards {
         }
       }
     }
+  }
+
+  .round_card_image_corner img {
+    border-radius: 0 27px 27px 27px;
   }
 }

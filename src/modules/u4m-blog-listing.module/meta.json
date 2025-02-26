@@ -1,19 +1,8 @@
 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   "global" : false,
   "content_types" : [ "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 186147986577,
   "label" : "Blog Listing",
   "is_available_for_new_content" : false
-=======
-=======
->>>>>>> Stashed changes
-  "global": false,
-  "smart_type": "NOT_SMART",
-  "host_template_types": ["BLOG_POST", "BLOG_LISTING"],
-  "label": "Blog Listing",
-  "is_available_for_new_content": false
->>>>>>> Stashed changes
 }

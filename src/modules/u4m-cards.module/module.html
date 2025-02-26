@@ -5,7 +5,11 @@
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
-  {{macros.introGroup(module.intro_content, module.module_settings)}}
+  {% if module.intro_content %}
+  <div class="intro_content_wrapper {% if module.intro_content.custom_bullet_list_style %}customList{% endif %}">
+    {{macros.introGroup(module.intro_content, module.module_settings)}}
+  </div>
+  {% endif %}
 
   {% if module.include_label_text %}
   <div class="label_text_wrap row_spacing">
@@ -18,7 +22,8 @@
 
   <div class="cards_row flex_row {{ module.module_settings.cards_count_in_row }}_row row_spacing">
     {% for item in module.card_group %}
-    <div class="car_item col {% if module.module_settings.card_shadow %}cardShdw{% endif %} {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
+    <div class="car_item col {% if module.module_settings.round_card_image_corner %}round_card_image_corner
+{% endif %} {% if module.module_settings.card_shadow %}cardShdw{% endif %} {{ module.module_settings.cards_count_in_row }} al_{{ module.module_settings.card_content_alignment }}">
       <div class="card_inner">
         {% if item.select_image_type  %}
         <div class="card_img" {% if module.module_settings.include_icon_animation %}data-aos="{{ module.module_settings.icon_animation }}"{% endif %}>
@@ -214,7 +219,7 @@
         {# #}
         {% if module.bottom_content %}
         {% if module.bottom_content.include_heading ||  module.bottom_content.include_content ||  module.bottom_content.include_button %}
-        <div class="bottom_cnt row_spacing {{ module.module_settings.bottom_content_alignment }}">
+        <div class="bottom_cnt {% if module.bottom_content.custom_bullet_list_style %}customList{% endif %} row_spacing {{ module.module_settings.bottom_content_alignment }}">
           {{macros.introGroup(module.bottom_content)}}
         </div>
         {% endif %}

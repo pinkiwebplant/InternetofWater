@@ -18,6 +18,7 @@ html {
 //
 
 :root {
+  --dropicon: "https:{{get_asset_url('./../templates/images/drop.png') }}";
   --gradient1: #{$gradient1};
   --gradient2: #{$gradient2};
   --gradient3: #{$gradient3};
@@ -28,7 +29,8 @@ html {
 @font-face {
   font-family: "ETmodules";
   src:
-    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}")
+      format("embedded-opentype"),
     url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
     url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
   font-style: normal;
@@ -1195,4 +1197,42 @@ main form {
 
 .u4m-table table td {
   padding: 6px 24px !important;
+}
+
+@mixin customBullet {
+  padding: 0;
+  list-style: none;
+  li {
+    padding-left: 20rem;
+    position: relative;
+    background: url("https:{{get_asset_url('./../templates/images/drop.png') }}")
+      no-repeat left 7px;
+    padding: 3px 0px 3px 20px;
+    list-style: none;
+    margin: 0;
+
+    li {
+      padding-left: 20rem;
+      position: relative;
+      background: url("https:{{get_asset_url('./../templates/images/drop-clear.png') }}")
+        no-repeat left 7px;
+      padding: 3px 0px 3px 20px;
+      list-style: none;
+      margin: 0;
+    }
+  }
+}
+
+.bottom_cnt.customList .intro_desc ul,
+.u4m-contentWForm .customList .bottom_content ul,
+.u4m-contentWForm .customList .intro_desc ul,
+.intro_content_wrapper.customList .intro_desc ul,
+.content_col_inner.customList .intro_desc ul {
+  @include customBullet;
+}
+
+.bg_overlay.sgape_img {
+  background-size: initial;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }

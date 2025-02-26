@@ -2,8 +2,14 @@
 
 {% include "../partials/u4-module-includes.html" %}
 
+{% if module.module_settings.include_background_shape_image %}
+<div class="bg_overlay sgape_img" style="background-image: url({{ module.module_settings.background_shape_image.src|escape_url }})">
+</div>
 
-<div class="page-center {{ module.module_settings.remove_outer_spacing ? "no_outer_spacing" : "" }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+{% endif %}
+
+<div class="page-center {% if module.intro_content.custom_bullet_list_style %}customList
+            {% endif %} {{ module.module_settings.remove_outer_spacing ? "no_outer_spacing" : "" }}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
 
   {{ macros.introGroup(module.intro_content, module.module_settings) }}
 
@@ -20,6 +26,12 @@
   </div>
   {% endif %}
 
+  {% if module.intro_content.include_bottom_content %}
+  <div class="bottom_content {% if module.intro_content.custom_bullet_list_style %}customList
+            {% endif %} {{ module.intro_content.bottom_content_style }}">
+    {{ module.intro_content.bottom_content }}
+  </div>
+  {% endif %}
 
 
 </div>

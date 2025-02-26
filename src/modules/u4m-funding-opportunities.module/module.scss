@@ -51,6 +51,7 @@
       width: 75%;
       @include tabletvert {
         width: 100%;
+        margin-top: 30rem;
       }
       .resourceCard {
         margin-bottom: 40px;
@@ -78,6 +79,7 @@
             display: flex;
             flex-wrap: wrap;
             column-gap: 54px;
+            row-gap: 25px;
             line-height: 1.7;
             text-transform: capitalize;
           }
@@ -122,6 +124,28 @@
       color: $tealGreen;
       opacity: 0.9;
     }
+  }
+
+  //
+
+  .content_box > div {
+    font-weight: bold;
+  }
+
+  .content_box > div p {
+    font-weight: normal;
+  }
+
+  .content_box > div p:has(a) > span:first-child {
+    font-weight: bold;
+  }
+
+  .content_box > div i {
+    font-weight: normal;
+  }
+
+  .content_box > div i ~ p {
+    margin-top: 2px;
   }
 }
 

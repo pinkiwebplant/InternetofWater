@@ -188,6 +188,24 @@
     "display_width" : null,
     "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
   }, {
+    "id" : "a52de4b8-b6f7-c353-1444-3a595f31c5c6",
+    "name" : "custom_bullet_list_style",
+    "label" : "Custom Bullet List Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
     "label" : "Include Button",
@@ -382,6 +400,7 @@
     "include_content" : false,
     "content_style" : "bodystyle3",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "custom_bullet_list_style" : false,
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -599,7 +618,25 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>\n<ul>\n<li>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</li>\n<li>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</li>\n<li>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</li>\n</ul>"
+  }, {
+    "id" : "04dd1056-585e-7e3d-1b85-edc72ef41010",
+    "name" : "custom_bullet_list_style",
+    "label" : "Custom Bullet List Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   }, {
     "id" : "51eb1685-d4d5-d800-6962-42144ab29ee7",
     "name" : "include_button",
@@ -966,7 +1003,8 @@
     "include_heading_border" : false,
     "include_content" : true,
     "content_style" : "bodystyle3",
-    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
+    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>\n<ul>\n<li>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</li>\n<li>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</li>\n<li>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</li>\n</ul>",
+    "custom_bullet_list_style" : false,
     "include_button" : true,
     "button_group" : [ {
       "button_type" : "std",

@@ -69,6 +69,9 @@ $Silver: #bcbcbc;
         &.field-excerpt {
           font-size: 16px;
           margin-bottom: 1em;
+          @include tabletMid {
+            display: none;
+          }
         }
       }
     }
